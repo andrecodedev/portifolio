@@ -137,7 +137,7 @@
 }
 
 .hero__cta-button:hover img {
-    filter: var(--filter-button-gray);
+    filter: var(--filter-button-hero);
 }
 
 .hero__social-links {
@@ -180,7 +180,7 @@
 .hero__social-card img {
     width: var(--space-md);
     height: auto;
-    filter: var(--filter-button-gray);
+    filter: var(--filter-button-hero);
     user-select: none;
     pointer-events: none;
 }

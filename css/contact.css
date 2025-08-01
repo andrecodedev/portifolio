@@ -94,13 +94,13 @@
 .contact__cta-button img {
   max-width: var(--space-base);
   height: auto;
-  filter: var(--filter-button);
+    filter: var(--filter-button);
   user-select: none;
   pointer-events: none;
 }
 
 .contact__cta-button:hover img {
-  filter: var(--filter-button-gray);
+    filter: var(--filter-button-hero);
 }
 
 .contact__social-links {
@@ -144,7 +144,7 @@
 .contact__social-card img {
   max-width: var(--space-md);
   height: auto;
-  filter: var(--filter-button-gray);
+    filter: var(--filter-button-hero);
   user-select: none;
   pointer-events: none;
 }
