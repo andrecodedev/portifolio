@@ -481,6 +481,129 @@
         </div>
       </section>
 
+      <section id="skills" class="skills">
+        <div class="skills__header">
+          <h2 class="skills__text-title">Habilidades</h2>
+        </div>
+        <div class="skills__container">
+          <!-- Botões para filtrar as habilidades -->
+          <div class="skills__filter fade-in">
+            <button onclick="filterSkills('all', event)">Todas</button>
+            <button onclick="filterSkills('linguagens', event)">
+              Linguagens
+            </button>
+            <button onclick="filterSkills('ferramentas', event)">
+              Ferramentas
+            </button>
+            <button onclick="filterSkills('ides', event)">IDEs</button>
+            <button onclick="filterSkills('metodologias', event)">
+              Metodologias
+            </button>
+            <button onclick="filterSkills('frameworks', event)">
+              Frameworks
+            </button>
+            <button onclick="filterSkills('banco-dados', event)">
+              Banco de Dados
+            </button>
+          </div>
+
+          <!-- Cards de habilidades -->
+          <div class="skills__flex fade-in">
+            <!-- Linguagens de Programação -->
+            <div class="skill__card fade-in linguagens">
+              <img src="img/skills/html.svg" alt="HTML" />
+              <h1>HTML5</h1>
+            </div>
+            <div class="skill__card fade-in linguagens">
+              <img src="img/skills/css.svg" alt="CSS" />
+              <h1>CSS3</h1>
+            </div>
+            <div class="skill__card fade-in linguagens">
+              <img src="img/skills/javascript.svg" alt="JavaScript" />
+              <h1>JavaScript</h1>
+            </div>
+            <div class="skill__card fade-in linguagens">
+              <img src="img/skills/java.svg" alt="Java" />
+              <h1>Java</h1>
+            </div>
+            <div class="skill__card fade-in linguagens">
+              <img src="img/skills/sql.svg" alt="SQL" />
+              <h1>SQL</h1>
+            </div>
+
+            <!-- Ferramentas -->
+            <div class="skill__card fade-in ferramentas">
+              <img src="img/skills/git.svg" alt="Git" />
+              <h1>Git</h1>
+            </div>
+            <div class="skill__card fade-in ferramentas">
+              <img src="img/skills/figma.svg" alt="Figma" />
+              <h1>Figma</h1>
+            </div>
+            <div class="skill__card fade-in ferramentas">
+              <img src="img/skills/trello.svg" alt="Trello" />
+              <h1>Trello</h1>
+            </div>
+            <div class="skill__card fade-in ferramentas">
+              <img src="img/skills/jira.svg" alt="Jira" />
+              <h1>Jira</h1>
+            </div>
+            <div class="skill__card fade-in ferramentas">
+              <img src="img/skills/office.svg" alt="Office" />
+              <h1>Pacote Office</h1>
+            </div>
+            <div class="skill__card fade-in ferramentas">
+              <img src="img/skills/canva.svg" alt="Canva" />
+              <h1>Canva</h1>
+            </div>
+
+            <!-- Metodologias -->
+            <div class="skill__card fade-in metodologias">
+              <img src="img/skills/scrum.svg" alt="Scrum" />
+              <h1>Scrum</h1>
+            </div>
+            <div class="skill__card fade-in metodologias">
+              <img src="img/skills/kanban.svg" alt="Kanban" />
+              <h1>Kanban</h1>
+            </div>
+
+            <!-- Frameworks -->
+            <div class="skill__card fade-in frameworks">
+              <img src="img/skills/bootstrap.svg" alt="BootStrap" />
+              <h1>BootStrap</h1>
+            </div>
+
+            <!-- Banco de Dados -->
+            <div class="skill__card fade-in banco-dados">
+              <img src="img/skills/sqlServer.svg" alt="SQL" />
+              <h1>SQL Server</h1>
+            </div>
+            <div class="skill__card fade-in banco-dados">
+              <img src="img/skills/mysql.svg" alt="SQL" />
+              <h1>MySQL</h1>
+            </div>
+
+            <!-- IDEs -->
+            <div class="skill__card fade-in ides">
+              <img src="img/skills/vscode.svg" alt="VScode" />
+              <h1>VS Code</h1>
+            </div>
+            <div class="skill__card fade-in ides">
+              <img src="img/skills/visualstudy.svg" alt="VisualStudio" />
+              <h1>Visual Studio</h1>
+            </div>
+            <div class="skill__card fade-in ides">
+              <img src="img/skills/eclipse.svg" alt="Eclipse" />
+              <h1>Eclipse</h1>
+            </div>
+            <div class="skill__card fade-in ides">
+              <img src="img/skills/intellij.svg" alt="Intellij" />
+              <h1>Intellij</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="project">
         <div class="project__header">
           <h2 class="project__text-title">Projetos</h2>
@@ -948,129 +1071,6 @@
           >
             Ver todos os repositórios no GitHub
           </a>
-        </div>
-      </section>
-
-      <section id="skills" class="skills">
-        <div class="skills__header">
-          <h2 class="skills__text-title">Habilidades</h2>
-        </div>
-        <div class="skills__container">
-          <!-- Botões para filtrar as habilidades -->
-          <div class="skills__filter fade-in">
-            <button onclick="filterSkills('all', event)">Todas</button>
-            <button onclick="filterSkills('linguagens', event)">
-              Linguagens
-            </button>
-            <button onclick="filterSkills('ferramentas', event)">
-              Ferramentas
-            </button>
-            <button onclick="filterSkills('ides', event)">IDEs</button>
-            <button onclick="filterSkills('metodologias', event)">
-              Metodologias
-            </button>
-            <button onclick="filterSkills('frameworks', event)">
-              Frameworks
-            </button>
-            <button onclick="filterSkills('banco-dados', event)">
-              Banco de Dados
-            </button>
-          </div>
-
-          <!-- Cards de habilidades -->
-          <div class="skills__flex fade-in">
-            <!-- Linguagens de Programação -->
-            <div class="skill__card fade-in linguagens">
-              <img src="img/skills/html.svg" alt="HTML" />
-              <h1>HTML5</h1>
-            </div>
-            <div class="skill__card fade-in linguagens">
-              <img src="img/skills/css.svg" alt="CSS" />
-              <h1>CSS3</h1>
-            </div>
-            <div class="skill__card fade-in linguagens">
-              <img src="img/skills/javascript.svg" alt="JavaScript" />
-              <h1>JavaScript</h1>
-            </div>
-            <div class="skill__card fade-in linguagens">
-              <img src="img/skills/java.svg" alt="Java" />
-              <h1>Java</h1>
-            </div>
-            <div class="skill__card fade-in linguagens">
-              <img src="img/skills/sql.svg" alt="SQL" />
-              <h1>SQL</h1>
-            </div>
-
-            <!-- Ferramentas -->
-            <div class="skill__card fade-in ferramentas">
-              <img src="img/skills/git.svg" alt="Git" />
-              <h1>Git</h1>
-            </div>
-            <div class="skill__card fade-in ferramentas">
-              <img src="img/skills/figma.svg" alt="Figma" />
-              <h1>Figma</h1>
-            </div>
-            <div class="skill__card fade-in ferramentas">
-              <img src="img/skills/trello.svg" alt="Trello" />
-              <h1>Trello</h1>
-            </div>
-            <div class="skill__card fade-in ferramentas">
-              <img src="img/skills/jira.svg" alt="Jira" />
-              <h1>Jira</h1>
-            </div>
-            <div class="skill__card fade-in ferramentas">
-              <img src="img/skills/office.svg" alt="Office" />
-              <h1>Pacote Office</h1>
-            </div>
-            <div class="skill__card fade-in ferramentas">
-              <img src="img/skills/canva.svg" alt="Canva" />
-              <h1>Canva</h1>
-            </div>
-
-            <!-- Metodologias -->
-            <div class="skill__card fade-in metodologias">
-              <img src="img/skills/scrum.svg" alt="Scrum" />
-              <h1>Scrum</h1>
-            </div>
-            <div class="skill__card fade-in metodologias">
-              <img src="img/skills/kanban.svg" alt="Kanban" />
-              <h1>Kanban</h1>
-            </div>
-
-            <!-- Frameworks -->
-            <div class="skill__card fade-in frameworks">
-              <img src="img/skills/bootstrap.svg" alt="BootStrap" />
-              <h1>BootStrap</h1>
-            </div>
-
-            <!-- Banco de Dados -->
-            <div class="skill__card fade-in banco-dados">
-              <img src="img/skills/sqlServer.svg" alt="SQL" />
-              <h1>SQL Server</h1>
-            </div>
-            <div class="skill__card fade-in banco-dados">
-              <img src="img/skills/mysql.svg" alt="SQL" />
-              <h1>MySQL</h1>
-            </div>
-
-            <!-- IDEs -->
-            <div class="skill__card fade-in ides">
-              <img src="img/skills/vscode.svg" alt="VScode" />
-              <h1>VS Code</h1>
-            </div>
-            <div class="skill__card fade-in ides">
-              <img src="img/skills/visualstudy.svg" alt="VisualStudio" />
-              <h1>Visual Studio</h1>
-            </div>
-            <div class="skill__card fade-in ides">
-              <img src="img/skills/eclipse.svg" alt="Eclipse" />
-              <h1>Eclipse</h1>
-            </div>
-            <div class="skill__card fade-in ides">
-              <img src="img/skills/intellij.svg" alt="Intellij" />
-              <h1>Intellij</h1>
-            </div>
-          </div>
         </div>
       </section>
 
