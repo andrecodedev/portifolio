@@ -2,14 +2,7 @@
 
 import facens from '../img/formacoes/facens.svg';
 import etec from '../img/formacoes/etec.svg';
-import alura from '../img/formacoes/alura.svg';
-import ccbeu from '../img/formacoes/ccbeu.svg';
-import dio from '../img/formacoes/dio.svg';
-import interativa from '../img/formacoes/interativa.svg';
-import udemy from '../img/formacoes/udemy.svg';
 import senai from '../img/formacoes/senai.svg';
-import onebitcode from '../img/formacoes/onebitcode.svg';
-import onealura from '../img/formacoes/onealura.svg';
 
 // Importe outros ícones conforme necessário
 
