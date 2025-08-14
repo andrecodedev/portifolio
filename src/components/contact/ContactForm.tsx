@@ -79,8 +79,8 @@ export default function ContactForm() {
           type="submit"
           disabled={loading}
           className={`${
-            loading ? "bg-blue-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"
-          } transition cursor-pointer text-white p-2 rounded font-semibold flex items-center justify-center select-none text-sm`}
+            loading ? "bg-[var(--button-bg)] cursor-not-allowed" : "bg-[var(--button-bg)] hover:bg-[var(--button-hover)]"
+          } transition cursor-pointer text-[var(--text-primary)] p-2 rounded font-semibold flex items-center justify-center select-none text-sm`}
         >
           {loading ? (
             <>

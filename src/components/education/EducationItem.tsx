@@ -80,8 +80,8 @@ export default function CardEducation({ data }: { data: CardEducationData }) {
             rel={certificadoUrl ? "noopener noreferrer" : undefined}
             className={`w-12 h-12 flex items-center justify-center rounded-lg text-[var(--white)] transition-all duration-300 transform shadow-lg focus:outline-none focus:ring-2 focus:ring-opacity-50
               ${certificadoUrl
-                ? "bg-blue-500 hover:bg-blue-600"
-                : "bg-blue-400 cursor-not-allowed"}`}
+                ? "bg-[var(--button-bg)] hover:bg-[var(--button-hover)]"
+                : "bg-[var(--button-bg)] cursor-not-allowed"}`}
             aria-label={t("Education.label_ver_certificado")}
           >
             <AiOutlineFileDone size={24} />

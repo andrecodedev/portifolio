@@ -50,7 +50,7 @@ export const educationData: EducationData[] = [
     fim: 'Education.fim_11',
     cargaHoraria: 'Education.cargaHoraria_11',
     modalidade: 'Education.modalidade_11',
-    certificadoUrl: ""
+    certificadoUrl: "https://www.youtube.com/watch?v=pShfeG11Om0&list=RDpShfeG11Om0&start_radio=1"
   },
   
   // Adicione outros itens de educação aqui...

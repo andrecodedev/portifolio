@@ -76,7 +76,7 @@ const skillsData = [
   { name: "MySQL", icon: mysqlIcon, category: "banco-dados" },
   { name: "Português C2", icon: portuguesIcon, category: "idioma" },
   { name: "Inglês B1", icon: euaIcon, category: "idioma" },
-  { name: "Espanhol A2", icon: spanishIcon, category: "idioma" },
+  { name: "Espanhol A1", icon: spanishIcon, category: "idioma" },
   { name: "VS Code", icon: vscodeIcon, category: "ides" },
   { name: "Visual Studio", icon: visualstudyIcon, category: "ides" },
   { name: "Eclipse", icon: eclipseIcon, category: "ides" },
