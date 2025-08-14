@@ -43,7 +43,7 @@ function AboutHero() {
               {t('button.project')}
             </Link>
             <a
-              href="./src/cv/curriculoAndreVitor.pdf"
+              href="/cv/curriculoAndreVitor.pdf"
               download
               className={`${buttonBase} ${buttonStyle} ${activeBtn === 'cv' ? activeStyle : ''}`}
               onClick={() => setActiveBtn('cv')}
