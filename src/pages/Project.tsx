@@ -1,10 +1,10 @@
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import Title from '../components/Title';
-
 import { useTranslation } from 'react-i18next';
+import Title from '../components/Title';
+import FadeIn from '../components/FadeIn';
 
-function Project() {
+function Projetos() {
     const { t, i18n } = useTranslation();
   
     document.documentElement.lang = i18n.language;
@@ -17,7 +17,9 @@ function Project() {
       </header>
 
       <main className="flex flex-1 flex-col justify-center items-center text-center p-4">
-        <Title title_5={t(" ")} />
+        <FadeIn duration={1000}>
+          <Title title_5={t(" ")} />
+        </FadeIn>
       </main>
       
       <footer>
@@ -28,4 +30,4 @@ function Project() {
   )
 }
 
-export default Project
+export default Projetos
