@@ -9,6 +9,14 @@ export default function SkillsSection({ activeCategory }: SkillsSectionProps) {
     (skill) => activeCategory === "all" || skill.category === activeCategory
   );
 
+  if (skillsToShow.length === 0) {
+    return (
+      <div className="text-center py-16 text-[var(--text-secondary)] font-jet">
+        <p>Nenhum item encontrado para esta categoria.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-wrap justify-center items-center gap-6 max-w-[1200px] mx-auto pt-4">
       {skillsToShow.map((skill, index) => (

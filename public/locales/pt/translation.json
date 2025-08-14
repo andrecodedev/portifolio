@@ -83,10 +83,12 @@
     "description_4": "Atuei no setor de vendas e atendimento ao cliente em um pet shop de médio porte, realizando atendimento no balcão, caixa e telefone, além de apoiar na organização da loja, controle de estoque, recebimento de mercadorias e cuidados básicos com os animais. Desenvolvi habilidades como empatia, responsabilidade, trabalho em equipe e atendimento ao cliente."
   },
   "Education": {
+
     "label_periodo": "Período",
     "label_modalidade": "Modalidade",
     "label_carga_horaria": "Carga Horária",
     "label_ver_certificado": "Ver cert.",
+
     "curso_1": "Análise e Desenvolvimento de Sistemas",
     "tipo_1": "Graduação (Tecnólogo)",
     "escola_1": "FACENS - Centro Universitário",
@@ -95,14 +97,33 @@
     "fim_1": "12/2026",
     "cargaHoraria_1": "2.400h",
     "modalidade_1": "Presencial",
-    "curso_11": "Análise e Desenvolvimento de Sistemas",
-    "tipo_11": "Técnico",
-    "escola_11": "ETEC - Escola Técnica Estadual",
-    "status_11": "Concluído",
-    "inicio_11": "08/2022",
-    "fim_11": "12/2023",
-    "cargaHoraria_11": "1.200h",
-    "modalidade_11": "Presencial"
+
+    "curso_2": "Análise e Desenvolvimento de Sistemas",
+    "tipo_2": "Técnico",
+    "escola_2": "ETEC - Escola Técnica Estadual",
+    "status_2": "Concluído",
+    "inicio_2": "08/2022",
+    "fim_2": "12/2023",
+    "cargaHoraria_2": "1.500h",
+    "modalidade_2": "Presencial",
+
+    "curso_3": "Operador Logístico",
+    "tipo_3": "Curso profissionalizante",
+    "escola_3": "SENAI - Serviço Nacional de Aprendizagem Industrial",
+    "status_3": "Concluído",
+    "inicio_3": "02/2022",
+    "fim_3": "05/2022",
+    "cargaHoraria_3": "200h",
+    "modalidade_3": "Presencial",
+
+    "curso_4": "Criação de Websites e Customização de Plataformas Digitais",
+    "tipo_4": "Curso profissionalizante",
+    "escola_4": "FATEC - Faculdade de Tecnologia do Estado de São Paulo",
+    "status_4": "Concluído",
+    "inicio_4": "08/2021",
+    "fim_4": "12/2021",
+    "cargaHoraria_4": "144h",
+    "modalidade_4": "Remoto"
   },
   "SkillsFilter": {
     "todas": "Todas",

@@ -87,6 +87,7 @@
     "label_modalidade": "Modality",
     "label_carga_horaria": "Workload",
     "label_ver_certificado": "View Certificate",
+
     "curso_1": "Systems Analysis and Development",
     "tipo_1": "Bachelor (Technologist)",
     "escola_1": "FACENS - University Center",
@@ -95,14 +96,15 @@
     "fim_1": "12/2026",
     "cargaHoraria_1": "2,400h",
     "modalidade_1": "On-site",
-    "curso_11": "Systems Analysis and Development",
-    "tipo_11": "Technician",
-    "escola_11": "ETEC - State Technical School",
-    "status_11": "Completed",
-    "inicio_11": "08/2022",
-    "fim_11": "12/2023",
-    "cargaHoraria_11": "1,200h",
-    "modalidade_11": "On-site"
+
+    "curso_2": "Systems Analysis and Development",
+    "tipo_2": "Technician",
+    "escola_2": "ETEC - State Technical School",
+    "status_2": "Completed",
+    "inicio_2": "08/2022",
+    "fim_2": "12/2023",
+    "cargaHoraria_2": "1,200h",
+    "modalidade_2": "On-site"
   },
   "SkillsFilter": {
     "todas": "All",

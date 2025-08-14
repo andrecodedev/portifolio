@@ -40,23 +40,22 @@ import netbeensIcon from '../img/skills/netbeens.svg';
 import arduinoIcon from '../img/skills/arduino.svg';
 import csharpIcon from '../img/skills/csharp.svg';
 
-
-// 2. Use a variável importada no campo 'icon'
+// 2. Dados com categorias fixas
 const skillsData = [
   { name: "HTML5", icon: htmlIcon, category: "linguagens" },
   { name: "CSS3", icon: cssIcon, category: "linguagens" },
   { name: "JavaScript", icon: javascriptIcon, category: "linguagens" },
-  { name: "Java", icon: javaIcon, category: "linguagens" },
-  { name: "SQL", icon: sqlIcon, category: "linguagens" },
   { name: "TypeScript", icon: typescriptIcon, category: "linguagens" },
+  { name: "Java", icon: javaIcon, category: "linguagens" },
   { name: "C", icon: cIcon, category: "linguagens" },
   { name: "C++", icon: cmaismaisIcon, category: "linguagens" },
   { name: "C#", icon: csharpIcon, category: "linguagens" },
-  { name: "Sass", icon: sassIcon, category: "linguagens" },
+  { name: "SQL", icon: sqlIcon, category: "linguagens" },
+  { name: "Sass", icon: sassIcon, category: "ferramentas" },
   { name: "Git", icon: gitIcon, category: "ferramentas" },
+  { name: "Node.js", icon: nodeJsIcon, category: "ferramentas" },
   { name: "Figma", icon: figmaIcon, category: "ferramentas" },
   { name: "Postman", icon: postmanIcon, category: "ferramentas" },
-  { name: "Node.js", icon: nodeJsIcon, category: "ferramentas" },
   { name: "Trello", icon: trelloIcon, category: "ferramentas" },
   { name: "Jira", icon: jiraIcon, category: "ferramentas" },
   { name: "Pacote Office", icon: officeIcon, category: "ferramentas" },

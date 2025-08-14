@@ -95,14 +95,15 @@
     "fim_1": "12/2026",
     "cargaHoraria_1": "2.400h",
     "modalidade_1": "Presencial",
-    "curso_11": "Análisis y desarrollo de sistemas",
-    "tipo_11": "Técnico",
-    "escola_11": "ETEC - Escuela Técnica Estatal",
-    "status_11": "Finalizado",
-    "inicio_11": "08/2022",
-    "fim_11": "12/2023",
-    "cargaHoraria_11": "1.200h",
-    "modalidade_11": "Presencial"
+
+    "curso_2": "Análisis y desarrollo de sistemas",
+    "tipo_2": "Técnico",
+    "escola_2": "ETEC - Escuela Técnica Estatal",
+    "status_2": "Finalizado",
+    "inicio_2": "08/2022",
+    "fim_2": "12/2023",
+    "cargaHoraria_2": "1.200h",
+    "modalidade_2": "Presencial"
   },
   "SkillsFilter": {
     "todas": "Todas",
