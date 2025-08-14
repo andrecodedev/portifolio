@@ -80,7 +80,7 @@ export default function ContactForm() {
           disabled={loading}
           className={`${
             loading ? "bg-blue-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"
-          } transition text-white p-2 rounded font-semibold flex items-center justify-center select-none text-sm`}
+          } transition cursor-pointer text-white p-2 rounded font-semibold flex items-center justify-center select-none text-sm`}
         >
           {loading ? (
             <>
