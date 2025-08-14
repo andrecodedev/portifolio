@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 
 import LinkedinIcon from '../../img/redes/linkedin.svg';
 import GithubIcon from '../../img/redes/github.svg';
-import EmailIcon from '.../../img/redes/email.svg';
+import EmailIcon from '../../img/redes/email.svg';
 
 export default function ContactInfo() {
     const { t, i18n } = useTranslation();
