@@ -15,7 +15,7 @@ function Sobre() {
       <header>      
         <Header />
       </header>
-      <main className="flex flex-1 flex-col justify-center items-center text-center p-4">
+      <main className="flex flex-1 flex-col justify-center items-center p-4">
         <FadeIn duration={1000}>
         {/* Título superior */}
         <Title title_1=" " />
