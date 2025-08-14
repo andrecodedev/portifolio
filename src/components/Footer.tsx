@@ -12,8 +12,8 @@ const Footer = () => {
   return (
     <footer className="      
         flex flex-col items-center justify-around gap-4 p-4 text-center 
-        text-[0.80rem] text-primary select-none flex-shrink-0 font-jet leading-snug tracking-tight
-        sm:text-[0.8rem] 
+        text-xs text-primary select-none flex-shrink-0 font-jet leading-snug tracking-tight
+        sm:text-xs 
         md:py-6 md:px-0 md:flex-row">
 
       <div className="md:text-left flex items-center">

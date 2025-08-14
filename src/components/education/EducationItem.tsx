@@ -44,36 +44,36 @@ export default function CardEducation({ data }: { data: CardEducationData }) {
       className="group relative bg-[var(--bg-secondary-transparent)] rounded-xl p-6 w-full h-full flex flex-col shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 overflow-hidden font-jet"
     >
       {/* CABEÇALHO */}
-      <div className="flex items-start justify-between items-center gap-4 mb-4">
+      <div className="flex items-start justify-between gap-4 mb-4">
         <div className="p-2">
           <img src={icon} alt={t(escola)} className="w-10 h-10 select-none" />
         </div>
         <div className="flex-1">
-          <h3 className="text-lg font-bold text-[var(--text-primary)] leading-tight">{t(curso)}</h3>
+          <h3 className="text-sm font-bold text-[var(--text-primary)] leading-tight">{t(curso)}</h3>
           <p className="text-sm font-medium text-[var(--text-secondary)]">{t(escola)}</p>
         </div>
       </div>
 
-      {/* --- CORPO E BOTÃO COMBINADOS --- */}
+      {/* CORPO E BOTÃO */}
       <div className="flex-grow flex flex-row flex-nowrap justify-between gap-4 mt-2">
         {/* Coluna da Esquerda: Detalhes */}
-        <div className="flex-1 min-w-0 space-y-2 text-sm text-[var(--text-secondary)]">
+        <div className="flex-1 min-w-0 space-y-2 text-xs text-[var(--text-secondary)]">
           {/* BADGE DE STATUS */}
           <div className="flex items-center gap-2">
-            <span className="px-2.5 py-0.5 text-xs font-semibold rounded-full flex items-center gap-1.5 bg-[var(--text-terceiro)]/10 text-[var(--text-primary)] ring-1 ring-inset ring-[var(--text-terceiro)]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--text-primary)]"></span>
+            <span className="px-2.5 py-0.5 font-semibold rounded-full flex items-center gap-1.5 bg-[var(--text-terceiro)]/10 text-[var(--text-primary)] ring-1 ring-inset ring-[var(--text-terceiro)]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--text-primary)] text-xs"></span>
               {t(status)}
             </span>
           </div>
 
-          {tipo && (<p className="italic text-xs">{t(tipo)}</p>)}
-          <p><strong>{t('Education.label_periodo')}:</strong> <strong className="text-[var(--text-terceiro)]"> {t(inicio)} — {t(fim)}</strong></p>
-          {modalidade && (<p><strong>{t('Education.label_modalidade')}:</strong><strong className="text-[var(--text-terceiro)]"> {t(modalidade)}</strong></p>)}
-          {cargaHoraria && (<p><strong>{t('Education.label_carga_horaria')}:</strong><strong className="text-[var(--text-terceiro)]"> {t(cargaHoraria)}</strong></p>)}
+          {tipo && <p className="italic text-xs">{t(tipo)}</p>}
+          <p><strong>{t('Education.label_periodo')}:</strong> <strong className="text-[var(--text-terceiro)] text-xs"> {t(inicio)} — {t(fim)}</strong></p>
+          {modalidade && <p><strong className="text-xs">{t('Education.label_modalidade')}:</strong> <strong className="text-[var(--text-terceiro)] text-xs"> {t(modalidade)}</strong></p>}
+          {cargaHoraria && <p><strong className="text-xs">{t('Education.label_carga_horaria')}:</strong> <strong className="text-[var(--text-terceiro)] text-xs"> {t(cargaHoraria)}</strong></p>}
         </div>
 
         {/* Coluna da Direita: Botão */}
-        <div className="flex-shrink-0 flex justify-center items-start items-center">
+        <div className="flex-shrink-0 flex justify-center items-start">
           <a
             href={certificadoUrl || "#"}
             target={certificadoUrl ? "_blank" : undefined}

@@ -47,32 +47,32 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="font-jet flex flex-col items-center p-4 bg-[var(--bg-secondary-transparent)] rounded-lg shadow w-full">
-      <h3 className="text-[var(--text-terceiro)] text-lg font-semibold mb-4 select-none">
+    <div className="font-jet flex flex-col items-center justify-center p-4 bg-[var(--bg-secondary-transparent)] rounded-lg shadow w-full">
+      <h3 className="text-[var(--text-terceiro)] text-base font-semibold mb-4 select-none">
         {t('Contact.titulo_2')}
       </h3>
 
-      <form onSubmit={handleSubmit} className="w-full flex flex-col gap-3 text-[var(--text-primary)]">
+      <form onSubmit={handleSubmit} className="w-full flex flex-col gap-3 text-[var(--text-primary)] text-sm">
         <input
           type="text"
           name="name"
           placeholder={t('Contact.name')}
           required
-          className="p-2 rounded bg-[var(--button-bg)] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-primary select-none"
+          className="p-2 rounded bg-[var(--button-bg)] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-primary select-none text-sm"
         />
         <input
           type="email"
           name="email"
           placeholder={t('Contact.email_2')}
           required
-          className="p-2 rounded bg-[var(--button-bg)] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-primary select-none"
+          className="p-2 rounded bg-[var(--button-bg)] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-primary select-none text-sm"
         />
         <textarea
           name="message"
           placeholder={t('Contact.mensagem')}
           required
           rows={4}
-          className="p-2 rounded bg-[var(--button-bg)] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-primary select-none"
+          className="p-2 rounded bg-[var(--button-bg)] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-primary select-none text-sm"
         ></textarea>
 
         <button
@@ -80,7 +80,7 @@ export default function ContactForm() {
           disabled={loading}
           className={`${
             loading ? "bg-blue-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"
-          } transition text-white p-2 rounded font-semibold flex items-center justify-center select-none`}
+          } transition text-white p-2 rounded font-semibold flex items-center justify-center select-none text-sm`}
         >
           {loading ? (
             <>
@@ -104,7 +104,7 @@ export default function ContactForm() {
                   d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 100 16v-4l-3 3 3 3v-4a8 8 0 01-8-8z"
                 ></path>
               </svg>
-            {t('Contact.enviando')}
+              {t('Contact.enviando')}
             </>
           ) : (
             t('Contact.enviar')

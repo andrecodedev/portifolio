@@ -11,7 +11,7 @@ const Header = () => {
     <header className={`header-top ${isHome ? 'home-layout' : 'default-layout'}`}>
       {!isHome && (
         <span
-          className="lux font-medium text-[1.4rem] cursor-pointer inline-block"
+          className="lux font-medium text-2xl cursor-pointer inline-block"
           onClick={() => navigate('/')}
           role="button"
           tabIndex={0}

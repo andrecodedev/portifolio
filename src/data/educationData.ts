@@ -52,5 +52,6 @@ export const educationData: EducationData[] = [
     modalidade: 'Education.modalidade_11',
     certificadoUrl: ""
   },
+  
   // Adicione outros itens de educação aqui...
 ];

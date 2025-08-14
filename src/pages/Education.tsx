@@ -35,7 +35,7 @@ export default function Education() {
         <Header />
       </header>
 
-      <main>
+      <main className="flex flex-1 flex-col justify-center items-center p-4">
         <FadeIn duration={1000}>
           {/* Título da página - Note que removi o texto de fallback,
               pois a chave deve existir no seu JSON. */}

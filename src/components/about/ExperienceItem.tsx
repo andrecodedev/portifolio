@@ -23,7 +23,7 @@ function ExperienceItem({ data }: { data: ExperienceData }) {
           />
           <div className="flex flex-col">
             <h3 className="text-xl font-semibold text-[var(--text-primary)] m-0">{data.title}</h3>
-            <p className="text-[var(--text-secondary)] m-0">{data.company} · {data.position}</p>
+            <p className="text-base text-[var(--text-secondary)] m-0">{data.company} · {data.position}</p>
           </div>
         </div>
 

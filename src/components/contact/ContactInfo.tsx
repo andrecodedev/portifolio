@@ -10,19 +10,19 @@ export default function ContactInfo() {
     
   return (
     <div className="font-jet flex flex-col justify-center items-center gap-4 p-8 md:p-20 bg-[var(--bg-secondary-transparent)] rounded-lg shadow">
-      <h3 className="text-[var(--text-primary)] text-lg font-semibold select-none">{t('Contact.titulo_1')}</h3>
+      <h3 className="text-[var(--text-primary)] text-base font-semibold select-none">{t('Contact.titulo_1')}</h3>
 
-      <div className="text-[var(--text-terceiro)] text-base flex items-center gap-2">
+      <div className="text-[var(--text-terceiro)] text-sm flex items-center gap-2">
         <i className="fas fa-map-marker-alt"></i>
         <span>{t('Contact.local')}</span>
       </div>
 
-      <div className="text-[var(--text-terceiro)] text-base flex items-center gap-2">
+      <div className="text-[var(--text-terceiro)] text-sm flex items-center gap-2">
         <i className="fas fa-envelope"></i>
         <span>{t('Contact.email_1')}</span>
       </div>
 
-      <div className="text-[var(--text-terceiro)] text-base flex items-center gap-2">
+      <div className="text-[var(--text-terceiro)] text-sm flex items-center gap-2">
         <i className="fas fa-clock"></i>
         <span>{t('Contact.dias')}</span>
       </div>
