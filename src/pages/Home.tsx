@@ -14,7 +14,7 @@ function Home() {
       <header>
         <Header />
       </header>
-      <main className="flex flex-1 flex-col justify-center items-center text-center p-4">
+      <main className="flex flex-1 overflow-hidden flex-col justify-center items-center text-center p-4">
         <FadeIn duration={1000}>
         <section className="mx-2 sm:mx-1 md:mx-0 p-2 sm:p-0">
           <h1 className="lux font-medium text-[3rem] text-center sm:text-start leading-tight select-none">
