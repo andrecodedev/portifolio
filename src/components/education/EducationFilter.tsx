@@ -29,7 +29,7 @@ export default function EducationFilter({ onFilter, activeCategory }: EducationF
           key={cat.key}
           onClick={() => onFilter(cat.key)}
           // Aplica uma classe 'active' se a categoria do botão for a mesma que a categoria ativa
-          className={`px-4 py-2 bg-[var(--button-bg)] rounded-md text-sm transition-all duration-300 hover:bg-[var(--button-active)] ${
+          className={`px-4 py-2 bg-[var(--button-bg)] cursor-pointer rounded-md text-sm transition-all duration-300 hover:bg-[var(--button-active)] ${
             activeCategory === cat.key ? 'active' : ''
           }`}
         >
