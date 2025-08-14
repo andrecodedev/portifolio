@@ -50,7 +50,7 @@ export const educationData: EducationData[] = [
     fim: 'Education.fim_11',
     cargaHoraria: 'Education.cargaHoraria_11',
     modalidade: 'Education.modalidade_11',
-    certificadoUrl: "https://example.com/certificado-etec"
+    certificadoUrl: ""
   },
   // Adicione outros itens de educação aqui...
 ];
