@@ -1,0 +1,47 @@
+
+/* Estilo do texto com o efeito de brilho permanente */
+.lux {
+  /* Efeito de brilho aplicado diretamente e permanentemente */
+  background: linear-gradient(to right, #4a4a4a 20%, #ababab 60%, #4a4a4a 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 5s infinite linear;
+  user-select: none;
+}
+
+/* O seletor .brand:lux não é mais necessário para este efeito */
+
+/* Animação de brilho com loop imperceptível */
+@-moz-keyframes shine {
+  from {
+    background-position: -100% 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+@-webkit-keyframes shine {
+  from {
+    background-position: -100% 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+@-o-keyframes shine {
+  from {
+    background-position: -100% 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+@keyframes shine {
+  from {
+    background-position: -100% 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}

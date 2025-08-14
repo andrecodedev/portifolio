@@ -1,68 +1,464 @@
+@import "tailwindcss";
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Cores base - Dark Mode */
+  --bg-primary: #121212;
+  --bg-secondary: #1f1f1f;
+  --bg-terceiro: #ffffff;
+  --bg-elements: #333;
+  --bg-elements-hover: #555;
+  --bg-secondary-transparent: #1f1f1f97;
+  --text-primary: white;
+  --text-secondary: #e0e0e0;
+  --text-terceiro: #888;
+  --selection-bg: #535353;
+  --scrollbar-track: #222222;
+  --scrollbar-thumb: #535353e9;
+  --grid-line: #ffffff1a;
+  --button-bg: #ffffff1a;
+  --button-hover: #363636;
+  --button-active: #1d1d1d;
+  --white: white;
+  --menu: #121212;
+  --border: #282828a0;
+  --border-gray: #636363;
+  
+  /* Gradientes e efeitos */
+  --grid-opacity: 0.37;
+  --primary-linear-gradient: #3d3d3d;
+  --text-gray-linear-gradient: #cdcdcd;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+.light-theme {
+  --bg-primary: #f5f5f5;
+  --bg-secondary: #e0e0e0;
+  --bg-terceiro: #ffffffb3;
+  --bg-secondary-transparent: #dcdcdc9d;
+  --bg-elements: #e0e0e0;
+  --bg-elements-hover: #535353;
+  --text-primary: #333;
+  --text-secondary: #555;
+  --text-terceiro: #535353;
+  --selection-bg: #bdbdbd;
+  --scrollbar-track: #d2d2d2;
+  --scrollbar-thumb: #b3b3b3;
+  --grid-line: rgba(0, 0, 0, 0.623);
+  --grid-opacity: 0.2;
+  --button-bg: #00000018;
+  --button-hover: #d7d7d7;
+  --button-active: #c7c7c7;
+  --white: white;
+  --menu: #f5f5f5;
+  --border: #1212;
+  --border-gray: rgb(120, 120, 120);
 }
-a:hover {
-  color: #535bf2;
+
+html {
+  scroll-behavior: smooth;
 }
+
+/* Reset e Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   min-height: 100vh;
+  margin: 0;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Efeito de grid de fundo com animação */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: var(--grid-opacity);
+  z-index: -2;
+  pointer-events: none;
+  animation: moveGrid 10s linear infinite;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+/* Animação da grade se movendo */
+@keyframes moveGrid {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 24px 24px; /* move diagonalmente */
+  }
+}
+
+/* Seleção de texto */
+::selection {
+  background-color: var(--selection-bg);
+  color: var(--text-primary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+
+/* Listas */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+ul li {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+  
+a {
+  color: var(--text-primary);
+}
+
+
+
+
+
+
+
+
+
+
+
+.geral {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 100vh;
+  /*border: solid 1px #ffffff;
+  margin: 2rem;
+  border-radius: 2rem;*/
+}
+
+
+
+.skills__filter button.active {
+  @apply bg-[var(--button-active)];
+}
+
+.education__filter button.active {
+  @apply bg-[var(--button-active)];
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  display: inline-block;
+  margin-left: 2px;
+  width: 1ch;
+  animation: blink 1s step-end infinite;
+}
+
+
+
+
+
+
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95); /* opcional: leve zoom menor */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 700ms ease-in-out forwards;
+}
+
+
+
+
+
+
+
+
+.blink {
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
+
+
+
+
+
+
+
+
+
+.header-top {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  position: relative;
+}
+
+/* Se for a home */
+.home-layout {
+  justify-content: center;
+}
+
+/* Páginas comuns */
+.default-layout {
+  justify-content: space-around;
+}
+
+.nav-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.nav-group button{
+    padding: .7rem 1rem;
+}
+
+/* Visibilidade controlada por media */
+.desktop-only {
+  display: flex;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 1050px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  .mobile-only.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 1rem;
+    background-color: var(--background-secondary);
+    padding: 1rem;
+    border-radius: 8px;
+    gap: 0.5rem;
+    z-index: 1000;
+  }
+
+  .menu-sanduiche {
+    display: flex;
+    margin-left: auto;
+  }
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px;
+  height: 24px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  z-index: 1100;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.hamburger div {
+  width: 28px;
+  height: 3px;
+  background-color: var(--text-primary);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* animação ao abrir */
+.hamburger.open div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open div:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Menu mobile */
+.nav-group {
+  display: flex;
+  gap: .8rem;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.nav-group .switch {
+  margin: 0 0 0 0.5rem; /* apenas espaçamento lateral esquerdo */
+  align-self: center; /* garante alinhamento vertical */
+}
+
+@media (max-width: 1050px) {
+  .hamburger {
+    display: flex;
   }
-  a:hover {
-    color: #747bff;
+
+  .nav-group {
+    display: none;
+    flex-direction: column;
+    background: var(--background-secondary);
+    border: .5px solid var(--border);
+    position: absolute;
+    top: 80px;
+    right: 1rem;
+    border-radius: 8px;
+    width: 180px;
+    z-index: 1100;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .nav-group.open {
+    display: flex;
+    top: 70px;
+    gap: .8rem;
+    background: var(--menu);
+  }
+
+  .nav-group .switch {
+  margin: 0;
+}
+
+  .nav-group button {
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilo para o seletor de idiomas permanente */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  position: fixed; /* Fixa o elemento na tela */
+  flex-direction: column;
+  bottom: 20%;       /* Distância de baixo */
+  right: 15px;     /* Distância da direita */
+  z-index: 1000;   /* Garante que ele fique na frente de outros elementos */
+  display: flex;
+  gap: 6px;
+}
+
+.language-switcher button {
+  background-color: var(--button-bg);
+  border-radius: 100%;
+  padding: .5rem;
+  cursor: pointer;
+}
+
+.language-switcher button:hover {
+  opacity: 0.8;
+  background: var(--button-hover);
+}
+
+/* Estilo para o botão do idioma ativo */
+.language-switcher button:disabled {
+  background: var(--button-active);
+  border: solid 1px var(--border-gray);
+  cursor: default;
+  opacity: 1;
+}
+
+.language-switcher img {
+  width: 30px;
+  height: auto;
+  user-select: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

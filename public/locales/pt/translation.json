@@ -1,0 +1,143 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "education": "Educação",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "home": {
+    "welcome": "Bem-vindo ao meu Portfólio",
+    "navigate": "Escolha uma seção para navegar"
+  },
+  "page_titles": {
+    "about": "Sobre",
+    "aboutExpPro": "Experiências Profissionais",
+    "education": "Educação",
+    "educationFormal": "Educação Formal",
+    "educationBootcamp": "Bootcamps",
+    "educationFormacaoETrilha": "Formações e Trilha",
+    "educationCursos": "Cursos",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "footer": {
+    "copyright": "Direitos Autorais © 2025 ",
+    "rights": "Todos os direitos reservados.",
+    "built_with": "Construído com",
+    "built_with_2": "por André Vitor"
+  },
+  "about": {
+    "nome": "Olá, eu sou André Vitor",
+    "cargo": "Desenvolvedor Front-End Júnior",
+    "descricao_1": "Técnico em Análise e Desenvolvimento de Sistemas pela ETEC de São Roque e atualmente curso Bacharelado em Análise e Desenvolvimento de Sistemas na FACENS com bolsa integral. Estudo programação na OneBitCode, DIO e Alura, focado em aprendizado prático e evolução constante.",
+    "descricao_2": "Apaixonado por tecnologia desde criança, desenvolvo projetos web e busco crescer na área de TI com foco, aprendizado constante e vontade de impactar positivamente o mundo."
+  },
+  "AboutStartsGrid": {
+    "number1": "4+",
+    "description1": "Anos de Estudo Intensivo",
+    "number2": "4K+",
+    "description2": "Horas de Codificação",
+    "number3": "300+",
+    "description3": "Total de Commits",
+    "number4": "10+",
+    "description4": "Repositórios no GitHub"
+  },
+  "button": {
+    "project": "Ver Projetos",
+    "download": "Baixar Currículo"
+  },
+  "ExperienceItem": {
+    "title_1": "Mentor Acadêmico",
+    "company_1": "FACENS - Centro Universitário",
+    "position_1": "Trainee",
+    "startDate_1": "Mar de 2025",
+    "endDate_1": "Atualmente",
+    "time_1": "",
+    "location_1": "Sorocaba, SP, Brasil (Remoto)",
+    "description_1": "Atuo como mentor acadêmico em algoritmos e lógica de programação, auxiliando alunos iniciantes na resolução de exercícios, esclarecimento de dúvidas e desenvolvimento de boas práticas. A experiência reforça habilidades como didática, comunicação, paciência e liderança.",
+    "title_2": "Ajudante de Garçom",
+    "company_2": "Vila Don Patto",
+    "position_2": "Freelance",
+    "startDate_2": "Mai de 2024",
+    "endDate_2": "Mai de 2025",
+    "time_2": "1 ano",
+    "location_2": "Catarina Fashion Outlet, São Roque, SP, Brasil (Presencial)",
+    "description_2": "Atuei no atendimento ao cliente em ambiente de alto fluxo, prestando suporte aos garçons na organização das mesas, entrega de pedidos e manutenção do salão. A experiência reforçou habilidades como agilidade, proatividade, trabalho em equipe e atenção aos detalhes.",
+    "title_3": "Assistente Administrativo",
+    "company_3": "CD Pernambucanas",
+    "position_3": "Aprendiz",
+    "startDate_3": "Fev de 2024",
+    "endDate_3": "Ago de 2024",
+    "time_3": "7 meses",
+    "location_3": "Araçariguama, SP, Brasil (Presencial)",
+    "description_3": "Atuei no setor de transportes do centro de distribuição, prestando suporte administrativo às operações logísticas, com foco no controle de chaves, emissão de notas fiscais e comunicação com filiais. Durante o período, participei da criação de um novo Painel de Controle de Chaves em 3D e na otimização de planilhas em Excel. A experiência contribuiu para o desenvolvimento de organização, proatividade, noções de logística e comunicação profissional.",
+    "title_4": "Assistente de Vendas",
+    "company_4": "Agro Pecuária Paineiras",
+    "position_4": "Meio Período",
+    "startDate_4": "Jan de 2018",
+    "endDate_4": "Set de 2023",
+    "time_4": "6 anos",
+    "location_4": "Araçariguama, SP, Brasil (Presencial)",
+    "description_4": "Atuei no setor de vendas e atendimento ao cliente em um pet shop de médio porte, realizando atendimento no balcão, caixa e telefone, além de apoiar na organização da loja, controle de estoque, recebimento de mercadorias e cuidados básicos com os animais. Desenvolvi habilidades como empatia, responsabilidade, trabalho em equipe e atendimento ao cliente."
+  },
+  "Education": {
+    "label_periodo": "Período",
+    "label_modalidade": "Modalidade",
+    "label_carga_horaria": "Carga Horária",
+    "label_ver_certificado": "Ver cert.",
+    "curso_1": "Análise e Desenvolvimento de Sistemas",
+    "tipo_1": "Graduação (Tecnólogo)",
+    "escola_1": "FACENS - Centro Universitário",
+    "status_1": "Cursando",
+    "inicio_1": "08/2024",
+    "fim_1": "12/2026",
+    "cargaHoraria_1": "2.400h",
+    "modalidade_1": "Presencial",
+    "curso_11": "Técnico em Desenvolvimento de Sistemas",
+    "tipo_11": "Técnico",
+    "escola_11": "ETEC - Escola Técnica Estadual",
+    "status_11": "Concluído",
+    "inicio_11": "02/2023",
+    "fim_11": "06/2024",
+    "cargaHoraria_11": "1.200h",
+    "modalidade_11": "Presencial"
+  },
+  "SkillsFilter": {
+    "todas": "Todas",
+    "idiomas": "Idiomas",
+    "linguagens": "Linguagens de Programação",
+    "ferramentas": "Ferramentas",
+    "ias": "IAs",
+    "ides": "IDEs",
+    "metodologias": "Metodologias",
+    "frameworks": "Frameworks",
+    "bancodados": "Banco de Dados"
+  },
+  "EducationFilter": {
+    "all": "Todas",
+    "superior": "Superior",
+    "tecnico": "Técnico",
+    "bootcamp": "Bootcamps",
+    "curso": "Cursos",
+    "formacao": "Formações",
+    "trilha": "Trilhas",
+    "certificacao": "Certificações"
+  },
+  "Contact": {
+    "titulo_1": "Informações de Contato",
+    "local": "São Paulo, Brasil",
+    "email_1": "contato.andrecodedev@gmail.com",
+    "dias": "Seg - Sex: 8:00am - 18:00pm",
+    "message_1": "✅ Mensagem enviada com sucesso!",
+    "message_2": "❌ Erro ao enviar a mensagem.",
+    "message_3": "❌ Erro ao enviar a mensagem.",
+    "titulo_2": "Me Envie uma Mensagem",
+    "name": "Nome:",
+    "email_2": "Email:",
+    "mensagem": "Mensagem:",
+    "enviando": "Enviando...",
+    "enviar": "Enviar"
+  }
+}

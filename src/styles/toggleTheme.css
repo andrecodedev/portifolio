@@ -1,0 +1,92 @@
+
+  /* Toggle Switch do Uiverse - Versão Alinhada */
+.switch {
+  font-size: 15px;
+  position: relative;
+  display: inline-block;
+  width: 2.5em;
+  height: 1.5em; /* Ajuste da altura */
+  vertical-align: middle; /* Garante alinhamento */
+  margin-left: 15px; /* Aumenta o gap à esquerda */
+  margin-right: 5px; /* Adiciona gap à direita se necessário */
+
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%); /* Centraliza verticalmente */
+  background-color: var(--scrollbar-thumb);
+  transition: background-color 0.5s ease;
+  border-radius: 30px;
+  height: 0.5em;
+}
+
+.slider .circle {
+  background-color: transparent;
+  height: 1.4em; /* Reduzido para ficar proporcional */
+  width: 1.4em;  /* Reduzido para ficar proporcional */
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* transição suave e natural */
+}
+
+.slider .circle::before {
+  position: absolute;
+  content: "";
+  height: 1.2em; /* Ajustado proporcionalmente */
+  width: 1.2em;  /* Ajustado proporcionalmente */
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #121212;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+  box-shadow: inset 0 0 4px 1px rgba(0,0,0,0.6);
+}
+
+.slider .circle::after {
+  content: '';
+  background-color: #121212;
+  height: 0.9em; /* Ajustado proporcionalmente */
+  width: 0.9em;  /* Ajustado proporcionalmente */
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+  opacity: 1;
+}
+
+input:checked + .slider {
+  background-color: var(--scrollbar-thumb);
+}
+
+input:checked + .slider .circle {
+  transform: translate(2em, -50%);
+}
+
+input:checked + .slider .circle::before {
+  background-color: #fff;
+  box-shadow: inset 0 0 6px 2px rgba(255, 255, 255, 0.3);
+}
+
+input:checked + .slider .circle::after {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+

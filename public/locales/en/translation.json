@@ -1,0 +1,143 @@
+{
+  "nav": {
+    "about": "About",
+    "education": "Education",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "home": {
+    "welcome": "Welcome to my Portfolio",
+    "navigate": "Choose a section to navigate"
+  },
+  "page_titles": {
+    "about": "About",
+    "aboutExpPro": "Professional Experience",
+    "education": "Education",
+    "educationFormal": "Formal Education",
+    "educationBootcamp": "Bootcamps",
+    "educationFormacaoETrilha": "Trainings and Path",
+    "educationCursos": "Courses",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "Copyright © 2025 ",
+    "rights": "All rights reserved.",
+    "built_with": "Built with",
+    "built_with_2": "by André Vitor"
+  },
+  "about": {
+    "nome": "Hello, I'm André Vitor",
+    "cargo": "Junior Front-End Developer",
+    "descricao_1": "Technician in Systems Analysis and Development from ETEC São Roque and currently pursuing a Bachelor's degree in Systems Analysis and Development at FACENS with a full scholarship. I study programming at OneBitCode, DIO and Alura, focusing on practical learning and constant growth.",
+    "descricao_2": "Passionate about technology since childhood, I develop web projects and aim to grow in the IT area with focus, continuous learning, and a desire to positively impact the world."
+  },
+  "AboutStartsGrid": {
+    "number1": "4+",
+    "description1": "Years of Intensive Study",
+    "number2": "4K+",
+    "description2": "Hours of Coding",
+    "number3": "300+",
+    "description3": "Total Commits",
+    "number4": "10+",
+    "description4": "Repositories on GitHub"
+  },
+  "button": {
+    "project": "View Projects",
+    "download": "Download Resume"
+  },
+  "ExperienceItem": {
+    "title_1": "Academic Mentor",
+    "company_1": "FACENS - University Center",
+    "position_1": "Trainee",
+    "startDate_1": "Mar 2025",
+    "endDate_1": "Present",
+    "time_1": "",
+    "location_1": "Sorocaba, SP, Brazil (Remote)",
+    "description_1": "I work as an academic mentor in algorithms and programming logic, assisting beginner students with exercises, clarifying doubts, and developing good practices. The experience strengthens skills like teaching, communication, patience, and leadership.",
+    "title_2": "Waiter Assistant",
+    "company_2": "Vila Don Patto",
+    "position_2": "Freelance",
+    "startDate_2": "May 2024",
+    "endDate_2": "May 2025",
+    "time_2": "1 year",
+    "location_2": "Catarina Fashion Outlet, São Roque, SP, Brazil (On-site)",
+    "description_2": "I worked in customer service in a high-flow environment, supporting waiters by organizing tables, delivering orders, and maintaining the dining room. The experience enhanced skills such as agility, proactivity, teamwork, and attention to detail.",
+    "title_3": "Administrative Assistant",
+    "company_3": "CD Pernambucanas",
+    "position_3": "Apprentice",
+    "startDate_3": "Feb 2024",
+    "endDate_3": "Aug 2024",
+    "time_3": "7 months",
+    "location_3": "Araçariguama, SP, Brazil (On-site)",
+    "description_3": "I worked in the transportation sector of the distribution center, providing administrative support to logistics operations, focusing on key control, invoicing, and branch communication. During this period, I helped create a new 3D Key Control Panel and optimized Excel spreadsheets. The experience contributed to the development of organization, proactivity, logistics knowledge, and professional communication.",
+    "title_4": "Sales Assistant",
+    "company_4": "Agro Pecuária Paineiras",
+    "position_4": "Part-time",
+    "startDate_4": "Jan 2018",
+    "endDate_4": "Sep 2023",
+    "time_4": "6 years",
+    "location_4": "Araçariguama, SP, Brazil (On-site)",
+    "description_4": "I worked in sales and customer service at a medium-sized pet shop, handling counter, cashier, and phone service, besides supporting store organization, inventory control, goods receipt, and basic animal care. I developed skills such as empathy, responsibility, teamwork, and customer service."
+  },
+  "Education": {
+    "label_periodo": "Period",
+    "label_modalidade": "Modality",
+    "label_carga_horaria": "Workload",
+    "label_ver_certificado": "View Certificate",
+    "curso_1": "Systems Analysis and Development",
+    "tipo_1": "Bachelor (Technologist)",
+    "escola_1": "FACENS - University Center",
+    "status_1": "Studying",
+    "inicio_1": "08/2024",
+    "fim_1": "12/2026",
+    "cargaHoraria_1": "2,400h",
+    "modalidade_1": "On-site",
+    "curso_11": "Systems Development Technician",
+    "tipo_11": "Technician",
+    "escola_11": "ETEC - State Technical School",
+    "status_11": "Completed",
+    "inicio_11": "02/2023",
+    "fim_11": "06/2024",
+    "cargaHoraria_11": "1,200h",
+    "modalidade_11": "On-site"
+  },
+  "SkillsFilter": {
+    "todas": "All",
+    "idiomas": "Languages",
+    "linguagens": "Programming Languages",
+    "ferramentas": "Tools",
+    "ias": "AIs",
+    "ides": "IDEs",
+    "metodologias": "Methodologies",
+    "frameworks": "Frameworks",
+    "bancodados": "Databases"
+  },
+  "EducationFilter": {
+    "all": "All",
+    "superior": "Higher Education",
+    "tecnico": "Technical",
+    "bootcamp": "Bootcamps",
+    "curso": "Courses",
+    "formacao": "Education",
+    "trilha": "Tracks",
+    "certificacao": "Certifications"
+  },
+  "Contact": {
+    "titulo_1": "Contact Information",
+    "local": "São Paulo, Brazil",
+    "email_1": "contato.andrecodedev@gmail.com",
+    "dias": "Mon - Fri: 8:00am - 6:00pm",
+    "message_1": "✅ Message sent successfully!",
+    "message_2": "❌ Error sending message.",
+    "message_3": "❌ Error sending message.",
+    "titulo_2": "Send Me a Message",
+    "name": "Name:",
+    "email_2": "Email:",
+    "mensagem": "Message:",
+    "enviando": "Sending...",
+    "enviar": "Send"
+  }
+}
