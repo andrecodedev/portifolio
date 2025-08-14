@@ -60,8 +60,8 @@ export default function CardEducation({ data }: { data: CardEducationData }) {
         <div className="flex-1 min-w-0 space-y-2 text-sm text-[var(--text-secondary)]">
           {/* BADGE DE STATUS */}
           <div className="flex items-center gap-2">
-            <span className="px-2.5 py-0.5 text-xs font-semibold rounded-full flex items-center gap-1.5 bg-[var(--text-terceiro)]/10 text-[var(--text-terceiro)] ring-1 ring-inset ring-[var(--text-terceiro)]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--text-terceiro)]"></span>
+            <span className="px-2.5 py-0.5 text-xs font-semibold rounded-full flex items-center gap-1.5 bg-[var(--text-terceiro)]/10 text-[var(--text-primary)] ring-1 ring-inset ring-[var(--text-terceiro)]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--text-primary)]"></span>
               {t(status)}
             </span>
           </div>
