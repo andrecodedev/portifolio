@@ -78,7 +78,7 @@ export default function CardEducation({ data }: { data: CardEducationData }) {
             href={certificadoUrl || "#"}
             target={certificadoUrl ? "_blank" : undefined}
             rel={certificadoUrl ? "noopener noreferrer" : undefined}
-            className={`w-12 h-12 flex items-center justify-center rounded-lg text-white transition-all duration-300 transform shadow-lg focus:outline-none focus:ring-2 focus:ring-opacity-50
+            className={`w-12 h-12 flex items-center justify-center rounded-lg text-[var(--white)] transition-all duration-300 transform shadow-lg focus:outline-none focus:ring-2 focus:ring-opacity-50
               ${certificadoUrl
                 ? "bg-blue-500 hover:bg-blue-600"
                 : "bg-blue-400 cursor-not-allowed"}`}
