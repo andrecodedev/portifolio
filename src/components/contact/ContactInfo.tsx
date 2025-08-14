@@ -1,5 +1,9 @@
 import { useTranslation } from "react-i18next";
 
+import LinkedinIcon from '../../img/redes/linkedin.svg';
+import GithubIcon from '../img/redes/github.svg';
+import EmailIcon from '../img/redes/email.svg';
+
 export default function ContactInfo() {
     const { t, i18n } = useTranslation();
     document.documentElement.lang = i18n.language;
@@ -30,7 +34,7 @@ export default function ContactInfo() {
           rel="noopener noreferrer"
           className="p-2 rounded-full hover:bg-primary transition"
         >
-          <img src="src/img/redes/linkedin.svg" alt="LinkedIn" className="w-5 h-5" />
+          <img src={LinkedinIcon} alt="LinkedIn" className="w-5 h-5" />
         </a>
 
         <a
@@ -39,7 +43,7 @@ export default function ContactInfo() {
           rel="noopener noreferrer"
           className="p-2 rounded-full hover:bg-primary transition"
         >
-          <img src="src/img/redes/github.svg" alt="GitHub" className="w-5 h-5" />
+          <img src={GithubIcon} alt="GitHub" className="w-5 h-5" />
         </a>
 
         <a
@@ -48,7 +52,7 @@ export default function ContactInfo() {
           rel="noopener noreferrer"
           className="p-2 rounded-full hover:bg-primary transition"
         >
-          <img src="src/img/redes/email.svg" alt="E-mail" className="w-5 h-5" />
+          <img src={EmailIcon} alt="E-mail" className="w-5 h-5" />
         </a>
       </div>
     </div>

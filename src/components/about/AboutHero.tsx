@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import avatar from '../../img/avatar.svg';
+import avatarIcon from '../../img/avatar.svg';
 
 function AboutHero() {
     const { t, i18n } = useTranslation();
@@ -86,7 +86,7 @@ return (
             {/* AVATAR */}
             <div className="w-full flex justify-center lg:w-1/3 select-none">
                 <img
-                    src={avatar}
+                    src={avatarIcon}
                     alt="avatar"
                     className="w-[15rem] h-[15rem] sm:w-[18rem] sm:h-[18rem] lg:w-[17rem] lg:h-[17rem] rounded-full object-cover" />
             </div>
