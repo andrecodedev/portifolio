@@ -14,11 +14,11 @@ export default function EducationFilter({ onFilter, activeCategory }: EducationF
   const categories = [
     { key: "all", label: t("EducationFilter.all", "Todas") },
     { key: "superior", label: t("EducationFilter.superior", "Superior") },
-    { key: "tecnico", label: t("EducationFilter.tecnico", "Técnico") },
-    { key: "bootcamp", label: t("EducationFilter.bootcamp", "Bootcamps") },
-    { key: "curso", label: t("EducationFilter.curso", "Cursos") },
-    { key: "formacao", label: t("EducationFilter.formacao", "Formações") },
-    { key: "trilha", label: t("EducationFilter.trilha", "Trilhas") },
+    { key: "profissionalizante", label: t("EducationFilter.profissionalizante", "Profissionalizante") },
+    { key: "idioma", label: t("EducationFilter.idioma", "Idioma") },
+    { key: "dio.io", label: t("EducationFilter.dio.io", "DIO.IO") },
+    { key: "alura", label: t("EducationFilter.alura", "Alura") },
+    { key: "onebitcode", label: t("EducationFilter.onebitcode", "OneBitCode") },
     { key: "certificacao", label: t("EducationFilter.certificacao", "Certificações") },
   ];
 

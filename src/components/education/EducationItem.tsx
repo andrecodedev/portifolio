@@ -19,13 +19,13 @@ interface CardEducationData {
 function getStatusStyles(translatedStatus: string) {
   const s = translatedStatus.toLowerCase();
 
-  if (s === "concluído" || s === "completed") {
+  if (s === "concluído" || s === "completed" || s === "terminado") {
     return {
       backgroundColor: "#22c55e20", // verde translúcido
       color: "#22c55e",             // verde vibrante
       dotColor: "#22c55e"
     };
-  } else if (s === "cursando" || s === "studying" || s === "finalizado") {
+  } else if (s === "cursando" || s === "in progress" || s === "en curso") {
     return {
       backgroundColor: "#facc1520", // amarelo translúcido
       color: "#facc15",             // amarelo vibrante
@@ -84,9 +84,9 @@ export default function CardEducation({ data }: { data: CardEducationData }) {
       className="group relative bg-[var(--bg-secondary-transparent)] rounded-xl p-6 w-full h-full flex flex-col shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 overflow-hidden font-jet"
     >
       {/* CABEÇALHO */}
-      <div className="flex items-start justify-between gap-4 mb-4">
+      <div className="flex items-center justify-between gap-4 mb-4">
         <div className="p-2">
-          <img src={icon} alt={t(escola)} className="w-10 h-10 select-none" />
+          <img src={icon} alt={t(escola)} className="w-11 h-11 select-none" />
         </div>
         <div className="flex-1">
           <h3 className="text-sm font-bold text-[var(--text-primary)] leading-tight">{t(curso)}</h3>
