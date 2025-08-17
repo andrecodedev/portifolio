@@ -45,7 +45,7 @@ export default function ProjectCard({ title, imageUrl, description, skills }: Pr
         <img
           src={imageUrl}
           alt={title}
-          className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-105"
+          className="w-full h-full select-none object-cover transition-transform duration-300 transform hover:scale-105"
         />
 
         {/* Overlay */}
@@ -56,14 +56,14 @@ export default function ProjectCard({ title, imageUrl, description, skills }: Pr
         >
           <h3 className="text-lg font-bold mb-2 text-white">{title}</h3>
 
-          <div className="flex gap-2 mb-2">
+          <div className="flex gap-2 mb-2 select-none">
             {skills?.map((skill, idx) => (
               <img key={idx} src={skill} alt="Skill" className="w-6 h-6"/>
             ))}
           </div>
 
           <button
-            className="px-4 py-2 bg-[var(--button-bg)] text-white cursor-pointer hover:bg-[var(--button-hover)] rounded-lg text-sm"
+            className="px-4 py-2 bg-[var(--button-active)] select-none text-[var(--text-primary)] cursor-pointer hover:bg-[var(--button-hover)] rounded-lg text-sm transition-all duration-300"
             onClick={(e) => {
               e.stopPropagation();
               handleOpen();

@@ -32,7 +32,7 @@ export default function ProjectModal({ isOpen, onClose, title, imageUrl, descrip
         <img
           src={imageUrl}
           alt={title}
-          className="w-full md:w-1/2 max-h-[70vh] object-contain rounded-lg"
+          className="w-full md:w-1/2 max-h-[70vh] object-contain rounded-lg select-none"
         />
 
         {/* Informações do projeto */}
@@ -42,7 +42,7 @@ export default function ProjectModal({ isOpen, onClose, title, imageUrl, descrip
 
           {/* Skills */}
           {skills && (
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="flex flex-wrap gap-2 mb-4 select-none">
               {skills.map((skill, idx) => (
                 <img key={idx} src={skill} alt="Skill" className="w-8 h-8"/>
               ))}
@@ -51,7 +51,7 @@ export default function ProjectModal({ isOpen, onClose, title, imageUrl, descrip
 
           <button
             onClick={onClose}
-            className="px-6 py-3 bg-[var(--button-bg)] cursor-pointer text-[var(--text-primary)] rounded-lg hover:bg-[var(--button-hover)] mt-auto"
+            className="px-6 py-3 bg-[var(--button-hover)] cursor-pointer select-none text-[var(--text-primary)] rounded-lg hover:bg-[var(--button-active)] mt-auto transition-all duration-300"
           >
             Fechar
           </button>
