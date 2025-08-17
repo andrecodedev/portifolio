@@ -44,7 +44,7 @@ export default function ProjectModal({ isOpen, onClose, title, imageUrl, descrip
           {skills && (
             <div className="flex flex-wrap gap-2 mb-4 select-none">
               {skills.map((skill, idx) => (
-                <img key={idx} src={skill} alt="Skill" className="w-8 h-8"/>
+                <img key={idx} src={skill} alt="Skill" className="w-6 h-6"/>
               ))}
             </div>
           )}
