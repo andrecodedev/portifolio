@@ -78,7 +78,7 @@ export default function CardEducation({ data }: { data: CardEducationData }) {
     };
   }, []);
 
-  return (
+  return ( 
     <div
       ref={cardRef}
       className="group relative bg-[var(--bg-secondary-transparent)] rounded-xl p-6 w-full h-full flex flex-col shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 overflow-hidden font-jet"
