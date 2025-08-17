@@ -13,7 +13,7 @@ function Projetos() {
   document.documentElement.lang = i18n.language;
 
   return (
-    <div className="geral min-h-screen flex flex-col bg-[var(--bg-primary)]">
+    <div className="geral ">
       <Header />
 
       <main className="flex flex-1 flex-col justify-center items-center text-center p-6">
