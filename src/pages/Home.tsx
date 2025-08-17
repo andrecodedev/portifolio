@@ -3,6 +3,7 @@ import Footer from '../components/Footer';
 import '../styles/lux.css';
 import { useTranslation } from 'react-i18next';
 import FadeIn from '../components/FadeIn';
+import Typewriter from '../components/Typewriter';
 
 function Home() {
   const { t, i18n } = useTranslation();
@@ -21,7 +22,7 @@ function Home() {
             {t('home.welcome')}
           </h1>
           <p className="text-[0.9rem] font-jet text-center sm:text-justify leading-[1.6] text-[var(--text-primary)] select-none max-w-[65ch] mt-4">
-            {t('home.navigate')}
+            <Typewriter text={t('home.navigate')} resetKey={i18n.language} />
           </p>
         </section>
         </FadeIn>
