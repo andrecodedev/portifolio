@@ -1,69 +1,85 @@
-# React + TypeScript + Vite
+📘 Portfólio – André Vitor | AndreCodeDev
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Tema:** Portfólio Pessoal
+**Objetivo:** Apresentar meus projetos, habilidades e experiências como desenvolvedor Front-End.
+**Tecnologias Utilizadas:** React, TypeScript, Vite, CSS/SCSS.
 
-Currently, two official plugins are available:
+## 🧑‍💻 Descrição da Atividade
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este projeto é o meu portfólio pessoal, desenvolvido com foco em performance, escalabilidade e boas práticas de desenvolvimento.
+Ele serve como um espaço para reunir meus trabalhos, informações de contato e um pouco sobre minha trajetória na programação.
 
-## Expanding the ESLint configuration
+A proposta é ter um portfólio moderno, responsivo e de fácil navegação, destacando meus principais projetos e competências técnicas.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📝 Funcionalidades
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- ✅ **Página Inicial:** Apresentação pessoal e chamada para ação.  
+- ✅ **Seção de Projetos:** Exposição de projetos com descrição e links para repositórios/demonstrações.  
+- ✅ **Seção Sobre:** Resumo da minha trajetória e habilidades técnicas.  
+- ✅ **Formulário de Contato:** Integração com serviços externos (e-mail/WhatsApp).  
+- ✅ **Responsividade:** Layout adaptado para dispositivos móveis, tablets e desktops.  
+- ✅ **Internacionalização (i18n):** Suporte a múltiplos idiomas.  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 📂 Estrutura de Pastas 
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+novo-portfolio/
+├── public/
+│   ├── favicon.ico
+│   └── ...
+├── src/
+│   ├── components/   # Componentes reutilizáveis
+│   ├── data/         # Dados estáticos
+│   ├── img/          # Imagens do projeto
+│   ├── pages/        # Páginas principais
+│   ├── styles/       # Estilos globais
+│   ├── App.tsx       # Componente raiz
+│   ├── i18n.ts       # Configuração de tradução
+│   ├── main.tsx      # Ponto de entrada
+│   └── vite-env.d.ts
+├── index.html
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
 ```
+---
+
+## 💡 O que foi aprendido  
+
+Durante o desenvolvimento deste portfólio, pude reforçar conceitos importantes como:  
+
+- Organização de projeto com **React + TypeScript**.  
+- Uso do **Vite** para build rápido e otimizado.  
+- Estruturação de **componentes reutilizáveis**.  
+- Configuração de **internacionalização (i18n)**.  
+- Aplicação de **CSS modularizado** para escalabilidade.  
+- Deploy em plataforma moderna (Vercel).  
+
+---
+
+## ✅ Tecnologias Utilizadas  
+
+- **React** ⚛️  
+- **TypeScript** 📘  
+- **Vite** ⚡  
+- **CSS3 / SCSS** 🎨  
+- **i18next** 🌍  
+- **Node.js** 🟢  
+
+---
+
+## 📸 Prévia do Projeto  
+
+> *Link da Hospedagem: [andrecode.dev](https://andrecode.dev) (ou coloque aqui seu link do Netlify/Vercel)*  
+
+![Screenshot do Projeto](img/previa.png)  
+
+---
+
+## 📎 Autor  
+
+Desenvolvido por **André Vitor - ANDRECODEDEV** 👨‍💻  
+📩 [LinkedIn](https://linkedin.com/in/andrecode) | [GitHub](https://github.com/andrecode)  
