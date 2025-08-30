@@ -27,23 +27,31 @@ A proposta é ter um portfólio moderno, responsivo e de fácil navegação, des
 ## 📂 Estrutura de Pastas 
 ```
 novo-portfolio/
-├── public/
-│   ├── favicon.ico
-│   └── ...
-├── src/
-│   ├── components/   # Componentes reutilizáveis
-│   ├── data/         # Dados estáticos
-│   ├── img/          # Imagens do projeto
-│   ├── pages/        # Páginas principais
-│   ├── styles/       # Estilos globais
-│   ├── App.tsx       # Componente raiz
-│   ├── i18n.ts       # Configuração de tradução
-│   ├── main.tsx      # Ponto de entrada
-│   └── vite-env.d.ts
-├── index.html
-├── package.json
-├── tsconfig.json
-└── vite.config.ts
+├── dist/                   # Build gerado (não versionar)
+├── node_modules/           # Dependências do projeto
+├── public/                 # Arquivos estáticos públicos
+│   ├── cv/                 # Currículo / PDFs
+│   └── locales/            # Arquivos de tradução
+├── src/                    # Código-fonte principal
+│   ├── components/         # Componentes reutilizáveis
+│   ├── data/               # Dados estáticos (TS/JSON)
+│   ├── img/                # Imagens do projeto
+│   ├── pages/              # Páginas principais
+│   ├── styles/             # Estilos globais
+│   ├── App.tsx             # Componente raiz
+│   ├── i18n.ts             # Configuração de tradução
+│   ├── index.css           # Estilos globais principais
+│   ├── main.tsx            # Ponto de entrada do app
+│   └── vite-env.d.ts       # Tipagens do Vite
+├── .gitignore              # Ignora arquivos/pastas no Git
+├── eslint.config.js        # Configuração do ESLint
+├── index.html              # HTML principal
+├── package.json            # Dependências e scripts
+├── package-lock.json       # Lockfile do npm
+├── tsconfig.json           # Configuração principal do TypeScript
+├── tsconfig.app.json       # TS config para app
+├── tsconfig.node.json      # TS config para Node
+└── vite.config.ts          # Configuração do Vite
 ```
 ---
 
@@ -73,9 +81,8 @@ Durante o desenvolvimento deste portfólio, pude reforçar conceitos importantes
 
 ## 📸 Prévia do Projeto  
 
-> *Link da Hospedagem: [andrecode.dev](https://andrecode.dev) (ou coloque aqui seu link do Netlify/Vercel)*  
-
-![Screenshot do Projeto](img/previa.png)  
+> *Link da Hospedagem: [andrecode.dev](https://andrecode.dev.br/)
+![Screenshot do Projeto](./src/img/previa.png)
 
 ---
 
