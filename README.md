@@ -1,8 +1,8 @@
 # 📘 Portfólio – André Vitor | AndreCodeDev
 
-**Tema:** Portfólio Pessoal
-**Objetivo:** Apresentar meus projetos, habilidades e experiências como desenvolvedor Front-End.
-**Tecnologias Utilizadas:** React, TypeScript, Vite, CSS/SCSS.
+**Tema:** Portfólio Pessoal  
+**Objetivo:** Apresentar meus projetos, habilidades e experiências como desenvolvedor Front-End.  
+**Tecnologias Utilizadas:** React, TypeScript, Vite, CSS/SCSS.  
 
 ## 🧑‍💻 Descrição da Atividade
 
