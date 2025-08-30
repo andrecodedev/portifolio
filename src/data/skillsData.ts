@@ -32,7 +32,7 @@ import vscodeIcon from '../img/skills/vscode.svg';
 import visualstudyIcon from '../img/skills/visualstudy.svg';
 import eclipseIcon from '../img/skills/eclipse.svg';
 import intellijIcon from '../img/skills/intellij.svg';
-
+import nuvemshopIcon from '../img/skills/nuvemshop.svg';
 import cIcon from '../img/skills/c.svg';
 import cmaismaisIcon from '../img/skills/c++.svg';
 import sassIcon from '../img/skills/sass.svg';
@@ -61,6 +61,7 @@ const skillsData = [
   { name: "Pacote Office", icon: officeIcon, category: "ferramentas" },
   { name: "Canva", icon: canvaIcon, category: "ferramentas" },
   { name: "Gimp", icon: gimpIcon, category: "ferramentas" },
+  { name: "Nuvemshop", icon: nuvemshopIcon, category: "ferramentas" },
   { name: "Arduino", icon: arduinoIcon, category: "ferramentas" },
   { name: "ChatGPT", icon: chatgptIcon, category: "ias" },
   { name: "Google Gemini", icon: geminiIcon, category: "ias" },
