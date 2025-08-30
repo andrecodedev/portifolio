@@ -19,7 +19,7 @@ function ExperienceItem({ data }: { data: ExperienceData }) {
           <img
             src={data.logo}
             alt={`Logo da ${data.company}`}
-            className="w-[100px] h-[100px] object-contain rounded-lg p-1 select-none"
+            className="w-[60px] h-[60px] object-contain rounded-lg p-1 select-none"
           />
           <div className="flex flex-col">
             <h3 className="text-xl font-semibold text-[var(--text-primary)] m-0">{data.title}</h3>
