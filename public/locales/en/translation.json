@@ -34,9 +34,9 @@
 
   "about": {
     "nome": "Hello, I'm André Vitor",
-    "cargo": "Junior Front-End Developer",
-    "descricao_1": "Technician in Systems Analysis and Development from ETEC São Roque and currently pursuing a Bachelor's degree in Systems Analysis and Development at FACENS with a full scholarship. I study programming at OneBitCode, DIO, and Alura, focusing on practical learning and constant evolution.",
-    "descricao_2": "Passionate about technology since childhood, I develop web projects and seek to grow in the IT field with focus, constant learning, and a desire to positively impact the world."
+    "cargo": "Junior Web Developer",
+    "descricao_1": "I am a Junior Web Developer at TEC4U, with a technical degree in Systems Analysis and Development from ETEC de São Roque and currently pursuing a Bachelor's degree in Systems Analysis and Development at FACENS with a full scholarship. I constantly study on platforms such as OneBitCode, DIO, and Alura, applying modern practices in real projects.",
+    "descricao_2": "Passionate about technology since childhood, I work on web development projects with a focus on continuous learning, practical evolution, and creating a positive impact through technology."
   },
 
   "AboutStartsGrid": {
