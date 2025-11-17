@@ -13,7 +13,7 @@ export default function Contato() {
         <Header />
       </header>
 
-      <main className="flex-1 flex flex-col items-center px-4">
+      <main className="flex flex-1 flex-col justify-center items-center text-center px-4">
         <FadeIn duration={1000}>
         <Title title_6=" " />
 
