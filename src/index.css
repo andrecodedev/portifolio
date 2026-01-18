@@ -181,6 +181,10 @@ a {
   @apply bg-[var(--button-active)];
 }
 
+.experience__filter button.active {
+  @apply bg-[var(--button-active)];
+}
+
 
 
 

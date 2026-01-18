@@ -42,11 +42,11 @@
   "AboutStartsGrid": {
     "number1": "4+",
     "description1": "Years of Intensive Study",
-    "number2": "4K+",
+    "number2": "8K+",
     "description2": "Hours of Coding",
-    "number3": "300+",
+    "number3": "600+",
     "description3": "Total Commits",
-    "number4": "10+",
+    "number4": "24+",
     "description4": "Repositories on GitHub"
   },
 
@@ -97,6 +97,30 @@
 "location_5": "Vila Olímpia, São Paulo, SP, Brazil (Remote)",
 "description_5": "I work as a junior developer on web projects, supporting the creation of interfaces, layout adjustments, and implementation of functionalities. The experience strengthens skills such as organization, collaboration, logical reasoning, and adaptability."
 
+  },
+
+  "ExperienceFilter": {
+    "professional": "Professional Experiences",
+    "achievements": "Personal Achievements"
+  },
+
+  "Achievements": {
+    "title_1": "Full ProUni Scholarship",
+    "description_1": "Achieved full ProUni scholarship to study Systems Analysis and Development at FACENS.",
+    "title_2": "Technical Education - ETEC",
+    "description_2": "Completed technical course in Systems Analysis and Development at ETEC São Roque.",
+    "title_3": "Academic Mentorship",
+    "description_3": "Worked as academic mentor at FACENS, helping students with algorithms and programming.",
+    "title_4": "Oracle Next Education",
+    "description_4": "Participation and completion of Oracle Next Education (ONE) program training.",
+    "title_5": "OneBitCode",
+    "description_5": "Completed courses and bootcamps on OneBitCode platform focused on web development.",
+    "title_6": "SENAI",
+    "description_6": "Participation in vocational courses offered by SENAI.",
+    "title_7": "CCBEU - English",
+    "description_7": "English studies at Brazil-United States Cultural Center (CCBEU).",
+    "title_8": "TEC4U Digital",
+    "description_8": "Called in for an internship interview at TEC4U Digital and directly hired as a junior developer, working on real web projects."
   },
 
   "Education": {

@@ -42,11 +42,11 @@
   "AboutStartsGrid": {
     "number1": "4+",
     "description1": "Anos de Estudo Intensivo",
-    "number2": "4K+",
+    "number2": "8K+",
     "description2": "Horas de Codificação",
-    "number3": "300+",
+    "number3": "600+",
     "description3": "Total de Commits",
-    "number4": "10+",
+    "number4": "24+",
     "description4": "Repositórios no GitHub"
   },
 
@@ -99,6 +99,30 @@
     "time_1": "6 anos",
     "location_1": "Araçariguama, SP, Brasil (Presencial)",
     "description_1": "Atuei no setor de vendas e atendimento ao cliente em um pet shop de médio porte, realizando atendimento no balcão, caixa e telefone, além de apoiar na organização da loja, controle de estoque, recebimento de mercadorias e cuidados básicos com os animais. Desenvolvi habilidades como empatia, responsabilidade, trabalho em equipe e atendimento ao cliente."
+  },
+
+  "ExperienceFilter": {
+    "professional": "Experiências Profissionais",
+    "achievements": "Conquistas Pessoais"
+  },
+
+  "Achievements": {
+    "title_1": "Bolsa ProUni Integral",
+    "description_1": "Conquista da bolsa integral ProUni para cursar Análise e Desenvolvimento de Sistemas na FACENS.",
+    "title_2": "Formação Técnica - ETEC",
+    "description_2": "Conclusão do curso técnico em Análise e Desenvolvimento de Sistemas pela ETEC São Roque.",
+    "title_3": "Mentoria Acadêmica",
+    "description_3": "Atuação como mentor acadêmico na FACENS, auxiliando alunos em algoritmos e programação.",
+    "title_4": "Oracle Next Education",
+    "description_4": "Participação e conclusão de formações do programa Oracle Next Education (ONE).",
+    "title_5": "OneBitCode",
+    "description_5": "Conclusão de cursos e bootcamps na plataforma OneBitCode focados em desenvolvimento web.",
+    "title_6": "SENAI",
+    "description_6": "Participação em cursos profissionalizantes oferecidos pelo SENAI.",
+    "title_7": "CCBEU - Inglês",
+    "description_7": "Estudos de inglês no Centro Cultural Brasil-Estados Unidos (CCBEU).",
+    "title_8": "TEC4U Digital",
+    "description_8": "Fui chamado para entrevista de estágio na TEC4U Digital e acabei sendo contratado diretamente como desenvolvedor júnior, atuando em projetos web reais."
   },
 
   "Education": {

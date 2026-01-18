@@ -42,11 +42,11 @@
   "AboutStartsGrid": {
     "number1": "4+",
     "description1": "Años de Estudio Intensivo",
-    "number2": "4K+",
+    "number2": "8K+",
     "description2": "Horas de Codificación",
-    "number3": "300+",
+    "number3": "600+",
     "description3": "Commits Totales",
-    "number4": "10+",
+    "number4": "24+",
     "description4": "Repositorios en GitHub"
   },
 
@@ -97,6 +97,30 @@
 "location_5": "Vila Olímpia, São Paulo, SP, Brasil (Remoto)",
 "description_5": "Actúo como desarrollador júnior en proyectos web, apoyando la creación de interfaces, ajustes de diseño e implementación de funcionalidades. La experiencia refuerza habilidades como organización, colaboración, razonamiento lógico y adaptabilidad."
 
+  },
+
+  "ExperienceFilter": {
+    "professional": "Experiencias Profesionales",
+    "achievements": "Logros Personales"
+  },
+
+  "Achievements": {
+    "title_1": "Beca ProUni Integral",
+    "description_1": "Logro de la beca integral ProUni para estudiar Análisis y Desarrollo de Sistemas en FACENS.",
+    "title_2": "Formación Técnica - ETEC",
+    "description_2": "Conclusión del curso técnico en Análisis y Desarrollo de Sistemas en ETEC São Roque.",
+    "title_3": "Mentoría Académica",
+    "description_3": "Actuación como mentor académico en FACENS, ayudando a estudiantes con algoritmos y programación.",
+    "title_4": "Oracle Next Education",
+    "description_4": "Participación y conclusión de formaciones del programa Oracle Next Education (ONE).",
+    "title_5": "OneBitCode",
+    "description_5": "Conclusión de cursos y bootcamps en la plataforma OneBitCode enfocados en desarrollo web.",
+    "title_6": "SENAI",
+    "description_6": "Participación en cursos profesionalizantes ofrecidos por SENAI.",
+    "title_7": "CCBEU - Inglés",
+    "description_7": "Estudios de inglés en el Centro Cultural Brasil-Estados Unidos (CCBEU).",
+    "title_8": "TEC4U Digital",
+    "description_8": "Fui convocado para una entrevista de pasantía en TEC4U Digital y terminé siendo contratado directamente como desarrollador júnior, trabajando en proyectos web reales."
   },
 
   "Education": {

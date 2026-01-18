@@ -32,8 +32,7 @@ function Sobre() {
         />
         <AboutVideo videoId="v2vE1Ac-NxE" />
         <SliderSkills />
-        {/* Título inferior */}
-        <Title title_2=" " />
+        {/* Experiências com título dinâmico dentro */}
         <Experience />
         </FadeIn>
       </main>
