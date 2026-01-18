@@ -457,6 +457,32 @@ a {
   user-select: none;
 }
 
+/* reCAPTCHA Responsivo */
+.recaptcha-container {
+  transform: scale(1);
+  transform-origin: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 400px) {
+  .recaptcha-container {
+    transform: scale(0.85);
+    transform-origin: center;
+  }
+}
+
+@media (max-width: 340px) {
+  .recaptcha-container {
+    transform: scale(0.75);
+    transform-origin: center;
+  }
+}
+
+
+
+
 
 
 

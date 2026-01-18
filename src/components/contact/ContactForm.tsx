@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Toast from "./Toast";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import { useTranslation } from "react-i18next";
 
@@ -14,9 +15,40 @@ export default function ContactForm() {
   
   const [toast, setToast] = useState<ToastState>({ show: false, message: "" });
   const [loading, setLoading] = useState(false);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  
+  // Detectar o tema atual do site
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const saved = localStorage.getItem('theme');
+    return saved ? saved === 'dark' : true;
+  });
+
+  // Observar mudanças no tema
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      const currentTheme = document.body.className.includes('dark-theme');
+      setIsDarkMode(currentTheme);
+    });
+
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Validar reCAPTCHA
+    const recaptchaValue = recaptchaRef.current?.getValue();
+    
+    if (!recaptchaValue) {
+      setToast({ show: true, message: t('Contact.message_captcha') });
+      return;
+    }
+
     setLoading(true);
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -36,6 +68,7 @@ export default function ContactForm() {
       if (data.success === "true") {
         setToast({ show: true, message: t('Contact.message_1')}); 
         form.reset();
+        recaptchaRef.current?.reset(); // Reset reCAPTCHA
       } else {
         setToast({ show: true, message: t('Contact.message_2')});
       }
@@ -74,6 +107,17 @@ export default function ContactForm() {
           rows={4}
           className="p-2 rounded bg-[var(--button-bg)] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-primary select-none text-sm"
         ></textarea>
+
+        {/* Google reCAPTCHA */}
+        <div className="flex justify-center w-full my-2">
+          <ReCAPTCHA
+            key={isDarkMode ? 'dark' : 'light'}
+            ref={recaptchaRef}
+            sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
+            theme={isDarkMode ? "dark" : "light"}
+            className="recaptcha-container"
+          />
+        </div>
 
         <button
           type="submit"

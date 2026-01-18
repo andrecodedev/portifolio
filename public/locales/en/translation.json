@@ -461,6 +461,7 @@
     "message_1": "✅ Message sent successfully!",
     "message_2": "❌ Error sending message.",
     "message_3": "❌ Error sending message.",
+    "message_captcha": "❌ Please confirm you are not a robot.",
     "titulo_2": "Send Me a Message",
     "name": "Name:",
     "email_2": "Email:",
