@@ -27,15 +27,15 @@ export const achievementsData = (t: TFunction): AchievementData[] => [
   },
   {
     id: 2,
-    image: etec,
-    title: t('Achievements.title_2', 'Formação Técnica - ETEC'),
-    description: t('Achievements.description_2', 'Conclusão do curso técnico em Análise e Desenvolvimento de Sistemas pela ETEC São Roque.'),
+    image: mentoria,
+    title: t('Achievements.title_2', 'Mentoria Acadêmica'),
+    description: t('Achievements.description_2', 'Atuação como mentor acadêmico na FACENS, auxiliando alunos em algoritmos e programação.'),
   },
   {
     id: 3,
-    image: mentoria,
-    title: t('Achievements.title_3', 'Mentoria Acadêmica'),
-    description: t('Achievements.description_3', 'Atuação como mentor acadêmico na FACENS, auxiliando alunos em algoritmos e programação.'),
+    image: etec,
+    title: t('Achievements.title_3', 'Formação Técnica - ETEC'),
+    description: t('Achievements.description_3', 'Conclusão do curso técnico em Análise e Desenvolvimento de Sistemas pela ETEC São Roque.'),
   },
   {
     id: 4,
