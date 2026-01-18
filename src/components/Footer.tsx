@@ -8,6 +8,7 @@ import LogoIcon from '../img/logo.svg';
 
 const Footer = () => {
   const { t } = useTranslation();
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="      
@@ -18,7 +19,7 @@ const Footer = () => {
 
       <div className="md:text-left flex items-center">
         <p className="m-0 leading-snug">
-          {t('footer.copyright')}<a href="https://andrecode.dev.br" className="text-primary no-underline pointer-events-auto hover:underline">
+          {t('footer.copyright')} {currentYear} <a href="https://andrecode.dev.br" className="text-primary no-underline pointer-events-auto hover:underline">
           andrecode.dev.br</a><br />
           {t('footer.rights')}
         </p>
