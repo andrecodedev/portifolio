@@ -33,6 +33,9 @@ import visualstudyIcon from '../img/skills/visualstudy.svg';
 import eclipseIcon from '../img/skills/eclipse.svg';
 import intellijIcon from '../img/skills/intellij.svg';
 import nuvemshopIcon from '../img/skills/nuvemshop.svg';
+import antigravityIcon from '../img/skills/antigravity.svg';
+import fileZillaIcon from '../img/skills/FileZilla.svg';
+import twigIcon from '../img/skills/Twig.svg';
 import cIcon from '../img/skills/c.svg';
 import cmaismaisIcon from '../img/skills/c++.svg';
 import sassIcon from '../img/skills/sass.svg';
@@ -51,9 +54,12 @@ const skillsData = [
   { name: "C++", icon: cmaismaisIcon, category: "linguagens" },
   { name: "C#", icon: csharpIcon, category: "linguagens" },
   { name: "SQL", icon: sqlIcon, category: "linguagens" },
+  { name: "Twig", icon: twigIcon, category: "linguagens" },
   { name: "Sass", icon: sassIcon, category: "ferramentas" },
   { name: "Git", icon: gitIcon, category: "ferramentas" },
   { name: "Node.js", icon: nodeJsIcon, category: "ferramentas" },
+  { name: "Antigravity", icon: antigravityIcon, category: "ides" },
+  { name: "FileZilla", icon: fileZillaIcon, category: "ferramentas" },
   { name: "Figma", icon: figmaIcon, category: "ferramentas" },
   { name: "Postman", icon: postmanIcon, category: "ferramentas" },
   { name: "Trello", icon: trelloIcon, category: "ferramentas" },
@@ -62,6 +68,7 @@ const skillsData = [
   { name: "Canva", icon: canvaIcon, category: "ferramentas" },
   { name: "Gimp", icon: gimpIcon, category: "ferramentas" },
   { name: "Nuvemshop", icon: nuvemshopIcon, category: "ferramentas" },
+  // As skills novas foram adicionadas acima
   { name: "Arduino", icon: arduinoIcon, category: "ferramentas" },
   { name: "ChatGPT", icon: chatgptIcon, category: "ias" },
   { name: "Google Gemini", icon: geminiIcon, category: "ias" },

@@ -21,7 +21,7 @@ export default function AboutStartsGrid({
 
   return (
     <section>
-      <div className="font-jet max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1.5rem] text-center p-5 sm:px-6">
+      <div className="font-jet max-w-[1200px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-[1.5rem] text-center p-5 sm:px-6">
         
         {/* Item 1 */}
         <div className="relative px-4 after:content-[''] after:absolute after:top-[20%] after:bottom-[20%] after:right-[-0.5rem] after:w-[1px] after:bg-[var(--text-primary)] after:opacity-60 after:hidden lg:after:block lg:last:after:hidden">

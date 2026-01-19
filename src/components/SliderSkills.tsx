@@ -39,10 +39,12 @@ import cmaismaisIcon from '../img/skills/c++.svg';
 import sassIcon from '../img/skills/sass.svg';
 import netbeensIcon from '../img/skills/netbeens.svg';
 import arduinoIcon from '../img/skills/arduino.svg';
-import csharpIcon from '../img/skills/csharp.svg';    
+import csharpIcon from '../img/skills/csharp.svg';
+import antigravityIcon from '../img/skills/antigravity.svg';
+import fileZillaIcon from '../img/skills/FileZilla.svg';
+import twigIcon from '../img/skills/Twig.svg';
 
 // Agrupando por categoria
-
 const languages = [
   { name: 'HTML5', icon: htmlIcon },
   { name: 'CSS3', icon: cssIcon },
@@ -53,6 +55,7 @@ const languages = [
   { name: 'C++', icon: cmaismaisIcon },
   { name: 'C#', icon: csharpIcon },
   { name: 'SQL', icon: sqlIcon },
+  { name: 'Twig', icon: twigIcon },
 ];
 
 const frameworksAndLibs = [
@@ -73,13 +76,17 @@ const tools = [
   { name: 'Office', icon: officeIcon },
   { name: 'Canva', icon: canvaIcon },
   { name: 'GIMP', icon: gimpIcon },
+  { name: 'Arduino', icon: arduinoIcon },
+  { name: 'AI Studio Google', icon: AIStudioGoogleIcon },
+  { name: 'FileZilla', icon: fileZillaIcon },
+];
+const ides = [
   { name: 'VSCode', icon: vscodeIcon },
   { name: 'Visual Studio', icon: visualstudyIcon },
   { name: 'Eclipse', icon: eclipseIcon },
   { name: 'IntelliJ', icon: intellijIcon },
   { name: 'NetBeans', icon: netbeensIcon },
-  { name: 'Arduino', icon: arduinoIcon },
-  { name: 'AI Studio Google', icon: AIStudioGoogleIcon },
+  { name: 'Antigravity', icon: antigravityIcon },
 ];
 
 const methodologies = [
@@ -103,11 +110,11 @@ const aiTools = [
   { name: 'Gemini', icon: geminiIcon },
 ];
 
-// Juntando tudo em uma lista final para o slider
 const skills = [
   ...languages,
   ...frameworksAndLibs,
   ...tools,
+  ...ides,
   ...methodologies,
   ...databases,
   ...languagesSpoken,
@@ -125,14 +132,17 @@ const SkillsSlider = () => {
     const clones = Array.from(items).map(item => item.cloneNode(true));
     clones.forEach(clone => slider.appendChild(clone));
 
-    // Aumentei a duração para 300 segundos (5 minutos) para diminuir a velocidade
-    const duration = 300 * 1000;
+    // Duração total do ciclo (ajustado para ser mais lento)
+    const duration = 400 * 1000;
     let startTime: number | null = null;
     let animationId: number;
 
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = (timestamp - startTime) / duration;
+
+      // Pegamos a largura real do item na tela atual para que a velocidade seja consistente
+      const itemWidth = (items[0] as HTMLElement).offsetWidth || 250;
 
       if (progress >= 1) {
         startTime = timestamp;
@@ -142,7 +152,8 @@ const SkillsSlider = () => {
           slider.style.transition = 'transform 0.1s linear';
         });
       } else {
-        const translateX = -progress * (items.length * 250);
+        // Multiplica o progresso pela largura total real da lista original
+        const translateX = -progress * (items.length * itemWidth);
         slider.style.transform = `translateX(${translateX}px)`;
       }
 
@@ -168,10 +179,10 @@ const SkillsSlider = () => {
               key={`${skill.name}-${index}`}
               className={`
                 skill-item flex flex-col items-center justify-center transition-transform duration-300 hover:scale-110
-                w-[220px] px-6
-                lg:w-[190px] lg:px-4
-                md:w-[150px] md:px-3
-                sm:w-[60px] sm:px-0
+                w-[120px] px-4           /* MOBILE: Tamanho ideal e espaçamento equilibrado */
+                sm:w-[220px] sm:px-6    /* DESKTOP (Inalterado) */
+                md:w-[150px] md:px-3    /* TABLET (Inalterado) */
+                lg:w-[190px] lg:px-4    /* DESKTOP LG (Inalterado) */
               `}
               style={{ minWidth: 'auto' }}
             >
@@ -180,10 +191,11 @@ const SkillsSlider = () => {
                 alt={skill.name}
                 loading="lazy"
                 className={`
-                  h-[80px] w-[80px] max-w-full aspect-square object-contain p-1 drop-shadow-md transition-all duration-300
-                  lg:h-[70px] lg:w-[70px] lg:p-1
-                  md:h-[60px] md:w-[60px] md:p-0.5
-                  sm:h-[28px] sm:w-[28px] sm:p-0
+                  h-[55px] w-[55px] p-0    /* MOBILE: Ícones maiores e visíveis */
+                  sm:h-[80px] sm:w-[80px] sm:p-1  /* DESKTOP (Inalterado) */
+                  md:h-[60px] md:w-[60px] md:p-0.5 /* TABLET (Inalterado) */
+                  lg:h-[70px] lg:w-[70px] lg:p-1   /* DESKTOP LG (Inalterado) */
+                  max-w-full aspect-square object-contain drop-shadow-md transition-all duration-300
                 `}
               />
             </div>

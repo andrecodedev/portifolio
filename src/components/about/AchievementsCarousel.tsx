@@ -85,7 +85,7 @@ export default function AchievementsCarousel() {
   };
 
   return (
-    <div className="carousel-container relative w-full max-w-6xl mx-auto py-4 px-4">
+    <div className="carousel-container relative w-full max-w-6xl mx-auto px-4 mb-6 pb-6">
       {/* Botão anterior */}
       <button
         onClick={goToPrevious}
@@ -206,7 +206,7 @@ export default function AchievementsCarousel() {
       </button>
 
       {/* Indicadores (dots) */}
-      <div className="flex justify-center gap-2 mt-4">
+      <div className="flex justify-center gap-2 mt-4 mb-6">
         {achievements.map((_, index) => (
           <button
             key={index}

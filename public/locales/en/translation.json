@@ -114,13 +114,20 @@
     "title_4": "Oracle Next Education",
     "description_4": "Participation and completion of Oracle Next Education (ONE) program training.",
     "title_5": "OneBitCode",
-    "description_5": "Completed courses and bootcamps on OneBitCode platform focused on web development.",
+    "description_5": "I continuously study on the OneBitCode platform, where I have lifetime access. I use it to elevate my knowledge in web development and new technologies.",
     "title_6": "SENAI",
     "description_6": "Participation in vocational courses offered by SENAI.",
     "title_7": "CCBEU - English",
     "description_7": "English studies at Brazil-United States Cultural Center (CCBEU).",
     "title_8": "TEC4U Digital",
     "description_8": "Called in for an internship interview at TEC4U Digital and directly hired as a junior developer, working on real web projects."
+    ,
+    "title_9": "DIO - Bootcamps & Labs",
+    "description_9": "I'm always studying on DIO, where I have lifetime access. I use the platform to elevate my knowledge in web development, backend, and new technologies.",
+    "title_10": "Origamid - Frontend Training",
+    "description_10": "I'm a lifetime student at Origamid and keep studying to improve my skills in frontend, UI/UX, and new technologies.",
+    "title_11": "Udemy - Professional Courses",
+    "description_11": "I'm always taking courses on Udemy to elevate my knowledge in React, Node.js, databases, productivity, and much more."
   },
 
   "Education": {

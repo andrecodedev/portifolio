@@ -428,7 +428,7 @@ a {
   align-items: center;
   position: fixed; /* Fixa o elemento na tela */
   flex-direction: column;
-  bottom: 20%;       /* Distância de baixo */
+  bottom: 10%;       /* Distância de baixo */
   right: 15px;     /* Distância da direita */
   z-index: 1000;   /* Garante que ele fique na frente de outros elementos */
   display: flex;
