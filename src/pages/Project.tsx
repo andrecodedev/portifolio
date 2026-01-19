@@ -18,9 +18,9 @@ function Projetos() {
       <main className="flex flex-1 flex-col justify-center items-center text-center p-6">
         <FadeIn duration={1000}>
           <Title title_5={t(" ")} />
-          <p>🚧🏗️📢EM CONSTRUÇÃO📢🏗️🚧</p>
+          <p>Sessão em manutenção</p>
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-            {projectsData.map((proj) => (
+            {projectsData.map((proj) => ( 
               <ProjectCard
                 key={proj.id}
                 title={proj.title}
