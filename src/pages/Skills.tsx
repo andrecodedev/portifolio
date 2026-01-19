@@ -20,9 +20,7 @@ export default function Skills() {
 
   return (
     <div className="geral">
-      <header>
-        <Header />
-      </header>
+      <Header />
       <main className="flex flex-1 flex-col justify-center items-center text-center p-4">
         <FadeIn duration={1000}>
         <Title title_4={t(" ")} />

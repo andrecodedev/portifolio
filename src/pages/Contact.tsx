@@ -9,9 +9,7 @@ export default function Contato() {
 
   return (
     <div className="geral">
-      <header>
-        <Header />
-      </header>
+      <Header />
 
       <main className="flex flex-1 flex-col justify-center items-center text-center px-4">
         <FadeIn duration={1000}>

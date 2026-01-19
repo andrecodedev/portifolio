@@ -12,9 +12,7 @@ import FadeIn from '../components/FadeIn';
 function Sobre() {
   return (
     <div className="geral">
-      <header>      
-        <Header />
-      </header>
+      <Header />
       <main>
         <FadeIn duration={1000}>
         {/* Título superior */}

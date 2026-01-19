@@ -15,12 +15,10 @@ function Projetos() {
   return (
     <div className="geral ">
       <Header />
-
       <main className="flex flex-1 flex-col justify-center items-center text-center p-6">
         <FadeIn duration={1000}>
           <Title title_5={t(" ")} />
           <p>🚧🏗️📢EM CONSTRUÇÃO📢🏗️🚧</p>
-
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
             {projectsData.map((proj) => (
               <ProjectCard
@@ -34,7 +32,6 @@ function Projetos() {
           </div>
         </FadeIn>
       </main>
-
       <Footer />
     </div>
   );
