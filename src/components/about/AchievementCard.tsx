@@ -98,10 +98,10 @@ export default function AchievementCard({ data, isFlipped: externalFlipped, isAc
 
         {/* Verso do card (texto) */}
         <div className="achievement-card-face achievement-card-back absolute w-full h-full backface-hidden rotate-y-180 bg-[var(--bg-secondary)] rounded-lg shadow-lg p-6 flex flex-col justify-center items-center text-center">
-          <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-4 font-jet">
+          <h3 className="text-base sm:text-base md:text-lg font-bold text-[var(--text-primary)] mb-4 font-jet">
             {data.title}
           </h3>
-          <p className="text-[var(--text-secondary)] leading-relaxed font-jet">
+          <p className="text-sm sm:text-sm md:text-base text-[var(--text-secondary)] leading-relaxed font-jet">
             {data.description}
           </p>
         </div>
