@@ -1,4 +1,29 @@
 {
+  "projects": {
+    "work": {
+      "eorayewear": "Contribuí en el desarrollo del e-commerce de Eorayewear, ayudando en la construcción y mejora de la tienda online en la plataforma Nuvemshop, con enfoque en organización y experiencia del usuario.",
+      "emoveis": "Realicé ajustes y mejoras en el e-commerce de Emoveis, trabajando en el mantenimiento y optimización de la tienda online desarrollada en Nuvemshop.",
+      "qcy": "Contribuí en el desarrollo del e-commerce de QCY, creando y ajustando componentes de la tienda online en la plataforma Nuvemshop para satisfacer las necesidades del proyecto.",
+      "lojasComfort": "Desarrollé el e-commerce de Lojas Comfort en la plataforma Nuvemshop, realizando la estructuración completa de la tienda online y los ajustes necesarios para su funcionamiento.",
+      "sapatariaNova": "Desarrollé el e-commerce de Sapataria Nova utilizando la plataforma Nuvemshop, creando la tienda online desde la configuración inicial hasta los ajustes finales.",
+      "relevo": "Contribuí en el desarrollo del e-commerce de Relevo, colaborando en la construcción y mejora de la tienda online en la plataforma Nuvemshop.",
+      "baixaPace": "Desarrollé un componente específico para el e-commerce de Baixa Pace, contribuyendo a la personalización de la tienda online en la plataforma Nuvemshop.",
+      "sportsTennis": "Desarrollé el e-commerce de Sports&Tennis en la plataforma Nuvemshop, realizando la creación y configuración de la tienda online para la marca."
+    },
+    "personal": {
+      "sealWorld": "Proyecto desarrollado durante estudios en OneBitCode, enfocado en la creación de una aplicación web, explorando estructura, estilo y organización de una interfaz funcional.",
+      "alessiosPizzaria": "Proyecto desarrollado en OneBitCode, orientado a la creación de un sitio web de pizzería, con enfoque en el diseño, organización del contenido y presentación de productos.",
+      "jogoAmigoSecreto": "Proyecto desarrollado durante estudios en Alura, consistente en un juego simple de amigo secreto, con enfoque en lógica, interacción con el usuario y manipulación de datos.",
+      "primeiroPortfolio": "Mi primera versión de portafolio personal, desarrollada como el inicio de mi camino en la programación, representando uno de varios intentos y evoluciones hacia versiones más maduras de mis portafolios.",
+      "mobiSeg": "Proyecto académico desarrollado con enfoque en la creación de una solución digital, aplicando conceptos estudiados durante la formación y consolidando conocimientos prácticos.",
+      "petLife": "Proyecto desarrollado en OneBitCode con enfoque en la creación de un sitio institucional, explorando la estructura de páginas, organización visual y presentación de servicios."
+    }
+  },
+
+  "ProjectFilter": {
+    "pessoais": "Personales",
+    "trabalho": "Trabajo"
+  },
   "nav": {
     "about": "Sobre mí",
     "education": "Educación",
@@ -52,7 +77,10 @@
 
   "button": {
     "project": "Ver Proyectos",
-    "download": "Descargar CV"
+    "download": "Descargar CV",
+    "see_more": "Ver más",
+    "close": "Cerrar",
+    "site": "Sitio"
   },
 
   "ExperienceItem": {

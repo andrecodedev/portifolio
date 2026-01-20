@@ -33,6 +33,7 @@ import vscodeIcon from '../img/skills/vscode.svg';
 import visualstudyIcon from '../img/skills/visualstudy.svg';
 import eclipseIcon from '../img/skills/eclipse.svg';
 import intellijIcon from '../img/skills/intellij.svg';
+import clickupIcon from '../img/skills/ClickUp.svg';
 
 import cIcon from '../img/skills/c.svg';
 import cmaismaisIcon from '../img/skills/c++.svg';
@@ -79,6 +80,7 @@ const tools = [
   { name: 'Arduino', icon: arduinoIcon },
   { name: 'AI Studio Google', icon: AIStudioGoogleIcon },
   { name: 'FileZilla', icon: fileZillaIcon },
+  { name: 'ClickUp', icon: clickupIcon },
 ];
 const ides = [
   { name: 'VSCode', icon: vscodeIcon },

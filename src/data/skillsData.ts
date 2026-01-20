@@ -42,6 +42,7 @@ import sassIcon from '../img/skills/sass.svg';
 import netbeensIcon from '../img/skills/netbeens.svg';
 import arduinoIcon from '../img/skills/arduino.svg';
 import csharpIcon from '../img/skills/csharp.svg';
+import clickupIcon from '../img/skills/ClickUp.svg';
 
 // 2. Dados com categorias fixas
 const skillsData = [
@@ -60,6 +61,7 @@ const skillsData = [
   { name: "Node.js", icon: nodeJsIcon, category: "ferramentas" },
   { name: "Antigravity", icon: antigravityIcon, category: "ides" },
   { name: "FileZilla", icon: fileZillaIcon, category: "ferramentas" },
+  { name: "ClickUp", icon: clickupIcon, category: "ferramentas" },
   { name: "Figma", icon: figmaIcon, category: "ferramentas" },
   { name: "Postman", icon: postmanIcon, category: "ferramentas" },
   { name: "Trello", icon: trelloIcon, category: "ferramentas" },

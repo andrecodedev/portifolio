@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import ProjectModal from "./ProjectModal";
 
 interface ProjectCardProps {
@@ -6,9 +7,12 @@ interface ProjectCardProps {
   imageUrl: string;
   description?: string;
   skills?: string[];
+  repoUrl?: string;
+  siteUrl?: string;
 }
 
-export default function ProjectCard({ title, imageUrl, description, skills }: ProjectCardProps) {
+export default function ProjectCard({ title, imageUrl, description, skills, repoUrl, siteUrl }: ProjectCardProps) {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -29,6 +33,15 @@ export default function ProjectCard({ title, imageUrl, description, skills }: Pr
     };
   }, []);
 
+  // Se a descrição começa com 't:' usa a chave de tradução
+  const getDescription = () => {
+    if (typeof description === 'string' && description.startsWith('t:')) {
+      const key = description.replace('t:', '');
+      return t(key);
+    }
+    return description;
+  };
+
   return (
     <>
       <div
@@ -38,7 +51,7 @@ export default function ProjectCard({ title, imageUrl, description, skills }: Pr
         onMouseEnter={() => setShowOverlay(true)}
         onMouseLeave={() => setShowOverlay(false)}
         onTouchStart={(e) => {
-          e.stopPropagation(); // evita disparar clique fora imediatamente
+          e.stopPropagation();
           setShowOverlay(true);
         }}
       >
@@ -69,7 +82,7 @@ export default function ProjectCard({ title, imageUrl, description, skills }: Pr
               handleOpen();
             }}
           >
-            Ver Mais
+            {t('button.see_more')}
           </button>
         </div>
       </div>
@@ -79,8 +92,10 @@ export default function ProjectCard({ title, imageUrl, description, skills }: Pr
         onClose={() => setOpen(false)}
         title={title}
         imageUrl={imageUrl}
-        description={description}
+        description={getDescription()}
         skills={skills}
+        repoUrl={repoUrl}
+        siteUrl={siteUrl}
       />
     </>
   );

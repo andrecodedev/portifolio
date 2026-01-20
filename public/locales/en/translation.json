@@ -1,4 +1,30 @@
 {
+  "projects": {
+    "work": {
+      "eorayewear": "I contributed to the development of the Eorayewear e-commerce, helping build and improve the online store on the Nuvemshop platform, focusing on organization and user experience.",
+      "emoveis": "I made adjustments and improvements to the Emoveis e-commerce, working on the maintenance and optimization of the online store built on Nuvemshop.",
+      "qcy": "I contributed to the development of the QCY e-commerce, creating and adjusting components for the online store on the Nuvemshop platform to meet project needs.",
+      "lojasComfort": "I developed the Lojas Comfort e-commerce on the Nuvemshop platform, handling the complete structure of the online store and the necessary adjustments for its operation.",
+      "sapatariaNova": "I developed the Sapataria Nova e-commerce using the Nuvemshop platform, building the online store from the initial setup to the final adjustments.",
+      "relevo": "I contributed to the development of the Relevo e-commerce, collaborating on the construction and improvement of the online store on the Nuvemshop platform.",
+      "baixaPace": "I developed a specific component for the Baixa Pace e-commerce, helping to customize the online store on the Nuvemshop platform.",
+      "sportsTennis": "I developed the Sports&Tennis e-commerce on the Nuvemshop platform, creating and configuring the online store for the brand."
+    },
+    "personal": {
+      "sealWorld": "Project developed during studies at OneBitCode, focused on creating a web application, exploring structure, styling, and organizing a functional interface.",
+      "alessiosPizzaria": "Project developed at OneBitCode, aimed at creating a pizzeria website, focusing on layout, content organization, and product presentation.",
+      "jogoAmigoSecreto": "Project developed during studies at Alura, consisting of a simple Secret Santa game, focusing on logic, user interaction, and data handling.",
+      "primeiroPortfolio": "My first version of a personal portfolio, developed as the beginning of my programming journey, representing one of several attempts and evolutions toward more mature versions of my portfolios.",
+      "mobiSeg": "Academic project focused on creating a digital solution, applying concepts studied during my education and consolidating practical knowledge.",
+      "petLife": "Project developed at OneBitCode focused on creating an institutional website, exploring page structure, visual organization, and service presentation."
+    }
+  },
+
+  "ProjectFilter": {
+    "pessoais": "Personal",
+    "trabalho": "Work"
+  },
+  
   "nav": {
     "about": "About",
     "education": "Education",
@@ -52,7 +78,10 @@
 
   "button": {
     "project": "View Projects",
-    "download": "Download Resume"
+    "download": "Download Resume",
+    "see_more": "See more",
+    "close": "Close",
+    "site": "Site"
   },
 
   "ExperienceItem": {

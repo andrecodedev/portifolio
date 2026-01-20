@@ -51,7 +51,7 @@ export default function Title({
             
       {title_5 && (
         <h2 className="section-title text-4xl sm:text-4xl md:text-5xl lg:text-[3rem] mb-1 mt-1 font-medium text-start font-extrabold bg-gradient-to-r from-[var(--primary-linear-gradient)] to-[var(--text-gray-linear-gradient)] bg-clip-text text-transparent relative inline-block select-none">
-          {title_5} {t('page_titles.projects')}
+          {title_5}
         </h2>
       )}
 

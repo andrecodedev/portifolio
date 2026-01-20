@@ -1,4 +1,30 @@
 {
+  "projects": {
+    "work": {
+      "eorayewear": "Participei do desenvolvimento do e-commerce da Eorayewear, contribuindo para a construção e o aprimoramento da loja virtual na plataforma Nuvemshop, com foco na organização e na experiência do usuário.",
+      "emoveis": "Realizei ajustes e melhorias no e-commerce da Emoveis, atuando na manutenção e otimização da loja virtual desenvolvida na plataforma Nuvemshop.",
+      "qcy": "Contribuí no desenvolvimento do e-commerce da QCY, criando e ajustando componentes da loja virtual na plataforma Nuvemshop para atender às necessidades do projeto.",
+      "lojasComfort": "Desenvolvi o e-commerce da Lojas Comfort na plataforma Nuvemshop, realizando a estruturação completa da loja virtual e os ajustes necessários para seu funcionamento.",
+      "sapatariaNova": "Desenvolvi o e-commerce da Sapataria Nova utilizando a plataforma Nuvemshop, criando a loja virtual desde a configuração inicial até os ajustes finais.",
+      "relevo": "Participei do desenvolvimento do e-commerce da Relevo, colaborando na construção e melhoria da loja virtual na plataforma Nuvemshop.",
+      "baixaPace": "Desenvolvi um componente específico para o e-commerce da Baixa Pace, contribuindo para a personalização da loja virtual na plataforma Nuvemshop.",
+      "sportsTennis": "Desenvolvi o e-commerce da Sports&Tennis na plataforma Nuvemshop, realizando a criação e configuração da loja virtual para a marca."
+    },
+    "personal": {
+      "sealWorld": "Projeto desenvolvido durante estudos na OneBitCode, com foco na criação de uma aplicação web, explorando estrutura, estilização e organização de uma interface funcional.",
+      "alessiosPizzaria": "Projeto desenvolvido na OneBitCode, voltado para a criação de um site de pizzaria, com foco em layout, organização do conteúdo e apresentação de produtos.",
+      "jogoAmigoSecreto": "Projeto desenvolvido durante estudos na Alura, consistindo em um jogo simples de amigo secreto, com foco em lógica, interação com o usuário e manipulação de dados.",
+      "primeiroPortfolio": "Minha primeira versão de portfólio pessoal, desenvolvida como início da minha jornada na programação, representando uma das várias tentativas e evoluções até versões mais maduras dos meus portfólios.",
+      "mobiSeg": "Projeto acadêmico desenvolvido com foco na criação de uma solução digital, aplicando conceitos estudados durante a formação e consolidando conhecimentos práticos.",
+      "petLife": "Projeto desenvolvido na OneBitCode com foco na criação de um site institucional, explorando estrutura de páginas, organização visual e apresentação de serviços."
+    }
+  },
+
+  "ProjectFilter": {
+    "pessoais": "Pessoais",
+    "trabalho": "Trabalho"
+  },
+
   "nav": {
     "about": "Sobre",
     "education": "Educação",
@@ -52,7 +78,10 @@
 
   "button": {
     "project": "Ver Projetos",
-    "download": "Baixar Currículo"
+    "download": "Baixar Currículo",
+    "see_more": "Ver mais",
+    "close": "Fechar",
+    "site": "Site"
   },
 
   "ExperienceItem": {
