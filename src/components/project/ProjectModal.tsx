@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { createPortal } from "react-dom";
+import { getSkillName } from "../../data/skillsData";
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -46,10 +47,16 @@ export default function ProjectModal({ isOpen, onClose, title, imageUrl, descrip
 
           {/* Skills */}
           {skills && (
-            <div className="flex flex-wrap gap-2 mb-4 select-none">
-              {skills.map((skill, idx) => (
-                <img key={idx} src={skill} alt="Skill" className="w-6 h-6"/>
-              ))}
+            <div className="flex flex-wrap gap-3 mb-6 select-none">
+              {skills.map((skill, idx) => {
+                const name = getSkillName(skill);
+                return (
+                  <div key={idx} className="tooltip-container group">
+                    <img src={skill} alt={name || "Skill"} className="w-8 h-8 transition-transform duration-300 group-hover:scale-110" />
+                    {name && <span className="tooltip-content">{name}</span>}
+                  </div>
+                );
+              })}
             </div>
           )}
 

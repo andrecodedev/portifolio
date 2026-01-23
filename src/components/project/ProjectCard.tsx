@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import ProjectModal from "./ProjectModal";
+import { getSkillName } from "../../data/skillsData";
 
 interface ProjectCardProps {
   title: string;
@@ -63,16 +64,21 @@ export default function ProjectCard({ title, imageUrl, description, skills, repo
 
         {/* Overlay */}
         <div
-          className={`absolute inset-0 bg-black/70 flex flex-col justify-center items-center p-4 transition-opacity duration-300 ${
-            showOverlay ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 bg-black/70 flex flex-col justify-center items-center p-4 transition-opacity duration-300 ${showOverlay ? "opacity-100" : "opacity-0"
+            }`}
         >
           <h3 className="text-lg font-bold p-2 text-white">{title}</h3>
 
-          <div className="flex flex-wrap gap-2 p-2 select-none max-w-[calc(8*2rem+7*0.5rem)]">
-            {skills?.map((skill, idx) => (
-              <img key={idx} src={skill} alt="Skill" className="w-6 h-6"/>
-            ))}
+          <div className="flex flex-wrap justify-center gap-2 p-2 select-none max-w-[calc(8*2rem+7*0.5rem)]">
+            {skills?.map((skill, idx) => {
+              const name = getSkillName(skill);
+              return (
+                <div key={idx} className="tooltip-container group">
+                  <img src={skill} alt={name || "Skill"} className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
+                  {name && <span className="tooltip-content !text-[10px] !py-1 !px-2">{name}</span>}
+                </div>
+              );
+            })}
           </div>
 
           <button

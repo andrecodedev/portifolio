@@ -22,7 +22,7 @@
   --menu: #121212;
   --border: #282828a0;
   --border-gray: #636363;
-  
+
   /* Gradientes e efeitos */
   --grid-opacity: 0.37;
   --primary-linear-gradient: #3d3d3d;
@@ -34,9 +34,9 @@
 
 .light-theme {
   --bg-primary: #f5f5f5;
-  --bg-secondary: #e0e0e0;
+  --bg-secondary: #ffffff;
   --bg-terceiro: #ffffffb3;
-  --bg-secondary-transparent: #dcdcdc9d;
+  --bg-secondary-transparent: #ffffff9d;
   --bg-elements: #e0e0e0;
   --bg-elements-hover: #535353;
   --text-primary: #333;
@@ -106,8 +106,10 @@ body::before {
   0% {
     background-position: 0 0;
   }
+
   100% {
-    background-position: 24px 24px; /* move diagonalmente */
+    background-position: 24px 24px;
+    /* move diagonalmente */
   }
 }
 
@@ -143,13 +145,13 @@ ul li {
   font-size: 1.1rem;
   color: var(--text-primary);
 }
-  
+
 a {
   color: var(--text-primary);
 }
 
 
-.font-jet{
+.font-jet {
   font-family: 'JetBrains Mono', monospace;
 }
 
@@ -196,9 +198,12 @@ a {
 
 
 @keyframes blink {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0;
   }
@@ -221,8 +226,10 @@ a {
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: scale(0.95); /* opcional: leve zoom menor */
+    transform: scale(0.95);
+    /* opcional: leve zoom menor */
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
@@ -245,8 +252,15 @@ a {
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 
@@ -290,8 +304,8 @@ a {
   align-items: center;
 }
 
-.nav-group button{
-    padding: .7rem 1rem;
+.nav-group button {
+  padding: .7rem 1rem;
 }
 
 /* Visibilidade controlada por media */
@@ -318,7 +332,7 @@ a {
     position: absolute;
     top: 80px;
     right: 1rem;
-    background-color: var(--background-secondary);
+    background-color: var(--bg-secondary);
     padding: 1rem;
     border-radius: 8px;
     gap: 0.5rem;
@@ -371,8 +385,10 @@ a {
 }
 
 .nav-group .switch {
-  margin: 0 0 0 0.5rem; /* apenas espaçamento lateral esquerdo */
-  align-self: center; /* garante alinhamento vertical */
+  margin: 0 0 0 0.5rem;
+  /* apenas espaçamento lateral esquerdo */
+  align-self: center;
+  /* garante alinhamento vertical */
 }
 
 @media (max-width: 1050px) {
@@ -383,7 +399,7 @@ a {
   .nav-group {
     display: none;
     flex-direction: column;
-    background: var(--background-secondary);
+    background: var(--bg-secondary);
     border: .5px solid var(--border);
     position: absolute;
     top: 80px;
@@ -401,8 +417,8 @@ a {
   }
 
   .nav-group .switch {
-  margin: 0;
-}
+    margin: 0;
+  }
 
   .nav-group button {
     width: 100%;
@@ -434,11 +450,15 @@ a {
 .language-switcher {
   display: flex;
   align-items: center;
-  position: fixed; /* Fixa o elemento na tela */
+  position: fixed;
+  /* Fixa o elemento na tela */
   flex-direction: column;
-  bottom: 10%;       /* Distância de baixo */
-  right: 15px;     /* Distância da direita */
-  z-index: 1000;   /* Garante que ele fique na frente de outros elementos */
+  bottom: 10%;
+  /* Distância de baixo */
+  right: 15px;
+  /* Distância da direita */
+  z-index: 1000;
+  /* Garante que ele fique na frente de outros elementos */
   display: flex;
   gap: 6px;
 }
@@ -507,3 +527,58 @@ a {
 
 
 
+/* Tooltip Premium */
+.tooltip-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tooltip-content {
+  position: absolute;
+  bottom: 140%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-family: var(--jet);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 10000;
+  border: 1px solid var(--border-gray);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+/* Seta do Balãozinho */
+.tooltip-content::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--border-gray) transparent transparent transparent;
+}
+
+.tooltip-container:hover .tooltip-content,
+.tooltip-container:active .tooltip-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Ajuste para mobile: toque exibe o tooltip */
+@media (hover: none) {
+  .tooltip-container:active .tooltip-content {
+    opacity: 1;
+    visibility: visible;
+  }
+}
