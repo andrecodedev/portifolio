@@ -19,12 +19,10 @@
       "petLife": "Project developed at OneBitCode focused on creating an institutional website, exploring page structure, visual organization, and service presentation."
     }
   },
-
   "ProjectFilter": {
     "pessoais": "Personal",
     "trabalho": "Work"
   },
-  
   "nav": {
     "about": "About",
     "education": "Education",
@@ -32,12 +30,10 @@
     "projects": "Projects",
     "contact": "Contact"
   },
-
   "home": {
     "welcome": "Welcome to my Portfolio",
     "navigate": "Choose a section to navigate"
   },
-
   "page_titles": {
     "about": "About",
     "aboutExpPro": "Professional Experiences",
@@ -50,21 +46,18 @@
     "projects": "Projects",
     "contact": "Contact"
   },
-
   "footer": {
     "copyright": "Copyright © 2024 - ",
     "rights": "All rights reserved.",
     "built_with": "Built with",
     "built_with_2": "by André Vitor"
   },
-
   "about": {
     "nome": "Hello, I'm André Vitor",
     "cargo": "Junior Web Developer",
     "descricao_1": "I am a Junior Web Developer at <a href='https://www.tec4udigital.com/' target='_blank' rel='noopener noreferrer' class='underline hover:text-[var(--text-secondary)] transition'>TEC4U Digital</a>, with a technical degree in Systems Analysis and Development from <a href='https://www.google.com/search?q=ETEC+São+Roque' target='_blank' rel='noopener noreferrer' class='underline hover:text-[var(--text-secondary)] transition'>ETEC de São Roque</a> and currently pursuing a Bachelor's degree in Systems Analysis and Development at <a href='https://www.facens.br' target='_blank' rel='noopener noreferrer' class='underline hover:text-[var(--text-secondary)] transition'>FACENS de Sorocaba</a> with a full scholarship. I constantly study on platforms such as <a href='https://onebitcode.com' target='_blank' rel='noopener noreferrer' class='underline hover:text-[var(--text-secondary)] transition'>OneBitCode</a>, <a href='https://www.dio.me' target='_blank' rel='noopener noreferrer' class='underline hover:text-[var(--text-secondary)] transition'>DIO</a>, <a href='https://www.alura.com.br' target='_blank' rel='noopener noreferrer' class='underline hover:text-[var(--text-secondary)] transition'>Alura</a>, <a href='https://www.udemy.com' target='_blank' rel='noopener noreferrer' class='underline hover:text-[var(--text-secondary)] transition'>Udemy</a>, and <a href='https://www.origamid.com' target='_blank' rel='noopener noreferrer' class='underline hover:text-[var(--text-secondary)] transition'>Origamid</a>, applying modern practices in real projects.",
     "descricao_2": "Passionate about technology since childhood, I work on web development projects with a focus on continuous learning, practical evolution, and creating a positive impact through technology."
   },
-
   "AboutStartsGrid": {
     "number1": "4+",
     "description1": "Years of Intensive Study",
@@ -75,7 +68,6 @@
     "number4": "24+",
     "description4": "Repositories on GitHub"
   },
-
   "button": {
     "project": "View Projects",
     "download": "Download Resume",
@@ -83,7 +75,6 @@
     "close": "Close",
     "site": "Site"
   },
-
   "ExperienceItem": {
     "title_1": "Academic Mentor",
     "company_1": "FACENS - University Center",
@@ -118,21 +109,18 @@
     "location_4": "Araçariguama, SP, Brazil (On-site)",
     "description_4": "I worked in the sales and customer service sector of a medium-sized pet shop, performing counter, cashier, and telephone service, in addition to supporting store organization, stock control, receiving goods, and basic animal care. I developed skills such as empathy, responsibility, teamwork, and customer service.",
     "title_5": "Junior Developer - Web Developer",
-"company_5": "TEC4U Digital",
-"position_5": "Autonomous",
-"startDate_5": "Aug 2025",
-"endDate_5": "Present",
-"time_5": "Present",
-"location_5": "Vila Olímpia, São Paulo, SP, Brazil (Remote)",
-"description_5": "I work as a junior developer on web projects, supporting the creation of interfaces, layout adjustments, and implementation of functionalities. The experience strengthens skills such as organization, collaboration, logical reasoning, and adaptability."
-
+    "company_5": "TEC4U Digital",
+    "position_5": "Autonomous",
+    "startDate_5": "Aug 2025",
+    "endDate_5": "Present",
+    "time_5": "Present",
+    "location_5": "Vila Olímpia, São Paulo, SP, Brazil (Remote)",
+    "description_5": "I work as a junior developer on web projects, supporting the creation of interfaces, layout adjustments, and implementation of functionalities. The experience strengthens skills such as organization, collaboration, logical reasoning, and adaptability."
   },
-
   "ExperienceFilter": {
     "professional": "Professional Experiences",
     "achievements": "Professional Achievements"
   },
-
   "Achievements": {
     "title_1": "Full ProUni Scholarship",
     "description_1": "Achieved full ProUni scholarship to study Systems Analysis and Development at FACENS.",
@@ -149,8 +137,7 @@
     "title_7": "CCBEU - English",
     "description_7": "English studies at Brazil-United States Cultural Center (CCBEU).",
     "title_8": "TEC4U Digital",
-    "description_8": "Called in for an internship interview at TEC4U Digital and directly hired as a junior developer, working on real web projects."
-    ,
+    "description_8": "Called in for an internship interview at TEC4U Digital and directly hired as a junior developer, working on real web projects.",
     "title_9": "DIO - Bootcamps & Labs",
     "description_9": "I'm always studying on DIO, where I have lifetime access. I use the platform to elevate my knowledge in web development, backend, and new technologies.",
     "title_10": "Origamid - Frontend Training",
@@ -158,13 +145,11 @@
     "title_11": "Udemy - Professional Courses",
     "description_11": "I'm always taking courses on Udemy to elevate my knowledge in React, Node.js, databases, productivity, and much more."
   },
-
   "Education": {
     "label_periodo": "Period",
     "label_modalidade": "Modality",
     "label_carga_horaria": "Workload",
     "label_ver_certificado": "View cert.",
-
     "curso_36": "Practicing Java: if and else conditionals",
     "tipo_36": "Technical Skills in Technology",
     "escola_36": "Alura - Digital Courses Platform",
@@ -173,7 +158,6 @@
     "fim_36": "06/2025",
     "cargaHoraria_36": "4h",
     "modalidade_36": "Remote",
-
     "curso_35": "Java: applying Object Orientation",
     "tipo_35": "Technical Skills in Technology",
     "escola_35": "Alura - Digital Courses Platform",
@@ -182,7 +166,6 @@
     "fim_35": "06/2025",
     "cargaHoraria_35": "10h",
     "modalidade_35": "Remote",
-
     "curso_34": "Agile Management: exploring agility concepts",
     "tipo_34": "Personal Development",
     "escola_34": "Alura - Digital Courses Platform",
@@ -191,7 +174,6 @@
     "fim_34": "06/2025",
     "cargaHoraria_34": "8h",
     "modalidade_34": "Remote",
-
     "curso_33": "Entrepreneurship, Agility and Career Protagonism Training G8 - ONE",
     "tipo_33": "Personal Development",
     "escola_33": "Alura - Digital Courses Platform",
@@ -200,7 +182,6 @@
     "fim_33": "06/2025",
     "cargaHoraria_33": "47h",
     "modalidade_33": "Remote",
-
     "curso_32": "Entrepreneurship: from idea to business plan",
     "tipo_32": "Personal Development",
     "escola_32": "Alura - Digital Courses Platform",
@@ -209,7 +190,6 @@
     "fim_32": "06/2025",
     "cargaHoraria_32": "8h",
     "modalidade_32": "Remote",
-
     "curso_31": "Career transition: a guide to the technology area",
     "tipo_31": "Personal Development",
     "escola_31": "Alura - Digital Courses Platform",
@@ -218,7 +198,6 @@
     "fim_31": "05/2025",
     "cargaHoraria_31": "8h",
     "modalidade_31": "Remote",
-
     "curso_30": "Professional purpose: be the protagonist of your career",
     "tipo_30": "Personal Development",
     "escola_30": "Alura - Digital Courses Platform",
@@ -227,7 +206,6 @@
     "fim_30": "05/2025",
     "cargaHoraria_30": "8h",
     "modalidade_30": "Remote",
-
     "curso_29": "Cisco Networking Basics",
     "tipo_29": "Technical Skills in Technology",
     "escola_29": "Cisco - Digital Courses Platform",
@@ -236,7 +214,6 @@
     "fim_29": "05/2025",
     "cargaHoraria_29": "00h",
     "modalidade_29": "Remote",
-
     "curso_28": "Java: creating your first application",
     "tipo_28": "Technical Skills in Technology",
     "escola_28": "Alura - Digital Courses Platform",
@@ -245,7 +222,6 @@
     "fim_28": "05/2025",
     "cargaHoraria_28": "8h",
     "modalidade_28": "Remote",
-
     "curso_27": "Career development: the market demand",
     "tipo_27": "Personal Development",
     "escola_27": "Alura - Digital Courses Platform",
@@ -254,7 +230,6 @@
     "fim_27": "05/2025",
     "cargaHoraria_27": "10h",
     "modalidade_27": "Remote",
-
     "curso_26": "Practicing programming logic: Secret Santa Challenge",
     "tipo_26": "Technical Skills in Technology",
     "escola_26": "Alura - Digital Courses Platform",
@@ -263,7 +238,6 @@
     "fim_26": "02/2025",
     "cargaHoraria_26": "8h",
     "modalidade_26": "Remote",
-
     "curso_25": "Programming logic: dive into programming with JavaScript",
     "tipo_25": "Technical Skills in Technology",
     "escola_25": "Alura - Digital Courses Platform",
@@ -272,7 +246,6 @@
     "fim_25": "02/2025",
     "cargaHoraria_25": "6h",
     "modalidade_25": "Remote",
-
     "curso_24": "Programming logic: explore functions and lists",
     "tipo_24": "Technical Skills in Technology",
     "escola_24": "Alura - Digital Courses Platform",
@@ -281,7 +254,6 @@
     "fim_24": "02/2025",
     "cargaHoraria_24": "6h",
     "modalidade_24": "Remote",
-
     "curso_23": "LinkedIn: how to make your profile work for you",
     "tipo_23": "Personal Development",
     "escola_23": "Alura - Digital Courses Platform",
@@ -290,7 +262,6 @@
     "fim_23": "02/2025",
     "cargaHoraria_23": "4h",
     "modalidade_23": "Remote",
-
     "curso_22": "Habits: from productivity to personal goals",
     "tipo_22": "Personal Development",
     "escola_22": "Alura - Digital Courses Platform",
@@ -299,7 +270,6 @@
     "fim_22": "02/2025",
     "cargaHoraria_22": "6h",
     "modalidade_22": "Remote",
-
     "curso_21": "HTML and CSS: working with responsiveness and project publishing",
     "tipo_21": "Personal Development",
     "escola_21": "Alura - Digital Courses Platform",
@@ -308,7 +278,6 @@
     "fim_21": "02/2025",
     "cargaHoraria_21": "6h",
     "modalidade_21": "Remote",
-
     "curso_20": "HTML and CSS: header, footer and CSS variables",
     "tipo_20": "Technical Skills in Technology",
     "escola_20": "Alura - Digital Courses Platform",
@@ -317,7 +286,6 @@
     "fim_20": "02/2025",
     "cargaHoraria_20": "6h",
     "modalidade_20": "Remote",
-
     "curso_19": "HTML and CSS: development environments, file structure and tags",
     "tipo_19": "Technical Skills in Technology",
     "escola_19": "Alura - Digital Courses Platform",
@@ -326,7 +294,6 @@
     "fim_19": "02/2025",
     "cargaHoraria_19": "8h",
     "modalidade_19": "Remote",
-
     "curso_18": "HTML and CSS: Classes, positioning and Flexbox",
     "tipo_18": "Technical Skills in Technology",
     "escola_18": "Alura - Digital Courses Platform",
@@ -335,7 +302,6 @@
     "fim_18": "02/2025",
     "cargaHoraria_18": "8h",
     "modalidade_18": "Remote",
-
     "curso_17": "Git and GitHub: sharing and collaborating on projects",
     "tipo_17": "Technical Skills in Technology",
     "escola_17": "Alura - Digital Courses Platform",
@@ -344,7 +310,6 @@
     "fim_17": "02/2025",
     "cargaHoraria_17": "8h",
     "modalidade_17": "Remote",
-
     "curso_16": "Beginner in Programming Training G8 - ONE",
     "tipo_16": "Technical Skills in Technology",
     "escola_16": "Alura - Digital Courses Platform",
@@ -353,7 +318,6 @@
     "fim_16": "02/2025",
     "cargaHoraria_16": "70h",
     "modalidade_16": "Remote",
-
     "curso_15": "Personal Development Training G8 - ONE",
     "tipo_15": "Personal Development",
     "escola_15": "Alura - Digital Courses Platform",
@@ -362,7 +326,6 @@
     "fim_15": "02/2025",
     "cargaHoraria_15": "36h",
     "modalidade_15": "Remote",
-
     "curso_14": "Focus: bringing more results to day-to-day life",
     "tipo_14": "Personal Development",
     "escola_14": "Alura - Digital Courses Platform",
@@ -371,7 +334,6 @@
     "fim_14": "02/2025",
     "cargaHoraria_14": "10h",
     "modalidade_14": "Remote",
-
     "curso_13": "ChatGPT: optimizing the quality of results",
     "tipo_13": "Technical Skills in Technology",
     "escola_13": "Alura - Digital Courses Platform",
@@ -380,7 +342,6 @@
     "fim_13": "02/2025",
     "cargaHoraria_13": "8h",
     "modalidade_13": "Remote",
-
     "curso_12": "Learning to learn: techniques for your self-development",
     "tipo_12": "Personal Development",
     "escola_12": "Alura - Digital Courses Platform",
@@ -389,7 +350,6 @@
     "fim_12": "02/2025",
     "cargaHoraria_12": "8h",
     "modalidade_12": "Remote",
-
     "curso_11": "HTML5",
     "tipo_11": "Technical Skills in Technology",
     "escola_11": "OneBitCode - Digital Courses Platform",
@@ -398,7 +358,6 @@
     "fim_11": "01/2025",
     "cargaHoraria_11": "12h",
     "modalidade_11": "Remote",
-
     "curso_10": "CSS3",
     "tipo_10": "Technical Skills in Technology",
     "escola_10": "OneBitCode - Digital Courses Platform",
@@ -407,7 +366,6 @@
     "fim_10": "01/2025",
     "cargaHoraria_10": "14h",
     "modalidade_10": "Remote",
-
     "curso_9": "English A1, A2 and B1",
     "tipo_9": "English with Soft Skills",
     "escola_9": "CCBEU - Brazil United States Cultural Center",
@@ -416,7 +374,6 @@
     "fim_9": "06/2025",
     "cargaHoraria_9": "120h",
     "modalidade_9": "Remote",
-
     "curso_8": "Systems Analysis and Development",
     "tipo_8": "Graduation (Technologist)",
     "escola_8": "FACENS - University Center",
@@ -425,7 +382,6 @@
     "fim_8": "12/2026",
     "cargaHoraria_8": "2,400h",
     "modalidade_8": "On-site",
-
     "curso_7": "English as a Second Language",
     "tipo_7": "English with Soft Skills",
     "escola_7": "NGO Soul Bilíngue - English and Personal Development Training",
@@ -434,7 +390,6 @@
     "fim_7": "06/2024",
     "cargaHoraria_7": "88h",
     "modalidade_7": "Remote",
-
     "curso_6": "Systems Analysis and Development",
     "tipo_6": "Technical Course",
     "escola_6": "ETEC - State Technical School",
@@ -443,7 +398,6 @@
     "fim_6": "12/2023",
     "cargaHoraria_6": "1,500h",
     "modalidade_6": "On-site",
-
     "curso_5": "Logistics Operator",
     "tipo_5": "Professional Training",
     "escola_5": "SENAI - National Service for Industrial Learning",
@@ -452,7 +406,6 @@
     "fim_5": "05/2022",
     "cargaHoraria_5": "200h",
     "modalidade_5": "On-site",
-
     "curso_4": "Web Development and Platform Customization",
     "tipo_4": "Technical Skills in Technology",
     "escola_4": "FATEC - Faculty of Technology",
@@ -461,7 +414,6 @@
     "fim_4": "12/2021",
     "cargaHoraria_4": "144h",
     "modalidade_4": "Remote",
-
     "curso_3": "Mathematics",
     "tipo_3": "Professional Training",
     "escola_3": "Interativa Treinamentos",
@@ -470,7 +422,6 @@
     "fim_3": "07/2020",
     "cargaHoraria_3": "82h",
     "modalidade_3": "Remote",
-
     "curso_2": "Computer Operator - Intermediate Informatics",
     "tipo_2": "Technical Skills in Technology",
     "escola_2": "Interativa Treinamentos",
@@ -479,7 +430,6 @@
     "fim_2": "11/2019",
     "cargaHoraria_2": "163.5h",
     "modalidade_2": "On-site",
-
     "curso_1": "English A1 and A2",
     "tipo_1": "English with Soft Skills",
     "escola_1": "Interativa Treinamentos",
@@ -489,7 +439,6 @@
     "cargaHoraria_1": "80h",
     "modalidade_1": "On-site"
   },
-
   "SkillsFilter": {
     "todas": "All",
     "idiomas": "Languages",
@@ -501,7 +450,6 @@
     "frameworks": "Frameworks",
     "bancodados": "Database"
   },
-
   "EducationFilter": {
     "all": "All",
     "superior": "Higher Education",
@@ -512,7 +460,6 @@
     "idioma": "Language",
     "certificacao": "Certifications"
   },
-
   "Contact": {
     "titulo_1": "Contact Information",
     "local": "São Paulo, Brazil",

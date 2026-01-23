@@ -19,7 +19,6 @@
       "petLife": "Proyecto desarrollado en OneBitCode con enfoque en la creación de un sitio institucional, explorando la estructura de páginas, organización visual y presentación de servicios."
     }
   },
-
   "ProjectFilter": {
     "pessoais": "Personales",
     "trabalho": "Trabajo"
@@ -31,12 +30,10 @@
     "projects": "Proyectos",
     "contact": "Contacto"
   },
-
   "home": {
     "welcome": "Bienvenido a mi Portafolio",
     "navigate": "Elige una sección para navegar"
   },
-
   "page_titles": {
     "about": "Sobre mí",
     "aboutExpPro": "Experiencias Profesionales",
@@ -49,21 +46,18 @@
     "projects": "Proyectos",
     "contact": "Contacto"
   },
-
   "footer": {
     "copyright": "Copyright © 2024 - ",
     "rights": "Todos los derechos reservados.",
     "built_with": "Hecho con",
     "built_with_2": "por André Vitor"
   },
-
   "about": {
     "nome": "Hola, soy André Vitor",
     "cargo": "Desarrollador Web Júnior",
     "descricao_1": "Soy Desarrollador Web Júnior en <a href='https://www.tec4udigital.com/' target='_blank' rel='noopener noreferrer' class='underline hover:text-[var(--text-secondary)] transition'>TEC4U Digital</a>, con formación técnica en Análisis y Desarrollo de Sistemas por la <a href='https://www.google.com/search?q=ETEC+São+Roque' target='_blank' rel='noopener noreferrer' class='underline hover:text-[var(--text-secondary)] transition'>ETEC de São Roque</a> y actualmente cursando la Licenciatura en Análisis y Desarrollo de Sistemas en <a href='https://www.facens.br' target='_blank' rel='noopener noreferrer' class='underline hover:text-[var(--text-secondary)] transition'>FACENS de Sorocaba</a> con beca completa. Estudio constantemente en plataformas como <a href='https://onebitcode.com' target='_blank' rel='noopener noreferrer' class='underline hover:text-[var(--text-secondary)] transition'>OneBitCode</a>, <a href='https://www.dio.me' target='_blank' rel='noopener noreferrer' class='underline hover:text-[var(--text-secondary)] transition'>DIO</a>, <a href='https://www.alura.com.br' target='_blank' rel='noopener noreferrer' class='underline hover:text-[var(--text-secondary)] transition'>Alura</a>, <a href='https://www.udemy.com' target='_blank' rel='noopener noreferrer' class='underline hover:text-[var(--text-secondary)] transition'>Udemy</a> y <a href='https://www.origamid.com' target='_blank' rel='noopener noreferrer' class='underline hover:text-[var(--text-secondary)] transition'>Origamid</a>, aplicando prácticas modernas en proyectos reales.",
     "descricao_2": "Apasionado por la tecnología desde niño, desarrollo proyectos web con enfoque en el aprendizaje continuo, la evolución práctica y el impacto positivo a través de la tecnología."
   },
-
   "AboutStartsGrid": {
     "number1": "4+",
     "description1": "Años de Estudio Intensivo",
@@ -74,7 +68,6 @@
     "number4": "24+",
     "description4": "Repositorios en GitHub"
   },
-
   "button": {
     "project": "Ver Proyectos",
     "download": "Descargar CV",
@@ -82,7 +75,6 @@
     "close": "Cerrar",
     "site": "Sitio"
   },
-
   "ExperienceItem": {
     "title_1": "Mentor Académico",
     "company_1": "FACENS - Centro Universitario",
@@ -117,21 +109,18 @@
     "location_4": "Araçariguama, SP, Brasil (Presencial)",
     "description_4": "Actué en el sector de ventas y atención al cliente en una tienda de mascotas de tamaño mediano, realizando atención en el mostrador, caja y teléfono, además de apoyar en la organización de la tienda, control de stock, recepción de mercancías y cuidados básicos con los animales. Desarrollé habilidades como empatía, responsabilidad, trabajo en equipo y atención al cliente.",
     "title_5": "Desarrollador Júnior - Web Developer",
-"company_5": "TEC4U Digital",
-"position_5": "Autónomo",
-"startDate_5": "Ago de 2025",
-"endDate_5": "Actualmente",
-"time_5": "Al momento",
-"location_5": "Vila Olímpia, São Paulo, SP, Brasil (Remoto)",
-"description_5": "Actúo como desarrollador júnior en proyectos web, apoyando la creación de interfaces, ajustes de diseño e implementación de funcionalidades. La experiencia refuerza habilidades como organización, colaboración, razonamiento lógico y adaptabilidad."
-
+    "company_5": "TEC4U Digital",
+    "position_5": "Autónomo",
+    "startDate_5": "Ago de 2025",
+    "endDate_5": "Actualmente",
+    "time_5": "Al momento",
+    "location_5": "Vila Olímpia, São Paulo, SP, Brasil (Remoto)",
+    "description_5": "Actúo como desarrollador júnior en proyectos web, apoyando la creación de interfaces, ajustes de diseño e implementación de funcionalidades. La experiencia refuerza habilidades como organización, colaboración, razonamiento lógico y adaptabilidad."
   },
-
   "ExperienceFilter": {
     "professional": "Experiencias Profesionales",
     "achievements": "Logros Profesionales"
   },
-
   "Achievements": {
     "title_1": "Beca ProUni Integral",
     "description_1": "Logro de la beca integral ProUni para estudiar Análisis y Desarrollo de Sistemas en FACENS.",
@@ -148,8 +137,7 @@
     "title_7": "CCBEU - Inglés",
     "description_7": "Estudios de inglés en el Centro Cultural Brasil-Estados Unidos (CCBEU).",
     "title_8": "TEC4U Digital",
-    "description_8": "Fui convocado para una entrevista de pasantía en TEC4U Digital y terminé siendo contratado directamente como desarrollador júnior, trabajando en proyectos web reales."
-    ,
+    "description_8": "Fui convocado para una entrevista de pasantía en TEC4U Digital y terminé siendo contratado directamente como desarrollador júnior, trabajando en proyectos web reales.",
     "title_9": "DIO - Bootcamps & Labs",
     "description_9": "Siempre estoy estudiando en DIO, donde tengo acceso vitalicio. Uso la plataforma para elevar mis conocimientos en desarrollo web, backend y nuevas tecnologías.",
     "title_10": "Origamid - Formación Frontend",
@@ -157,13 +145,11 @@
     "title_11": "Udemy - Cursos Profesionales",
     "description_11": "Siempre estoy haciendo cursos en Udemy para elevar mis conocimientos en React, Node.js, bases de datos, productividad y mucho más."
   },
-
   "Education": {
     "label_periodo": "Período",
     "label_modalidade": "Modalidad",
     "label_carga_horaria": "Carga de trabajo",
     "label_ver_certificado": "Ver cert.",
-
     "curso_36": "Practicando Java: condicionales if y else",
     "tipo_36": "Competencias Técnicas en Tecnología",
     "escola_36": "Alura - Plataforma de Cursos Digitales",
@@ -172,7 +158,6 @@
     "fim_36": "06/2025",
     "cargaHoraria_36": "4h",
     "modalidade_36": "Remoto",
-
     "curso_35": "Java: aplicando la Orientación a Objetos",
     "tipo_35": "Competencias Técnicas en Tecnología",
     "escola_35": "Alura - Plataforma de Cursos Digitales",
@@ -181,7 +166,6 @@
     "fim_35": "06/2025",
     "cargaHoraria_35": "10h",
     "modalidade_35": "Remoto",
-
     "curso_34": "Gestión Ágil: explorando conceptos de la agilidad",
     "tipo_34": "Desarrollo Personal",
     "escola_34": "Alura - Plataforma de Cursos Digitales",
@@ -190,7 +174,6 @@
     "fim_34": "06/2025",
     "cargaHoraria_34": "8h",
     "modalidade_34": "Remoto",
-
     "curso_33": "Formación Emprendimiento, Agilidad y Protagonismo en la Carrera G8 - ONE",
     "tipo_33": "Desarrollo Personal",
     "escola_33": "Alura - Plataforma de Cursos Digitales",
@@ -199,7 +182,6 @@
     "fim_33": "06/2025",
     "cargaHoraria_33": "47h",
     "modalidade_33": "Remoto",
-
     "curso_32": "Emprendimiento: de la idea al plan de negocios",
     "tipo_32": "Desarrollo Personal",
     "escola_32": "Alura - Plataforma de Cursos Digitales",
@@ -208,7 +190,6 @@
     "fim_32": "06/2025",
     "cargaHoraria_32": "8h",
     "modalidade_32": "Remoto",
-
     "curso_31": "Transición de carrera: una guía para el área de la tecnología",
     "tipo_31": "Desarrollo Personal",
     "escola_31": "Alura - Plataforma de Cursos Digitales",
@@ -217,7 +198,6 @@
     "fim_31": "05/2025",
     "cargaHoraria_31": "8h",
     "modalidade_31": "Remoto",
-
     "curso_30": "Propósito profesional: sé el protagonista de tu carrera",
     "tipo_30": "Desarrollo Personal",
     "escola_30": "Alura - Plataforma de Cursos Digitales",
@@ -226,7 +206,6 @@
     "fim_30": "05/2025",
     "cargaHoraria_30": "8h",
     "modalidade_30": "Remoto",
-
     "curso_29": "Cisco Networking Basics",
     "tipo_29": "Competencias Técnicas en Tecnología",
     "escola_29": "Cisco - Plataforma de Cursos Digitales",
@@ -235,7 +214,6 @@
     "fim_29": "05/2025",
     "cargaHoraria_29": "00h",
     "modalidade_29": "Remoto",
-
     "curso_28": "Java: creando tu primera aplicación",
     "tipo_28": "Competencias Técnicas en Tecnología",
     "escola_28": "Alura - Plataforma de Cursos Digitales",
@@ -244,7 +222,6 @@
     "fim_28": "05/2025",
     "cargaHoraria_28": "8h",
     "modalidade_28": "Remoto",
-
     "curso_27": "Desarrollo de carrera: la demanda del mercado",
     "tipo_27": "Desarrollo Personal",
     "escola_27": "Alura - Plataforma de Cursos Digitales",
@@ -253,7 +230,6 @@
     "fim_27": "05/2025",
     "cargaHoraria_27": "10h",
     "modalidade_27": "Remoto",
-
     "curso_26": "Practicando Lógica de programación: Challenge amigo secreto",
     "tipo_26": "Competencias Técnicas en Tecnología",
     "escola_26": "Alura - Plataforma de Cursos Digitales",
@@ -262,7 +238,6 @@
     "fim_26": "02/2025",
     "cargaHoraria_26": "8h",
     "modalidade_26": "Remoto",
-
     "curso_25": "Lógica de programación: sumérgete en la programación con JavaScript",
     "tipo_25": "Competencias Técnicas en Tecnología",
     "escola_25": "Alura - Plataforma de Cursos Digitales",
@@ -271,7 +246,6 @@
     "fim_25": "02/2025",
     "cargaHoraria_25": "6h",
     "modalidade_25": "Remoto",
-
     "curso_24": "Lógica de programación: explora funciones y listas",
     "tipo_24": "Competencias Técnicas en Tecnología",
     "escola_24": "Alura - Plataforma de Cursos Digitales",
@@ -280,7 +254,6 @@
     "fim_24": "02/2025",
     "cargaHoraria_24": "6h",
     "modalidade_24": "Remoto",
-
     "curso_23": "LinkedIn: cómo hacer que tu perfil trabaje para ti",
     "tipo_23": "Desarrollo Personal",
     "escola_23": "Alura - Plataforma de Cursos Digitales",
@@ -289,7 +262,6 @@
     "fim_23": "02/2025",
     "cargaHoraria_23": "4h",
     "modalidade_23": "Remoto",
-
     "curso_22": "Hábitos: de la productividad a las metas personales",
     "tipo_22": "Desarrollo Personal",
     "escola_22": "Alura - Plataforma de Cursos Digitales",
@@ -298,7 +270,6 @@
     "fim_22": "02/2025",
     "cargaHoraria_22": "6h",
     "modalidade_22": "Remoto",
-
     "curso_21": "HTML y CSS: trabajando con responsividad y publicación de proyectos",
     "tipo_21": "Desarrollo Personal",
     "escola_21": "Alura - Plataforma de Cursos Digitales",
@@ -307,7 +278,6 @@
     "fim_21": "02/2025",
     "cargaHoraria_21": "6h",
     "modalidade_21": "Remoto",
-
     "curso_20": "HTML y CSS: encabezado, pie de página y variables CSS",
     "tipo_20": "Competencias Técnicas en Tecnología",
     "escola_20": "Alura - Plataforma de Cursos Digitales",
@@ -316,7 +286,6 @@
     "fim_20": "02/2025",
     "cargaHoraria_20": "6h",
     "modalidade_20": "Remoto",
-
     "curso_19": "HTML y CSS: entornos de desarrollo, estructura de archivos y etiquetas",
     "tipo_19": "Competencias Técnicas en Tecnología",
     "escola_19": "Alura - Plataforma de Cursos Digitales",
@@ -325,7 +294,6 @@
     "fim_19": "02/2025",
     "cargaHoraria_19": "8h",
     "modalidade_19": "Remoto",
-
     "curso_18": "HTML y CSS: Clases, posicionamiento y Flexbox",
     "tipo_18": "Competencias Técnicas en Tecnología",
     "escola_18": "Alura - Plataforma de Cursos Digitales",
@@ -334,7 +302,6 @@
     "fim_18": "02/2025",
     "cargaHoraria_18": "8h",
     "modalidade_18": "Remoto",
-
     "curso_17": "Git y GitHub: compartiendo y colaborando en proyectos",
     "tipo_17": "Competencias Técnicas en Tecnología",
     "escola_17": "Alura - Plataforma de Cursos Digitales",
@@ -343,7 +310,6 @@
     "fim_17": "02/2025",
     "cargaHoraria_17": "8h",
     "modalidade_17": "Remoto",
-
     "curso_16": "Formación Principiante en Programación G8 - ONE",
     "tipo_16": "Competencias Técnicas en Tecnología",
     "escola_16": "Alura - Plataforma de Cursos Digitales",
@@ -352,7 +318,6 @@
     "fim_16": "02/2025",
     "cargaHoraria_16": "70h",
     "modalidade_16": "Remoto",
-
     "curso_15": "Formación Desarrollo Personal G8 - ONE",
     "tipo_15": "Desarrollo Personal",
     "escola_15": "Alura - Plataforma de Cursos Digitales",
@@ -361,7 +326,6 @@
     "fim_15": "02/2025",
     "cargaHoraria_15": "36h",
     "modalidade_15": "Remoto",
-
     "curso_14": "Foco: trayendo más resultados al día a día",
     "tipo_14": "Desarrollo Personal",
     "escola_14": "Alura - Plataforma de Cursos Digitales",
@@ -370,7 +334,6 @@
     "fim_14": "02/2025",
     "cargaHoraria_14": "10h",
     "modalidade_14": "Remoto",
-
     "curso_13": "ChatGPT: optimizando la calidad de los resultados",
     "tipo_13": "Competencias Técnicas en Tecnología",
     "escola_13": "Alura - Plataforma de Cursos Digitales",
@@ -379,7 +342,6 @@
     "fim_13": "02/2025",
     "cargaHoraria_13": "8h",
     "modalidade_13": "Remoto",
-
     "curso_12": "Aprender a aprender: técnicas para tu autodesarrollo",
     "tipo_12": "Desarrollo Personal",
     "escola_12": "Alura - Plataforma de Cursos Digitales",
@@ -388,7 +350,6 @@
     "fim_12": "02/2025",
     "cargaHoraria_12": "8h",
     "modalidade_12": "Remoto",
-
     "curso_11": "HTML5",
     "tipo_11": "Competencias Técnicas en Tecnología",
     "escola_11": "OneBitCode - Plataforma de Cursos Digitales",
@@ -397,7 +358,6 @@
     "fim_11": "01/2025",
     "cargaHoraria_11": "12h",
     "modalidade_11": "Remoto",
-
     "curso_10": "CSS3",
     "tipo_10": "Competencias Técnicas en Tecnología",
     "escola_10": "OneBitCode - Plataforma de Cursos Digitales",
@@ -406,7 +366,6 @@
     "fim_10": "01/2025",
     "cargaHoraria_10": "14h",
     "modalidade_10": "Remoto",
-
     "curso_9": "Inglés A1, A2 y B1",
     "tipo_9": "Inglés con Habilidades Blandas",
     "escola_9": "CCBEU - Centro Cultural Brasil Estados Unidos",
@@ -415,7 +374,6 @@
     "fim_9": "06/2025",
     "cargaHoraria_9": "120h",
     "modalidade_9": "Remoto",
-
     "curso_8": "Análisis y Desarrollo de Sistemas",
     "tipo_8": "Grado (Tecnólogo)",
     "escola_8": "FACENS - Centro Universitario",
@@ -424,7 +382,6 @@
     "fim_8": "12/2026",
     "cargaHoraria_8": "2.400h",
     "modalidade_8": "Presencial",
-
     "curso_7": "Inglés como Segunda Lengua",
     "tipo_7": "Inglés con Habilidades Blandas",
     "escola_7": "ONG Soul Bilíngue - Formación en Inglés y Desarrollo Personal",
@@ -433,7 +390,6 @@
     "fim_7": "06/2024",
     "cargaHoraria_7": "88h",
     "modalidade_7": "Remoto",
-
     "curso_6": "Análisis y Desarrollo de Sistemas",
     "tipo_6": "Curso Técnico",
     "escola_6": "ETEC - Escuela Técnica Estatal",
@@ -442,7 +398,6 @@
     "fim_6": "12/2023",
     "cargaHoraria_6": "1.500h",
     "modalidade_6": "Presencial",
-
     "curso_5": "Operador Logístico",
     "tipo_5": "Capacitación Profesional",
     "escola_5": "SENAI - Servicio Nacional de Aprendizaje Industrial",
@@ -451,7 +406,6 @@
     "fim_5": "05/2022",
     "cargaHoraria_5": "200h",
     "modalidade_5": "Presencial",
-
     "curso_4": "Desarrollo Web y Personalización de Plataformas",
     "tipo_4": "Competencias Técnicas en Tecnología",
     "escola_4": "FATEC - Facultad de Tecnología",
@@ -460,7 +414,6 @@
     "fim_4": "12/2021",
     "cargaHoraria_4": "144h",
     "modalidade_4": "Remoto",
-
     "curso_3": "Matemáticas",
     "tipo_3": "Capacitación Profesional",
     "escola_3": "Interativa Treinamentos",
@@ -469,7 +422,6 @@
     "fim_3": "07/2020",
     "cargaHoraria_3": "82h",
     "modalidade_3": "Remoto",
-
     "curso_2": "Operador de Computadora - Informática Intermedia",
     "tipo_2": "Competencias Técnicas en Tecnología",
     "escola_2": "Interativa Treinamentos",
@@ -478,7 +430,6 @@
     "fim_2": "11/2019",
     "cargaHoraria_2": "163,5h",
     "modalidade_2": "Presencial",
-
     "curso_1": "Inglés A1 y A2",
     "tipo_1": "Inglés con Habilidades Blandas",
     "escola_1": "Interativa Treinamentos",
@@ -488,7 +439,6 @@
     "cargaHoraria_1": "80h",
     "modalidade_1": "Presencial"
   },
-
   "SkillsFilter": {
     "todas": "Todas",
     "idiomas": "Idiomas",
@@ -500,7 +450,6 @@
     "frameworks": "Frameworks",
     "bancodados": "Base de Datos"
   },
-
   "EducationFilter": {
     "all": "Todas",
     "superior": "Superior",
@@ -511,7 +460,6 @@
     "idioma": "Idioma",
     "certificacao": "Certificaciones"
   },
-
   "Contact": {
     "titulo_1": "Información de Contacto",
     "local": "São Paulo, Brasil",
