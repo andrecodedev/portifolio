@@ -7,11 +7,13 @@ import Project from './pages/Project';
 import Contact from './pages/Contact';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import ScrollToTopOnNavigation from './components/ScrollToTopOnNavigation';
 
 function App() {
   return (
     <Router>
       {/* Componentes globais */}
+      <ScrollToTopOnNavigation />
       <LanguageSwitcher />
       <ScrollToTopButton />
       <Routes>
