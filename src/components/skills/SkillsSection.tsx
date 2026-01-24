@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import skillsData from "../../data/skillsData";
 
 interface SkillsSectionProps {
@@ -5,6 +6,7 @@ interface SkillsSectionProps {
 }
 
 export default function SkillsSection({ activeCategory }: SkillsSectionProps) {
+  const { t } = useTranslation();
   const skillsToShow = skillsData.filter(
     (skill) => activeCategory === "all" || skill.category === activeCategory
   );
@@ -24,8 +26,11 @@ export default function SkillsSection({ activeCategory }: SkillsSectionProps) {
           key={index}
           className="flex flex-col items-center justify-center w-[120px] h-[120px] bg-[var(--bg-secondary-transparent)] rounded-lg shadow-sm text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
         >
-          <img src={skill.icon} alt={skill.name} className="w-[45px] h-[45px] mb-2 select-none" />
-          <h1 className="text-xs font-jet">{skill.name}</h1>
+          <img src={skill.icon} alt={t(skill.name)} className="w-[45px] h-[45px] mb-2 select-none" />
+          <h1 className="text-xs font-jet">{t(skill.name)}</h1>
+          {skill.level && (
+            <p className="text-[10px] opacity-70 font-jet mt-1">{t(skill.level)}</p>
+          )}
         </div>
       ))}
     </div>

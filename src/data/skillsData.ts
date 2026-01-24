@@ -45,6 +45,7 @@ import nuvemshopIcon from '../img/skills/nuvemshop.svg';
 
 export interface Skill {
   name: string;
+  level?: string;
   icon: string;
   category: string;
 }
@@ -102,9 +103,9 @@ export const skillsData: Skill[] = [
   { name: 'SQL Server', icon: sqlServerIcon, category: 'banco-dados' },
 
   // Idiomas
-  { name: 'Português', icon: portuguesIcon, category: 'idioma' },
-  { name: 'Inglês (EUA)', icon: euaIcon, category: 'idioma' },
-  { name: 'Espanhol', icon: spanishIcon, category: 'idioma' },
+  { name: 'Skills.portugues', level: 'Skills.level_c1', icon: portuguesIcon, category: 'idioma' },
+  { name: 'Skills.ingles', level: 'Skills.level_b1', icon: euaIcon, category: 'idioma' },
+  { name: 'Skills.espanhol', level: 'Skills.level_b1', icon: spanishIcon, category: 'idioma' },
 
   // IAs
   { name: 'ChatGPT', icon: chatgptIcon, category: 'ias' },

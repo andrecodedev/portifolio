@@ -80,7 +80,7 @@ export default function ProjectCard({ title, imageUrl, description, skills, repo
               return (
                 <div key={idx} className="tooltip-container group">
                   <img src={skill} alt={name || "Skill"} className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
-                  {name && <span className="tooltip-content !text-[10px] !py-1 !px-2">{name}</span>}
+                  {name && <span className="tooltip-content !text-[10px] !py-1 !px-2">{t(name)}</span>}
                 </div>
               );
             })}

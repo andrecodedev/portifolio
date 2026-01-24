@@ -57,7 +57,7 @@ export default function ProjectModal({ isOpen, onClose, title, imageUrl, descrip
                   return (
                     <div key={idx} className="tooltip-container group">
                       <img src={skill} alt={name || "Skill"} className="w-8 h-8 transition-transform duration-300 group-hover:scale-110" />
-                      {name && <span className="tooltip-content">{name}</span>}
+                      {name && <span className="tooltip-content">{t(name)}</span>}
                     </div>
                   );
                 })}

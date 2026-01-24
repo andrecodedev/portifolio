@@ -478,5 +478,12 @@
   },
   "ProjectModal": {
     "tech_title": "Tecnologías Utilizadas"
+  },
+  "Skills": {
+    "portugues": "Portugués",
+    "ingles": "Inglés (EE. UU.)",
+    "espanhol": "Español",
+    "level_c1": "C1 (Fluido)",
+    "level_b1": "B1 (Intermedio)"
   }
 }
