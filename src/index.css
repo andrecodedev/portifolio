@@ -228,7 +228,7 @@ a {
   border: none !important;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   box-shadow: 0 0 15px color-mix(in srgb, var(--text-primary) 5%, transparent) !important;
 }
 

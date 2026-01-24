@@ -10,7 +10,7 @@ import '../../styles/achievementCard.css';
 function ExperienceSection() {
   const { t, i18n } = useTranslation();
   document.documentElement.lang = i18n.language;
-  
+
   const [activeCategory, setActiveCategory] = useState('achievements');
 
   const handleFilter = (category: string) => {
