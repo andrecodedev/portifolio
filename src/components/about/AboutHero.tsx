@@ -26,7 +26,7 @@ function AboutHero() {
           <p className="text-base mb-4 font-jet leading-snug tracking-tight text-[var(--text-terceiro)]">
             {t('about.cargo')}
           </p>
-          <p 
+          <p
             className="text-sm mt-4 font-jet leading-snug tracking-tight max-w-[75ch]"
             dangerouslySetInnerHTML={{ __html: t('about.descricao_1') }}
           />

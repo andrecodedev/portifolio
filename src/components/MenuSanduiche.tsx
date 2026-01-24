@@ -30,8 +30,8 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
     return `
       px-6 py-3 text-sm cursor-pointer select-none rounded-[5px]
       transition-all duration-300 ease-in-out
-      ${isActive 
-        ? 'bg-[var(--button-active)] text-[var(--text-active)]' 
+      ${isActive
+        ? 'bg-[var(--button-active)] text-[var(--text-active)]'
         : 'bg-[var(--button-bg)] text-[var(--text-primary)] hover:bg-[var(--button-hover)]'
       }
     `;

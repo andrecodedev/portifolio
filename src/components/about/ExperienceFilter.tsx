@@ -19,9 +19,8 @@ export default function ExperienceFilter({ onFilter, activeCategory }: Experienc
         <button
           key={cat.key}
           onClick={() => onFilter(cat.key)}
-          className={`px-6 py-3 bg-[var(--button-bg)] cursor-pointer rounded-md text-sm transition-all duration-300 hover:bg-[var(--button-active)] ${
-            activeCategory === cat.key ? 'active' : ''
-          }`}
+          className={`px-6 py-3 bg-[var(--button-bg)] cursor-pointer rounded-md text-sm transition-all duration-300 hover:bg-[var(--button-active)] ${activeCategory === cat.key ? 'active' : ''
+            }`}
         >
           {cat.label}
         </button>

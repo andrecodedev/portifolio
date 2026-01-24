@@ -475,5 +475,8 @@
     "mensagem": "Mensagem:",
     "enviando": "Enviando...",
     "enviar": "Enviar"
+  },
+  "ProjectModal": {
+    "tech_title": "Tecnologias Utilizadas"
   }
 }

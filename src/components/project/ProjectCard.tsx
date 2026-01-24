@@ -69,6 +69,11 @@ export default function ProjectCard({ title, imageUrl, description, skills, repo
         >
           <h3 className="text-lg font-bold p-2 text-white">{title}</h3>
 
+          {skills && skills.length > 0 && (
+            <h4 className="text-white text-[10px] tracking-widest opacity-80 mb-1 font-semibold">
+              {t('ProjectModal.tech_title')}
+            </h4>
+          )}
           <div className="flex flex-wrap justify-center gap-2 p-2 select-none max-w-[calc(8*2rem+7*0.5rem)]">
             {skills?.map((skill, idx) => {
               const name = getSkillName(skill);

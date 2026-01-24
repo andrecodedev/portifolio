@@ -46,17 +46,22 @@ export default function ProjectModal({ isOpen, onClose, title, imageUrl, descrip
           <p className="text-[var(--text-primary)] text-sm mb-4">{description}</p>
 
           {/* Skills */}
-          {skills && (
-            <div className="flex flex-wrap gap-3 mb-6 select-none">
-              {skills.map((skill, idx) => {
-                const name = getSkillName(skill);
-                return (
-                  <div key={idx} className="tooltip-container group">
-                    <img src={skill} alt={name || "Skill"} className="w-8 h-8 transition-transform duration-300 group-hover:scale-110" />
-                    {name && <span className="tooltip-content">{name}</span>}
-                  </div>
-                );
-              })}
+          {skills && skills.length > 0 && (
+            <div className="mb-6">
+              <h3 className="text-[var(--text-primary)] text-xs tracking-widest opacity-80 mb-3 font-semibold">
+                {t('ProjectModal.tech_title')}
+              </h3>
+              <div className="flex flex-wrap gap-3 select-none">
+                {skills.map((skill, idx) => {
+                  const name = getSkillName(skill);
+                  return (
+                    <div key={idx} className="tooltip-container group">
+                      <img src={skill} alt={name || "Skill"} className="w-8 h-8 transition-transform duration-300 group-hover:scale-110" />
+                      {name && <span className="tooltip-content">{name}</span>}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           )}
 
@@ -67,7 +72,7 @@ export default function ProjectModal({ isOpen, onClose, title, imageUrl, descrip
                 href={repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2 bg-[var(--button-hover)] cursor-pointer select-none text-[var(--text-primary)] rounded-lg hover:bg-[var(--button-active)] mt-auto transition-all duration-300"
+                className="px-6 py-2 bg-[var(--button-hover)] cursor-pointer select-none text-[var(--text-primary)] rounded-lg hover:bg-[var(--button-active)] mt-auto transition-all duration-300 border border-transparent hover:border-[var(--border-gray)]"
               >
                 GitHub
               </a>
@@ -77,7 +82,7 @@ export default function ProjectModal({ isOpen, onClose, title, imageUrl, descrip
                 href={siteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2 bg-[var(--button-hover)] cursor-pointer select-none text-[var(--text-primary)] rounded-lg hover:bg-[var(--button-active)] mt-auto transition-all duration-300"
+                className="px-6 py-2 bg-[var(--button-hover)] cursor-pointer select-none text-[var(--text-primary)] rounded-lg hover:bg-[var(--button-active)] mt-auto transition-all duration-300 border border-transparent hover:border-[var(--border-gray)]"
               >
                 {t('button.site')}
               </a>
@@ -87,7 +92,7 @@ export default function ProjectModal({ isOpen, onClose, title, imageUrl, descrip
           <div className="flex-1" />
           <button
             onClick={onClose}
-            className="px-6 py-3 bg-[var(--button-hover)] cursor-pointer select-none text-[var(--text-primary)] rounded-lg hover:bg-[var(--button-active)] w-full transition-all duration-300"
+            className="px-6 py-3 bg-[var(--button-hover)] cursor-pointer select-none text-[var(--text-primary)] rounded-lg hover:bg-[var(--button-active)] w-full transition-all duration-300 border border-transparent hover:border-[var(--border-gray)]"
             style={{ marginTop: 'auto' }}
           >
             {t('button.close')}

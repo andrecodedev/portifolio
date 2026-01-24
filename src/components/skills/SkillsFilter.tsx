@@ -8,7 +8,7 @@ interface SkillsFilterProps {
 export default function SkillsFilter({ onFilter, activeCategory }: SkillsFilterProps) {
   const { t, i18n } = useTranslation();
   document.documentElement.lang = i18n.language;
-  
+
   const categories = [
     { key: "all", label: t("SkillsFilter.todas") },
     { key: "idioma", label: t("SkillsFilter.idiomas") },
@@ -27,9 +27,8 @@ export default function SkillsFilter({ onFilter, activeCategory }: SkillsFilterP
         <button
           key={cat.key}
           onClick={() => onFilter(cat.key)}
-          className={`px-4 py-2 bg-[var(--button-bg)] cursor-pointer rounded-md text-sm transition-all duration-300 hover:bg-[var(--button-active)] ${
-            activeCategory === cat.key ? 'active' : ''
-          }`}
+          className={`px-4 py-2 bg-[var(--button-bg)] cursor-pointer rounded-md text-sm transition-all duration-300 hover:bg-[var(--button-active)] ${activeCategory === cat.key ? 'active' : ''
+            }`}
         >
           {cat.label}
         </button>

@@ -12,11 +12,11 @@ type ToastState = {
 export default function ContactForm() {
   const { t, i18n } = useTranslation();
   document.documentElement.lang = i18n.language;
-  
+
   const [toast, setToast] = useState<ToastState>({ show: false, message: "" });
   const [loading, setLoading] = useState(false);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
-  
+
   // Detectar o tema atual do site
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const saved = localStorage.getItem('theme');
@@ -43,7 +43,7 @@ export default function ContactForm() {
 
     // Validar reCAPTCHA
     const recaptchaValue = recaptchaRef.current?.getValue();
-    
+
     if (!recaptchaValue) {
       setToast({ show: true, message: t('Contact.message_captcha') });
       return;
@@ -66,14 +66,14 @@ export default function ContactForm() {
       const data = await res.json();
 
       if (data.success === "true") {
-        setToast({ show: true, message: t('Contact.message_1')}); 
+        setToast({ show: true, message: t('Contact.message_1') });
         form.reset();
         recaptchaRef.current?.reset(); // Reset reCAPTCHA
       } else {
-        setToast({ show: true, message: t('Contact.message_2')});
+        setToast({ show: true, message: t('Contact.message_2') });
       }
     } catch {
-      setToast({ show: true, message: t('Contact.message_3')});
+      setToast({ show: true, message: t('Contact.message_3') });
     } finally {
       setLoading(false);
     }
@@ -122,9 +122,8 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={loading}
-          className={`${
-            loading ? "bg-[var(--button-bg)] cursor-not-allowed" : "bg-[var(--button-bg)] hover:bg-[var(--button-hover)]"
-          } transition cursor-pointer text-[var(--text-primary)] p-2 rounded font-semibold flex items-center justify-center select-none text-sm`}
+          className={`${loading ? "bg-[var(--button-bg)] cursor-not-allowed" : "bg-[var(--button-bg)] hover:bg-[var(--button-hover)]"
+            } transition cursor-pointer text-[var(--text-primary)] p-2 rounded font-semibold flex items-center justify-center select-none text-sm`}
         >
           {loading ? (
             <>

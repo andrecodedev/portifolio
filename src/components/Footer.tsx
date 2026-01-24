@@ -17,10 +17,10 @@ const Footer = () => {
         sm:text-xs 
         md:py-6 md:px-0 md:flex-row">
 
-      <div className="md:text-left flex items-center">
-        <p className="m-0 leading-snug">
+      <div className="md:text-left flex items-center px-6">
+        <p className="m-0 leading-snug px-6">
           {t('footer.copyright')} {currentYear} <a href="https://andrecode.dev.br" className="text-primary no-underline pointer-events-auto hover:underline">
-          andrecode.dev.br</a><br />
+            andrecode.dev.br</a><br />
           {t('footer.rights')}
         </p>
       </div>
