@@ -22,11 +22,12 @@ export default function ProjectFilter({ activeType, onFilter }: ProjectFilterPro
           onClick={() => onFilter(type.key)}
           className={`px-4 py-2 rounded-md text-sm transition-all duration-300 cursor-pointer font-jet
             ${activeType === type.key
-              ? 'bg-[var(--button-active)] text-[var(--text-primary)]'
+              ? 'active-premium'
               : 'bg-[var(--button-bg)] text-[var(--text-primary)] hover:bg-[var(--button-active)]'}
           `}
         >
-          {type.label}
+          {activeType === type.key && <span className="active-premium-bg" />}
+          <span className="relative z-10">{type.label}</span>
         </button>
       ))}
     </div>

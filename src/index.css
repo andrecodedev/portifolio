@@ -175,17 +175,7 @@ a {
 
 
 
-.skills__filter button.active {
-  background-color: var(--button-active);
-}
-
-.education__filter button.active {
-  background-color: var(--button-active);
-}
-
-.experience__filter button.active {
-  background-color: var(--button-active);
-}
+/* Redundant active styles removed */
 
 
 
@@ -215,6 +205,88 @@ a {
   width: 1ch;
   animation: blink 1s step-end infinite;
 }
+
+/* Active Premium Style */
+
+@keyframes rotate-glow {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.active-premium {
+  position: relative !important;
+  /* Agora o fundo é o mesmo do botão, removendo a borda preta */
+  background: var(--button-active) !important;
+  color: var(--text-primary) !important;
+  overflow: hidden !important;
+  z-index: 1;
+  border: none !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px color-mix(in srgb, var(--text-primary) 5%, transparent) !important;
+}
+
+/* Duas Cobrinhas Opostas - Estilo Laser/Fibra Ótica */
+.active-premium::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* Aumentado para 1000% para cobrir botões muito largos sem cortar o bico */
+  width: 1000%;
+  height: 1000%;
+  aspect-ratio: 1;
+  background: conic-gradient(from 0deg,
+      /* Primeira Cobrinha */
+      transparent 0deg,
+      var(--text-primary) 10deg,
+      transparent 20deg,
+
+      /* Espaço entre elas */
+      transparent 180deg,
+
+      /* Segunda Cobrinha */
+      var(--text-primary) 190deg,
+      transparent 200deg,
+      transparent 360deg);
+  animation: rotate-glow 6s linear infinite;
+  z-index: 1;
+  /* Acima do fundo do botão */
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.active-premium::after {
+  display: none;
+}
+
+/* Camada interna para manter o corpo do botão sólido e cobrir o centro da cobrinha */
+.active-premium-bg {
+  position: absolute;
+  inset: 1px;
+  background: var(--button-active);
+  border-radius: inherit;
+  z-index: 2;
+  /* Acima da cobrinha, mas abaixo do texto */
+}
+
+.light-theme .active-premium {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-theme .active-premium-bg {
+  background: var(--button-active) !important;
+}
+
+
+
+
 
 
 

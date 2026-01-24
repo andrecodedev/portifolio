@@ -31,7 +31,7 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
       px-6 py-3 text-sm cursor-pointer select-none rounded-[5px]
       transition-all duration-300 ease-in-out
       ${isActive
-        ? 'bg-[var(--button-active)] text-[var(--text-active)]'
+        ? 'active-premium'
         : 'bg-[var(--button-bg)] text-[var(--text-primary)] hover:bg-[var(--button-hover)]'
       }
     `;
@@ -59,19 +59,24 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
 
       <nav className={`nav-group mobile-only ${open ? 'open' : ''}`}>
         <button onClick={() => { navigate('/about'); setOpen(false); }} className={getButtonClass('/about')}>
-          {t('nav.about')}
+          {location.pathname === '/about' && <span className="active-premium-bg" />}
+          <span className="relative z-10">{t('nav.about')}</span>
         </button>
         <button onClick={() => { navigate('/education'); setOpen(false); }} className={getButtonClass('/education')}>
-          {t('nav.education')}
+          {location.pathname === '/education' && <span className="active-premium-bg" />}
+          <span className="relative z-10">{t('nav.education')}</span>
         </button>
         <button onClick={() => { navigate('/skills'); setOpen(false); }} className={getButtonClass('/skills')}>
-          {t('nav.skills')}
+          {location.pathname === '/skills' && <span className="active-premium-bg" />}
+          <span className="relative z-10">{t('nav.skills')}</span>
         </button>
         <button onClick={() => { navigate('/project'); setOpen(false); }} className={getButtonClass('/project')}>
-          {t('nav.projects')}
+          {location.pathname === '/project' && <span className="active-premium-bg" />}
+          <span className="relative z-10">{t('nav.projects')}</span>
         </button>
         <button onClick={() => { navigate('/contact'); setOpen(false); }} className={getButtonClass('/contact')}>
-          {t('nav.contact')}
+          {location.pathname === '/contact' && <span className="active-premium-bg" />}
+          <span className="relative z-10">{t('nav.contact')}</span>
         </button>
         <ThemeToggle />
       </nav>
