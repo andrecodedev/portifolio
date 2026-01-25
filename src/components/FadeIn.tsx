@@ -9,7 +9,7 @@ type FadeInProps = {
 export default function FadeIn({ children, duration = 500 }: FadeInProps) {
   return (
     <div
-      className="fade-in"
+      className="fade-in w-full flex flex-col items-center"
       style={{ animationDuration: `${duration}ms` }}
     >
       {children}

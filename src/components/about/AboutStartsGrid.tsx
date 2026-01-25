@@ -33,7 +33,7 @@ export default function AboutStartsGrid() {
   ];
 
   return (
-    <section className="mb-8 lg:mb-12">
+    <section className="w-full mb-8 lg:mb-12">
       <div className="font-jet max-w-[1200px] mx-auto grid grid-cols-2 lg:grid-cols-5 gap-[1.5rem] text-center p-5 sm:px-6">
         {stats.map((stat, index) => (
           <div

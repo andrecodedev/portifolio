@@ -1,6 +1,5 @@
-// src/components/about/ExperienceFilter.tsx
-
 import { useTranslation } from "react-i18next";
+import FilterCarousel from "../ui/FilterCarousel";
 
 
 interface ExperienceFilterProps {
@@ -17,12 +16,12 @@ export default function ExperienceFilter({ onFilter, activeCategory }: Experienc
   ];
 
   return (
-    <div className="experience__filter-wrapper mt-16 flex flex-wrap justify-center gap-4">
+    <FilterCarousel className="mt-8">
       {categories.map((cat) => (
         <button
           key={cat.key}
           onClick={() => onFilter(cat.key)}
-          className={`px-6 py-2 rounded-lg font-jet cursor-pointer transition-all duration-300 ${activeCategory === cat.key
+          className={`px-3 py-1.5 rounded-lg font-jet text-sm cursor-pointer transition-all duration-300 whitespace-nowrap ${activeCategory === cat.key
             ? "bg-[var(--text-primary)] text-[var(--bg-primary)] shadow-[0_0_15px_rgba(255,255,255,0.3)]"
             : "bg-[var(--button-bg)] text-[var(--text-primary)] hover:bg-[var(--button-hover)]"
             }`}
@@ -30,6 +29,6 @@ export default function ExperienceFilter({ onFilter, activeCategory }: Experienc
           {cat.label}
         </button>
       ))}
-    </div>
+    </FilterCarousel>
   );
 }

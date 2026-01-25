@@ -16,7 +16,7 @@ function AboutHero() {
   const activeStyle = "bg-[var(--button-active)]";
 
   return (
-    <div className="flex flex-1 flex-col justify-center items-center text-center px-4 py-6 sm:px-8 lg:px-16">
+    <div className="w-full flex flex-1 flex-col justify-center items-center text-center px-4 py-6 sm:px-8 lg:px-16">
       <section className="w-full max-w-6xl flex flex-col-reverse lg:flex-row items-center justify-between gap-8 text-justify">
         {/* TEXTOS */}
         <div className="w-full lg:w-2/3 p-4">

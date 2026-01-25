@@ -18,7 +18,7 @@ function ExperienceSection() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="w-full max-w-6xl mx-auto">
       {/* Filtro */}
       <ExperienceFilter onFilter={handleFilter} activeCategory={activeCategory} />
 

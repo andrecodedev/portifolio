@@ -1,6 +1,5 @@
-// src/components/project/ProjectFilter.tsx
-
 import { useTranslation } from "react-i18next";
+import FilterCarousel from "../ui/FilterCarousel";
 
 
 type ProjectFilterProps = {
@@ -17,12 +16,12 @@ export default function ProjectFilter({ activeType, onFilter }: ProjectFilterPro
   ];
 
   return (
-    <div className="project__filter-wrapper flex flex-wrap justify-center gap-4 mb-8">
+    <FilterCarousel className="mb-6">
       {types.map((type) => (
         <button
           key={type.key}
           onClick={() => onFilter(type.key)}
-          className={`px-6 py-2 rounded-lg font-jet cursor-pointer transition-all duration-300 ${activeType === type.key
+          className={`px-3 py-1.5 rounded-lg font-jet text-sm cursor-pointer transition-all duration-300 whitespace-nowrap ${activeType === type.key
             ? "bg-[var(--text-primary)] text-[var(--bg-primary)] shadow-[0_0_15px_rgba(255,255,255,0.3)]"
             : "bg-[var(--button-bg)] text-[var(--text-primary)] hover:bg-[var(--button-hover)]"
             }`}
@@ -30,6 +29,6 @@ export default function ProjectFilter({ activeType, onFilter }: ProjectFilterPro
           {type.label}
         </button>
       ))}
-    </div>
+    </FilterCarousel>
   );
 }

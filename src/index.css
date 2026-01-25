@@ -133,6 +133,18 @@ body::before {
   border-radius: 4px;
 }
 
+/* No scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
 /* Listas */
 ul {
   list-style-type: none;

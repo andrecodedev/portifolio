@@ -50,7 +50,7 @@ const SkillsSlider = () => {
   }, []);
 
   return (
-    <section className="bg-transparent overflow-hidden select-none pointer-events-none">
+    <section className="w-full bg-transparent overflow-hidden select-none pointer-events-none">
       <div className="w-full overflow-hidden relative">
         <div
           ref={sliderRef}
