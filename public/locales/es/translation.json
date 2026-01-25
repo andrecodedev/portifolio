@@ -66,7 +66,9 @@
     "number3": "600+",
     "description3": "Commits Totales",
     "number4": "24+",
-    "description4": "Repositorios en GitHub"
+    "description4": "Repositorios en GitHub",
+    "number5": "1.2K+",
+    "description5": "Cafés Consumidos"
   },
   "button": {
     "project": "Ver Proyectos",
@@ -206,14 +208,6 @@
     "fim_30": "05/2025",
     "cargaHoraria_30": "8h",
     "modalidade_30": "Remoto",
-    "curso_29": "Cisco Networking Basics",
-    "tipo_29": "Competencias Técnicas en Tecnología",
-    "escola_29": "Cisco - Plataforma de Cursos Digitales",
-    "status_29": "Terminado",
-    "inicio_29": "03/2025",
-    "fim_29": "05/2025",
-    "cargaHoraria_29": "00h",
-    "modalidade_29": "Remoto",
     "curso_28": "Java: creando tu primera aplicación",
     "tipo_28": "Competencias Técnicas en Tecnología",
     "escola_28": "Alura - Plataforma de Cursos Digitales",
@@ -485,5 +479,25 @@
     "espanhol": "Español",
     "level_c1": "C1 (Fluido)",
     "level_b1": "B1 (Intermedio)"
+  },
+  "EducationStats": {
+    "totalHours": "Horas de Estudio",
+    "totalCourses": "Cursos y Formaciones",
+    "completedCourses": "Certificados Obtenidos",
+    "uniqueSchools": "Instituciones",
+    "ongoingCourses": "Cursos en Curso"
+  },
+  "SkillsStats": {
+    "totalSkills": "Total Habilidades",
+    "techSkills": "Tecnologías",
+    "toolsSkills": "Herramientas & IDEs",
+    "aiSkills": "IAs & Metodologías",
+    "languageSkills": "Idiomas"
+  },
+  "ProjectsStats": {
+    "totalProjects": "Total Proyectos",
+    "personalProjects": "Proyectos Personales",
+    "workProjects": "Proyectos de Trabajo",
+    "techUsed": "Tecnologías"
   }
 }

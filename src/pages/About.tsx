@@ -15,23 +15,14 @@ function Sobre() {
       <Header />
       <main>
         <FadeIn duration={1000}>
-        {/* Título superior */}
-        <Title title_1=" " />
-        <AboutHero />
-        <AboutStartsGrid
-          number1=""
-          description1=""
-          number2=""
-          description2=""
-          number3=""
-          description3=""
-          number4=""
-          description4=""
-        />
-        <AboutVideo videoId="v2vE1Ac-NxE" />
-        <SliderSkills />
-        {/* Experiências com título dinâmico dentro */}
-        <Experience />
+          {/* Título superior */}
+          <Title title_1=" " />
+          <AboutHero />
+          <AboutStartsGrid />
+          <AboutVideo videoId="v2vE1Ac-NxE" />
+          <SliderSkills />
+          {/* Experiências com título dinâmico dentro */}
+          <Experience />
         </FadeIn>
       </main>
       <footer>

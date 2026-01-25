@@ -1,4 +1,7 @@
+// src/components/about/ExperienceFilter.tsx
+
 import { useTranslation } from "react-i18next";
+
 
 interface ExperienceFilterProps {
   onFilter: (category: string) => void;
@@ -9,21 +12,22 @@ export default function ExperienceFilter({ onFilter, activeCategory }: Experienc
   const { t } = useTranslation();
 
   const categories = [
-    { key: "achievements", label: t("ExperienceFilter.achievements", "Conquistas Pessoais") },
+    { key: "achievements", label: t("ExperienceFilter.achievements", "Conquistas Profissionais") },
     { key: "professional", label: t("ExperienceFilter.professional", "Experiências Profissionais") },
   ];
 
   return (
-    <div className="experience__filter flex justify-center flex-wrap gap-3 mt-16 mb-6 select-none font-jet">
+    <div className="experience__filter-wrapper mt-16 flex flex-wrap justify-center gap-4">
       {categories.map((cat) => (
         <button
           key={cat.key}
           onClick={() => onFilter(cat.key)}
-          className={`px-6 py-3 cursor-pointer rounded-md text-sm transition-all duration-300 ${activeCategory === cat.key ? 'active-premium' : 'bg-[var(--button-bg)] hover:bg-[var(--button-active)]'
+          className={`px-6 py-2 rounded-lg font-jet cursor-pointer transition-all duration-300 ${activeCategory === cat.key
+            ? "bg-[var(--text-primary)] text-[var(--bg-primary)] shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+            : "bg-[var(--button-bg)] text-[var(--text-primary)] hover:bg-[var(--button-hover)]"
             }`}
         >
-          {activeCategory === cat.key && <span className="active-premium-bg" />}
-          <span className="relative z-10">{cat.label}</span>
+          {cat.label}
         </button>
       ))}
     </div>

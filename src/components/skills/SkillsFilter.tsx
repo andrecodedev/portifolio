@@ -1,4 +1,7 @@
+// src/components/skills/SkillsFilter.tsx
+
 import { useTranslation } from "react-i18next";
+
 
 interface SkillsFilterProps {
   onFilter: (category: string) => void;
@@ -6,32 +9,32 @@ interface SkillsFilterProps {
 }
 
 export default function SkillsFilter({ onFilter, activeCategory }: SkillsFilterProps) {
-  const { t, i18n } = useTranslation();
-  document.documentElement.lang = i18n.language;
+  const { t } = useTranslation();
 
   const categories = [
-    { key: "all", label: t("SkillsFilter.todas") },
-    { key: "idioma", label: t("SkillsFilter.idiomas") },
-    { key: "linguagens", label: t("SkillsFilter.linguagens") },
-    { key: "ferramentas", label: t("SkillsFilter.ferramentas") },
-    { key: "ias", label: t("SkillsFilter.ias") },
-    { key: "ides", label: t("SkillsFilter.ides") },
-    { key: "metodologias", label: t("SkillsFilter.metodologias") },
-    { key: "frameworks", label: t("SkillsFilter.frameworks") },
-    { key: "banco-dados", label: t("SkillsFilter.bancodados") },
+    { key: "all", label: t("SkillsFilter.todas", "Todas") },
+    { key: "idioma", label: t("SkillsFilter.idiomas", "Idiomas") },
+    { key: "linguagens", label: t("SkillsFilter.linguagens", "Tecnologias") },
+    { key: "ferramentas", label: t("SkillsFilter.ferramentas", "Ferramentas") },
+    { key: "ias", label: t("SkillsFilter.ias", "IAs") },
+    { key: "ides", label: t("SkillsFilter.ides", "IDEs") },
+    { key: "metodologias", label: t("SkillsFilter.metodologias", "Metodologias") },
+    { key: "frameworks", label: t("SkillsFilter.frameworks", "Frameworks") },
+    { key: "banco-dados", label: t("SkillsFilter.bancodados", "Banco de Dados") },
   ];
 
   return (
-    <div className="skills__filter flex justify-center flex-wrap gap-3 mb-10 select-none font-jet">
+    <div className="skills__filter-wrapper flex flex-wrap justify-center gap-4 mb-8">
       {categories.map((cat) => (
         <button
           key={cat.key}
           onClick={() => onFilter(cat.key)}
-          className={`px-4 py-2 cursor-pointer rounded-md text-sm transition-all duration-300 ${activeCategory === cat.key ? 'active-premium' : 'bg-[var(--button-bg)] hover:bg-[var(--button-active)]'
+          className={`px-4 py-2 rounded-lg font-jet cursor-pointer transition-all duration-300 ${activeCategory === cat.key
+            ? "bg-[var(--text-primary)] text-[var(--bg-primary)] shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+            : "bg-[var(--button-bg)] text-[var(--text-primary)] hover:bg-[var(--button-hover)]"
             }`}
         >
-          {activeCategory === cat.key && <span className="active-premium-bg" />}
-          <span className="relative z-10">{cat.label}</span>
+          {cat.label}
         </button>
       ))}
     </div>

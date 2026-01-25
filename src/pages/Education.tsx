@@ -12,6 +12,7 @@ import FadeIn from '../components/FadeIn';
 // Componentes da Seção de Educação
 import EducationFilter from '../components/education/EducationFilter';
 import EducationSection from '../components/education/EducationSection';
+import EducationStats from '../components/education/EducationStats';
 
 // CORREÇÃO 1: Importar o array `educationData` diretamente, não a função getEducationData.
 import { educationData } from '../data/educationData';
@@ -38,6 +39,9 @@ export default function Education() {
           {/* Título da página - Note que removi o texto de fallback,
               pois a chave deve existir no seu JSON. */}
           <Title title_3={t(" ")} />
+
+          {/* Componente de Estatísticas */}
+          <EducationStats educationData={educationData} />
 
           {/* Componente do Filtro (permanece igual) */}
           <EducationFilter

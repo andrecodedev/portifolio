@@ -4,7 +4,7 @@ import facens from '../img/formacoes/facens.svg';
 import etec from '../img/formacoes/etec.svg';
 import senai from '../img/formacoes/senai.svg';
 import interativa from '../img/formacoes/interativa.svg';
-import soulBilingue  from '../img/formacoes/soulBilingue.svg';
+import soulBilingue from '../img/formacoes/soulBilingue.svg';
 import ccbeu from '../img/formacoes/ccbeu.svg';
 import onebitcode from '../img/formacoes/onebitcode.svg';
 import alura from '../img/formacoes/alura.svg';
@@ -128,20 +128,6 @@ export const educationData: EducationData[] = [
     fim: 'Education.fim_30',
     cargaHoraria: 'Education.cargaHoraria_30',
     modalidade: 'Education.modalidade_30',
-    certificadoUrl: ""
-  },
-  {
-    id: 29,
-    categoria: 'alura',
-    icon: alura,
-    curso: 'Education.curso_29',
-    tipo: 'Education.tipo_29',
-    escola: 'Education.escola_29',
-    status: 'Education.status_29',
-    inicio: 'Education.inicio_29',
-    fim: 'Education.fim_29',
-    cargaHoraria: 'Education.cargaHoraria_29',
-    modalidade: 'Education.modalidade_29',
     certificadoUrl: ""
   },
   {

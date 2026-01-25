@@ -1,6 +1,7 @@
-// src/components/Education/EducationFilter.tsx
+// src/components/education/EducationFilter.tsx
 
 import { useTranslation } from "react-i18next";
+
 
 interface EducationFilterProps {
   onFilter: (category: string) => void;
@@ -10,7 +11,6 @@ interface EducationFilterProps {
 export default function EducationFilter({ onFilter, activeCategory }: EducationFilterProps) {
   const { t } = useTranslation();
 
-  // Defina as categorias para o filtro de educação
   const categories = [
     { key: "all", label: t("EducationFilter.all", "Todas") },
     { key: "superior", label: t("EducationFilter.superior", "Superior") },
@@ -23,17 +23,17 @@ export default function EducationFilter({ onFilter, activeCategory }: EducationF
   ];
 
   return (
-    <div className="education__filter flex justify-center flex-wrap gap-3 mb-10 select-none font-jet">
+    <div className="education__filter-wrapper flex flex-wrap justify-center gap-4 mb-8">
       {categories.map((cat) => (
         <button
           key={cat.key}
           onClick={() => onFilter(cat.key)}
-          // Aplica uma classe 'active' se a categoria do botão for a mesma que a categoria ativa
-          className={`px-4 py-2 cursor-pointer rounded-md text-sm transition-all duration-300 ${activeCategory === cat.key ? 'active-premium' : 'bg-[var(--button-bg)] hover:bg-[var(--button-active)]'
+          className={`px-4 py-2 rounded-lg font-jet cursor-pointer transition-all duration-300 ${activeCategory === cat.key
+            ? "bg-[var(--text-primary)] text-[var(--bg-primary)] shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+            : "bg-[var(--button-bg)] text-[var(--text-primary)] hover:bg-[var(--button-hover)]"
             }`}
         >
-          {activeCategory === cat.key && <span className="active-premium-bg" />}
-          <span className="relative z-10">{cat.label}</span>
+          {cat.label}
         </button>
       ))}
     </div>
