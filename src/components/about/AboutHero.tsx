@@ -8,7 +8,7 @@ function AboutHero() {
   const { t, i18n } = useTranslation();
   const [activeBtn, setActiveBtn] = useState<string | null>(null);
 
-  // Atualiza o idioma do documento HTML
+  // Atualiza o idioma do documento HTML  
   document.documentElement.lang = i18n.language;
 
   const buttonBase = "text-sm px-6 py-2 rounded-md transition-all duration-300 select-none"; // mantém text-sm nos botões

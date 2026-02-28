@@ -12,6 +12,9 @@ import sealWorld from '../img/projetos/sealWorld.svg';
 import meuPortfolio from '../img/projetos/meuPortfolio.svg';
 import mobiSeg from '../img/projetos/mobiSeg.svg';
 import petLife from '../img/projetos/petLife.svg';
+import padua from '../img/projetos/Padua.svg';
+import couroECia from '../img/projetos/CouroECia.svg';
+import cabaretDeMarie from '../img/projetos/CabaretDeMarie.svg';
 
 // Importar ícones de skills
 import htmlIcon from '../img/skills/html.svg';
@@ -169,6 +172,30 @@ export const projectsData: ProjectData[] = [
     title: "Sports&Tennis",
     imageUrl: sportsTennis,
     description: 't:projects.work.sportsTennis',
+    skills: [htmlIcon, cssIcon, sassIcon, javascriptIcon, twig, bootstrapIcon, nuvemshopIcon, gitIcon, FileZillaIcon, vscodeIcon, figmaIcon, clickupIcon, scrumIcon],
+    type: 'work',
+  },
+  {
+    id: 109,
+    title: "Paduá",
+    imageUrl: padua,
+    description: 't:projects.work.padua',
+    skills: [htmlIcon, cssIcon, sassIcon, javascriptIcon, twig, bootstrapIcon, nuvemshopIcon, gitIcon, FileZillaIcon, vscodeIcon, figmaIcon, clickupIcon, scrumIcon],
+    type: 'work',
+  },
+  {
+    id: 110,
+    title: "Couro e Cia",
+    imageUrl: couroECia,
+    description: 't:projects.work.couroECia',
+    skills: [htmlIcon, cssIcon, sassIcon, javascriptIcon, twig, bootstrapIcon, nuvemshopIcon, gitIcon, FileZillaIcon, vscodeIcon, figmaIcon, clickupIcon, scrumIcon],
+    type: 'work',
+  },
+  {
+    id: 111,
+    title: "Cabaré de Maria",
+    imageUrl: cabaretDeMarie,
+    description: 't:projects.work.cabaretDeMarie',
     skills: [htmlIcon, cssIcon, sassIcon, javascriptIcon, twig, bootstrapIcon, nuvemshopIcon, gitIcon, FileZillaIcon, vscodeIcon, figmaIcon, clickupIcon, scrumIcon],
     type: 'work',
   },
