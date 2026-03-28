@@ -16,6 +16,7 @@ import padua from '../img/projetos/Padua.svg';
 import couroECia from '../img/projetos/CouroECia.svg';
 import cabaretDeMarie from '../img/projetos/CabaretDeMarie.svg';
 import zetona from '../img/projetos/zetona.svg';
+import portfolioAndrecodedev from '../img/projetos/portfolioAndrecodedev.svg';
 
 // Importar ícones de skills
 import htmlIcon from '../img/skills/html.svg';
@@ -40,6 +41,12 @@ import pageSpeedIcon from '../img/skills/PageSpeed.svg';
 import linuxIcon from '../img/skills/linux.svg';
 import geminiIcon from '../img/skills/gemini.svg';
 import AIStudioGoogleIcon from '../img/skills/AIStudioGoogle.svg';
+import reactIcon from '../img/skills/react.svg';
+import typescriptIcon from '../img/skills/typescript.svg';
+import tailwindIcon from '../img/skills/tailwind.svg';
+import viteIcon from '../img/skills/vite.svg';
+import nodejsIcon from '../img/skills/nodejs.svg';
+import obsidianIcon from '../img/skills/obsidian.svg';
 
 export interface ProjectData {
   id: number;
@@ -107,7 +114,7 @@ export const projectsData: ProjectData[] = [
   },
   {
     id: 4,
-    title: "Primeiro Portfólio AndreCode",
+    title: "Primeiro Portifólio AndreCode",
     imageUrl: meuPortfolio,
     description: 't:projects.personal.primeiroPortfolio',
     skills: [htmlIcon, cssIcon, javascriptIcon, gitIcon, vscodeIcon, figmaIcon, trelloIcon, canvaIcon],
@@ -131,6 +138,40 @@ export const projectsData: ProjectData[] = [
     skills: [htmlIcon, cssIcon, javascriptIcon, gitIcon, vscodeIcon, figmaIcon, trelloIcon, canvaIcon],
     type: 'personal',
     label: 't:projects.labels.siteWeb'
+  },
+  {
+    id: 7,
+    title: "Portifólio AndreCodeDev",
+    imageUrl: portfolioAndrecodedev,
+    description: 't:projects.personal.portfolioAndrecodedev',
+    skills: [
+      reactIcon,
+      typescriptIcon,
+      tailwindIcon,
+      viteIcon,
+      nodejsIcon,
+      htmlIcon,
+      cssIcon,
+      javascriptIcon,
+      sassIcon,
+      gitIcon,
+      vscodeIcon,
+      antigravityIcon,
+      linuxIcon,
+      figmaIcon,
+      trelloIcon,
+      canvaIcon,
+      scrumIcon,
+      geminiIcon,
+      deepSeekIcon,
+      perplexityIcon,
+      AIStudioGoogleIcon,
+      pageSpeedIcon,
+      obsidianIcon
+    ],
+    siteUrl: "https://andrecode.dev.br/",
+    type: 'personal',
+    label: 't:projects.labels.portfolio'
   },
   {
     id: 101,

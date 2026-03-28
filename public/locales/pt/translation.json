@@ -18,11 +18,13 @@
       "sealWorld": "Projeto desenvolvido durante estudos na OneBitCode, com foco na criação de uma aplicação web, explorando estrutura, estilização e organização de uma interface funcional.",
       "alessiosPizzaria": "Projeto desenvolvido na OneBitCode, voltado para a criação de um site de pizzaria, com foco em layout, organização do conteúdo e apresentação de produtos.",
       "jogoAmigoSecreto": "Projeto desenvolvido durante estudos na Alura, consistindo em um jogo simples de amigo secreto, com foco em lógica, interação com o usuário e manipulação de dados.",
-      "primeiroPortfolio": "Minha primeira versão de portfólio pessoal, desenvolvida como início da minha jornada na programação, representando uma das várias tentativas e evoluções até versões mais maduras dos meus portfólios.",
+      "primeiroPortfolio": "Minha primeira versão de portifólio pessoal, desenvolvida como início da minha jornada na programação, representando uma das várias tentativas e evoluções até versões mais maduras dos meus portifólios.",
       "mobiSeg": "Projeto acadêmico desenvolvido com foco na criação de uma solução digital, aplicando conceitos estudados durante a formação e consolidando conhecimentos práticos.",
-      "petLife": "Projeto desenvolvido na OneBitCode com foco na criação de um site institucional, explorando estrutura de páginas, organização visual e apresentação de serviços."
+      "petLife": "Projeto desenvolvido na OneBitCode com foco na criação de um site institucional, explorando estrutura de páginas, organização visual e apresentação de serviços.",
+      "portfolioAndrecodedev": "Este próprio portifólio que você está navegando! Desenvolvido com foco em alta performance, UI/UX moderna e tecnologia de ponta, utilizando as melhores práticas de desenvolvimento."
     },
     "labels": {
+      "portfolio": "Portifólio",
       "ecommerce": "E-commerce",
       "siteWeb": "Site Web",
       "webapp": "Web App",

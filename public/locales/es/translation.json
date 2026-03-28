@@ -20,9 +20,11 @@
       "jogoAmigoSecreto": "Proyecto desarrollado durante estudios en Alura, consistente en un juego simple de amigo secreto, con enfoque en lógica, interacción con el usuario y manipulación de datos.",
       "primeiroPortfolio": "Mi primera versión de portafolio personal, desarrollada como el inicio de mi camino en la programación, representando uno de varios intentos y evoluciones hacia versiones más maduras de mis portafolios.",
       "mobiSeg": "Proyecto académico desarrollado con enfoque en la creación de una solución digital, aplicando conceptos estudiados durante la formación y consolidando conocimientos prácticos.",
-      "petLife": "Proyecto desarrollado en OneBitCode con enfoque en la creación de un sitio institucional, explorando la estructura de páginas, organización visual y presentación de servicios."
+      "petLife": "Proyecto desarrollado en OneBitCode con enfoque en la creación de un sitio institucional, explorando la estructura de páginas, organización visual y presentación de servicios.",
+      "portfolioAndrecodedev": "¡Este mismo portafolio que estás navegando! Desarrollado con un enfoque en alto rendimiento, UI/UX moderna y tecnología de vanguardia, utilizando las mejores prácticas de desarrollo."
     },
     "labels": {
+      "portfolio": "Portafolio",
       "ecommerce": "E-commerce",
       "siteWeb": "Sitio Web",
       "webapp": "Web App",

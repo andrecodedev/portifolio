@@ -20,9 +20,11 @@
       "jogoAmigoSecreto": "Project developed during studies at Alura, consisting of a simple Secret Santa game, focusing on logic, user interaction, and data handling.",
       "primeiroPortfolio": "My first version of a personal portfolio, developed as the beginning of my programming journey, representing one of several attempts and evolutions toward more mature versions of my portfolios.",
       "mobiSeg": "Academic project focused on creating a digital solution, applying concepts studied during my education and consolidating practical knowledge.",
-      "petLife": "Project developed at OneBitCode focused on creating an institutional website, exploring page structure, visual organization, and service presentation."
+      "petLife": "Project developed at OneBitCode focused on creating an institutional website, exploring page structure, visual organization, and service presentation.",
+      "portfolioAndrecodedev": "This very portfolio you are browsing! Developed with a focus on high performance, modern UI/UX, and cutting-edge technology, using the best development practices."
     },
     "labels": {
+      "portfolio": "Portfolio",
       "ecommerce": "E-commerce",
       "siteWeb": "Web Site",
       "webapp": "Web App",
