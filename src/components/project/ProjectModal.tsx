@@ -12,9 +12,10 @@ interface ProjectModalProps {
   skills?: string[];
   repoUrl?: string;
   siteUrl?: string;
+  label?: string;
 }
 
-export default function ProjectModal({ isOpen, onClose, title, imageUrl, description, skills, repoUrl, siteUrl }: ProjectModalProps) {
+export default function ProjectModal({ isOpen, onClose, title, imageUrl, description, skills, repoUrl, siteUrl, label }: ProjectModalProps) {
   const { t } = useTranslation();
   useEffect(() => {
     if (isOpen) document.body.style.overflow = "hidden";
@@ -42,8 +43,15 @@ export default function ProjectModal({ isOpen, onClose, title, imageUrl, descrip
 
         {/* Informações do projeto */}
         <div className="flex-1 flex flex-col min-h-[300px]">
-          <h2 className="text-[var(--text-primary)] text-3xl font-bold mb-4">{title}</h2>
-          <p className="text-[var(--text-primary)] text-sm mb-4">{description}</p>
+          <h2 className="text-[var(--text-primary)] text-3xl font-bold mb-2">{title}</h2>
+          {label && (
+            <span className="inline-block self-start px-2 py-1 text-[10px] font-medium rounded-md border border-[var(--text-primary)]/20 bg-[var(--text-primary)]/5 text-[var(--text-primary)]/80 mb-4 uppercase tracking-widest">
+              {label.startsWith('t:') ? t(label.replace('t:', '')) : label}
+            </span>
+          )}
+          <p className="text-[var(--text-primary)] text-sm mb-4">
+            {description?.startsWith('t:') ? t(description.replace('t:', '')) : description}
+          </p>
 
           {/* Skills */}
           {skills && skills.length > 0 && (

@@ -109,8 +109,29 @@ body::before {
 
   100% {
     background-position: 24px 24px;
-    /* move diagonalmente */
   }
+}
+
+@keyframes loading-bar {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-loading-bar {
+  animation: loading-bar 1.5s ease-in-out infinite;
+}
+
+.loading-grid-overlay {
+  background:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 24px 24px;
+  animation: moveGrid 10s linear infinite;
 }
 
 /* Seleção de texto */
@@ -119,18 +140,28 @@ body::before {
   color: var(--text-primary);
 }
 
-/* Scrollbar */
+/* Scrollbar Premium Minimalist */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: var(--scrollbar-track);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-thumb);
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 /* No scrollbar utility */
@@ -569,7 +600,9 @@ a {
 
 .language-switcher img {
   width: 30px;
-  height: auto;
+  height: 30px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
   user-select: none;
 }
 

@@ -18,7 +18,7 @@ export default function SkillsStats({ skillsData }: SkillsStatsProps) {
 
     // Ferramentas & IDEs
     const toolsSkills = skillsData.filter(s =>
-        s.category === 'ferramentas' || s.category === 'ides'
+        s.category === 'ferramentas' || s.category === 'ides' || s.category === 'sistemas'
     ).length;
 
     // IAs & Metodologias

@@ -11,7 +11,8 @@
       "sportsTennis": "Desenvolvi o e-commerce da Sports&Tennis na plataforma Nuvemshop, realizando a criação e configuração da loja virtual para a marca.",
       "padua": "Atuei na customização avançada e ajustes gerais do e-commerce da Paduá na plataforma Nuvemshop, realizando modificações complexas no template para atender às necessidades específicas da marca.",
       "couroECia": "Desenvolvi o e-commerce da Couro e Cia de forma completa e complexa na plataforma Nuvemshop, sendo responsável por toda a estruturação e implementação da loja virtual.",
-      "cabaretDeMarie": "Realizei ajustes e refinamentos pontuais no template do e-commerce Cabaré de Maria, focando na melhoria da interface e experiência da loja na plataforma Nuvemshop."
+      "cabaretDeMarie": "Realizei ajustes e refinamentos pontuais no template do e-commerce Cabaré de Maria, focando na melhoria da interface e experiência da loja na plataforma Nuvemshop.",
+      "zetona": "Atuei no desenvolvimento do e-commerce da Zétona, contribuindo para a construção e aprimoramento da loja virtual na plataforma Nuvemshop."
     },
     "personal": {
       "sealWorld": "Projeto desenvolvido durante estudos na OneBitCode, com foco na criação de uma aplicação web, explorando estrutura, estilização e organização de uma interface funcional.",
@@ -20,6 +21,13 @@
       "primeiroPortfolio": "Minha primeira versão de portfólio pessoal, desenvolvida como início da minha jornada na programação, representando uma das várias tentativas e evoluções até versões mais maduras dos meus portfólios.",
       "mobiSeg": "Projeto acadêmico desenvolvido com foco na criação de uma solução digital, aplicando conceitos estudados durante a formação e consolidando conhecimentos práticos.",
       "petLife": "Projeto desenvolvido na OneBitCode com foco na criação de um site institucional, explorando estrutura de páginas, organização visual e apresentação de serviços."
+    },
+    "labels": {
+      "ecommerce": "E-commerce",
+      "siteWeb": "Site Web",
+      "webapp": "Web App",
+      "templateWeb": "Template Web",
+      "academico": "Projeto Acadêmico"
     }
   },
   "ProjectFilter": {
@@ -445,7 +453,8 @@
     "ides": "IDEs",
     "metodologias": "Metodologias",
     "frameworks": "Frameworks",
-    "bancodados": "Banco de Dados"
+    "bancodados": "Banco de Dados",
+    "sistemas": "Sistemas"
   },
   "EducationFilter": {
     "all": "Todas",

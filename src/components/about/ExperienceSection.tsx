@@ -33,9 +33,12 @@ function ExperienceSection() {
         // Experiências Profissionais
         <>
           <Title title_2=" " />
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto px-4 md:px-0">
             {experienceData(t).map((item) => (
-              <ExperienceItem key={item.id} data={item} />
+              <ExperienceItem
+                key={item.id}
+                data={item}
+              />
             ))}
           </div>
         </>

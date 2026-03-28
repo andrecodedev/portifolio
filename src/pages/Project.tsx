@@ -42,6 +42,7 @@ function Projetos() {
                 skills={proj.skills}
                 repoUrl={proj.repoUrl}
                 siteUrl={proj.siteUrl}
+                label={proj.label}
               />
             ))}
           </div>

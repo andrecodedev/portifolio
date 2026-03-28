@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import Toast from "./Toast";
 import ReCAPTCHA from "react-google-recaptcha";
 
 import { useTranslation } from "react-i18next";
@@ -37,6 +36,16 @@ export default function ContactForm() {
 
     return () => observer.disconnect();
   }, []);
+
+  // Efeito para sumir a mensagem de feedback após 5 segundos
+  useEffect(() => {
+    if (toast.show) {
+      const timer = setTimeout(() => {
+        setToast((prev) => ({ ...prev, show: false }));
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [toast.show]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -85,31 +94,31 @@ export default function ContactForm() {
         {t('Contact.titulo_2')}
       </h3>
 
-      <form onSubmit={handleSubmit} className="w-full flex flex-col gap-3 text-[var(--text-primary)] text-sm">
+      <form onSubmit={handleSubmit} className="w-full flex flex-col gap-3 text-[var(--text-primary)] text-sm relative">
         <input
           type="text"
           name="name"
           placeholder={t('Contact.name')}
           required
-          className="p-2 rounded bg-[var(--button-bg)] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-primary select-none text-sm"
+          className="p-3 rounded bg-[var(--button-bg)] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-primary select-none text-sm transition-all"
         />
         <input
           type="email"
           name="email"
           placeholder={t('Contact.email_2')}
           required
-          className="p-2 rounded bg-[var(--button-bg)] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-primary select-none text-sm"
+          className="p-3 rounded bg-[var(--button-bg)] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-primary select-none text-sm transition-all"
         />
         <textarea
           name="message"
           placeholder={t('Contact.mensagem')}
           required
           rows={4}
-          className="p-2 rounded bg-[var(--button-bg)] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-primary select-none text-sm"
+          className="p-3 rounded bg-[var(--button-bg)] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-primary select-none text-sm transition-all"
         ></textarea>
 
         {/* Google reCAPTCHA */}
-        <div className="flex justify-center w-full my-2">
+        <div className="flex justify-center w-full my-1">
           <ReCAPTCHA
             key={isDarkMode ? 'dark' : 'light'}
             ref={recaptchaRef}
@@ -123,12 +132,12 @@ export default function ContactForm() {
           type="submit"
           disabled={loading}
           className={`${loading ? "bg-[var(--button-bg)] cursor-not-allowed" : "bg-[var(--button-bg)] hover:bg-[var(--button-hover)]"
-            } transition cursor-pointer text-[var(--text-primary)] p-2 rounded font-semibold flex items-center justify-center select-none text-sm`}
+            } transition cursor-pointer text-[var(--text-primary)] p-3 rounded font-semibold flex items-center justify-center select-none text-sm w-full mt-1 active:scale-95`}
         >
           {loading ? (
             <>
               <svg
-                className="animate-spin h-5 w-5 mr-2 text-white"
+                className="animate-spin h-5 w-5 mr-3 text-white"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -153,13 +162,20 @@ export default function ContactForm() {
             t('Contact.enviar')
           )}
         </button>
-      </form>
 
-      <Toast
-        message={toast.message}
-        show={toast.show}
-        onClose={() => setToast({ ...toast, show: false })}
-      />
+        {/* Mensagem de Feedback Flutuante (Absolute para não quebrar o layout) */}
+        <div
+          className={`absolute -bottom-16 left-0 right-0 p-3 rounded-md text-center text-sm font-medium transition-all duration-500 pointer-events-none ${toast.show
+            ? "opacity-100 translate-y-0 scale-100"
+            : "opacity-0 -translate-y-2 scale-95"
+            } ${toast.message === t('Contact.message_1')
+              ? "bg-green-500/20 text-green-400 border border-green-500/30"
+              : "bg-red-500/20 text-red-400 border border-red-500/30"
+            }`}
+        >
+          {toast.message}
+        </div>
+      </form>
     </div>
   );
 }

@@ -42,6 +42,18 @@ import antigravityIcon from '../img/skills/antigravity.svg';
 import fileZillaIcon from '../img/skills/FileZilla.svg';
 import twigIcon from '../img/skills/Twig.svg';
 import nuvemshopIcon from '../img/skills/nuvemshop.svg';
+import deepSeekIcon from '../img/skills/DeepSeek.svg';
+import perplexityIcon from '../img/skills/Perplexity.svg';
+import vimeoIcon from '../img/skills/video.svg';
+import loomIcon from '../img/skills/loom.svg';
+import pageSpeedIcon from '../img/skills/PageSpeed.svg';
+import obsidianIcon from '../img/skills/obsidian.svg';
+import linuxIcon from '../img/skills/linux.svg';
+import windowsIcon from '../img/skills/Windows.svg';
+import nuvemshopPartnersIcon from '../img/skills/nuvemshop apps parceiros.svg';
+import viteIcon from '../img/skills/vite.svg';
+import supabaseIcon from '../img/skills/supabase.svg';
+import renderIcon from '../img/skills/Render.svg';
 
 export interface Skill {
   name: string;
@@ -72,7 +84,7 @@ export const skillsData: Skill[] = [
 
   // Ferramentas
   { name: 'Git', icon: gitIcon, category: 'ferramentas' },
-  { name: 'GitHub Copilot', icon: gitHubCopilotIcon, category: 'ias' },
+  { name: 'Vite', icon: viteIcon, category: 'ferramentas' },
   { name: 'Figma', icon: figmaIcon, category: 'ferramentas' },
   { name: 'Postman', icon: postmanIcon, category: 'ferramentas' },
   { name: 'Trello', icon: trelloIcon, category: 'ferramentas' },
@@ -81,10 +93,15 @@ export const skillsData: Skill[] = [
   { name: 'Canva', icon: canvaIcon, category: 'ferramentas' },
   { name: 'GIMP', icon: gimpIcon, category: 'ferramentas' },
   { name: 'Arduino', icon: arduinoIcon, category: 'ferramentas' },
-  { name: 'AI Studio Google', icon: AIStudioGoogleIcon, category: 'ias' },
   { name: 'FileZilla', icon: fileZillaIcon, category: 'ferramentas' },
   { name: 'ClickUp', icon: clickupIcon, category: 'ferramentas' },
   { name: 'Nuvemshop', icon: nuvemshopIcon, category: 'ferramentas' },
+  { name: 'Nuvemshop Partners', icon: nuvemshopPartnersIcon, category: 'ferramentas' },
+  { name: 'Vimeo', icon: vimeoIcon, category: 'ferramentas' },
+  { name: 'Loom', icon: loomIcon, category: 'ferramentas' },
+  { name: 'PageSpeed', icon: pageSpeedIcon, category: 'ferramentas' },
+  { name: 'Obsidian', icon: obsidianIcon, category: 'ferramentas' },
+  { name: 'Render', icon: renderIcon, category: 'ferramentas' },
 
   // IDEs
   { name: 'VSCode', icon: vscodeIcon, category: 'ides' },
@@ -101,6 +118,11 @@ export const skillsData: Skill[] = [
   // Banco de Dados
   { name: 'MySQL', icon: mysqlIcon, category: 'banco-dados' },
   { name: 'SQL Server', icon: sqlServerIcon, category: 'banco-dados' },
+  { name: 'Supabase', icon: supabaseIcon, category: 'banco-dados' },
+
+  // Sistemas Operacionais
+  { name: 'Linux', icon: linuxIcon, category: 'sistemas' },
+  { name: 'Windows', icon: windowsIcon, category: 'sistemas' },
 
   // Idiomas
   { name: 'Skills.portugues', level: 'Skills.level_c1', icon: portuguesIcon, category: 'idioma' },
@@ -110,6 +132,10 @@ export const skillsData: Skill[] = [
   // IAs
   { name: 'ChatGPT', icon: chatgptIcon, category: 'ias' },
   { name: 'Gemini', icon: geminiIcon, category: 'ias' },
+  { name: 'DeepSeek', icon: deepSeekIcon, category: 'ias' },
+  { name: 'Perplexity', icon: perplexityIcon, category: 'ias' },
+  { name: 'AI Studio Google', icon: AIStudioGoogleIcon, category: 'ias' },
+  { name: 'GitHub Copilot', icon: gitHubCopilotIcon, category: 'ias' },
 ];
 
 export const allSkills = skillsData;

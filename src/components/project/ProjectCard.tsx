@@ -10,9 +10,10 @@ interface ProjectCardProps {
   skills?: string[];
   repoUrl?: string;
   siteUrl?: string;
+  label?: string;
 }
 
-export default function ProjectCard({ title, imageUrl, description, skills, repoUrl, siteUrl }: ProjectCardProps) {
+export default function ProjectCard({ title, imageUrl, description, skills, repoUrl, siteUrl, label }: ProjectCardProps) {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
@@ -34,14 +35,6 @@ export default function ProjectCard({ title, imageUrl, description, skills, repo
     };
   }, []);
 
-  // Se a descrição começa com 't:' usa a chave de tradução
-  const getDescription = () => {
-    if (typeof description === 'string' && description.startsWith('t:')) {
-      const key = description.replace('t:', '');
-      return t(key);
-    }
-    return description;
-  };
 
   return (
     <>
@@ -64,18 +57,29 @@ export default function ProjectCard({ title, imageUrl, description, skills, repo
 
         {/* Overlay */}
         <div
-          className={`absolute inset-0 bg-black/70 flex flex-col justify-center items-center p-4 transition-opacity duration-300 ${showOverlay ? "opacity-100" : "opacity-0"
+          className={`absolute inset-0 bg-black/80 flex flex-col justify-center items-center p-4 transition-opacity duration-300 ${showOverlay ? "opacity-100" : "opacity-0"
             }`}
         >
-          <h3 className="text-lg font-bold p-2 text-white">{title}</h3>
+          {label && (
+            <>
+              <span className="absolute top-3 left-3 px-2 py-0.5 text-[9px] font-bold rounded-md border border-white/20 bg-white/10 text-white/90 uppercase tracking-widest backdrop-blur-md z-10">
+                {label.startsWith('t:') ? t(label.replace('t:', '')) : label}
+              </span>
+              {/* Espaçador para empurrar o conteúdo para baixo apenas o suficiente para não bater na tag */}
+              <div className="h-6 w-full" />
+            </>
+          )}
+          <h3 className="text-base font-bold text-white mb-2 max-w-[90%] truncate text-center" title={title}>
+            {title}
+          </h3>
 
           {skills && skills.length > 0 && (
-            <h4 className="text-white text-[10px] tracking-widest opacity-80 mb-1 font-semibold">
+            <h4 className="text-white text-[10px] tracking-widest opacity-70 mb-2 font-semibold uppercase">
               {t('ProjectModal.tech_title')}
             </h4>
           )}
-          <div className="flex flex-wrap justify-center gap-2 p-2 select-none max-w-[calc(8*2rem+7*0.5rem)]">
-            {skills?.map((skill, idx) => {
+          <div className="flex flex-wrap justify-center gap-2 p-2 select-none max-w-full">
+            {skills?.slice(0, 8).map((skill, idx) => {
               const name = getSkillName(skill);
               return (
                 <div key={idx} className="tooltip-container group">
@@ -84,6 +88,11 @@ export default function ProjectCard({ title, imageUrl, description, skills, repo
                 </div>
               );
             })}
+            {skills && skills.length > 8 && (
+              <div className="w-6 h-6 flex items-center justify-center bg-white/10 rounded-full text-[10px] text-white font-bold border border-white/20 backdrop-blur-sm">
+                +{skills.length - 8}
+              </div>
+            )}
           </div>
 
           <button
@@ -103,10 +112,11 @@ export default function ProjectCard({ title, imageUrl, description, skills, repo
         onClose={() => setOpen(false)}
         title={title}
         imageUrl={imageUrl}
-        description={getDescription()}
+        description={description}
         skills={skills}
         repoUrl={repoUrl}
         siteUrl={siteUrl}
+        label={label}
       />
     </>
   );

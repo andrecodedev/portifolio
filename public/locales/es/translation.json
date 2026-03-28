@@ -11,7 +11,8 @@
       "sportsTennis": "Desarrollé el e-commerce de Sports&Tennis en la plataforma Nuvemshop, realizando la creación y configuración de la tienda online para la marca.",
       "padua": "Trabajé en la personalización avanzada y ajustes generales del e-commerce de Paduá en la plataforma Nuvemshop, realizando modificaciones complejas en la plantilla para satisfacer las necesidades específicas de la marca.",
       "couroECia": "Desarrollé el e-commerce de Couro e Cia de forma completa y compleja en la plataforma Nuvemshop, siendo responsable de toda la estructuración e implementación de la tienda online.",
-      "cabaretDeMarie": "Realicé ajustes y refinamientos puntuales en la plantilla del e-commerce Cabaré de Maria, enfocándome en mejorar la interfaz y la experiencia de la tienda en la plataforma Nuvemshop."
+      "cabaretDeMarie": "Realicé ajustes y refinamientos puntuales en la plantilla del e-commerce Cabaré de Maria, enfocándome en mejorar la interfaz y la experiencia de la tienda en la plataforma Nuvemshop.",
+      "zetona": "Participé en el desarrollo del e-commerce de Zétona, contribuyendo a la construcción y mejora de la tienda virtual en la plataforma Nuvemshop."
     },
     "personal": {
       "sealWorld": "Proyecto desarrollado durante estudios en OneBitCode, enfocado en la creación de una aplicación web, explorando estructura, estilo y organización de una interfaz funcional.",
@@ -20,6 +21,13 @@
       "primeiroPortfolio": "Mi primera versión de portafolio personal, desarrollada como el inicio de mi camino en la programación, representando uno de varios intentos y evoluciones hacia versiones más maduras de mis portafolios.",
       "mobiSeg": "Proyecto académico desarrollado con enfoque en la creación de una solución digital, aplicando conceptos estudiados durante la formación y consolidando conocimientos prácticos.",
       "petLife": "Proyecto desarrollado en OneBitCode con enfoque en la creación de un sitio institucional, explorando la estructura de páginas, organización visual y presentación de servicios."
+    },
+    "labels": {
+      "ecommerce": "E-commerce",
+      "siteWeb": "Sitio Web",
+      "webapp": "Web App",
+      "templateWeb": "Template Web",
+      "academico": "Proyecto Académico"
     }
   },
   "ProjectFilter": {
@@ -445,7 +453,8 @@
     "ides": "IDEs",
     "metodologias": "Metodologías",
     "frameworks": "Frameworks",
-    "bancodados": "Base de Datos"
+    "bancodados": "Base de Datos",
+    "sistemas": "Sistemas"
   },
   "EducationFilter": {
     "all": "Todas",

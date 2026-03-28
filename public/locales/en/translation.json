@@ -11,7 +11,8 @@
       "sportsTennis": "I developed the Sports&Tennis e-commerce on the Nuvemshop platform, creating and configuring the online store for the brand.",
       "padua": "I worked on advanced customization and general adjustments for the Paduá e-commerce on the Nuvemshop platform, performing complex template modifications to meet specific brand needs.",
       "couroECia": "I developed the Couro e Cia e-commerce in a complete and complex way on the Nuvemshop platform, being responsible for the entire structuring and implementation of the online store.",
-      "cabaretDeMarie": "I made specific adjustments and refinements to the Cabaré de Maria e-commerce template, focusing on improving the store's interface and experience on the Nuvemshop platform."
+      "cabaretDeMarie": "I made specific adjustments and refinements to the Cabaré de Maria e-commerce template, focusing on improving the store's interface and experience on the Nuvemshop platform.",
+      "zetona": "I participated in the development of the Zétona e-commerce, contributing to the construction and improvement of the online store on the Nuvemshop platform."
     },
     "personal": {
       "sealWorld": "Project developed during studies at OneBitCode, focused on creating a web application, exploring structure, styling, and organizing a functional interface.",
@@ -20,6 +21,13 @@
       "primeiroPortfolio": "My first version of a personal portfolio, developed as the beginning of my programming journey, representing one of several attempts and evolutions toward more mature versions of my portfolios.",
       "mobiSeg": "Academic project focused on creating a digital solution, applying concepts studied during my education and consolidating practical knowledge.",
       "petLife": "Project developed at OneBitCode focused on creating an institutional website, exploring page structure, visual organization, and service presentation."
+    },
+    "labels": {
+      "ecommerce": "E-commerce",
+      "siteWeb": "Web Site",
+      "webapp": "Web App",
+      "templateWeb": "Web Template",
+      "academico": "Academic Project"
     }
   },
   "ProjectFilter": {
@@ -445,7 +453,8 @@
     "ides": "IDEs",
     "metodologias": "Methodologies",
     "frameworks": "Frameworks",
-    "bancodados": "Database"
+    "bancodados": "Database",
+    "sistemas": "Systems"
   },
   "EducationFilter": {
     "all": "All",

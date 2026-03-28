@@ -60,8 +60,12 @@ export default function FilterCarousel({ children, className = "" }: FilterCarou
                     onScroll={checkScroll}
                     className="flex overflow-x-auto no-scrollbar w-full scroll-smooth"
                     style={{
-                        maskImage: 'linear-gradient(to right, transparent, black 64px, black calc(100% - 64px), transparent)',
-                        WebkitMaskImage: 'linear-gradient(to right, transparent, black 64px, black calc(100% - 64px), transparent)'
+                        maskImage: showLeftArrow || showRightArrow
+                            ? `linear-gradient(to right, ${showLeftArrow ? 'transparent' : 'black'} 0%, black 64px, black calc(100% - 64px), ${showRightArrow ? 'transparent' : 'black'} 100%)`
+                            : 'none',
+                        WebkitMaskImage: showLeftArrow || showRightArrow
+                            ? `linear-gradient(to right, ${showLeftArrow ? 'transparent' : 'black'} 0%, black 64px, black calc(100% - 64px), ${showRightArrow ? 'transparent' : 'black'} 100%)`
+                            : 'none'
                     }}
                 >
                     <div className="flex flex-nowrap gap-2 px-8 py-4 mx-auto w-fit min-w-max">

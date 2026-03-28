@@ -20,6 +20,7 @@ export default function SkillsFilter({ onFilter, activeCategory }: SkillsFilterP
     { key: "metodologias", label: t("SkillsFilter.metodologias", "Metodologias") },
     { key: "frameworks", label: t("SkillsFilter.frameworks", "Frameworks") },
     { key: "banco-dados", label: t("SkillsFilter.bancodados", "Banco de Dados") },
+    { key: "sistemas", label: t("SkillsFilter.sistemas", "Sistemas") },
   ];
 
   return (
