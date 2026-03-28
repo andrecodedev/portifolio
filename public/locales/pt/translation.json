@@ -11,7 +11,7 @@
       "sportsTennis": "Desenvolvi o e-commerce da Sports&Tennis na plataforma Nuvemshop, realizando a criação e configuração da loja virtual para a marca.",
       "padua": "Atuei na customização avançada e ajustes gerais do e-commerce da Paduá na plataforma Nuvemshop, realizando modificações complexas no template para atender às necessidades específicas da marca.",
       "couroECia": "Desenvolvi o e-commerce da Couro e Cia de forma completa e complexa na plataforma Nuvemshop, sendo responsável por toda a estruturação e implementação da loja virtual.",
-      "cabaretDeMarie": "Realizei ajustes e refinamentos pontuais no template do e-commerce Cabaré de Maria, focando na melhoria da interface e experiência da loja na plataforma Nuvemshop.",
+      "cabaretDeMarie": "Realizei ajustes e refinamentos pontuais no template do e-commerce Cabaret de Marie, focando na melhoria da interface e experiência da loja na plataforma Nuvemshop.",
       "zetona": "Atuei no desenvolvimento do e-commerce da Zétona, contribuindo para a construção e aprimoramento da loja virtual na plataforma Nuvemshop."
     },
     "personal": {
@@ -504,13 +504,14 @@
     "techSkills": "Tecnologias",
     "toolsSkills": "Ferramentas & IDEs",
     "aiSkills": "IAs & Metodologias",
+    "systemSkills": "Sistemas",
     "languageSkills": "Idiomas"
   },
   "ProjectsStats": {
     "totalProjects": "Total Projetos",
     "personalProjects": "Projetos Pessoais",
     "workProjects": "Projetos de Trabalho",
-    "techUsed": "Tecnologias",
+    "techUsed": "Tecnologias Utilizadas",
     "deployments": "Deploys Realizados"
   }
 }

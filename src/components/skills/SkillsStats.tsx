@@ -18,13 +18,16 @@ export default function SkillsStats({ skillsData }: SkillsStatsProps) {
 
     // Ferramentas & IDEs
     const toolsSkills = skillsData.filter(s =>
-        s.category === 'ferramentas' || s.category === 'ides' || s.category === 'sistemas'
+        s.category === 'ferramentas' || s.category === 'ides'
     ).length;
 
     // IAs & Metodologias
     const aiSkills = skillsData.filter(s =>
         s.category === 'ias' || s.category === 'metodologias'
     ).length;
+
+    // Sistemas Operacionais (Linux/Windows)
+    const systemSkills = skillsData.filter(s => s.category === 'sistemas').length;
 
     // Idiomas
     const langSkills = skillsData.filter(s => s.category === 'idioma').length;
@@ -34,16 +37,17 @@ export default function SkillsStats({ skillsData }: SkillsStatsProps) {
         { label: t('SkillsStats.techSkills', 'Tecnologias'), value: techSkills },
         { label: t('SkillsStats.toolsSkills', 'Ferramentas & IDEs'), value: toolsSkills },
         { label: t('SkillsStats.aiSkills', 'IAs & Metodologias'), value: aiSkills },
+        { label: t('SkillsStats.systemSkills', 'Sistemas'), value: systemSkills },
         { label: t('SkillsStats.languageSkills', 'Idiomas'), value: langSkills },
     ];
 
     return (
         <section className="w-full mb-8 lg:mb-12">
-            <div className="font-jet max-w-[1200px] mx-auto grid grid-cols-2 lg:grid-cols-5 gap-[1.5rem] text-center p-5 sm:px-6">
+            <div className="font-jet max-w-[1200px] mx-auto grid grid-cols-2 lg:grid-cols-6 gap-[1.5rem] text-center p-5 sm:px-6">
                 {stats.map((stat, index) => (
                     <div
                         key={index}
-                        className={`relative px-4 after:content-[''] after:absolute after:top-[20%] after:bottom-[20%] after:right-[-0.5rem] after:w-[1px] after:bg-[var(--text-primary)] after:opacity-60 after:hidden lg:after:block last:after:hidden ${index === 4 ? 'col-span-2 lg:col-span-1' : ''
+                        className={`relative px-4 after:content-[''] after:absolute after:top-[20%] after:bottom-[20%] after:right-[-0.5rem] after:w-[1px] after:bg-[var(--text-primary)] after:opacity-60 after:hidden lg:after:block last:after:hidden ${index >= 4 ? 'col-span-1 lg:col-span-1' : ''
                             }`}
                     >
                         <h5 className="text-[1.875rem] md:text-4xl font-bold text-[var(--text-primary)] mb-2">

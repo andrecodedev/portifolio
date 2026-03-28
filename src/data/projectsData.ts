@@ -232,7 +232,7 @@ export const projectsData: ProjectData[] = [
   },
   {
     id: 111,
-    title: "Cabaré de Maria",
+    title: "Cabaret de Marie",
     imageUrl: cabaretDeMarie,
     description: 't:projects.work.cabaretDeMarie',
     skills: ecommerceSkills,

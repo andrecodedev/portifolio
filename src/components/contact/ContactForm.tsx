@@ -37,12 +37,12 @@ export default function ContactForm() {
     return () => observer.disconnect();
   }, []);
 
-  // Efeito para sumir a mensagem de feedback após 5 segundos
+  // Efeito para sumir a mensagem de feedback após 3 segundos
   useEffect(() => {
     if (toast.show) {
       const timer = setTimeout(() => {
         setToast((prev) => ({ ...prev, show: false }));
-      }, 5000);
+      }, 3000);
       return () => clearTimeout(timer);
     }
   }, [toast.show]);
@@ -130,9 +130,14 @@ export default function ContactForm() {
 
         <button
           type="submit"
-          disabled={loading}
-          className={`${loading ? "bg-[var(--button-bg)] cursor-not-allowed" : "bg-[var(--button-bg)] hover:bg-[var(--button-hover)]"
-            } transition cursor-pointer text-[var(--text-primary)] p-3 rounded font-semibold flex items-center justify-center select-none text-sm w-full mt-1 active:scale-95`}
+          disabled={loading || toast.show}
+          className={`transition-all duration-300 cursor-pointer p-3 rounded font-semibold flex items-center justify-center select-none text-sm w-full mt-1 active:scale-95 ${loading || toast.show ? "cursor-not-allowed opacity-80" : "hover:bg-[var(--button-hover)]"
+            } ${toast.show
+              ? toast.message === t('Contact.message_1')
+                ? "bg-green-600 text-white"
+                : "bg-red-600 text-white"
+              : "bg-[var(--button-bg)] text-[var(--text-primary)]"
+            }`}
         >
           {loading ? (
             <>
@@ -158,23 +163,12 @@ export default function ContactForm() {
               </svg>
               {t('Contact.enviando')}
             </>
+          ) : toast.show ? (
+            toast.message
           ) : (
             t('Contact.enviar')
           )}
         </button>
-
-        {/* Mensagem de Feedback Flutuante (Absolute para não quebrar o layout) */}
-        <div
-          className={`absolute -bottom-16 left-0 right-0 p-3 rounded-md text-center text-sm font-medium transition-all duration-500 pointer-events-none ${toast.show
-            ? "opacity-100 translate-y-0 scale-100"
-            : "opacity-0 -translate-y-2 scale-95"
-            } ${toast.message === t('Contact.message_1')
-              ? "bg-green-500/20 text-green-400 border border-green-500/30"
-              : "bg-red-500/20 text-red-400 border border-red-500/30"
-            }`}
-        >
-          {toast.message}
-        </div>
       </form>
     </div>
   );

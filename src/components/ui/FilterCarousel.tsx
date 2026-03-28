@@ -29,6 +29,36 @@ export default function FilterCarousel({ children, className = "" }: FilterCarou
         }
     }, [children, checkScroll]);
 
+    useEffect(() => {
+        const scrollToActive = () => {
+            if (scrollRef.current) {
+                const buttons = scrollRef.current.querySelectorAll('button');
+                const activeBtn = Array.from(buttons).find(btn =>
+                    btn.className.includes('bg-[var(--text-primary)]')
+                ) as HTMLElement;
+
+                if (activeBtn) {
+                    const container = scrollRef.current;
+                    const activeRect = activeBtn.getBoundingClientRect();
+                    const containerRect = container.getBoundingClientRect();
+
+                    const scrollLeft = container.scrollLeft;
+                    const relativeLeft = activeRect.left - containerRect.left + scrollLeft;
+                    const targetScroll = relativeLeft - (containerRect.width / 2) + (activeRect.width / 2);
+
+                    container.scrollTo({
+                        left: targetScroll,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        };
+
+        // Pequeno delay para garantir que o DOM foi atualizado com as novas classes
+        const timer = setTimeout(scrollToActive, 100);
+        return () => clearTimeout(timer);
+    }, [children]);
+
     const scroll = (direction: 'left' | 'right') => {
         if (scrollRef.current) {
             const scrollAmount = scrollRef.current.clientWidth * 0.75;
