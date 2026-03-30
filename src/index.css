@@ -198,6 +198,18 @@ a {
   font-family: 'JetBrains Mono', monospace;
 }
 
+/* Fix global para títulos não cortarem a parte inferior (descenders g, j, q, y) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-title {
+  line-height: 1.2 !important;
+  padding-bottom: 0.15em;
+}
+
 
 
 
@@ -562,48 +574,90 @@ a {
 
 
 /* Estilo para o seletor de idiomas permanente */
-.language-switcher {
+.language-switcher-wrapper {
+  position: fixed;
+  bottom: 20%;
+  right: 0;
+  z-index: 1000;
   display: flex;
   align-items: center;
-  position: fixed;
-  /* Fixa o elemento na tela */
-  flex-direction: column;
-  bottom: 10%;
-  /* Distância de baixo */
-  right: 15px;
-  /* Distância da direita */
-  z-index: 1000;
-  /* Garante que ele fique na frente de outros elementos */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+.language-switcher-wrapper.closed {
+  transform: translateX(54px);
+  /* Esconde completamente as bandeiras, deixando apenas a aba da seta */
+}
+
+/* Botão de abrir/fechar com efeito de "aba" */
+.language-toggle {
+  background: var(--button-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  width: 24px;
+  height: 38px;
   display: flex;
-  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-terceiro);
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1010;
+}
+
+.language-toggle:hover {
+  color: var(--text-primary);
+  padding-left: 2px;
+  width: 28px;
+}
+
+.language-switcher {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 7px;
+  background: var(--button-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: none;
+  border-radius: 12px 0 0 12px;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.4);
 }
 
 .language-switcher button {
-  background-color: var(--button-bg);
-  border-radius: 100%;
-  padding: .5rem;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 4px;
   cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
 }
 
-.language-switcher button:hover {
-  opacity: 0.8;
-  background: var(--button-hover);
+.language-switcher button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
 }
 
-/* Estilo para o botão do idioma ativo */
 .language-switcher button:disabled {
-  background: var(--button-active);
-  border: solid 1px var(--border-gray);
+  background: rgba(var(--color-primary-rgb), 0.2);
+  border: 1px solid var(--text-primary);
   cursor: default;
-  opacity: 1;
 }
 
 .language-switcher img {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   aspect-ratio: 1 / 1;
   object-fit: contain;
   user-select: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 /* reCAPTCHA Responsivo */

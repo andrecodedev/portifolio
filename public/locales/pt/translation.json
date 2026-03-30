@@ -16,7 +16,7 @@
     },
     "personal": {
       "sealWorld": "Projeto desenvolvido durante estudos na OneBitCode, com foco na criação de uma aplicação web, explorando estrutura, estilização e organização de uma interface funcional.",
-      "alessiosPizzaria": "Projeto desenvolvido na OneBitCode, voltado para a criação de um site de pizzaria, com foco em layout, organização do conteúdo e apresentação de produtos.",
+      "alessiosPizzaria": "Projeto desenvolvido na OneBitCode, voltado para a criação de um site de pizzaria, com foco em layout, organização do conteúdo e presentation de produtos.",
       "jogoAmigoSecreto": "Projeto desenvolvido durante estudos na Alura, consistindo em um jogo simples de amigo secreto, com foco em lógica, interação com o usuário e manipulação de dados.",
       "primeiroPortfolio": "Minha primeira versão de portifólio pessoal, desenvolvida como início da minha jornada na programação, representando uma das várias tentativas e evoluções até versões mais maduras dos meus portifólios.",
       "mobiSeg": "Projeto acadêmico desenvolvido com foco na criação de uma solução digital, aplicando conceitos estudados durante a formação e consolidando conhecimentos práticos.",
@@ -91,7 +91,7 @@
     "site": "Site"
   },
   "ExperienceItem": {
-    "title_5": "Desenvoldedor Júnior - Web Developer",
+    "title_5": "Desenvoldeder Júnior - Web Developer",
     "company_5": "TEC4U Digital",
     "position_5": "Autônomo",
     "startDate_5": "Ago de 2025",
@@ -146,9 +146,9 @@
     "title_4": "Oracle Next Education",
     "description_4": "Participação e conclusão de formações do programa Oracle Next Education (ONE).",
     "title_5": "OneBitCode",
-    "description_5": "Estudo continuamente na plataforma OneBitCode, onde tenho acesso vitalício. Utilizo para elevar meu conhecimento em desenvolvimento web e novas tecnologias.",
+    "description_5": "Estudo continuamente na plataforma OneBitCode, onde tenho acesso vitalicio. Utilizo para elevar meu conhecimento em desenvolvimento web e novas tecnologias.",
     "title_6": "SENAI",
-    "description_6": "Participação em cursos profissionalizantes oferecidos pelo SENAI.",
+    "description_6": "Participação em cursos profissionalizantes oferecidos por SENAI.",
     "title_7": "CCBEU - Inglês",
     "description_7": "Estudos de inglês no Centro Cultural Brasil-Estados Unidos (CCBEU).",
     "title_8": "TEC4U Digital",
@@ -407,7 +407,7 @@
     "modalidade_6": "Presencial",
     "curso_5": "Operador Logístico",
     "tipo_5": "Capacitação Profissional",
-    "escola_5": "SENAI - Serviço Nacional de Aprendizagem Industrial",
+    "escola_5": "SENAI - Serviço Nacional de Aprendização Industrial",
     "status_5": "Concluído",
     "inicio_5": "02/2022",
     "fim_5": "05/2022",
@@ -515,5 +515,43 @@
     "workProjects": "Projetos de Trabalho",
     "techUsed": "Tecnologias Utilizadas",
     "deployments": "Deploys Realizados"
+  },
+  "AboutHighlights": {
+    "title": "Mergulhando nos Detalhes",
+    "subtitle": "Descubra o que me motiva e quais são meus principais diferenciais como desenvolvedor.",
+    "items": {
+      "learning": {
+        "title": "Sempre um passo à frente",
+        "description": "Minha rotina é movida pela curiosidade. Além da faculdade na FACENS, dedico boa parte do meu tempo livre explorando plataformas como OneBitCode e Alura, mergulhando de cabeça em novas stacks que podem otimizar meu fluxo de trabalho. \n\nAcredito que o setor tech não permite estagnação. Por isso, não estudo apenas por estudo; aplico cada conceito novo em projetos reais, transformando teoria em soluções práticas.\n\nPara mim, aprender é um processo contínuo e sem fim."
+      },
+      "teamwork": {
+        "title": "Construir junto é melhor",
+        "description": "Acredito que o software é um esforço coletivo. No meu dia a dia, valorizo a troca honesta de ideias, revisões de código construtivas e a colaboração direta com designers e outros devs para garantir que estamos todos na mesma página. Gosto de ser o elo que facilita a comunicação técnica, garantindo que a entrega final supere a expectativa inicial.\n\nUm time forte é o que cresce unido."
+      },
+      "resilience": {
+        "title": "Foco total na solução",
+        "description": "Minha trajetória me ensinou que a resiliência é a chave. Encaro bugs bizarros e prazos apertados como quebra-cabeças que só precisam de paciência e a estratégia certa para serem resolvidos.\n\nManter a calma sob pressão é uma das minhas maiores forças. Seja ajustando um layout complexo na Nuvemshop ou depurando uma lógica de backend, eu não desisto até que a solução esteja rodando perfeitamente e o usuário esteja satisfeito. Desafios são apenas degraus para o sucesso."
+      },
+      "tech": {
+        "title": "Tecnologia com propósito",
+        "description": "Sou fascinado pelo poder que algumas linhas de código têm de transformar negócios. Meu foco é dominar as ferramentas que fazem a diferença, como React e Tailwind CSS, sempre de olho no que há de mais moderno no ecossistema web. Não me limito apenas a 'fazer funcionar'. Busco entender o 'porquê' por trás de cada tecnologia, garantindo que as escolhas técnicas que tomo hoje criem uma base sólida para o crescimento do projeto amanhã."
+      },
+      "versatility": {
+        "title": "Minha visão real do 360°",
+        "description": "Minha bagagem vai além das telas.\n\nAntes de mergulhar de vez na tecnologia, passei por áreas como logística e vendas. Essa vivência me deu uma visão muito clara de como os negócios funcionam no 'mundo real', o que me ajuda a traduzir necessidades reais de mercado em código funcional. Entendo o lado do cliente, a pressa do setor de transportes e a precisão do atendimento.\n\nSou um dev que entende de gente tanto quanto entende de sintaxe."
+      },
+      "mentoring": {
+        "title": "Multiplicar para crescer",
+        "description": "Ter atuado como mentor acadêmico na FACENS foi uma das experiências mais marcantes da minha trajetória. Ensinar algoritmos para quem estava começando me forçou a dominar os fundamentos e a exercitar a didática de forma constante.\n\nMesmo hoje, vejo a liderança e o compartilhamento de conhecimento como pilares fundamentais. Dividir o que sei com meus colegas e amigos não só os ajuda a superar obstáculos, mas também solidifica meu próprio aprendizado e cria um ambiente muito mais forte para todos."
+      },
+      "clean_code": {
+        "title": "Código feito para humanos",
+        "description": "Escrever código é, acima de tudo, um ato de comunicação. Minha prioridade é entregar soluções que não apenas resolvam o problema técnico, mas que sejam legíveis e fáceis de manter por qualquer desenvolvedor que chegue depois de mim. Um código 'sujo' é uma dívida que ninguém quer pagar.\n\nSigo os princípios do Clean Code por eficiência, não apenas por teoria. Um código bem estruturado hoje significa menos dor de cabeça amanhã e uma evolução muito mais rápida para o produto."
+      },
+      "ux_vision": {
+        "title": "O usuário no centro",
+        "description": "Software sem uma boa UX é software incompleto.\n\nBusco entender profundamente a jornada de quem vai usar o que estou construindo. Trabalho de perto para transformar protótipos em interfaces vivas e fluidas, garantindo que a tecnologia seja invisível e a facilidade de uso seja o destaque. Meu objetivo final é sempre encantar o usuário com uma experiência impecável."
+      }
+    }
   }
 }
