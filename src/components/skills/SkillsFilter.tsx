@@ -24,7 +24,21 @@ export default function SkillsFilter({ onFilter, activeCategory }: SkillsFilterP
   ];
 
   return (
-    <FilterCarousel className="mb-6">
+    <FilterCarousel
+      className="mb-6"
+      onNext={() => {
+        const currentIndex = categories.findIndex(c => c.key === activeCategory);
+        if (currentIndex < categories.length - 1) {
+          onFilter(categories[currentIndex + 1].key);
+        }
+      }}
+      onPrev={() => {
+        const currentIndex = categories.findIndex(c => c.key === activeCategory);
+        if (currentIndex > 0) {
+          onFilter(categories[currentIndex - 1].key);
+        }
+      }}
+    >
       {categories.map((cat) => (
         <button
           key={cat.key}

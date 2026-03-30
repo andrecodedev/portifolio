@@ -16,7 +16,21 @@ export default function ExperienceFilter({ onFilter, activeCategory }: Experienc
   ];
 
   return (
-    <FilterCarousel className="mt-8">
+    <FilterCarousel
+      className="mt-8"
+      onNext={() => {
+        const currentIndex = categories.findIndex(c => c.key === activeCategory);
+        if (currentIndex < categories.length - 1) {
+          onFilter(categories[currentIndex + 1].key);
+        }
+      }}
+      onPrev={() => {
+        const currentIndex = categories.findIndex(c => c.key === activeCategory);
+        if (currentIndex > 0) {
+          onFilter(categories[currentIndex - 1].key);
+        }
+      }}
+    >
       {categories.map((cat) => (
         <button
           key={cat.key}

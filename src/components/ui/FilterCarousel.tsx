@@ -4,9 +4,11 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 interface FilterCarouselProps {
     children: React.ReactNode;
     className?: string;
+    onNext?: () => void;
+    onPrev?: () => void;
 }
 
-export default function FilterCarousel({ children, className = "" }: FilterCarouselProps) {
+export default function FilterCarousel({ children, className = "", onNext, onPrev }: FilterCarouselProps) {
     const scrollRef = useRef<HTMLDivElement>(null);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(false);
@@ -33,8 +35,11 @@ export default function FilterCarousel({ children, className = "" }: FilterCarou
         const scrollToActive = () => {
             if (scrollRef.current) {
                 const buttons = scrollRef.current.querySelectorAll('button');
+                // Procura pelo botão ativo baseado na classe de estilo do seu sistema
                 const activeBtn = Array.from(buttons).find(btn =>
-                    btn.className.includes('bg-[var(--text-primary)]')
+                    btn.className.includes('bg-[var(--text-primary)]') ||
+                    btn.className.includes('bg-[var(--bg-primary)]') ||
+                    btn.getAttribute('aria-selected') === 'true'
                 ) as HTMLElement;
 
                 if (activeBtn) {
@@ -54,12 +59,20 @@ export default function FilterCarousel({ children, className = "" }: FilterCarou
             }
         };
 
-        // Pequeno delay para garantir que o DOM foi atualizado com as novas classes
         const timer = setTimeout(scrollToActive, 100);
         return () => clearTimeout(timer);
     }, [children]);
 
-    const scroll = (direction: 'left' | 'right') => {
+    const handleArrowClick = (direction: 'left' | 'right') => {
+        if (direction === 'left' && onPrev) {
+            onPrev();
+            return;
+        }
+        if (direction === 'right' && onNext) {
+            onNext();
+            return;
+        }
+
         if (scrollRef.current) {
             const scrollAmount = scrollRef.current.clientWidth * 0.75;
             scrollRef.current.scrollBy({
@@ -77,7 +90,7 @@ export default function FilterCarousel({ children, className = "" }: FilterCarou
                     className={`absolute left-0 top-0 bottom-0 z-20 w-16 flex items-center justify-start transition-opacity duration-300 pointer-events-none ${showLeftArrow ? 'opacity-100' : 'opacity-0'}`}
                 >
                     <button
-                        onClick={() => scroll('left')}
+                        onClick={() => handleArrowClick('left')}
                         className="ml-2 p-2 rounded-full bg-[var(--bg-secondary)] text-[var(--text-primary)] shadow-lg pointer-events-auto hover:scale-110 transition-transform active:scale-95 border border-[var(--border)]"
                         aria-label="Scroll left"
                     >
@@ -108,7 +121,7 @@ export default function FilterCarousel({ children, className = "" }: FilterCarou
                     className={`absolute right-0 top-0 bottom-0 z-20 w-16 flex items-center justify-end transition-opacity duration-300 pointer-events-none ${showRightArrow ? 'opacity-100' : 'opacity-0'}`}
                 >
                     <button
-                        onClick={() => scroll('right')}
+                        onClick={() => handleArrowClick('right')}
                         className="mr-2 p-2 rounded-full bg-[var(--bg-secondary)] text-[var(--text-primary)] shadow-lg pointer-events-auto hover:scale-110 transition-transform active:scale-95 border border-[var(--border)]"
                         aria-label="Scroll right"
                     >

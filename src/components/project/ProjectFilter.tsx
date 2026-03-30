@@ -16,7 +16,21 @@ export default function ProjectFilter({ activeType, onFilter }: ProjectFilterPro
   ];
 
   return (
-    <FilterCarousel className="mb-6">
+    <FilterCarousel
+      className="mb-6"
+      onNext={() => {
+        const currentIndex = types.findIndex(t => t.key === activeType);
+        if (currentIndex < types.length - 1) {
+          onFilter(types[currentIndex + 1].key);
+        }
+      }}
+      onPrev={() => {
+        const currentIndex = types.findIndex(t => t.key === activeType);
+        if (currentIndex > 0) {
+          onFilter(types[currentIndex - 1].key);
+        }
+      }}
+    >
       {types.map((type) => (
         <button
           key={type.key}
