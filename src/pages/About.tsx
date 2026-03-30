@@ -7,6 +7,7 @@ import AboutStartsGrid from '../components/about/AboutStartsGrid';
 import SliderSkills from '../components/SliderSkills';
 import AboutVideo from '../components/about/AboutVideo';
 import Experience from '../components/about/ExperienceSection';
+import AboutHighlights from '../components/about/AboutHighlights';
 import FadeIn from '../components/FadeIn';
 
 function Sobre() {
@@ -23,6 +24,9 @@ function Sobre() {
           <SliderSkills />
           {/* Experiências com título dinâmico dentro */}
           <Experience />
+
+          {/* Destaques e Curiosidades */}
+          <AboutHighlights />
         </FadeIn>
       </main>
       <footer>

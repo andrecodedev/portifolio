@@ -72,11 +72,11 @@ export default function AchievementsCarousel() {
 
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-    
+
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
-    
+
     if (isLeftSwipe) {
       goToNext();
     } else if (isRightSwipe) {
@@ -85,7 +85,7 @@ export default function AchievementsCarousel() {
   };
 
   return (
-    <div className="carousel-container relative w-full max-w-6xl mx-auto px-4 mb-6 pb-6">
+    <div className="carousel-container relative w-full max-w-6xl mx-auto px-4">
       {/* Botão anterior */}
       <button
         onClick={goToPrevious}
@@ -98,7 +98,7 @@ export default function AchievementsCarousel() {
       </button>
 
       {/* Container do carrossel */}
-      <div 
+      <div
         className="carousel-wrapper relative overflow-hidden h-[500px] flex items-center justify-center"
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
@@ -113,7 +113,7 @@ export default function AchievementsCarousel() {
           {achievements.map((achievement, index) => {
             // Calcula a posição relativa ao card atual
             let position = index - currentIndex;
-            
+
             // Ajusta para carrossel infinito
             if (position < -Math.floor(achievements.length / 2)) {
               position += achievements.length;
@@ -174,8 +174,8 @@ export default function AchievementsCarousel() {
                   pointerEvents: pointerEvents as React.CSSProperties['pointerEvents'],
                 }}
               >
-                <AchievementCard 
-                  data={achievement} 
+                <AchievementCard
+                  data={achievement}
                   isFlipped={flippedCards.has(achievement.id)}
                   isActive={position === 0}
                   onFlip={(id, flipped) => {
@@ -211,11 +211,10 @@ export default function AchievementsCarousel() {
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === currentIndex
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex
                 ? 'bg-[var(--text-primary)] w-8'
                 : 'bg-[var(--text-terceiro)] hover:bg-[var(--text-secondary)]'
-            }`}
+              }`}
             aria-label={`Ir para card ${index + 1}`}
           />
         ))}
