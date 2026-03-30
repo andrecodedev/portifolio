@@ -89,4 +89,4 @@ Durante o desenvolvimento deste portfólio, pude reforçar conceitos importantes
 ## 📎 Autor  
 
 Desenvolvido por **André Vitor - ANDRECODEDEV** 👨‍💻  
-📩 [LinkedIn](https://linkedin.com/in/andrecode) | [GitHub](https://github.com/andrecode)  
+📩 [LinkedIn]([https://linkedin.com/in/andrecode](https://www.linkedin.com/in/andrecodedev/)) | [GitHub](https://github.com/andrecode)  
