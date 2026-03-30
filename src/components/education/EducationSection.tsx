@@ -22,7 +22,7 @@ export default function EducationSection({ educationData, activeCategory }: Educ
   }
 
   return (
-    <section className="w-full max-w-screen-xl mx-auto px-8 box-border">
+    <section className="w-full max-w-screen-xl mx-auto box-border">
       <div
         className="
           pt-4 16px de padding no topo */
