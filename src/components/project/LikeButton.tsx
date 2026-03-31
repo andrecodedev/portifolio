@@ -13,12 +13,20 @@ export default function LikeButton({ projectId, className = "" }: LikeButtonProp
     const [isAnimating, setIsAnimating] = useState(false);
 
     useEffect(() => {
+        let isMounted = true;
         const fetchLikes = async () => {
-            const currentLikes = await likesService.getLikes(projectId);
-            setLikes(currentLikes);
-            setLiked(likesService.isLikedByUser(projectId));
+            try {
+                const currentLikes = await likesService.getLikes(projectId);
+                if (isMounted) {
+                    setLikes(currentLikes);
+                    setLiked(likesService.isLikedByUser(projectId));
+                }
+            } catch (err) {
+                console.error("[LikeButton] Erro ao carregar curtidas iniciais:", err);
+            }
         };
         fetchLikes();
+        return () => { isMounted = false; };
     }, [projectId]);
 
     const handleLike = async (e: React.MouseEvent | React.TouchEvent) => {
@@ -27,10 +35,15 @@ export default function LikeButton({ projectId, className = "" }: LikeButtonProp
         setIsAnimating(true);
         setTimeout(() => setIsAnimating(false), 500);
 
-        const result = await likesService.toggleLike(projectId);
-        setLikes(result.count);
-        setLiked(result.liked);
+        try {
+            const result = await likesService.toggleLike(projectId);
+            setLikes(result.count);
+            setLiked(result.liked);
+        } catch (err) {
+            console.error("[LikeButton] Erro ao processar curtida:", err);
+        }
     };
+
 
     return (
         <div

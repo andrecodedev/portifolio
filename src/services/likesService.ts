@@ -13,22 +13,25 @@ export const likesService = {
      */
     async getLikes(projectId: number): Promise<number> {
         if (!supabase) {
+            console.warn(`[LikesService] Supabase não inicializado. Usando fallback local para o projeto ${projectId}.`);
             const local = localStorage.getItem(`${FALLBACK_LIKES_PREFIX}${projectId}`);
             return local ? parseInt(local, 10) : 0;
         }
 
         try {
-            // Ajuste: Usamos .select() sem .single() para evitar o erro 406 de negociação de header
             const { data, error } = await supabase
                 .from('project_likes')
                 .select('count')
                 .eq('id', projectId);
 
-            if (error) return 0;
+            if (error) {
+                console.error(`[LikesService] Erro ao buscar likes para o projeto ${projectId}:`, error);
+                return 0;
+            }
 
-            // Como o select retorna um array, pegamos o primeiro item
             return data && data.length > 0 ? data[0].count : 0;
         } catch (e) {
+            console.error(`[LikesService] Erro crítico ao buscar likes:`, e);
             return 0;
         }
     },
@@ -40,20 +43,34 @@ export const likesService = {
         const userLikedKey = `${USER_LIKED_PREFIX}${projectId}`;
         const currentlyLiked = localStorage.getItem(userLikedKey) === 'true';
 
-        // Pegamos os likes atuais
-        const currentLikes = await this.getLikes(projectId);
+        // Determina o novo status antes de tudo
         const newLikedStatus = !currentlyLiked;
-        const finalCount = newLikedStatus ? currentLikes + 1 : Math.max(0, currentLikes - 1);
 
         if (!supabase) {
+            const currentLikes = await this.getLikes(projectId);
+            const finalCount = newLikedStatus ? currentLikes + 1 : Math.max(0, currentLikes - 1);
             localStorage.setItem(`${FALLBACK_LIKES_PREFIX}${projectId}`, finalCount.toString());
             localStorage.setItem(userLikedKey, newLikedStatus.toString());
             return { count: finalCount, liked: newLikedStatus };
         }
 
         try {
+            // Buscamos o valor mais recente do banco para evitar sobrescrever com dados desatualizados
+            const { data: currentData, error: fetchError } = await supabase
+                .from('project_likes')
+                .select('count')
+                .eq('id', projectId)
+                .single();
+
+            if (fetchError && fetchError.code !== 'PGRST116') { // PGRST116 é "no rows returned"
+                throw fetchError;
+            }
+
+            const currentCount = currentData ? currentData.count : 0;
+            const finalCount = newLikedStatus ? currentCount + 1 : Math.max(0, currentCount - 1);
+
             // Sincroniza com o banco
-            const { error } = await supabase
+            const { error: upsertError } = await supabase
                 .from('project_likes')
                 .upsert({
                     id: projectId,
@@ -61,16 +78,20 @@ export const likesService = {
                     updated_at: new Date().toISOString()
                 }, { onConflict: 'id' });
 
-            if (error) throw error;
+            if (upsertError) throw upsertError;
 
+            // Só atualizamos o localStorage se o banco confirmou
             localStorage.setItem(userLikedKey, newLikedStatus.toString());
+
             return {
                 count: finalCount,
                 liked: newLikedStatus
             };
         } catch (error) {
-            console.error('Erro na sincronização:', error);
-            return { count: finalCount, liked: currentlyLiked };
+            console.error('[LikesService] Erro na sincronização:', error);
+            // Em caso de erro, retornamos o que temos localmente mas avisamos
+            const currentLikes = await this.getLikes(projectId);
+            return { count: currentLikes, liked: currentlyLiked };
         }
     },
 
@@ -81,3 +102,4 @@ export const likesService = {
         return localStorage.getItem(`${USER_LIKED_PREFIX}${projectId}`) === 'true';
     }
 };
+
