@@ -2,8 +2,10 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { createPortal } from "react-dom";
 import { getSkillName } from "../../data/skillsData";
+import LikeButton from "./LikeButton";
 
 interface ProjectModalProps {
+  id: number;
   isOpen: boolean;
   onClose: () => void;
   title: string;
@@ -15,7 +17,7 @@ interface ProjectModalProps {
   label?: string;
 }
 
-export default function ProjectModal({ isOpen, onClose, title, imageUrl, description, skills, repoUrl, siteUrl, label }: ProjectModalProps) {
+export default function ProjectModal({ id, isOpen, onClose, title, imageUrl, description, skills, repoUrl, siteUrl, label }: ProjectModalProps) {
   const { t } = useTranslation();
   useEffect(() => {
     if (isOpen) document.body.style.overflow = "hidden";
@@ -27,23 +29,27 @@ export default function ProjectModal({ isOpen, onClose, title, imageUrl, descrip
 
   return createPortal(
     <div
-      className="fixed inset-0 bg-black/70 flex items-center justify-center z-[9999] p-4 overflow-auto"
+      className="fixed inset-0 bg-black/70 flex justify-center z-[9999] p-4 overflow-y-auto"
       onClick={onClose}
     >
       <div
-        className="bg-[var(--bg-secondary)] rounded-2xl shadow-xl p-6 w-full max-w-5xl mx-auto flex flex-col md:flex-row gap-6 align-items-center"
+        className="bg-[var(--bg-secondary)] rounded-2xl shadow-xl p-6 w-full max-w-5xl my-auto flex flex-col md:flex-row gap-6 items-center"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Imagem do projeto */}
         <img
           src={imageUrl}
           alt={title}
-          className="w-full md:w-1/2 max-h-[70vh] object-contain rounded-lg select-none"
+          className="w-full md:w-1/2 max-h-[40vh] md:max-h-[70vh] object-contain rounded-lg select-none"
         />
 
         {/* Informações do projeto */}
         <div className="flex-1 flex flex-col min-h-[300px]">
-          <h2 className="text-[var(--text-primary)] text-3xl font-bold mb-2">{title}</h2>
+          <div className="flex justify-between items-start mb-2">
+            <h2 className="text-[var(--text-primary)] text-3xl font-bold flex-1">{title}</h2>
+            <LikeButton projectId={id} />
+          </div>
+
           {label && (
             <span className="inline-block self-start px-2 py-1 text-[10px] font-medium rounded-md border border-[var(--text-primary)]/20 bg-[var(--text-primary)]/5 text-[var(--text-primary)]/80 mb-4 uppercase tracking-widest">
               {label.startsWith('t:') ? t(label.replace('t:', '')) : label}
@@ -64,7 +70,11 @@ export default function ProjectModal({ isOpen, onClose, title, imageUrl, descrip
                   const name = getSkillName(skill);
                   return (
                     <div key={idx} className="tooltip-container group">
-                      <img src={skill} alt={name || "Skill"} className="w-8 h-8 transition-transform duration-300 group-hover:scale-110" />
+                      <img
+                        src={skill}
+                        alt={name || "Skill"}
+                        className="w-7 h-7 sm:w-8 sm:h-8 transition-transform duration-300 group-hover:scale-110"
+                      />
                       {name && <span className="tooltip-content">{t(name)}</span>}
                     </div>
                   );

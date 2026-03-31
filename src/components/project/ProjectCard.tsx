@@ -2,8 +2,10 @@ import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import ProjectModal from "./ProjectModal";
 import { getSkillName } from "../../data/skillsData";
+import LikeButton from "./LikeButton";
 
 interface ProjectCardProps {
+  id: number;
   title: string;
   imageUrl: string;
   description?: string;
@@ -13,7 +15,7 @@ interface ProjectCardProps {
   label?: string;
 }
 
-export default function ProjectCard({ title, imageUrl, description, skills, repoUrl, siteUrl, label }: ProjectCardProps) {
+export default function ProjectCard({ id, title, imageUrl, description, skills, repoUrl, siteUrl, label }: ProjectCardProps) {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
@@ -40,7 +42,8 @@ export default function ProjectCard({ title, imageUrl, description, skills, repo
     <>
       <div
         ref={cardRef}
-        className="relative w-85 h-48 rounded-md overflow-hidden shadow-lg cursor-pointer"
+        className="group relative w-full h-48 rounded-md overflow-hidden shadow-lg cursor-pointer hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] bg-black"
+        style={{ WebkitMaskImage: "-webkit-radial-gradient(white, black)" }}
         onClick={handleOpen}
         onMouseEnter={() => setShowOverlay(true)}
         onMouseLeave={() => setShowOverlay(false)}
@@ -52,64 +55,72 @@ export default function ProjectCard({ title, imageUrl, description, skills, repo
         <img
           src={imageUrl}
           alt={title}
-          className="w-full h-full select-none object-cover transition-transform duration-300 transform hover:scale-105"
+          className="w-full h-full select-none object-cover rounded-[inherit]"
         />
 
         {/* Overlay */}
         <div
-          className={`absolute inset-0 bg-black/80 flex flex-col justify-center items-center p-4 transition-opacity duration-300 ${showOverlay ? "opacity-100" : "opacity-0"
+          className={`absolute inset-[-2px] bg-black/85 flex flex-col justify-center items-center p-4 backdrop-blur-[2px] transition-opacity duration-300 rounded-[inherit] z-20 ${showOverlay ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
         >
-          {label && (
-            <>
-              <span className="absolute top-3 left-3 px-2 py-0.5 text-[9px] font-bold rounded-md border border-white/20 bg-white/10 text-white/90 uppercase tracking-widest backdrop-blur-md z-10">
-                {label.startsWith('t:') ? t(label.replace('t:', '')) : label}
-              </span>
-              {/* Espaçador para empurrar o conteúdo para baixo apenas o suficiente para não bater na tag */}
-              <div className="h-6 w-full" />
-            </>
-          )}
-          <h3 className="text-base font-bold text-white mb-2 max-w-[90%] truncate text-center" title={title}>
-            {title}
-          </h3>
+          {/* Internal Content (Smooth fade) */}
+          <div className={`flex flex-col justify-center items-center w-full h-full transition-all duration-700 ${showOverlay ? "opacity-100 translate-y-0" : "opacity-0 translate-y-0"}`}>
+            {/* Header do Card (Label e Like) */}
+            <div className="absolute top-0 left-0 right-0 p-3 flex justify-between items-center z-20">
+              {label ? (
+                <span className="px-2 py-0.5 text-[9px] font-bold rounded-md border border-white/20 bg-white/10 text-white/90 uppercase tracking-widest backdrop-blur-md">
+                  {label.startsWith('t:') ? t(label.replace('t:', '')) : label}
+                </span>
+              ) : <div />}
 
-          {skills && skills.length > 0 && (
-            <h4 className="text-white text-[10px] tracking-widest opacity-70 mb-2 font-semibold uppercase">
-              {t('ProjectModal.tech_title')}
-            </h4>
-          )}
-          <div className="flex flex-wrap justify-center gap-2 p-2 select-none max-w-full">
-            {skills?.slice(0, 8).map((skill, idx) => {
-              const name = getSkillName(skill);
-              return (
-                <div key={idx} className="tooltip-container group">
-                  <img src={skill} alt={name || "Skill"} className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
-                  {name && <span className="tooltip-content !text-[10px] !py-1 !px-2">{t(name)}</span>}
-                </div>
-              );
-            })}
-            {skills && skills.length > 8 && (
-              <div className="w-6 h-6 flex items-center justify-center bg-white/10 rounded-full text-[10px] text-white font-bold border border-white/20 backdrop-blur-sm">
-                +{skills.length - 8}
-              </div>
+              <LikeButton
+                projectId={id}
+              />
+            </div>
+
+            <h3 className="text-base font-bold text-white mb-2 max-w-[90%] truncate text-center mt-8" title={title}>
+              {title}
+            </h3>
+
+            {skills && skills.length > 0 && (
+              <h4 className="text-white text-[10px] tracking-widest opacity-70 mb-2 font-semibold uppercase">
+                {t('ProjectModal.tech_title')}
+              </h4>
             )}
-          </div>
+            <div className="flex flex-wrap justify-center gap-2 p-2 select-none max-w-full">
+              {skills?.slice(0, 8).map((skill, idx) => {
+                const name = getSkillName(skill);
+                return (
+                  <div key={idx} className="tooltip-container group">
+                    <img src={skill} alt={name || "Skill"} className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
+                    {name && <span className="tooltip-content !text-[10px] !py-1 !px-2">{t(name)}</span>}
+                  </div>
+                );
+              })}
+              {skills && skills.length > 8 && (
+                <div className="w-6 h-6 flex items-center justify-center bg-white/10 rounded-full text-[10px] text-white font-bold border border-white/20 backdrop-blur-sm">
+                  +{skills.length - 8}
+                </div>
+              )}
+            </div>
 
-          <button
-            className="px-4 py-2 m-2 bg-[var(--button-active)] select-none text-[var(--text-primary)] cursor-pointer hover:bg-[var(--button-hover)] rounded-lg text-sm transition-all duration-300"
-            onClick={(e) => {
-              e.stopPropagation();
-              handleOpen();
-            }}
-          >
-            {t('button.see_more')}
-          </button>
+            <button
+              className="px-5 py-2 mt-2 bg-white/10 border border-white/20 select-none text-white cursor-pointer hover:bg-white/20 rounded-lg text-xs font-semibold transition-all duration-300 active:scale-95"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleOpen();
+              }}
+            >
+              {t('button.see_more')}
+            </button>
+          </div>
         </div>
       </div>
 
       <ProjectModal
         isOpen={open}
         onClose={() => setOpen(false)}
+        id={id}
         title={title}
         imageUrl={imageUrl}
         description={description}
