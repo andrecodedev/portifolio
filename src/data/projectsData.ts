@@ -47,6 +47,7 @@ import tailwindIcon from '../img/skills/tailwind.svg';
 import viteIcon from '../img/skills/vite.svg';
 import nodejsIcon from '../img/skills/nodejs.svg';
 import obsidianIcon from '../img/skills/obsidian.svg';
+import supabaseIcon from '../img/skills/supabase.svg';
 
 export interface ProjectData {
   id: number;
@@ -162,6 +163,7 @@ export const projectsData: ProjectData[] = [
       trelloIcon,
       canvaIcon,
       scrumIcon,
+      supabaseIcon,
       geminiIcon,
       deepSeekIcon,
       perplexityIcon,
