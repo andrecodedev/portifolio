@@ -81,7 +81,10 @@
     "number4": "24+",
     "description4": "Repositories on GitHub",
     "number5": "1.2K+",
-    "description5": "Coffees Consumed"
+    "description5": "Coffees Consumed",
+    "tooltip2": "Focus and persistence!",
+    "tooltip3": "Constant evolution!",
+    "tooltip5": "Energy to code!"
   },
   "button": {
     "project": "See Projects",
@@ -499,7 +502,10 @@
     "totalCourses": "Courses & Paths",
     "completedCourses": "Certificates Earned",
     "uniqueSchools": "Institutions",
-    "ongoingCourses": "Ongoing Courses"
+    "ongoingCourses": "Ongoing Courses",
+    "tooltip1": "Knowledge is power!",
+    "tooltip2": "Continuous learning!",
+    "tooltip3": "Achievement unlocked!"
   },
   "SkillsStats": {
     "totalSkills": "Total Skills",
@@ -507,14 +513,20 @@
     "toolsSkills": "Tools & IDEs",
     "aiSkills": "AI & Methodologies",
     "systemSkills": "Systems",
-    "languageSkills": "Languages"
+    "languageSkills": "Languages",
+    "tooltip1": "Full arsenal!",
+    "tooltip2": "Technical mastery!"
   },
   "ProjectsStats": {
     "totalProjects": "Total Projects",
     "personalProjects": "Personal Projects",
     "workProjects": "Work Projects",
     "techUsed": "Technologies Used",
-    "deployments": "Live Deploys"
+    "deployments": "Live Deploys",
+    "totalLikes": "Project Loves",
+    "tooltip1": "Building the future!",
+    "tooltip2": "To infinity and beyond!",
+    "thanks": "Thanks for the love!"
   },
   "AboutHighlights": {
     "title": "Diving into the Details",
@@ -553,5 +565,11 @@
         "description": "Software without good UX is incomplete software.\n\nI seek to deeply understand the journey of whoever will use what I'm building. I work closely to turn prototypes into living, fluid interfaces, ensuring technology is invisible and ease of use is the highlight. My final goal is always to delight the user with a flawless experience."
       }
     }
+  },
+  "support": {
+    "label": "Loved the Project",
+    "action": "I loved them all!",
+    "thanks": "Thanks for the love!",
+    "already_done": "You already loved it!"
   }
 }

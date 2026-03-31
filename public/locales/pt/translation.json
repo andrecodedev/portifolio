@@ -81,7 +81,10 @@
     "number4": "24+",
     "description4": "Repositórios no GitHub",
     "number5": "1.2K+",
-    "description5": "Cafés Consumidos"
+    "description5": "Cafés Consumidos",
+    "tooltip2": "Foco e persistência!",
+    "tooltip3": "Evolução constante!",
+    "tooltip5": "Energia para codar!"
   },
   "button": {
     "project": "Ver Projetos",
@@ -499,7 +502,10 @@
     "totalCourses": "Cursos & Formações",
     "completedCourses": "Certificados Obtidos",
     "uniqueSchools": "Instituições",
-    "ongoingCourses": "Cursos em Andamento"
+    "ongoingCourses": "Cursos em Andamento",
+    "tooltip1": "Conhecimento é poder!",
+    "tooltip2": "Aprendizado contínuo!",
+    "tooltip3": "Conquista desbloqueada!"
   },
   "SkillsStats": {
     "totalSkills": "Total Habilidades",
@@ -507,14 +513,20 @@
     "toolsSkills": "Ferramentas & IDEs",
     "aiSkills": "IAs & Metodologias",
     "systemSkills": "Sistemas",
-    "languageSkills": "Idiomas"
+    "languageSkills": "Idiomas",
+    "tooltip1": "Arsenal completo!",
+    "tooltip2": "Domínio técnico!"
   },
   "ProjectsStats": {
     "totalProjects": "Total Projetos",
     "personalProjects": "Projetos Pessoais",
     "workProjects": "Projetos de Trabalho",
     "techUsed": "Tecnologias Utilizadas",
-    "deployments": "Deploys Realizados"
+    "deployments": "Deploys Realizados",
+    "totalLikes": "Amei nos Projetos",
+    "tooltip1": "Construindo o futuro!",
+    "tooltip2": "Rumo ao infinito!",
+    "thanks": "Obrigado pelo carinho!"
   },
   "AboutHighlights": {
     "title": "Mergulhando nos Detalhes",
@@ -553,5 +565,11 @@
         "description": "Software sem uma boa UX é software incompleto.\n\nBusco entender profundamente a jornada de quem vai usar o que estou construindo. Trabalho de perto para transformar protótipos em interfaces vivas e fluidas, garantindo que a tecnologia seja invisível e a facilidade de uso seja o destaque. Meu objetivo final é sempre encantar o usuário com uma experiência impecável."
       }
     }
+  },
+  "support": {
+    "label": "Amei o Projeto",
+    "action": "Amei todos!",
+    "thanks": "Obrigado pelo carinho!",
+    "already_done": "Você já amou!"
   }
 }

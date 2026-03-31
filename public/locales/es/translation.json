@@ -81,7 +81,10 @@
     "number4": "24+",
     "description4": "Repositorios en GitHub",
     "number5": "1.2K+",
-    "description5": "Cafés Consumidos"
+    "description5": "Cafés Consumidos",
+    "tooltip2": "¡Enfoque y persistencia!",
+    "tooltip3": "¡Evolución constante!",
+    "tooltip5": "¡Energía para codificar!"
   },
   "button": {
     "project": "Ver Proyectos",
@@ -499,7 +502,10 @@
     "totalCourses": "Cursos y Formaciones",
     "completedCourses": "Certificados Obtenidos",
     "uniqueSchools": "Instituciones",
-    "ongoingCourses": "Cursos en Curso"
+    "ongoingCourses": "Cursos en Curso",
+    "tooltip1": "¡El conocimiento es poder!",
+    "tooltip2": "¡Aprendizaje continuo!",
+    "tooltip3": "¡Logro desbloqueado!"
   },
   "SkillsStats": {
     "totalSkills": "Total Habilidades",
@@ -507,14 +513,20 @@
     "toolsSkills": "Herramientas e IDEs",
     "aiSkills": "IAs y Metodologías",
     "systemSkills": "Sistemas",
-    "languageSkills": "Idiomas"
+    "languageSkills": "Idiomas",
+    "tooltip1": "¡Arsenal completo!",
+    "tooltip2": "¡Dominio técnico!"
   },
   "ProjectsStats": {
     "totalProjects": "Total Proyectos",
     "personalProjects": "Proyectos Personales",
     "workProjects": "Proyectos de Trabajo",
     "techUsed": "Tecnologías Utilizadas",
-    "deployments": "Deploys Realizados"
+    "deployments": "Deploys Realizados",
+    "totalLikes": "Me encanta en los Proyectos",
+    "tooltip1": "¡Construyendo o futuro!",
+    "tooltip2": "¡Rumbo al infinito!",
+    "thanks": "¡Gracias por el cariño!"
   },
   "AboutHighlights": {
     "title": "Sumergiéndome en los Detalles",
@@ -553,5 +565,11 @@
         "description": "El software sin una buena UX es un software incompleto.\n\nBusco entender profundamente el viaje de quien usará lo que estoy construindo. Trabajo de cerca para transformar prototipos en interfaces vivas y fluidas, asegurando que la tecnología sea invisible y la facilidad de uso sea la protagonista. Mi objetivo final es siempre encantar al usuario con una experiencia impecable."
       }
     }
+  },
+  "support": {
+    "label": "Me encantó el Proyecto",
+    "action": "¡Me encantaron todos!",
+    "thanks": "¡Gracias por el cariño!",
+    "already_done": "¡Ya te encantó!"
   }
 }
