@@ -752,3 +752,18 @@ h6,
     visibility: visible;
   }
 }
+
+/* Efeito de Carrossel de Cores / Matrix Rainbow */
+@keyframes matrix-carousel {
+  0%   { color: #ff0000; fill: #ff0000; }
+  17%  { color: #ff8800; fill: #ff8800; }
+  33%  { color: #ffff00; fill: #ffff00; }
+  50%  { color: #00ff00; fill: #00ff00; }
+  67%  { color: #00ffff; fill: #00ffff; }
+  83%  { color: #0000ff; fill: #0000ff; }
+  100% { color: #ff0000; fill: #ff0000; }
+}
+
+.animate-matrix {
+  animation: matrix-carousel 4s linear infinite !important;
+}
