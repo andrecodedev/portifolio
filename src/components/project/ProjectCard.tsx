@@ -78,7 +78,7 @@ export default function ProjectCard({ id, title, imageUrl, description, skills, 
               />
             </div>
 
-            <h3 className="text-base font-bold text-white mb-2 max-w-[90%] truncate text-center mt-8" title={title}>
+            <h3 className="text-base font-bold text-white mb-2 max-w-[90%] truncate text-center mt-12 md:mt-14" title={title}>
               {title}
             </h3>
 
