@@ -5,14 +5,13 @@ import FadeIn from '../components/FadeIn';
 import ProjectCard from '../components/project/ProjectCard';
 import ProjectFilter from '../components/project/ProjectFilter';
 import ProjectsStats from '../components/project/ProjectsStats';
+import GlobalSupportButton from '../components/project/GlobalSupportButton';
 import { useTranslation } from 'react-i18next';
 
 // Importar dados dos projetos
 import { projectsData } from '../data/projectsData';
 
 import { useState } from 'react';
-
-// Removido: projetos de trabalho agora estão em projectsData.ts
 
 function Projetos() {
   const { t, i18n } = useTranslation();
@@ -49,6 +48,7 @@ function Projetos() {
           </div>
         </FadeIn>
       </main>
+      <GlobalSupportButton />
       <Footer />
     </div>
   );

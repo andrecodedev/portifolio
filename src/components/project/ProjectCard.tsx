@@ -64,8 +64,8 @@ export default function ProjectCard({ id, title, imageUrl, description, skills, 
             }`}
         >
           {/* Internal Content (Smooth fade) */}
-          <div className={`flex flex-col justify-center items-center w-full h-full transition-all duration-700 ${showOverlay ? "opacity-100 translate-y-0" : "opacity-0 translate-y-0"}`}>
-            {/* Header do Card (Label e Like) */}
+          <div className={`flex flex-col justify-center items-center w-full h-full pt-8 gap-1.5 transition-all duration-700 ${showOverlay ? "opacity-100 translate-y-0" : "opacity-0 translate-y-0"}`}>
+            {/* Header do Card (Label e Like) - Já é absolute top-0 */}
             <div className="absolute top-0 left-0 right-0 p-3 flex justify-between items-center z-20">
               {label ? (
                 <span className="px-2 py-0.5 text-[9px] font-bold rounded-md border border-white/20 bg-white/10 text-white/90 uppercase tracking-widest backdrop-blur-md">
@@ -78,34 +78,34 @@ export default function ProjectCard({ id, title, imageUrl, description, skills, 
               />
             </div>
 
-            <h3 className="text-base font-bold text-white mb-2 max-w-[90%] truncate text-center mt-12 md:mt-14" title={title}>
+            <h3 className="text-[14px] md:text-base font-bold text-white max-w-[90%] truncate text-center font-jet uppercase tracking-tight" title={title}>
               {title}
             </h3>
 
             {skills && skills.length > 0 && (
-              <h4 className="text-white text-[10px] tracking-widest opacity-70 mb-2 font-semibold uppercase">
+              <h4 className="text-white text-[9px] tracking-widest opacity-60 font-semibold uppercase">
                 {t('ProjectModal.tech_title')}
               </h4>
             )}
-            <div className="flex flex-wrap justify-center gap-2 p-2 select-none max-w-full">
+            <div className="flex flex-wrap justify-center gap-1.5 p-1 select-none max-w-[95%]">
               {skills?.slice(0, 8).map((skill, idx) => {
                 const name = getSkillName(skill);
                 return (
                   <div key={idx} className="tooltip-container group">
-                    <img src={skill} alt={name || "Skill"} className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
+                    <img src={skill} alt={name || "Skill"} className="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300 group-hover:scale-110" />
                     {name && <span className="tooltip-content !text-[10px] !py-1 !px-2">{t(name)}</span>}
                   </div>
                 );
               })}
               {skills && skills.length > 8 && (
-                <div className="w-6 h-6 flex items-center justify-center bg-white/10 rounded-full text-[10px] text-white font-bold border border-white/20 backdrop-blur-sm">
+                <div className="w-5 h-5 md:w-6 md:h-6 flex items-center justify-center bg-white/10 rounded-full text-[9px] text-white font-bold border border-white/20 backdrop-blur-sm">
                   +{skills.length - 8}
                 </div>
               )}
             </div>
 
             <button
-              className="px-5 py-2 mt-2 bg-white/10 border border-white/20 select-none text-white cursor-pointer hover:bg-white/20 rounded-lg text-xs font-semibold transition-all duration-300 active:scale-95"
+              className="px-4 py-0.5 bg-white/10 border border-white/20 select-none text-white cursor-pointer hover:bg-white/20 rounded-lg text-[10px] font-semibold transition-all duration-300 active:scale-95"
               onClick={(e) => {
                 e.stopPropagation();
                 handleOpen();
@@ -114,6 +114,7 @@ export default function ProjectCard({ id, title, imageUrl, description, skills, 
               {t('button.see_more')}
             </button>
           </div>
+
         </div>
       </div>
 

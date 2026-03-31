@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PixelHeart from '../ui/PixelHeart';
 import { likesService } from '../../services/likesService';
+import { formatLikes } from '../../utils/formatters';
 
 interface LikeButtonProps {
     projectId: number;
@@ -66,7 +67,7 @@ export default function LikeButton({ projectId, className = "" }: LikeButtonProp
                 text-[10px] md:text-xs font-bold font-jet transition-colors duration-300
                 ${liked ? 'text-red-500' : 'text-[var(--text-primary)]'}
             `}>
-                {likes}
+                {formatLikes(likes)}
             </span>
         </div>
     );
