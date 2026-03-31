@@ -1,20 +1,19 @@
 import { useTranslation } from "react-i18next";
 import CountUp from "../ui/CountUp";
+import PixelCoffee from "../ui/PixelCoffee";
+import PixelCode from "../ui/PixelCode";
+import PixelClock from "../ui/PixelClock";
 
 export default function AboutStartsGrid() {
   const { t } = useTranslation();
 
   const parseValue = (val: string) => {
     if (!val) return { num: 0, suffix: '', decimals: 0 };
-    // Extrai o número (aceita vírgula ou ponto decimal)
     const match = val.match(/(\d+([.,]\d+)?)/);
     const numStr = match ? match[0] : '0';
     const num = parseFloat(numStr.replace(',', '.'));
     const decimals = numStr.includes(',') || (numStr.includes('.') && !/^\d{1,3}(\.\d{3})*$/.test(numStr)) ? 1 : 0;
-
-    // O sufixo é tudo o que vem depois do número
     const suffix = val.split(numStr)[1] || '';
-
     return { num, suffix, decimals };
   };
 
@@ -26,10 +25,37 @@ export default function AboutStartsGrid() {
 
   const stats = [
     { num: stat1.num, decimals: stat1.decimals, suffix: stat1.suffix, label: t('AboutStartsGrid.description1', 'Anos de Estudo Intensivo') },
-    { num: stat2.num, decimals: stat2.decimals, suffix: stat2.suffix, label: t('AboutStartsGrid.description2', 'Horas de Codificação') },
-    { num: stat3.num, decimals: stat3.decimals, suffix: stat3.suffix, label: t('AboutStartsGrid.description3', 'Total de Commits') },
+    {
+      num: stat2.num,
+      decimals: stat2.decimals,
+      suffix: stat2.suffix,
+      label: t('AboutStartsGrid.description2', 'Horas de Codificação'),
+      isHighlight: true,
+      highlightColor: 'text-cyan-400',
+      icon: <PixelClock glow className="w-4 h-4 md:w-5 md:h-5 inline-block mr-2 align-middle -mt-1" color="#22D3EE" />,
+      tooltip: t('AboutStartsGrid.tooltip2', 'Foco e persistência!')
+    },
+    {
+      num: stat3.num,
+      decimals: stat3.decimals,
+      suffix: stat3.suffix,
+      label: t('AboutStartsGrid.description3', 'Total de Commits'),
+      isHighlight: true,
+      highlightColor: 'text-emerald-500',
+      icon: <PixelCode glow className="w-4 h-4 md:w-5 md:h-5 inline-block mr-2 align-middle -mt-1" />,
+      tooltip: t('AboutStartsGrid.tooltip3', 'Evolução constante!')
+    },
     { num: stat4.num, decimals: stat4.decimals, suffix: stat4.suffix, label: t('AboutStartsGrid.description4', 'Repositórios no GitHub') },
-    { num: stat5.num, decimals: stat5.decimals, suffix: stat5.suffix, label: t('AboutStartsGrid.description5', 'Cafés Consumidos') },
+    {
+      num: stat5.num,
+      decimals: stat5.decimals,
+      suffix: stat5.suffix,
+      label: t('AboutStartsGrid.description5', 'Cafés Consumidos'),
+      isHighlight: true,
+      highlightColor: 'text-orange-500',
+      icon: <PixelCoffee glow className="w-4 h-4 md:w-5 md:h-5 inline-block mr-2 align-middle -mt-1" />,
+      tooltip: t('AboutStartsGrid.tooltip5', 'Energia para codar!')
+    },
   ];
 
   return (
@@ -38,14 +64,17 @@ export default function AboutStartsGrid() {
         {stats.map((stat, index) => (
           <div
             key={index}
-            className={`relative px-4 after:content-[''] after:absolute after:top-[20%] after:bottom-[20%] after:right-[-0.5rem] after:w-[1px] after:bg-[var(--text-primary)] after:opacity-60 after:hidden lg:after:block last:after:hidden ${index === 4 ? 'col-span-2 lg:col-span-1' : ''
-              }`}
+            className={`relative px-4 group after:content-[''] after:absolute after:top-[20%] after:bottom-[20%] after:right-[-0.5rem] after:w-[1px] after:bg-[var(--text-primary)] after:opacity-60 after:hidden lg:after:block last:after:hidden ${index === 4 ? 'col-span-2 lg:col-span-1 border-t border-white/5 lg:border-none pt-4 lg:pt-0 mt-4 lg:mt-0' : ''}`}
           >
-            <h5 className="text-[1.875rem] md:text-4xl font-bold text-[var(--text-primary)] mb-2">
+            <h5 className={`text-[1.875rem] md:text-3xl font-bold mb-2 transition-all duration-300 ${stat.isHighlight ? `${stat.highlightColor}` : 'text-[var(--text-primary)]'}`}>
+              {stat.icon && stat.icon}
               <CountUp end={stat.num} decimals={stat.decimals} suffix={stat.suffix} />
             </h5>
-            <p className="text-sm text-[var(--text-terceiro)] leading-[1.4]">
+            <p className={`text-[11px] md:text-xs leading-[1.4] transition-colors duration-300 ${stat.isHighlight ? `${stat.highlightColor} font-bold opacity-100` : 'text-[var(--text-terceiro)]'}`}>
               {stat.label}
+              {stat.isHighlight && stat.tooltip && (
+                <span className={`block text-[8px] opacity-0 group-hover:opacity-100 transition-opacity mt-1 italic ${stat.highlightColor}`}>{stat.tooltip}</span>
+              )}
             </p>
           </div>
         ))}
