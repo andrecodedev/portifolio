@@ -127,7 +127,7 @@ export default function ProjectsStats({ projectsData }: ProjectsStatsProps) {
                         <p className={`text-[11px] md:text-xs leading-[1.4] transition-colors duration-300 ${stat.isHighlight && stat.highlightColor !== 'text-[var(--text-primary)]' ? `${stat.highlightColor} font-bold` : 'text-[var(--text-terceiro)]'} ${stat.isHighlight ? 'font-bold' : ''}`}>
                             {t(stat.labelKey, stat.labelDefault)}
                             {stat.isHighlight && stat.tooltipKey && (
-                                <span className={`block text-[8px] opacity-0 group-hover:opacity-100 group-active:opacity-100 group-focus:opacity-100 transition-opacity mt-1 italic ${stat.highlightColor === 'text-red-500' ? 'text-red-500' : 'text-[var(--text-terceiro)]'}`}>
+                                <span className={`block text-[10px] opacity-0 group-hover:opacity-100 group-active:opacity-100 group-focus:opacity-100 transition-opacity mt-1 italic ${stat.highlightColor === 'text-red-500' ? 'text-red-500' : 'text-[var(--text-terceiro)]'}`}>
                                     {t(stat.tooltipKey, stat.tooltipDefault)}
                                 </span>
                             )}

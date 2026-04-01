@@ -108,7 +108,7 @@ export default function AboutStartsGrid() {
             <p className={`text-[11px] md:text-xs leading-[1.4] transition-colors duration-300 text-[var(--text-terceiro)] ${stat.isHighlight ? 'font-bold opacity-100' : ''}`}>
               {t(stat.labelKey, stat.labelDefault)}
               {stat.isHighlight && stat.tooltipKey && (
-                <span className={`block text-[8px] opacity-0 group-hover:opacity-100 group-active:opacity-100 group-focus:opacity-100 transition-opacity mt-1 italic text-[var(--text-terceiro)]`}>
+                <span className={`block text-[10px] opacity-0 group-hover:opacity-100 group-active:opacity-100 group-focus:opacity-100 transition-opacity mt-1 italic text-[var(--text-terceiro)]`}>
                   {t(stat.tooltipKey, stat.tooltipDefault)}
                 </span>
               )}

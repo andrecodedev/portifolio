@@ -4,7 +4,7 @@ import CountUp from '../ui/CountUp';
 import PixelBook from '../ui/PixelBook';
 import PixelHourglass from '../ui/PixelHourglass';
 import PixelCertificate from '../ui/PixelCertificate';
-import PixelSchool from '../ui/PixelSchool';
+import PixelAcademy from '../ui/PixelAcademy';
 import PixelOngoing from '../ui/PixelOngoing';
 
 interface EducationStatsProps {
@@ -70,7 +70,7 @@ export default function EducationStats({ educationData }: EducationStatsProps) {
             suffix: totalHours >= 1000 ? 'K+' : '+',
             isHighlight: true,
             highlightColor: 'text-[var(--text-primary)]',
-            icon: <PixelHourglass className="w-6 h-6 md:w-8 md:h-8" />,
+            icon: <PixelHourglass className="w-6 h-6 md:w-8 md:h-8" color="#FACC15" />,
             tooltipKey: 'EducationStats.tooltip1',
             tooltipDefault: 'Conhecimento é poder!'
         },
@@ -103,7 +103,7 @@ export default function EducationStats({ educationData }: EducationStatsProps) {
             suffix: '+',
             isHighlight: true,
             highlightColor: 'text-[var(--text-primary)]',
-            icon: <PixelSchool className="w-6 h-6 md:w-8 md:h-8" />,
+            icon: <PixelAcademy className="w-6 h-6 md:w-8 md:h-8" />,
             tooltipKey: 'EducationStats.tooltip4',
             tooltipDefault: 'Onde tudo floresce!'
         },
@@ -144,7 +144,7 @@ export default function EducationStats({ educationData }: EducationStatsProps) {
                         <p className={`text-[11px] md:text-xs leading-[1.4] transition-colors duration-300 text-[var(--text-terceiro)] ${stat.isHighlight ? 'font-bold' : ''}`}>
                             {t(stat.labelKey, stat.labelDefault)}
                             {stat.isHighlight && stat.tooltipKey && (
-                                <span className={`block text-[8px] opacity-0 group-hover:opacity-100 group-active:opacity-100 group-focus:opacity-100 transition-opacity mt-1 italic text-[var(--text-terceiro)]`}>
+                                <span className={`block text-[10px] opacity-0 group-hover:opacity-100 group-active:opacity-100 group-focus:opacity-100 transition-opacity mt-1 italic text-[var(--text-terceiro)]`}>
                                     {t(stat.tooltipKey, stat.tooltipDefault)}
                                 </span>
                             )}
