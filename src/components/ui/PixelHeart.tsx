@@ -1,7 +1,7 @@
 export default function PixelHeart({ className = "w-6 h-6", filled = false }: { className?: string, filled?: boolean }) {
     return (
         <svg
-            className={`${className} transition-all duration-300 ${filled ? 'scale-110 drop-shadow-[0_0_8px_rgba(239,68,68,0.7)]' : 'hover:scale-105'}`}
+            className={`${className}`}
             viewBox="0 0 13 13"
             xmlns="http://www.w3.org/2000/svg"
         >

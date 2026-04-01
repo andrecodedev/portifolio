@@ -1,27 +1,31 @@
-export default function PixelProject({ className = "w-6 h-6", glow = false, color = "#F59E0B" }: { className?: string, glow?: boolean, color?: string }) {
+export default function PixelProject({ className = "w-6 h-6", glow = false, color = "var(--bg-secondary)" }: { className?: string, glow?: boolean, color?: string }) {
+    const primary = "var(--text-primary)";
+    const secondary = color;
+
     return (
         <svg
-            className={`${className} transition-all duration-300 ${glow ? 'scale-110 drop-shadow-[0_0_12px_rgba(245,158,11,0.8)]' : 'hover:scale-105'}`}
+            className={`${className}`}
             viewBox="0 0 16 16"
             xmlns="http://www.w3.org/2000/svg"
         >
-            {/* Outline */}
-            <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M1 2H6V3H7V4H14V5H15V12H14V13H1V12H0V3H1V2ZM14 5H7V12H14V5Z"
-                fill="black"
-                fillOpacity="0.8"
-            />
-            {/* Folder Front */}
-            <path d="M1 4H6V5H7V12H1V4Z" fill={color} />
-            <path d="M7 5H14V12H7V5Z" fill={color} fillOpacity="0.75" />
+            {/* 1. LAYER DE PROFUNDIDADE (SOMBRA EMPILHADA) */}
+            <path d="M14 4H15V15H4V14H14V4ZM13 14H14V15H13V14Z" fill={primary} fillOpacity="0.08" />
 
-            {/* Code Symbol (Placeholder) */}
-            <path d="M8 7L9 8L8 9M11 7L10 8L11 9" stroke="black" strokeOpacity="0.4" strokeWidth="1" />
+            {/* 2. ESTRUTURA DO PROJETO (ESTILO FOLDER / STACK) */}
+            {/* Aba Superior (Tab) */}
+            <path d="M1 2H6V4H1V2Z" fill={primary} />
+            <path d="M7 3H14V5H7V3Z" fill={primary} fillOpacity="0.2" />
 
-            {/* Gloss on Front */}
-            <path d="M2 5H5V6H2V5Z" fill="white" fillOpacity="0.2" />
+            {/* Corpo da Pasta Principal */}
+            <path d="M1 4H14V14H1V4Z" fill={primary} />
+            <path d="M2 5H13V13H2V5Z" fill={secondary} />
+
+            {/* Símbolo de Conteúdo Interno (Estrutura de Arquivos) */}
+            <path d="M4 7H8V8H4V7ZM4 9H6V10H4V9ZM10 7H11V10H10V7Z" fill={primary} fillOpacity="0.3" />
+
+            {/* 3. REFINAMENTOS DE LUZ (PREMIUM GLOSS) */}
+            <path d="M1 4H14V5H1V4Z" fill="white" fillOpacity="0.15" />
+            <path d="M13 5H14V13H13V5Z" fill="white" fillOpacity="0.05" />
         </svg>
     );
 }

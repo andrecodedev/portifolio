@@ -1,48 +1,64 @@
 export default function PixelCoffee({ className = "w-6 h-6", glow = false }: { className?: string, glow?: boolean }) {
+    const mugColor = "var(--bg-secondary)";
+    const outlineColor = "var(--text-primary)";
+
     return (
         <svg
-            className={`${className} transition-all duration-300 ${glow ? 'scale-110 drop-shadow-[0_0_12px_rgba(249,115,22,0.8)]' : 'hover:scale-105'}`}
+            className={`${className}`}
             viewBox="0 0 16 16"
             xmlns="http://www.w3.org/2000/svg"
         >
-            {/* Elegant Rising Steam - Multi-toned for 'Hot' effect */}
+            {/* 1. STEAM - Centered and Suspended */}
             <g className={glow ? "animate-pulse" : ""}>
-                <path d="M6 0H7V2H6V0ZM10 1H11V3H10V1ZM8 2H9V4H8V2Z" fill="white" fillOpacity="0.4" />
-                <path d="M5 1H6V2H5V1ZM9 0H10V2H9V0ZM11 2H12V3H11V2Z" fill="white" fillOpacity="0.2" />
+                {/* Left Wisp (Centered at x=5,6) */}
+                <path d="M5 0H6V1H5V0ZM6 1H7V3H6V1ZM5 3H6V5H5V3Z" fill={outlineColor} fillOpacity="0.4" />
+                {/* Right Wisp (Centered at x=8,9) */}
+                <path d="M8 1H9V2H8V1ZM9 2H10V4H9V2ZM8 4H9V5H8V4Z" fill={outlineColor} fillOpacity="0.2" />
             </g>
 
-            {/* Mug Structure - Strong and Curvy */}
+            {/* 2. MUG DEPTH (Interior & Rim) */}
+            {/* Inner Coffee Shadow (The "redondinha" part) */}
             <path
                 fillRule="evenodd"
                 clipRule="evenodd"
-                d="M2 5H12V6H13V12H12V13H2V12H1V6H2V5Z"
-                fill="black"
+                d="M3 6H11V7H12V8H11V9H10L9 10H5L4 9H3V8H2V7H3V6Z"
+                fill={outlineColor}
+                fillOpacity="0.15"
             />
-            {/* Liquid Surface Level */}
-            <path d="M2 6H12V7H2V6Z" fill="black" fillOpacity="0.3" />
+            {/* Deep Interior (Center) */}
+            <path d="M4 7H10V8H9L8 9H6L5 8H4V7Z" fill={outlineColor} fillOpacity="0.25" />
 
-            {/* Main Mug Body with Gradient-like Depth */}
-            <path d="M2 7H12V12H2V7Z" fill={glow ? "#F97316" : "currentColor"} />
-            <path d="M2 11H12V12H2V11Z" fill="black" fillOpacity="0.1" />
-
-            {/* Premium Arched Handle */}
+            {/* 3. MUG EXTERIOR STRUCTURE */}
+            {/* Outline with Curved Base */}
             <path
                 fillRule="evenodd"
                 clipRule="evenodd"
-                d="M12 7H15V11H12V12H16V6H12V7ZM13 7.5H14.5V10.5H13V7.5Z"
-                fill="black"
+                d="M2 6H12V9L11 10L10 11L9 12H5L4 11L3 10L2 9V6ZM3 7V9L4 10L5 11H9L10 10L11 9V7H3Z"
+                fill={outlineColor}
             />
-            <path d="M13 8H14V10H13V8Z" fill={glow ? "#FB923C" : "currentColor"} fillOpacity="0.7" />
 
-            {/* Glass/Ceramic Highlights (High-End Reflection) */}
-            <path d="M3 6H5V7H3V6Z" fill="white" fillOpacity="0.4" />
-            <path d="M3 7H4V11H3V7Z" fill="white" fillOpacity="0.2" />
-            <path d="M11 7H12V11H11V7Z" fill="black" fillOpacity="0.1" />
+            {/* Main Ceramic Body (Front) */}
+            <path
+                d="M3 8H11V9L10 10H4L3 9V8Z"
+                fill={mugColor}
+            />
 
-            {/* Detailed Coffee Heart Decoration (Optional/Subtle) */}
-            {glow && (
-                <rect x="5" y="8" width="4" height="2" fill="white" fillOpacity="0.1" />
-            )}
+            {/* Ceramic Highlights / Roundness */}
+            <path d="M3 7H4V9L3 8V7Z" fill="white" fillOpacity="0.2" />
+            <path d="M10 7H11V9L10 8V7Z" fill="black" fillOpacity="0.1" />
+
+            {/* 4. HANDLE - More Rounded */}
+            <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M12 7H14V8H15V10H14V11H12V10H14V8H12V7Z"
+                fill={outlineColor}
+            />
+            <path d="M13 8.5H14V9.5H13V8.5Z" fill={mugColor} fillOpacity="0.4" />
+
+            {/* 5. SAUCER (The Base) */}
+            <path d="M2 13H12V14H2V13Z" fill={outlineColor} />
+            <path d="M4 14H10V15H4V14Z" fill={outlineColor} fillOpacity="0.6" />
         </svg>
     );
 }

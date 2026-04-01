@@ -1,7 +1,7 @@
 export default function PixelCloud({ className = "w-6 h-6", glow = false }: { className?: string, glow?: boolean }) {
     return (
         <svg
-            className={`${className} transition-all duration-300 ${glow ? 'scale-110 drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]' : 'hover:scale-105'}`}
+            className={`${className}`}
             viewBox="0 0 16 16"
             xmlns="http://www.w3.org/2000/svg"
         >
