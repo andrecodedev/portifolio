@@ -19,7 +19,7 @@ export default function PixelHeart({ className = "w-6 h-6", filled = false }: { 
                 clipRule="evenodd"
                 d="M3 2H5V3H8V2H10V3H11V6H10V7H9V8H8V9H7V10H6V9H5V8H4V7H3V6H2V3H3V2Z"
                 /* Usando sua variável nativa --text-terceiro para o estado inativo */
-                fill={filled ? "#FF0040" : "var(--text-terceiro)"}
+                fill={filled ? "#FF0040" : "#FCA5A5"}
             />
 
             {/* 3. BRILHO SUPERIOR QUANDO ATIVO */}

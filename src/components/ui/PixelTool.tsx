@@ -1,4 +1,4 @@
-export default function PixelTool({ className = "w-6 h-6" }: { className?: string }) {
+export default function PixelTool({ className = "w-6 h-6", glow = false }: { className?: string }) {
     const primary = "var(--text-primary)";
     const secondary = "var(--bg-secondary)";
 
@@ -31,7 +31,9 @@ export default function PixelTool({ className = "w-6 h-6" }: { className?: strin
             <path d="M7 9H9V10H7V9Z" fill={primary} fillOpacity="0.4" />
 
             {/* Lupa / Mini-detalhe (Opcional, para indicar Ferramenta de Busca) */}
-            <path d="M11 10H12V11H11V10Z" fill={primary} />
+            <g className={glow ? "animate-pulse" : ""}>
+                <path d="M11 10H12V11H11V10Z" fill="#34D399" fillOpacity="0.8" />
+            </g>
 
             {/* 3. REFINAMENTOS DE LUZ (METAL/GLASS) */}
             <path d="M3 4H13V5H3V4Z" fill="white" fillOpacity="0.1" />

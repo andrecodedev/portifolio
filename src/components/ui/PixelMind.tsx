@@ -1,4 +1,4 @@
-export default function PixelMind({ className = "w-6 h-6" }: { className?: string }) {
+export default function PixelMind({ className = "w-6 h-6", glow = false }: { className?: string }) {
     const primary = "var(--text-primary)";
     const secondary = "var(--bg-secondary)";
 
@@ -26,7 +26,9 @@ export default function PixelMind({ className = "w-6 h-6" }: { className?: strin
 
             {/* Miolo Central (3D Core) */}
             <path d="M6 6H10V10H6V6Z" fill={primary} />
-            <path d="M7 7H9V9H7V7Z" fill={secondary} />
+            <g className={glow ? "animate-pulse" : ""}>
+                <path d="M7 7H9V9H7V7Z" fill="#A78BFA" fillOpacity="0.6" />
+            </g>
             <path d="M7.5 7.5H8.5V8.5H7.5V7.5Z" fill="white" /> {/* Ponto focal máximo */}
 
             {/* Brilhos Orbitais (Aura de Pensamento) */}

@@ -29,8 +29,10 @@ export default function PixelBook({ className = "w-6 h-6", glow = false }: { cla
             <path d="M13 2H14V14H13V2Z" fill={outlineColor} fillOpacity="0.2" />
             <path d="M1 13H13V14H1V13Z" fill={outlineColor} fillOpacity="0.1" />
 
-            {/* Bookmark - Keeping the highlight color as it's small and elegant */}
-            <path d="M4.5 1H6.5V7L5.5 6L4.5 7V1Z" fill="var(--text-secondary)" />
+            {/* Bookmark - Using a subtle red accent as requested */}
+            <g className={glow ? "animate-pulse" : ""}>
+                <path d="M4.5 1H6.5V7L5.5 6L4.5 7V1Z" fill="#F87171" fillOpacity="0.8" />
+            </g>
 
             {/* Minimal Detail Lines */}
             <path d="M8 4.5H11V5.5H8V4.5ZM8 6.5H11V7.5H8V6.5Z" fill={outlineColor} fillOpacity="0.3" />

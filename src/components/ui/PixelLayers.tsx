@@ -1,4 +1,4 @@
-export default function PixelLayers({ className = "w-6 h-6" }: { className?: string }) {
+export default function PixelLayers({ className = "w-6 h-6", glow = false }: { className?: string }) {
     const primary = "var(--text-primary)";
     const secondary = "var(--bg-secondary)";
 
@@ -14,7 +14,9 @@ export default function PixelLayers({ className = "w-6 h-6" }: { className?: str
 
             {/* 2. CAMADAS DE TECNOLOGIA (TECH STACK - LAYERS) */}
             {/* Camada Superior (Top Layer) */}
-            <path d="M8 1L14 4L8 7L2 4L8 1Z" fill={primary} />
+            <g className={glow ? "animate-pulse" : ""}>
+                <path d="M8 1L14 4L8 7L2 4L8 1Z" fill="#60A5FA" fillOpacity="0.8" />
+            </g>
             <path d="M8 2.5L12.5 4.5L8 6.5L3.5 4.5L8 2.5Z" fill={secondary} />
             {/* Brilho da Face Superior */}
             <path d="M8 2.5L11 4L8 5.5L5 4L8 2.5Z" fill="white" fillOpacity="0.1" />

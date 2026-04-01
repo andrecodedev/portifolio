@@ -15,7 +15,7 @@ export default function PixelStar({ className = "w-6 h-6", glow = false }: { cla
             {/* Preenchimento Colorido */}
             <path
                 d="M7 3H9V5H11V7H13V9H11V11H9V13H7V11H5V9H3V7H5V5H7V3Z"
-                fill={glow ? "#FACC15" : "var(--text-terceiro)"}
+                fill={glow ? "#FACC15" : "#FDE68A"}
             />
             {/* Brilho Central */}
             {glow && (

@@ -1,5 +1,4 @@
 export default function PixelHourglass({ className = "w-6 h-6", glow = false, color = "var(--text-primary)" }: { className?: string, glow?: boolean, color?: string }) {
-    // We want the frame to stay dark and professional
     const frameColor = "var(--bg-elements)";
     const detailColor = "var(--text-primary)";
 
@@ -9,36 +8,37 @@ export default function PixelHourglass({ className = "w-6 h-6", glow = false, co
             viewBox="0 0 16 16"
             xmlns="http://www.w3.org/2000/svg"
         >
-            {/* Outline - This provides the 'light' definition in dark mode */}
-            <path d="M2 1H14V3H2V1Z" fill={detailColor} />
-            <path d="M2 13H14V15H2V13Z" fill={detailColor} />
+            {/* 1. ESTRUTURA EXTERNA (MOLDURA PREMIUM) */}
+            {/* Sombras de Profundidade */}
+            <path d="M14 2H15V15H14V2Z" fill={detailColor} fillOpacity="0.08" />
 
-            {/* Wooden/Metal Frame - Main Body */}
-            <path d="M3 1.5H13V2.5H3V1.5Z" fill={frameColor} />
-            <path d="M3 13.5H13V14.5H3V13.5Z" fill={frameColor} />
+            {/* Base e Topo */}
+            <path d="M1 1H15V2H1V1ZM2 2H14V3H2V2ZM2 13H14V14H2V13ZM1 14H15V15H1V14Z" fill={detailColor} />
+            <path d="M3 2H13V3H3V2Z" fill="white" fillOpacity="0.15" /> {/* Brilho superior */}
 
-            {/* Glass Container - Sides */}
-            <path d="M3 3H4V5H5V6H6V7H10V6H11V5H12V3H13V5H12V6H11V7H10V8H6V7H5V6H4V5H3V3Z" fill={detailColor} fillOpacity="0.8" />
-            <path d="M3 13H4V11H5V10H6V9H10V10H11V11H12V13H13V11H12V10H11V9H10V8H6V9H5V10H4V11H3V13Z" fill={detailColor} fillOpacity="0.8" />
+            {/* Colunas Laterais (Suporte) */}
+            <path d="M2 3H3V13H2V3ZM13 3H14V13H13V3Z" fill={detailColor} />
+            <path d="M3 3H4V13H3V3Z" fill="white" fillOpacity="0.05" />
 
-            {/* Inner Glass Highlights */}
-            <path d="M4 3H12V4H11V5H10V6H6V5H5V4H4V3Z" fill="var(--bg-secondary)" />
-            <path d="M4 12H12V11H11V10H10V9H6V10H5V11H4V12Z" fill="var(--bg-secondary)" />
+            {/* 2. RECIPIENTE DE VIDRO (CURVAS PIXELADAS) */}
+            {/* Vidro Externo */}
+            <path d="M4 3H5V5H6V6H7V7H9V6H10V5H11V3H12V5H11V6H10V7H9V8H7V7H6V6H5V5H4V3Z" fill={detailColor} fillOpacity="0.6" />
+            <path d="M4 13H5V11H6V10H7V9H9V10H10V11H11V13H12V11H11V10H10V9H9V8H7V9H6V10H5V11H4V13Z" fill={detailColor} fillOpacity="0.6" />
 
-            {/* Sand (Top Half) */}
-            <path d="M7 6H9V7H7V6Z" fill={color} fillOpacity="0.4" />
+            {/* 3. AREIA (SISTEMA DINÂMICO) */}
+            {/* Areia Superior (Diminuindo) */}
+            <path d="M5 4H11V5H10V6H6V5H5V4Z" fill={color} />
+            <path d="M7 6H9V7H7V6Z" fill={color} fillOpacity="0.6" />
 
-            {/* Sand (Bottom Half) */}
-            <path d="M4 11H12V13H4V11Z" fill={color} />
-            <path d="M5 10H11V11H5V10Z" fill={color} fillOpacity="0.8" />
-            <path d="M6 9H10V10H6V9Z" fill={color} fillOpacity="0.6" />
+            {/* Areia Inferior (Acumulando) */}
+            <path d="M5 12H11V13H5V12ZM6 11H10V12H6V11ZM7 10H9V11H7V10Z" fill={color} />
 
-            {/* Flowing Sand */}
-            <rect x="7.5" y="7" width="1" height="2" fill={color} fillOpacity="0.7" />
+            {/* Fluxo de Areia (Caindo) */}
+            <rect className={glow ? "animate-pulse" : ""} x="7.5" y="7" width="1" height="3" fill={color} fillOpacity="0.8" />
 
-            {/* Gloss Highlight */}
-            <path d="M4 3H5V5H4V3Z" fill="white" fillOpacity="0.3" />
-            <path d="M11 11H12V13H11V11Z" fill="white" fillOpacity="0.2" />
+            {/* 4. REFLEXOS DE CRISTAL (FINISHING) */}
+            <path d="M4 4H5V6H4V4ZM11 11H12V13H11V11Z" fill="white" fillOpacity="0.2" />
+            <path d="M5 3H6V4H5V3Z" fill="white" fillOpacity="0.1" />
         </svg>
     );
 }

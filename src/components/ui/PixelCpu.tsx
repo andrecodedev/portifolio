@@ -1,4 +1,4 @@
-export default function PixelCpu({ className = "w-6 h-6", glow = false }: { className?: string, glow?: boolean }) {
+export default function PixelCpu({ className = "w-6 h-6", glow = false }: { className?: string }) {
     const primary = "var(--text-primary)";
     const secondary = "var(--bg-secondary)";
 
@@ -20,7 +20,9 @@ export default function PixelCpu({ className = "w-6 h-6", glow = false }: { clas
 
             {/* 4. NÚCLEO (CORE) - REFINAMENTO DE TEXTURA */}
             <path d="M6 6H10V10H6V6Z" fill={primary} fillOpacity="0.4" />
-            <path d="M7 7H9V9H7V7Z" fill={primary} />
+            <g className={glow ? "animate-pulse" : ""}>
+                <path d="M7 7H9V9H7V7Z" fill="#A3E635" fillOpacity="0.8" />
+            </g>
             <path d="M7 7H8V8H7V7Z" fill="white" fillOpacity="0.2" />
 
             {/* 5. DETALHES DE LUZ (METAL) */}

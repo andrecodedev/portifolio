@@ -1,4 +1,4 @@
-export default function PixelOngoing({ className = "w-6 h-6" }: { className?: string }) {
+export default function PixelOngoing({ className = "w-6 h-6", glow = false }: { className?: string, glow?: boolean }) {
     const primary = "var(--text-primary)";
     const secondary = "var(--bg-secondary)";
 
@@ -12,7 +12,6 @@ export default function PixelOngoing({ className = "w-6 h-6" }: { className?: st
             <path d="M3 2H14V3H3V2ZM14 2H15V12H14V2ZM3 11H14V12H3V11ZM3 2H4V12H3V2Z" fill={primary} fillOpacity="0.15" />
 
             {/* 2. JANELA PRINCIPAL - OCLUSÃO (Tampando o fundo) */}
-            {/* Preenchimento sólido com a cor do card para esconder o fundo */}
             <path d="M1 4H13V14H1V4Z" fill={secondary} />
 
             {/* 3. JANELA PRINCIPAL - CONTORNO (DETALHE FINAL) */}
@@ -24,7 +23,9 @@ export default function PixelOngoing({ className = "w-6 h-6" }: { className?: st
 
             {/* 5. CONTEÚDO: BARRA DE PROGRESSO (EM ANDAMENTO) */}
             <path d="M3 11H11V12H3V11Z" fill={primary} fillOpacity="0.1" />
-            <path d="M3 11H8V12H3V11Z" fill={primary} />
+            <g className={glow ? "animate-pulse" : ""}>
+                <path d="M3 11H8V12H3V11Z" fill="#FCD34D" fillOpacity="0.8" />
+            </g>
 
             {/* 6. LINHAS DE TEXTO / SINTAXE INTERNAS */}
             <path d="M3 8H10V9H3V8ZM3 9.5H7V10.5H3V9.5Z" fill={primary} fillOpacity="0.2" />

@@ -24,9 +24,9 @@ export default function PixelClock({ className = "w-6 h-6", glow = false, color 
 
             {/* Ponteiros (Hands) */}
             <g className={glow ? "animate-pulse" : ""}>
-                <path d="M7 5H8V8.5H7V5Z" fill={outlineColor} />
-                <path d="M8 8.5H11V9.5H8V8.5Z" fill={outlineColor} />
-                <path d="M7.5 8H8.5V9H7.5V8Z" fill="red" />
+                <path d="M7 5H8V8.5H7V5Z" fill="#22D3EE" fillOpacity="0.8" />
+                <path d="M8 8.5H11V9.5H8V8.5Z" fill="#22D3EE" fillOpacity="0.8" />
+                <path d="M7.5 8H8.5V9H7.5V8Z" fill="#EF4444" fillOpacity="0.8" />
             </g>
 
             {/* Brilho Externo (Circunferência Colorida) */}

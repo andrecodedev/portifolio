@@ -15,7 +15,7 @@ export default function PixelCloud({ className = "w-6 h-6", glow = false }: { cl
             {/* Preenchimento Colorido */}
             <path
                 d="M5 5H11V6H13V11H2V7H3V6H5V5Z"
-                fill={glow ? "#22D3EE" : "var(--text-terceiro)"}
+                fill={glow ? "#22D3EE" : "#94A3B8"}
             />
             {/* Detalhe de Volume (Luz) */}
             {glow && (

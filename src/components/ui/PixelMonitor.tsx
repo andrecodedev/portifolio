@@ -1,4 +1,4 @@
-export default function PixelMonitor({ className = "w-6 h-6" }: { className?: string }) {
+export default function PixelMonitor({ className = "w-6 h-6", glow = false }: { className?: string }) {
     const primary = "var(--text-primary)";
     const secondary = "var(--bg-secondary)";
 
@@ -19,7 +19,9 @@ export default function PixelMonitor({ className = "w-6 h-6" }: { className?: st
             {/* 3. TERMINAL INTERNO (CONTEÚDO) */}
             {/* Linhas de Prompt (Code) */}
             <path d="M3 4H5V5H3V4ZM6 4H10V5H6V4ZM3 6H8V7H3V6ZM3 8H6V9H3V8Z" fill={primary} fillOpacity="0.3" />
-            <path d="M11 9H13V10H11V9Z" fill={primary} fillOpacity="0.8" />
+            <g className={glow ? "animate-pulse" : ""}>
+                <path d="M11 9H13V10H11V9Z" fill="#34D399" fillOpacity="0.8" />
+            </g>
 
             {/* 4. BASE E SUPORTE */}
             <path d="M7 12H9V14H7V12ZM5 14H11V16H5V14Z" fill={primary} />

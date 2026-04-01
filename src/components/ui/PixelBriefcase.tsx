@@ -1,4 +1,4 @@
-export default function PixelBriefcase({ className = "w-6 h-6" }: { className?: string }) {
+export default function PixelBriefcase({ className = "w-6 h-6", glow = false }: { className?: string }) {
     const primary = "var(--text-primary)";
     const secondary = "var(--bg-secondary)";
 
@@ -23,7 +23,9 @@ export default function PixelBriefcase({ className = "w-6 h-6" }: { className?: 
             <path d="M6 10H7V11H6V10ZM9 12H10V13H9V12Z" fill="white" fillOpacity="0.2" />
 
             {/* Entrada / Lobby */}
-            <path d="M7 11H9V13H7V11Z" fill={primary} fillOpacity="0.6" />
+            <g className={glow ? "animate-pulse" : ""}>
+                <path d="M7 11H9V13H7V11Z" fill="#3B82F6" fillOpacity="0.6" />
+            </g>
 
             {/* 3. REFINAMENTOS DE LUZ (PREMIUM GLASS) */}
             <path d="M4 2H12V3H4V2Z" fill="white" fillOpacity="0.1" />

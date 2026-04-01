@@ -23,7 +23,7 @@ export default function PixelUser({ className = "w-6 h-6" }: { className?: strin
             <path d="M4 1H11V2H4V1Z" fill="white" fillOpacity="0.15" />
 
             {/* Área da Etiqueta (Label Inferior) */}
-            <path d="M3 8H12V13H3V8Z" fill={primary} fillOpacity="0.15" />
+            <path d="M3 8H12V13H3V8Z" fill="#F472B6" fillOpacity="0.4" />
             <path d="M4 9H11V10H4V9ZM4 11H9V12H4V11Z" fill={primary} fillOpacity="0.3" />
 
             {/* Detalhe de Proteção de Escrita (Aquele furinho no canto) */}

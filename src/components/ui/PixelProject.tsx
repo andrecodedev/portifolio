@@ -1,4 +1,4 @@
-export default function PixelProject({ className = "w-6 h-6", glow = false, color = "var(--bg-secondary)" }: { className?: string, glow?: boolean, color?: string }) {
+export default function PixelProject({ className = "w-6 h-6", glow = false, color = "var(--bg-secondary)" }: { className?: string, color?: string }) {
     const primary = "var(--text-primary)";
     const secondary = color;
 
@@ -13,7 +13,9 @@ export default function PixelProject({ className = "w-6 h-6", glow = false, colo
 
             {/* 2. ESTRUTURA DO PROJETO (ESTILO FOLDER / STACK) */}
             {/* Aba Superior (Tab) */}
-            <path d="M1 2H6V4H1V2Z" fill={primary} />
+            <g className={glow ? "animate-pulse" : ""}>
+                <path d="M1 2H6V4H1V2Z" fill="#D946EF" />
+            </g>
             <path d="M7 3H14V5H7V3Z" fill={primary} fillOpacity="0.2" />
 
             {/* Corpo da Pasta Principal */}

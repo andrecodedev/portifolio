@@ -1,4 +1,4 @@
-export default function PixelCertificate({ className = "w-6 h-6", glow = false, color = "var(--text-terceiro)" }: { className?: string, glow?: boolean, color?: string }) {
+export default function PixelCertificate({ className = "w-6 h-6", glow = false, color = "#60A5FA" }: { className?: string, glow?: boolean, color?: string }) {
     const outlineColor = "var(--text-primary)";
     const bodyColor = "var(--bg-primary)"; // Black in dark mode
 
@@ -22,9 +22,11 @@ export default function PixelCertificate({ className = "w-6 h-6", glow = false, 
             {/* Lines of text (placeholder) - Subtly light */}
             <path d="M4 5H11V6H4V5ZM4 7H11V8H4V7ZM4 9H8V10H4V9Z" fill={outlineColor} fillOpacity="0.2" />
 
-            {/* Seal / Ribbon - Keep as a small color accent or move to theme */}
-            <path d="M10 10H14V14L12 13L10 14V10Z" fill={color} />
-            <path d="M11 11H13V12H11V11Z" fill="white" fillOpacity="0.3" />
+            {/* Seal / Ribbon - Glowing color accent */}
+            <g className={glow ? "animate-pulse" : ""}>
+                <path d="M10 10H14V14L12 13L10 14V10Z" fill={color} />
+                <path d="M11 11H13V12H11V11Z" fill="white" fillOpacity="0.3" />
+            </g>
         </svg>
     );
 }

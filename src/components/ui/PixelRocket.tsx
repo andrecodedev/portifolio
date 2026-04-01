@@ -1,4 +1,4 @@
-export default function PixelRocket({ className = "w-6 h-6", glow = false }: { className?: string, glow?: boolean }) {
+export default function PixelRocket({ className = "w-6 h-6" }: { className?: string }) {
     const primary = "var(--text-primary)";
     const secondary = "var(--bg-secondary)";
 
@@ -38,10 +38,10 @@ export default function PixelRocket({ className = "w-6 h-6", glow = false }: { c
             <path d="M7 13H9V14H7V13Z" fill={primary} />
 
             {/* Fogo Principal (Powerful Exhaust) */}
-            <path d="M6 14H10V15H6V14ZM7 15H9V16H7V15Z" fill={primary} fillOpacity="0.7" />
+            <path d="M6 14H10V15H6V14ZM7 15H9V16H7V15Z" fill="#FB923C" fillOpacity="0.6" />
 
             {/* Brilho de Combustão de Alta Temperatura */}
-            <path d="M7.5 14H8.5V15.5H7.5V14Z" fill="white" fillOpacity="0.6" />
+            <path d="M7.5 14H8.5V15.5H7.5V14Z" fill="#FDE68A" fillOpacity="0.6" />
             <path d="M7 14H7.1V15H7V14ZM8.9 14H9V15H8.9V14Z" fill="white" fillOpacity="0.2" />
 
             {/* 4. REFINAMENTOS DE LUZ FINAIS */}

@@ -29,14 +29,14 @@ export default function PixelCode({ className = "w-6 h-6", glow = false }: { cla
             {/* Prompt Símbolo ( > ) */}
             <path
                 d="M3 6H4V7H5V8H4V9H3V8H4V7H3V6Z"
-                fill={textColor}
+                fill="#34D399" fillOpacity="0.6"
             />
 
             {/* Cursor (_) Animado */}
             <rect
                 className={glow ? "animate-pulse" : ""}
                 x="6" y="9" width="3" height="1"
-                fill={textColor}
+                fill="#34D399" fillOpacity={glow ? "1" : "0.8"}
             />
         </svg>
     );

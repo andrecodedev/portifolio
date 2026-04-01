@@ -8,12 +8,12 @@ export default function PixelCoffee({ className = "w-6 h-6", glow = false }: { c
             viewBox="0 0 16 16"
             xmlns="http://www.w3.org/2000/svg"
         >
-            {/* 1. STEAM - Centered and Suspended */}
+            {/* 1. STEAM - Centered and Suspended (Warm Coffee Accent) */}
             <g className={glow ? "animate-pulse" : ""}>
                 {/* Left Wisp (Centered at x=5,6) */}
-                <path d="M5 0H6V1H5V0ZM6 1H7V3H6V1ZM5 3H6V5H5V3Z" fill={outlineColor} fillOpacity="0.4" />
+                <path d="M5 0H6V1H5V0ZM6 1H7V3H6V1ZM5 3H6V5H5V3Z" fill="#D97706" fillOpacity="0.4" />
                 {/* Right Wisp (Centered at x=8,9) */}
-                <path d="M8 1H9V2H8V1ZM9 2H10V4H9V2ZM8 4H9V5H8V4Z" fill={outlineColor} fillOpacity="0.2" />
+                <path d="M8 1H9V2H8V1ZM9 2H10V4H9V2ZM8 4H9V5H8V4Z" fill="#D97706" fillOpacity="0.2" />
             </g>
 
             {/* 2. MUG DEPTH (Interior & Rim) */}

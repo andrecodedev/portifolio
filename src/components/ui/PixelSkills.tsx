@@ -1,4 +1,4 @@
-export default function PixelSkills({ className = "w-6 h-6", glow = false }: { className?: string, glow?: boolean }) {
+export default function PixelSkills({ className = "w-6 h-6", glow = false }: { className?: string }) {
     const mainColor = "var(--text-primary)";
     const secondaryColor = "var(--text-terceiro)";
 
@@ -17,7 +17,9 @@ export default function PixelSkills({ className = "w-6 h-6", glow = false }: { c
 
                 {/* 2nd Row */}
                 <rect x="3" y="7" width="3" height="3" fill={mainColor} fillOpacity="0.6" />
-                <rect x="7" y="7" width="3" height="3" fill={mainColor} /> {/* Foco Central Sólido */}
+                <g className={glow ? "animate-pulse" : ""}>
+                    <rect x="7" y="7" width="3" height="3" fill="#60A5FA" fillOpacity="0.8" />
+                </g> {/* Foco Central Sólido */}
                 <rect x="11" y="7" width="3" height="3" fill={mainColor} fillOpacity="0.6" />
 
                 {/* 3rd Row */}
