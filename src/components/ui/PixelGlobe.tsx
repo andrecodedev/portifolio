@@ -1,4 +1,4 @@
-export default function PixelGlobe({ className = "w-6 h-6", glow = false }: { className?: string }) {
+export default function PixelGlobe({ className = "w-6 h-6", glow = false }: { className?: string, glow?: boolean }) {
     const primary = "var(--text-primary)";
 
     return (
@@ -12,14 +12,14 @@ export default function PixelGlobe({ className = "w-6 h-6", glow = false }: { cl
 
             {/* 2. CONTINENTES RECONHECÍVEIS (ALTA FIDELIDADE EM 16X16) */}
             <g className={glow ? "animate-pulse" : ""}>
-            {/* Américas (Norte e Sul conectadas) */}
-            <path d="M3 5H5V6H4V7H5V8H4V10H3V11H2V10H3V5Z" fill="#34D399" fillOpacity="0.5" />
+                {/* Américas (Norte e Sul conectadas) */}
+                <path d="M3 5H5V6H4V7H5V8H4V10H3V11H2V10H3V5Z" fill="#34D399" fillOpacity="0.5" />
 
-            {/* Europa e África (O centro do Mapa) */}
-            <path d="M8 4H11V5H10V6H12V7H11V8H9V11H8V12H7V8H8V4Z" fill="#34D399" fillOpacity="0.6" />
+                {/* Europa e África (O centro do Mapa) */}
+                <path d="M8 4H11V5H10V6H12V7H11V8H9V11H8V12H7V8H8V4Z" fill="#34D399" fillOpacity="0.6" />
 
-            {/* Ásia e Micronésia (Canto direito) */}
-            <path d="M12 4H14V5H13V6H14V9H13V8H12V4Z" fill="#34D399" fillOpacity="0.4" />
+                {/* Ásia e Micronésia (Canto direito) */}
+                <path d="M12 4H14V5H13V6H14V9H13V8H12V4Z" fill="#34D399" fillOpacity="0.4" />
 
             </g>
 

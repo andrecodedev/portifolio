@@ -1,4 +1,4 @@
-export default function PixelMind({ className = "w-6 h-6", glow = false }: { className?: string }) {
+export default function PixelMind({ className = "w-6 h-6", glow = false }: { className?: string, glow?: boolean }) {
     const primary = "var(--text-primary)";
     const secondary = "var(--bg-secondary)";
 

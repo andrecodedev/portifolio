@@ -1,4 +1,4 @@
-export default function PixelProject({ className = "w-6 h-6", glow = false, color = "var(--bg-secondary)" }: { className?: string, color?: string }) {
+export default function PixelProject({ className = "w-6 h-6", glow = false, color = "var(--bg-secondary)" }: { className?: string, glow?: boolean, color?: string }) {
     const primary = "var(--text-primary)";
     const secondary = color;
 

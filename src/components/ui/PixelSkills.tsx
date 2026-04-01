@@ -1,4 +1,4 @@
-export default function PixelSkills({ className = "w-6 h-6", glow = false }: { className?: string }) {
+export default function PixelSkills({ className = "w-6 h-6", glow = false }: { className?: string, glow?: boolean }) {
     const mainColor = "var(--text-primary)";
     const secondaryColor = "var(--text-terceiro)";
 

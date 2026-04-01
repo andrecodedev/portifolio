@@ -1,7 +1,6 @@
 export default function PixelCode({ className = "w-6 h-6", glow = false }: { className?: string, glow?: boolean }) {
     const outlineColor = "var(--text-primary)";
     const screenColor = "var(--bg-primary)";
-    const textColor = "var(--text-primary)";
 
     return (
         <svg
