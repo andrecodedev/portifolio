@@ -91,7 +91,7 @@ export default function FilterCarousel({ children, className = "", onNext, onPre
                 >
                     <button
                         onClick={() => handleArrowClick('left')}
-                        className="ml-2 p-2 rounded-full bg-[var(--bg-secondary)] text-[var(--text-primary)] shadow-lg pointer-events-auto hover:scale-110 transition-transform active:scale-95 border border-[var(--border)]"
+                        className="ml-2 p-2 rounded-full bg-[var(--bg-secondary)] text-[var(--text-primary)] shadow-lg pointer-events-auto border border-[var(--border)]"
                         aria-label="Scroll left"
                     >
                         <FaChevronLeft className="w-4 h-4" />
@@ -122,7 +122,7 @@ export default function FilterCarousel({ children, className = "", onNext, onPre
                 >
                     <button
                         onClick={() => handleArrowClick('right')}
-                        className="mr-2 p-2 rounded-full bg-[var(--bg-secondary)] text-[var(--text-primary)] shadow-lg pointer-events-auto hover:scale-110 transition-transform active:scale-95 border border-[var(--border)]"
+                        className="mr-2 p-2 rounded-full bg-[var(--bg-secondary)] text-[var(--text-primary)] shadow-lg pointer-events-auto border border-[var(--border)]"
                         aria-label="Scroll right"
                     >
                         <FaChevronRight className="w-4 h-4" />
