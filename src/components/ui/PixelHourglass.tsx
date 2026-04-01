@@ -1,5 +1,4 @@
 export default function PixelHourglass({ className = "w-6 h-6", glow = false, color = "var(--text-primary)" }: { className?: string, glow?: boolean, color?: string }) {
-    const frameColor = "var(--bg-elements)";
     const detailColor = "var(--text-primary)";
 
     return (
