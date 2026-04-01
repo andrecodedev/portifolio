@@ -9,14 +9,14 @@ export default function AboutHighlights() {
     const [activeItem, setActiveItem] = useState('learning');
 
     const items = [
-        { id: 'learning', icon: <FiBookOpen size={18} /> },
-        { id: 'teamwork', icon: <FiUsers size={18} /> },
-        { id: 'resilience', icon: <FiTarget size={18} /> },
-        { id: 'tech', icon: <FiCpu size={18} /> },
-        { id: 'versatility', icon: <FiRepeat size={18} /> },
-        { id: 'mentoring', icon: <FiMessageSquare size={18} /> },
-        { id: 'clean_code', icon: <FiCheckCircle size={18} /> },
-        { id: 'ux_vision', icon: <FiEye size={18} /> },
+        { id: 'learning', icon: <FiBookOpen size={24} /> },
+        { id: 'teamwork', icon: <FiUsers size={24} /> },
+        { id: 'resilience', icon: <FiTarget size={24} /> },
+        { id: 'tech', icon: <FiCpu size={24} /> },
+        { id: 'versatility', icon: <FiRepeat size={24} /> },
+        { id: 'mentoring', icon: <FiMessageSquare size={24} /> },
+        { id: 'clean_code', icon: <FiCheckCircle size={24} /> },
+        { id: 'ux_vision', icon: <FiEye size={24} /> },
     ];
 
     const renderButtons = (isMobile: boolean) => items.map((item) => (

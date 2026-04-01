@@ -6,6 +6,9 @@ import { likesService } from '../../services/likesService';
 import PixelHeart from '../ui/PixelHeart';
 import PixelRocket from '../ui/PixelRocket';
 import PixelProject from '../ui/PixelProject';
+import PixelUser from '../ui/PixelUser';
+import PixelBriefcase from '../ui/PixelBriefcase';
+import PixelLayers from '../ui/PixelLayers';
 import { formatLikes } from '../../utils/formatters';
 
 interface ProjectsStatsProps {
@@ -37,56 +40,96 @@ export default function ProjectsStats({ projectsData }: ProjectsStatsProps) {
     // Contagem de deploys (projetos que possuem siteUrl)
     const deploymentsCount = projectsData.filter(p => p.siteUrl && p.siteUrl.trim() !== '').length;
 
-    const stats = [
+    const statsData = [
         {
-            label: t('ProjectsStats.totalProjects', 'Total Projetos'),
+            labelKey: 'ProjectsStats.totalProjects',
+            labelDefault: 'Total Projetos',
             value: totalProjects,
             isHighlight: true,
-            highlightColor: 'text-amber-400',
-            icon: <PixelProject glow className="w-4 h-4 md:w-5 md:h-5 inline-block mr-2 align-middle -mt-1" />,
-            tooltip: t('ProjectsStats.tooltip1', 'Construindo o futuro!')
+            highlightColor: 'text-[var(--text-primary)]',
+            icon: <PixelProject className="w-6 h-6 md:w-8 md:h-8" />,
+            tooltipKey: 'ProjectsStats.tooltip1',
+            tooltipDefault: 'Construindo o futuro!'
         },
-        { label: t('ProjectsStats.personalProjects', 'Projetos Pessoais'), value: personalProjects },
-        { label: t('ProjectsStats.workProjects', 'Projetos de Trabalho'), value: workProjects },
-        { label: t('ProjectsStats.techUsed', 'Tecnologias'), value: uniqueTechs },
         {
-            label: t('ProjectsStats.deployments', 'Deploys Realizados'),
+            labelKey: 'ProjectsStats.personalProjects',
+            labelDefault: 'Projetos Pessoais',
+            value: personalProjects,
+            isHighlight: true,
+            highlightColor: 'text-[var(--text-primary)]',
+            icon: <PixelUser className="w-6 h-6 md:w-8 md:h-8" />,
+            tooltipKey: 'ProjectsStats.tooltipPersonal',
+            tooltipDefault: 'Criações exclusivas!'
+        },
+        {
+            labelKey: 'ProjectsStats.workProjects',
+            labelDefault: 'Projetos de Trabalho',
+            value: workProjects,
+            isHighlight: true,
+            highlightColor: 'text-[var(--text-primary)]',
+            icon: <PixelBriefcase className="w-6 h-6 md:w-8 md:h-8" />,
+            tooltipKey: 'ProjectsStats.tooltipWork',
+            tooltipDefault: 'Experiência de mercado!'
+        },
+        {
+            labelKey: 'ProjectsStats.techUsed',
+            labelDefault: 'Tecnologias',
+            value: uniqueTechs,
+            isHighlight: true,
+            highlightColor: 'text-[var(--text-primary)]',
+            icon: <PixelLayers className="w-6 h-6 md:w-8 md:h-8" />,
+            tooltipKey: 'ProjectsStats.tooltipTech',
+            tooltipDefault: 'Stack polivalente!'
+        },
+        {
+            labelKey: 'ProjectsStats.deployments',
+            labelDefault: 'Deploys Realizados',
             value: deploymentsCount,
             isHighlight: true,
-            highlightColor: 'text-blue-400',
-            icon: <PixelRocket glow className="w-4 h-4 md:w-5 md:h-5 inline-block mr-2 align-middle -mt-1" />,
-            tooltip: t('ProjectsStats.tooltip2', 'Rumo ao infinito!')
+            highlightColor: 'text-[var(--text-primary)]',
+            icon: <PixelRocket className="w-6 h-6 md:w-8 md:h-8" />,
+            tooltipKey: 'ProjectsStats.tooltip2',
+            tooltipDefault: 'Rumo ao infinito!'
         },
         {
-            label: t('ProjectsStats.totalLikes', 'Amei nos Projetos'),
+            labelKey: 'ProjectsStats.totalLikes',
+            labelDefault: 'Amei nos Projetos',
             value: totalLikes,
             isHighlight: true,
             highlightColor: 'text-red-500',
-            icon: <PixelHeart filled className="w-4 h-4 md:w-5 md:h-5 inline-block mr-2 align-middle -mt-1" />,
-            tooltip: t('ProjectsStats.thanks', 'Obrigado pelo carinho!')
+            icon: <PixelHeart filled className="w-6 h-6 md:w-8 md:h-8" />,
+            tooltipKey: 'ProjectsStats.thanks',
+            tooltipDefault: 'Obrigado pelo carinho!'
         },
     ];
 
     return (
         <section className="w-full mb-8 lg:mb-12">
             <div className="font-jet max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[1.5rem] text-center p-5 sm:px-6">
-                {stats.map((stat, index) => (
+                {statsData.map((stat, index) => (
                     <div
                         key={index}
-                        className={`relative px-4 group after:content-[''] after:absolute after:top-[20%] after:bottom-[20%] after:right-[-0.5rem] after:w-[1px] after:bg-[var(--text-primary)] after:opacity-60 after:hidden lg:after:block last:after:hidden`}
+                        tabIndex={0}
+                        className={`relative px-4 group outline-none after:content-[''] after:absolute after:top-[20%] after:bottom-[20%] after:right-[-0.5rem] after:w-[1px] after:bg-[var(--text-primary)] after:opacity-60 after:hidden lg:after:block last:after:hidden`}
                     >
-                        <h5 className={`text-[1.875rem] md:text-3xl font-bold mb-2 transition-all duration-300 ${stat.isHighlight ? `${stat.highlightColor}` : 'text-[var(--text-primary)]'}`}>
-                            {stat.icon && stat.icon}
+                        <h5 className={`text-[1.875rem] md:text-3xl font-bold mb-2 transition-all duration-300 flex items-center justify-center gap-2 ${stat.isHighlight ? `${stat.highlightColor}` : 'text-[var(--text-primary)]'}`}>
+                            {stat.icon && (
+                                <span className="flex-shrink-0">
+                                    {stat.icon}
+                                </span>
+                            )}
                             {stat.isHighlight && typeof stat.value === 'number' && stat.value >= 1000 ? (
                                 <span>{formatLikes(stat.value)}+</span>
                             ) : (
                                 <CountUp end={stat.value as number} suffix="+" />
                             )}
                         </h5>
-                        <p className={`text-[11px] md:text-xs leading-[1.4] transition-colors duration-300 ${stat.isHighlight ? `${stat.highlightColor} font-bold` : 'text-[var(--text-terceiro)]'}`}>
-                            {stat.label}
-                            {stat.isHighlight && (stat as any).tooltip && (
-                                <span className={`block text-[8px] opacity-0 group-hover:opacity-100 transition-opacity mt-1 italic ${stat.highlightColor}`}>{(stat as any).tooltip}</span>
+                        <p className={`text-[11px] md:text-xs leading-[1.4] transition-colors duration-300 ${stat.isHighlight && stat.highlightColor !== 'text-[var(--text-primary)]' ? `${stat.highlightColor} font-bold` : 'text-[var(--text-terceiro)]'} ${stat.isHighlight ? 'font-bold' : ''}`}>
+                            {t(stat.labelKey, stat.labelDefault)}
+                            {stat.isHighlight && stat.tooltipKey && (
+                                <span className={`block text-[8px] opacity-0 group-hover:opacity-100 group-active:opacity-100 group-focus:opacity-100 transition-opacity mt-1 italic ${stat.highlightColor === 'text-red-500' ? 'text-red-500' : 'text-[var(--text-terceiro)]'}`}>
+                                    {t(stat.tooltipKey, stat.tooltipDefault)}
+                                </span>
                             )}
                         </p>
                     </div>

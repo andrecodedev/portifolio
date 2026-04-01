@@ -4,6 +4,8 @@ import CountUp from '../ui/CountUp';
 import PixelBook from '../ui/PixelBook';
 import PixelHourglass from '../ui/PixelHourglass';
 import PixelCertificate from '../ui/PixelCertificate';
+import PixelSchool from '../ui/PixelSchool';
+import PixelOngoing from '../ui/PixelOngoing';
 
 interface EducationStatsProps {
     educationData: EducationData[];
@@ -59,59 +61,92 @@ export default function EducationStats({ educationData }: EducationStatsProps) {
         return status.includes('cursando');
     }).length;
 
-    const stats = [
+    const statsData = [
         {
-            label: t('EducationStats.totalHours', 'Horas de Estudo'),
+            labelKey: 'EducationStats.totalHours',
+            labelDefault: 'Horas de Estudo',
             value: totalHours >= 1000 ? totalHours / 1000 : totalHours,
             decimals: totalHours >= 1000 ? 1 : 0,
             suffix: totalHours >= 1000 ? 'K+' : '+',
             isHighlight: true,
-            highlightColor: 'text-violet-400',
-            icon: <PixelHourglass glow className="w-4 h-4 md:w-5 md:h-5 inline-block mr-2 align-middle -mt-1" color="#A78BFA" />,
-            tooltip: t('EducationStats.tooltip1', 'Conhecimento é poder!')
+            highlightColor: 'text-[var(--text-primary)]',
+            icon: <PixelHourglass className="w-6 h-6 md:w-8 md:h-8" />,
+            tooltipKey: 'EducationStats.tooltip1',
+            tooltipDefault: 'Conhecimento é poder!'
         },
         {
-            label: t('EducationStats.totalCourses', 'Cursos & Formações'),
+            labelKey: 'EducationStats.totalCourses',
+            labelDefault: 'Cursos & Formações',
             value: totalCourses,
             suffix: '+',
             isHighlight: true,
-            highlightColor: 'text-fuchsia-400',
-            icon: <PixelBook glow className="w-4 h-4 md:w-5 md:h-5 inline-block mr-2 align-middle -mt-1" />,
-            tooltip: t('EducationStats.tooltip2', 'Aprendizado contínuo!')
+            highlightColor: 'text-[var(--text-primary)]',
+            icon: <PixelBook className="w-6 h-6 md:w-8 md:h-8" />,
+            tooltipKey: 'EducationStats.tooltip2',
+            tooltipDefault: 'Aprendizado contínuo!'
         },
         {
-            label: t('EducationStats.completedCourses', 'Certificados Obtidos'),
+            labelKey: 'EducationStats.completedCourses',
+            labelDefault: 'Certificados Obtidos',
             value: completedCourses,
             suffix: '+',
             isHighlight: true,
-            highlightColor: 'text-sky-400',
-            icon: <PixelCertificate glow className="w-4 h-4 md:w-5 md:h-5 inline-block mr-2 align-middle -mt-1" color="#38BDF8" />,
-            tooltip: t('EducationStats.tooltip3', 'Conquista desbloqueada!')
+            highlightColor: 'text-[var(--text-primary)]',
+            icon: <PixelCertificate className="w-6 h-6 md:w-8 md:h-8" />,
+            tooltipKey: 'EducationStats.tooltip3',
+            tooltipDefault: 'Conquista desbloqueada!'
         },
-        { label: t('EducationStats.uniqueSchools', 'Instituições'), value: uniqueSchools, suffix: '+' },
-        { label: t('EducationStats.ongoingCourses', 'Cursos em Andamento'), value: ongoingCourses, suffix: '+' },
+        {
+            labelKey: 'EducationStats.uniqueSchools',
+            labelDefault: 'Instituições',
+            value: uniqueSchools,
+            suffix: '+',
+            isHighlight: true,
+            highlightColor: 'text-[var(--text-primary)]',
+            icon: <PixelSchool className="w-6 h-6 md:w-8 md:h-8" />,
+            tooltipKey: 'EducationStats.tooltip4',
+            tooltipDefault: 'Onde tudo floresce!'
+        },
+        {
+            labelKey: 'EducationStats.ongoingCourses',
+            labelDefault: 'Cursos em Andamento',
+            value: ongoingCourses,
+            suffix: '+',
+            isHighlight: true,
+            highlightColor: 'text-[var(--text-primary)]',
+            icon: <PixelOngoing className="w-6 h-6 md:w-8 md:h-8" />,
+            tooltipKey: 'EducationStats.tooltip5',
+            tooltipDefault: 'Sempre evoluindo!'
+        },
     ];
 
     return (
         <section className="w-full mb-8 lg:mb-12">
             <div className="font-jet max-w-[1200px] mx-auto grid grid-cols-2 lg:grid-cols-5 gap-[1.5rem] text-center p-5 sm:px-6">
-                {stats.map((stat, index) => (
+                {statsData.map((stat, index) => (
                     <div
                         key={index}
-                        className={`relative px-4 group after:content-[''] after:absolute after:top-[20%] after:bottom-[20%] after:right-[-0.5rem] after:w-[1px] after:bg-[var(--text-primary)] after:opacity-60 after:hidden lg:after:block last:after:hidden`}
+                        tabIndex={0}
+                        className={`relative px-4 group outline-none after:content-[''] after:absolute after:top-[20%] after:bottom-[20%] after:right-[-0.5rem] after:w-[1px] after:bg-[var(--text-primary)] after:opacity-60 after:hidden lg:after:block last:after:hidden`}
                     >
-                        <h5 className={`text-[1.875rem] md:text-3xl font-bold mb-2 transition-all duration-300 ${stat.isHighlight ? `${stat.highlightColor}` : 'text-[var(--text-primary)]'}`}>
-                            {stat.icon && stat.icon}
+                        <h5 className={`text-[1.875rem] md:text-3xl font-bold mb-2 transition-all duration-300 flex items-center justify-center gap-2 ${stat.isHighlight ? `${stat.highlightColor}` : 'text-[var(--text-primary)]'}`}>
+                            {stat.icon && (
+                                <span className="flex-shrink-0">
+                                    {stat.icon}
+                                </span>
+                            )}
                             <CountUp
                                 end={stat.value as number}
                                 decimals={stat.decimals || 0}
                                 suffix={stat.suffix}
                             />
                         </h5>
-                        <p className={`text-[11px] md:text-xs leading-[1.4] transition-colors duration-300 ${stat.isHighlight ? `${stat.highlightColor} font-bold` : 'text-[var(--text-terceiro)]'}`}>
-                            {stat.label}
-                            {stat.isHighlight && (stat as any).tooltip && (
-                                <span className={`block text-[8px] opacity-0 group-hover:opacity-100 transition-opacity mt-1 italic ${stat.highlightColor}`}>{(stat as any).tooltip}</span>
+                        <p className={`text-[11px] md:text-xs leading-[1.4] transition-colors duration-300 text-[var(--text-terceiro)] ${stat.isHighlight ? 'font-bold' : ''}`}>
+                            {t(stat.labelKey, stat.labelDefault)}
+                            {stat.isHighlight && stat.tooltipKey && (
+                                <span className={`block text-[8px] opacity-0 group-hover:opacity-100 group-active:opacity-100 group-focus:opacity-100 transition-opacity mt-1 italic text-[var(--text-terceiro)]`}>
+                                    {t(stat.tooltipKey, stat.tooltipDefault)}
+                                </span>
                             )}
                         </p>
                     </div>
