@@ -74,16 +74,18 @@
   "AboutStartsGrid": {
     "number1": "4+",
     "description1": "Years of Intensive Study",
+    "tooltip1": "Knowledge base!",
     "number2": "8K+",
     "description2": "Hours of Coding",
+    "tooltip2": "Focus and persistence!",
     "number3": "600+",
     "description3": "Total Commits",
+    "tooltip3": "Constant evolution!",
     "number4": "24+",
     "description4": "Repositories on GitHub",
+    "tooltip4": "Open source!",
     "number5": "1.2K+",
     "description5": "Coffees Consumed",
-    "tooltip2": "Focus and persistence!",
-    "tooltip3": "Constant evolution!",
     "tooltip5": "Energy to code!"
   },
   "button": {
@@ -505,7 +507,9 @@
     "ongoingCourses": "Ongoing Courses",
     "tooltip1": "Knowledge is power!",
     "tooltip2": "Continuous learning!",
-    "tooltip3": "Achievement unlocked!"
+    "tooltip3": "Achievement unlocked!",
+    "tooltip4": "Where it all starts!",
+    "tooltip5": "Always evolving!"
   },
   "SkillsStats": {
     "totalSkills": "Total Skills",
@@ -515,7 +519,11 @@
     "systemSkills": "Systems",
     "languageSkills": "Languages",
     "tooltip1": "Full arsenal!",
-    "tooltip2": "Technical mastery!"
+    "tooltip2": "Technical mastery!",
+    "tooltipTools": "Total productivity!",
+    "tooltipMind": "Logic and AI!",
+    "tooltipSystem": "Solid base!",
+    "tooltipGlobe": "No borders!"
   },
   "ProjectsStats": {
     "totalProjects": "Total Projects",
@@ -525,6 +533,9 @@
     "deployments": "Live Deploys",
     "totalLikes": "Project Loves",
     "tooltip1": "Building the future!",
+    "tooltipPersonal": "Exclusive creations!",
+    "tooltipWork": "Market experience!",
+    "tooltipTech": "Versatile stack!",
     "tooltip2": "To infinity and beyond!",
     "thanks": "Thanks for the love!"
   },
