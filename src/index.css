@@ -24,6 +24,8 @@
   --menu: #121212;
   --border: #282828a0;
   --border-gray: #636363;
+  --error: #ff4d4d;
+  --error-hover: #ff3333;
 
   /* Gradientes e efeitos */
   --grid-opacity: 0.37;
@@ -56,10 +58,33 @@
   --menu: #f5f5f5;
   --border: #1212;
   --border-gray: rgb(120, 120, 120);
+  --error: #d32f2f;
+  --error-hover: #b71c1c;
 }
 
 html {
-  scroll-behavior: smooth;
+  height: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
 /* Reset e Base */
@@ -139,10 +164,10 @@ body::before {
   color: var(--text-primary);
 }
 
-/* Scrollbar Premium Minimalist */
+/* Scrollbar Premium Minimalist - Growing on Hover */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -150,17 +175,21 @@ body::before {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
+  background-clip: padding-box;
+  border: 3px solid transparent;
   border-radius: 20px;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-width: 1px;
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.4);
+  border-width: 0px;
 }
 
 /* No scrollbar utility */
@@ -173,6 +202,30 @@ body::before {
   /* IE and Edge */
   scrollbar-width: none;
   /* Firefox */
+}
+
+/* Custom Thin Scrollbar - Growing on Hover */
+.custom-scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.custom-scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  background-clip: padding-box;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.custom-scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+  border-width: 1px;
 }
 
 /* Listas */
@@ -222,9 +275,17 @@ h6,
   flex: 1;
   flex-direction: column;
   min-height: 100vh;
-  /*border: solid 1px #ffffff;
-  margin: 2rem;
-  border-radius: 2rem;*/
+}
+
+/* Compensação para o Header Fixo */
+.geral main {
+  padding-top: 64px;
+}
+
+@media (max-width: 768px) {
+  .geral main {
+    padding-top: 56px;
+  }
 }
 
 
@@ -399,160 +460,22 @@ h6,
 
 
 
-.header-top {
+/* Menu Sanduiche - Now handled by Framer Motion in MenuSanduiche.tsx */
+.menu-sanduiche {
   display: flex;
-  align-items: center;
-  padding: 1.5rem;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  transition: box-shadow 0.2s;
 }
 
-/* .header-top.sticky {
-  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.13);
-} */
-
-
-/* Se for a home */
-.home-layout {
-  justify-content: center;
-}
-
-/* Páginas comuns */
 .default-layout {
   justify-content: space-around;
 }
 
-.nav-group {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-
-.nav-group button {
-  padding: .7rem 1rem;
-}
-
-/* Visibilidade controlada por media */
-.desktop-only {
-  display: flex;
-}
-
-.mobile-only {
-  display: none;
-}
-
 @media (max-width: 1050px) {
-  .desktop-only {
-    display: none;
-  }
-
-  .mobile-only {
-    display: none;
-  }
-
-  .mobile-only.open {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 80px;
-    right: 1rem;
-    background-color: var(--bg-secondary);
-    padding: 1rem;
-    border-radius: 8px;
-    gap: 0.5rem;
-    z-index: 1000;
-  }
-
-  .menu-sanduiche {
-    display: flex;
-    margin-left: auto;
+  .default-layout {
+    justify-content: space-around;
   }
 }
 
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 28px;
-  height: 24px;
-  cursor: pointer;
-  z-index: 1100;
-}
 
-.hamburger div {
-  width: 28px;
-  height: 3px;
-  background-color: var(--text-primary);
-  border-radius: 3px;
-  transition: all 0.3s ease;
-}
-
-/* animação ao abrir */
-.hamburger.open div:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger.open div:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.open div:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* Menu mobile */
-.nav-group {
-  display: flex;
-  gap: .8rem;
-  flex-wrap: nowrap;
-  align-items: center;
-}
-
-.nav-group .switch {
-  margin: 0 0 0 0.5rem;
-  /* apenas espaçamento lateral esquerdo */
-  align-self: center;
-  /* garante alinhamento vertical */
-}
-
-@media (max-width: 1050px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-group {
-    display: none;
-    flex-direction: column;
-    background: var(--bg-secondary);
-    border: .5px solid var(--border);
-    position: absolute;
-    top: 80px;
-    right: 1rem;
-    border-radius: 8px;
-    width: 180px;
-    z-index: 1100;
-  }
-
-  .nav-group.open {
-    display: flex;
-    top: 70px;
-    gap: .8rem;
-    background: var(--menu);
-  }
-
-  .nav-group .switch {
-    margin: 0;
-  }
-
-  .nav-group button {
-    width: 100%;
-    text-align: left;
-    padding: 0.75rem 1rem;
-    border-radius: 4px;
-  }
-}
 
 
 
@@ -577,15 +500,15 @@ h6,
   position: fixed;
   bottom: 20%;
   right: 0;
-  z-index: 1000;
+  z-index: 12000;
   display: flex;
   align-items: center;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
 }
 
 .language-switcher-wrapper.closed {
-  transform: translateX(54px);
-  /* Esconde completamente as bandeiras, deixando apenas a aba da seta */
+  transform: translateX(62px);
+  /* Esconde completamente as bandeiras e o fundo, deixando apenas a aba da seta */
 }
 
 /* Botão de abrir/fechar com efeito de "aba" */
@@ -594,7 +517,7 @@ h6,
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-right: none;
-  border-radius: 10px 0 0 10px;
+  border-radius: 6px 0 0 6px;
   width: 24px;
   height: 38px;
   display: flex;
@@ -616,14 +539,18 @@ h6,
 .language-switcher {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 7px;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 7px;
   background: var(--button-bg);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-right: none;
-  border-radius: 12px 0 0 12px;
-  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.4);
+  border-radius: 9px 0 0 9px;
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.4);
+  min-width: 58px;
+  padding: 12px 6px;
+  transition: all 0.3s ease;
 }
 
 .language-switcher button {
@@ -659,6 +586,20 @@ h6,
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
+/* Ajustes para o ThemeToggle dentro do LanguageSwitcher (Sidebar Permanente) */
+.theme-switcher-sidebar-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.theme-switcher-sidebar-wrapper .switch {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
 /* reCAPTCHA Responsivo */
 .recaptcha-container {
   transform: scale(1);
@@ -666,6 +607,13 @@ h6,
   width: 100%;
   display: flex;
   justify-content: center;
+  transition: all 0.3s ease;
+  filter: grayscale(1) opacity(0.8);
+}
+
+.recaptcha-container:hover {
+  filter: grayscale(0) opacity(1);
+  transform: scale(1.02);
 }
 
 @media (max-width: 400px) {
@@ -755,15 +703,50 @@ h6,
 
 /* Efeito de Carrossel de Cores / Matrix Rainbow */
 @keyframes matrix-carousel {
-  0%   { color: #ff0000; fill: #ff0000; }
-  17%  { color: #ff8800; fill: #ff8800; }
-  33%  { color: #ffff00; fill: #ffff00; }
-  50%  { color: #00ff00; fill: #00ff00; }
-  67%  { color: #00ffff; fill: #00ffff; }
-  83%  { color: #0000ff; fill: #0000ff; }
-  100% { color: #ff0000; fill: #ff0000; }
+  0% {
+    color: #ff0000;
+    fill: #ff0000;
+  }
+
+  17% {
+    color: #ff8800;
+    fill: #ff8800;
+  }
+
+  33% {
+    color: #ffff00;
+    fill: #ffff00;
+  }
+
+  50% {
+    color: #00ff00;
+    fill: #00ff00;
+  }
+
+  67% {
+    color: #00ffff;
+    fill: #00ffff;
+  }
+
+  83% {
+    color: #0000ff;
+    fill: #0000ff;
+  }
+
+  100% {
+    color: #ff0000;
+    fill: #ff0000;
+  }
 }
 
 .animate-matrix {
   animation: matrix-carousel 4s linear infinite !important;
+}
+
+/* Regra para tornar a chuva de código menos visível no mobile, evitando distrações */
+@media (max-width: 768px) {
+  .code-rain-container {
+    opacity: 0.9;
+    transition: opacity 0.5s ease;
+  }
 }

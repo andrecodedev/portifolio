@@ -1,4 +1,3 @@
-
 /* Estilo do texto com o efeito de brilho permanente */
 .lux {
   /* Efeito de brilho aplicado diretamente e permanentemente */
@@ -17,30 +16,37 @@
   from {
     background-position: -100% 0;
   }
+
   to {
     background-position: 100% 0;
   }
 }
+
 @-webkit-keyframes shine {
   from {
     background-position: -100% 0;
   }
+
   to {
     background-position: 100% 0;
   }
 }
+
 @-o-keyframes shine {
   from {
     background-position: -100% 0;
   }
+
   to {
     background-position: 100% 0;
   }
 }
+
 @keyframes shine {
   from {
     background-position: -100% 0;
   }
+
   to {
     background-position: 100% 0;
   }

@@ -2,7 +2,7 @@ import React from 'react';
 
 const LoadingScreen: React.FC = () => {
     return (
-        <div className="fixed inset-0 z-[10000] bg-[var(--bg-primary)] flex flex-col items-center justify-center overflow-hidden">
+        <div className="fixed inset-0 z-[10000] bg-transparent flex flex-col items-center justify-center overflow-hidden">
             <div className="loading-grid-overlay absolute inset-0 opacity-[var(--grid-opacity)] pointer-events-none" />
 
             <div className="relative flex flex-col items-center z-10">
