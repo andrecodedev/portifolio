@@ -1,17 +1,17 @@
-// src/components/education/EducationSection.tsx
-
+import FadeIn from '../FadeIn';
 import CardEducation from './EducationItem';
 import type { EducationData } from '../../data/educationData';
 
 interface EducationSectionProps {
   educationData: EducationData[];
-  activeCategory: string;
+  baseDelay?: number;
 }
 
-export default function EducationSection({ educationData, activeCategory }: EducationSectionProps) {
-  const filteredData = educationData.filter(
-    (item) => activeCategory === "all" || item.categoria === activeCategory
-  );
+export default function EducationSection({
+  educationData,
+  baseDelay = 0
+}: EducationSectionProps) {
+  const filteredData = educationData;
 
   if (filteredData.length === 0) {
     return (
@@ -25,14 +25,21 @@ export default function EducationSection({ educationData, activeCategory }: Educ
     <section className="w-full max-w-screen-xl mx-auto box-border">
       <div
         className="
-          pt-4 16px de padding no topo */
+          pt-4
           grid grid-cols-1 gap-4 
           sm:grid-cols-2 sm:gap-3
           lg:grid-cols-3 lg:gap-8
         "
       >
-        {filteredData.map((item) => (
-          <CardEducation key={item.id} data={item} />
+        {filteredData.map((item, index) => (
+          <FadeIn
+            key={item.id}
+            delay={baseDelay + Math.floor(index / 3) * 0.05}
+            duration={650}
+            y={24}
+          >
+            <CardEducation data={item} />
+          </FadeIn>
         ))}
       </div>
     </section>
