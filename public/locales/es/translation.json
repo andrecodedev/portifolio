@@ -30,11 +30,56 @@
       "webapp": "Web App",
       "templateWeb": "Plantilla Web",
       "academico": "Proyecto Académico"
-    }
+    },
+    "no_results": "No se encontraron proyectos",
+    "try_clearing": "Intenta ajustar tus filtros o buscar otro término."
   },
   "ProjectFilter": {
+    "todos": "Todos",
     "pessoais": "Personales",
-    "trabalho": "Trabajo"
+    "trabalho": "Trabalho",
+    "avancado": "Personalizados"
+  },
+  "AdvancedFilters": {
+    "search": "Buscar por nombre o tecnología...",
+    "tech": "Tecnologías",
+    "year": "Año",
+    "likes": "Más Queridos",
+    "clear": "Limpiar Todo",
+    "reset": "Reiniciar",
+    "sort_title": "Ordenación",
+    "sort_newest": "Más Recientes",
+    "sort_oldest": "Más Antigos",
+    "sort_loved": "Más Queridos",
+    "sort_hidden": "Menos Queridos",
+    "title": "Filtros Personalizados",
+    "search_label": "Filtrar por nombre",
+    "type_label": "Categorías"
+  },
+  "EducationAdvancedFilters": {
+    "title": "Filtros Personalizados",
+    "search_label": "Filtrar por formación",
+    "search_placeholder": "Buscar curso, escuela o tipo...",
+    "type_label": "Categorías",
+    "status_label": "Status",
+    "modality_label": "Modalidad",
+    "school_label": "Instituciones",
+    "sort_label": "Ordenación",
+    "clear": "Limpiar Todo",
+    "status_completed": "Completado",
+    "status_in_progress": "Cursando",
+    "status_paused": "Trancado",
+    "modality_remote": "Remoto",
+    "modality_onsite": "Presencial",
+    "modality_hybrid": "Híbrido",
+    "sort_newest": "Más Recientes",
+    "sort_oldest": "Más Antigos",
+    "sort_hours": "Más Horas",
+    "superior": "Superior",
+    "profissionalizante": "Profesionalizante",
+    "tecnologia": "Tech y Online",
+    "idioma": "Idioma",
+    "certificacao": "Certificaciones"
   },
   "nav": {
     "about": "Sobre mí",
@@ -467,9 +512,7 @@
     "all": "Todas",
     "superior": "Superior",
     "profissionalizante": "Profesional",
-    "dio.io": "DIO.IO",
-    "alura": "Alura",
-    "onebitcode": "OneBitCode",
+    "tecnologia": "Tech y Online",
     "idioma": "Idioma",
     "certificacao": "Certificaciones"
   },

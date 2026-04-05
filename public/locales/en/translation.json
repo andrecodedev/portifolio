@@ -21,7 +21,10 @@
       "primeiroPortfolio": "My first personal portfolio version, developed at the start of my programming journey, representing one of several attempts and evolutions until more mature versions of my portfolios.",
       "mobiSeg": "Academic project developed with a focus on creating a digital solution, applying concepts studied during training and consolidating practical knowledge.",
       "petLife": "Project developed at OneBitCode with a focus on creating an institutional website, exploring page structure, visual organization, and services presentation.",
-      "portfolioAndrecodedev": "This very portfolio you are browsing! Developed with a focus on high performance, modern UI/UX, and cutting-edge technology, using the best development practices."
+      "portfolioAndrecodedev": "This very portfolio you are browsing! Developed with a focus on high performance, modern UI/UX, and cutting-edge technology, using the best development practices.",
+      "portfolioAndrecodedev_challenge": "Create a digital showcase that represents the balance between high technical performance and aesthetic excellence, without depending on pre-made templates or heavy animation frameworks that could compromise loading time.",
+      "portfolioAndrecodedev_solution": "Implementation of a modern stack with React 19 and Tailwind v4 for fast native styling. Use of Framer Motion for orchestrated animations and Lenis for smooth scroll, ensuring a fluid and 'premium' navigation on any device.",
+      "portfolioAndrecodedev_result": "A 100% responsive portfolio, with top scores in Core Web Vitals metrics and a unique, original visual identity that reflects my technical capacity in both frontend and experience design."
     },
     "labels": {
       "portfolio": "Portfolio",
@@ -30,11 +33,60 @@
       "webapp": "Web App",
       "templateWeb": "Web Template",
       "academico": "Academic Project"
-    }
+    },
+    "institutions": {
+      "personal": "AndreCodeDev",
+      "tec4u": "Tec4u Digital"
+    },
+    "no_results": "No projects found",
+    "try_clearing": "Try adjusting your filters or searching for another term."
   },
   "ProjectFilter": {
+    "todos": "All",
     "pessoais": "Personal",
-    "trabalho": "Work"
+    "trabalho": "Work",
+    "avancado": "Custom"
+  },
+  "AdvancedFilters": {
+    "search": "Search by name or tech...",
+    "tech": "Technologies",
+    "year": "Year",
+    "likes": "Most Loved",
+    "clear": "Clear All",
+    "reset": "Reset",
+    "sort_title": "Sorting",
+    "sort_newest": "Newest",
+    "sort_oldest": "Oldest",
+    "sort_loved": "Most Loved",
+    "sort_hidden": "Least Loved",
+    "title": "Custom Filters",
+    "search_label": "Filter by name",
+    "type_label": "Categories"
+  },
+  "EducationAdvancedFilters": {
+    "title": "Custom Filters",
+    "search_label": "Filter by education",
+    "search_placeholder": "Search course, school or type...",
+    "type_label": "Categories",
+    "status_label": "Status",
+    "modality_label": "Modality",
+    "school_label": "Institutions",
+    "sort_label": "Sorting",
+    "clear": "Clear All",
+    "status_completed": "Completed",
+    "status_in_progress": "In Progress",
+    "status_paused": "Paused",
+    "modality_remote": "Remote",
+    "modality_onsite": "On-site",
+    "modality_hybrid": "Hybrid",
+    "sort_newest": "Newest",
+    "sort_oldest": "Oldest",
+    "sort_hours": "Most Hours",
+    "superior": "Degree",
+    "profissionalizante": "Professional",
+    "tecnologia": "Tech & Online",
+    "idioma": "Language",
+    "certificacao": "Certifications"
   },
   "nav": {
     "about": "About",
@@ -467,9 +519,7 @@
     "all": "All",
     "superior": "Superior",
     "profissionalizante": "Professional",
-    "dio.io": "DIO.IO",
-    "alura": "Alura",
-    "onebitcode": "OneBitCode",
+    "tecnologia": "Tech & Online",
     "idioma": "Language",
     "certificacao": "Certifications"
   },
@@ -490,14 +540,25 @@
     "enviar": "Send"
   },
   "ProjectModal": {
-    "tech_title": "Technologies Used"
+    "tech_title": "Technologies Used",
+    "reference_title": "REFERENCE",
+    "representing": "Representing",
+    "like_tooltip": "I love this project!",
+    "unlike_tooltip": "Remove my love",
+    "like_feedback": "Loved!",
+    "case_study_title": "Case Study",
+    "challenge_label": "The Challenge",
+    "solution_label": "The Solution",
+    "result_label": "Result"
   },
   "Skills": {
     "portugues": "Portuguese",
     "ingles": "English (US)",
     "espanhol": "Spanish",
     "level_c1": "C1 (Fluent)",
-    "level_b1": "B1 (Intermediate)"
+    "level_b1": "B1 (Intermediate)",
+    "click_to_learn": "Click to learn more",
+    "search_instruction": "Click on any skill to learn more about it"
   },
   "EducationStats": {
     "totalHours": "Study Hours",
@@ -582,5 +643,9 @@
     "action": "I loved them all!",
     "thanks": "Thanks for the love!",
     "already_done": "You already loved it!"
+  },
+  "common": {
+    "scroll_to_explore": "Scroll to explore",
+    "click_to_explore": "or click to explore"
   }
 }

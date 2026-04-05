@@ -15,7 +15,7 @@ import alura from '../img/formacoes/alura.svg';
 // Corrigimos certificadoUrl para aceitar null.
 export interface EducationData {
   id: number;
-  categoria: 'superior' | 'profissionalizante' | 'idioma' | 'dio.io' | 'alura' | 'onebitcode' | 'certificacao';
+  categoria: 'superior' | 'profissionalizante' | 'idioma' | 'tecnologia' | 'certificacao';
   icon: string;
   curso: string;
   tipo: string;
@@ -34,7 +34,7 @@ export const educationData: EducationData[] = [
 
   {
     id: 36,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_36',
     tipo: 'Education.tipo_36',
@@ -48,7 +48,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 35,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_35',
     tipo: 'Education.tipo_35',
@@ -62,7 +62,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 34,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_34',
     tipo: 'Education.tipo_34',
@@ -76,7 +76,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 33,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_33',
     tipo: 'Education.tipo_33',
@@ -90,7 +90,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 32,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_32',
     tipo: 'Education.tipo_32',
@@ -104,7 +104,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 31,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_31',
     tipo: 'Education.tipo_31',
@@ -118,7 +118,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 30,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_30',
     tipo: 'Education.tipo_30',
@@ -132,7 +132,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 28,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_28',
     tipo: 'Education.tipo_28',
@@ -146,7 +146,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 27,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_27',
     tipo: 'Education.tipo_27',
@@ -160,7 +160,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 26,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_26',
     tipo: 'Education.tipo_26',
@@ -174,7 +174,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 25,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_25',
     tipo: 'Education.tipo_25',
@@ -188,7 +188,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 24,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_24',
     tipo: 'Education.tipo_24',
@@ -202,7 +202,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 23,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_23',
     tipo: 'Education.tipo_23',
@@ -216,7 +216,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 22,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_22',
     tipo: 'Education.tipo_22',
@@ -230,7 +230,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 21,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_21',
     tipo: 'Education.tipo_21',
@@ -244,7 +244,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 20,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_20',
     tipo: 'Education.tipo_20',
@@ -258,7 +258,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 19,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_19',
     tipo: 'Education.tipo_19',
@@ -272,7 +272,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 18,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_18',
     tipo: 'Education.tipo_18',
@@ -286,7 +286,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 17,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_17',
     tipo: 'Education.tipo_17',
@@ -300,7 +300,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 16,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_16',
     tipo: 'Education.tipo_16',
@@ -314,7 +314,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 15,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_15',
     tipo: 'Education.tipo_15',
@@ -328,7 +328,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 14,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_14',
     tipo: 'Education.tipo_14',
@@ -342,7 +342,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 13,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_13',
     tipo: 'Education.tipo_13',
@@ -356,7 +356,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 12,
-    categoria: 'alura',
+    categoria: 'tecnologia',
     icon: alura,
     curso: 'Education.curso_12',
     tipo: 'Education.tipo_12',
@@ -370,7 +370,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 11,
-    categoria: 'onebitcode',
+    categoria: 'tecnologia',
     icon: onebitcode,
     curso: 'Education.curso_11',
     tipo: 'Education.tipo_11',
@@ -384,7 +384,7 @@ export const educationData: EducationData[] = [
   },
   {
     id: 10,
-    categoria: 'onebitcode',
+    categoria: 'tecnologia',
     icon: onebitcode,
     curso: 'Education.curso_10',
     tipo: 'Education.tipo_10',

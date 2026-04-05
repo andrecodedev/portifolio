@@ -21,26 +21,79 @@
       "primeiroPortfolio": "Minha primeira versão de portifólio pessoal, desenvolvida como início da minha jornada na programação, representando uma das várias tentativas e evoluções até versões mais maduras dos meus portifólios.",
       "mobiSeg": "Projeto acadêmico desenvolvido com foco na criação de uma solução digital, aplicando conceitos estudados durante a formação e consolidando conhecimentos práticos.",
       "petLife": "Projeto desenvolvido na OneBitCode com foco na criação de um site institucional, explorando estrutura de páginas, organização visual e apresentação de serviços.",
-      "portfolioAndrecodedev": "Este próprio portifólio que você está navegando! Desenvolvido com foco em alta performance, UI/UX moderna e tecnologia de ponta, utilizando as melhores práticas de desenvolvimento."
+      "portfolioAndrecodedev": "Este próprio portfólio que você está navegando! Desenvolvido com foco em alta performance, UI/UX moderna e tecnologia de ponta, utilizando as melhores práticas de desenvolvimento.",
+      "portfolioAndrecodedev_challenge": "Criar uma vitrine digital que representasse o equilíbrio entre alta performance técnica e excelência estética, sem depender de templates prontos ou frameworks pesados de animação que pudessem comprometer o tempo de carregamento.",
+      "portfolioAndrecodedev_solution": "Implementação de uma stack moderna com React 19 e Tailwind v4 para estilização nativa rápida. Utilização do Framer Motion para animações orquestradas e Lenis para scroll suave, garantindo uma navegação fluida e 'premium' em qualquer dispositivo.",
+      "portfolioAndrecodedev_result": "Um portfólio 100% responsivo, com pontuações máximas em métricas de Core Web Vitals e uma identidade visual única e autoral que reflete minha capacidade técnica tanto no frontend quanto no design de experiência."
     },
     "labels": {
-      "portfolio": "Portifólio",
+      "portfolio": "Portfólio",
       "ecommerce": "E-commerce",
       "siteWeb": "Site Web",
       "webapp": "Web App",
-      "templateWeb": "Template Web",
+      "templateWeb": "Web Template",
       "academico": "Projeto Acadêmico"
-    }
+    },
+    "institutions": {
+      "personal": "AndreCodeDev",
+      "tec4u": "Tec4u Digital"
+    },
+    "no_results": "Nenhum projeto encontrado",
+    "try_clearing": "Tente ajustar seus filtros ou pesquisar por outro termo."
   },
   "ProjectFilter": {
+    "todos": "Todos",
     "pessoais": "Pessoais",
-    "trabalho": "Trabalho"
+    "trabalho": "Trabalho",
+    "avancado": "Personalizados"
+  },
+  "AdvancedFilters": {
+    "search": "Buscar projeto ou tech...",
+    "tech": "Tecnologias",
+    "year": "Ano",
+    "likes": "Mais Curtidos",
+    "clear": "Limpar Tudo",
+    "reset": "Resetar",
+    "sort_title": "Ordenação",
+    "sort_newest": "Mais Recentes",
+    "sort_oldest": "Mais Antigos",
+    "sort_loved": "Mais Curtidos",
+    "sort_hidden": "Menos Curtidos",
+    "title": "Filtros Personalizados",
+    "search_label": "Filtrar por nome",
+    "type_label": "Categorias"
+  },
+  "EducationAdvancedFilters": {
+    "title": "Filtros Personalizados",
+    "search_label": "Filtrar por formação",
+    "search_placeholder": "Buscar curso, escola ou tipo...",
+    "type_label": "Categorias",
+    "status_label": "Status",
+    "modality_label": "Modalidade",
+    "school_label": "Instituições",
+    "sort_label": "Ordenação",
+    "clear": "Limpar Tudo",
+    "status_completed": "Concluído",
+    "status_in_progress": "Cursando",
+    "status_paused": "Trancado",
+    "modality_remote": "Remoto",
+    "modality_onsite": "Presencial",
+    "modality_hybrid": "Híbrido",
+    "sort_newest": "Mais Recentes",
+    "sort_oldest": "Mais Antigos",
+    "sort_hours": "Mais Horas",
+    "superior": "Superior",
+    "profissionalizante": "Profissionalizante",
+    "tecnologia": "Tech & Online",
+    "idioma": "Idioma",
+    "certificacao": "Certificações"
   },
   "nav": {
     "about": "Sobre",
     "education": "Educação",
     "skills": "Habilidades",
     "projects": "Projetos",
+    "news": "Notícias",
     "contact": "Contato"
   },
   "home": {
@@ -57,6 +110,7 @@
     "educationCursos": "Cursos",
     "skills": "Habilidades",
     "projects": "Projetos",
+    "news": "Notícias",
     "contact": "Contato"
   },
   "footer": {
@@ -467,9 +521,7 @@
     "all": "Todas",
     "superior": "Superior",
     "profissionalizante": "Profissionalizante",
-    "dio.io": "DIO.IO",
-    "alura": "Alura",
-    "onebitcode": "OneBitCode",
+    "tecnologia": "Tech & Online",
     "idioma": "Idioma",
     "certificacao": "Certificações"
   },
@@ -490,14 +542,25 @@
     "enviar": "Enviar"
   },
   "ProjectModal": {
-    "tech_title": "Tecnologias Utilizadas"
+    "tech_title": "Tecnologias Utilizadas",
+    "reference_title": "Referência",
+    "representing": "REPRESENTANDO",
+    "like_tooltip": "Amei este projeto!",
+    "unlike_tooltip": "Remover meu amei",
+    "like_feedback": "Amei!",
+    "case_study_title": "Estudo de Caso",
+    "challenge_label": "O Desafio",
+    "solution_label": "A Solução",
+    "result_label": "O Resultado"
   },
   "Skills": {
     "portugues": "Português",
     "ingles": "Inglês (EUA)",
     "espanhol": "Espanhol",
     "level_c1": "C1 (Fluente)",
-    "level_b1": "B1 (Intermediário)"
+    "level_b1": "B1 (Intermediário)",
+    "click_to_learn": "Clique para saber mais",
+    "search_instruction": "Clique em uma habilidade para pesquisar sobre ela"
   },
   "EducationStats": {
     "totalHours": "Horas de Estudo",
@@ -582,5 +645,9 @@
     "action": "Amei todos!",
     "thanks": "Obrigado pelo carinho!",
     "already_done": "Você já amou!"
+  },
+  "common": {
+    "scroll_to_explore": "Scroll para explorar",
+    "click_to_explore": "ou clique para explorar"
   }
 }

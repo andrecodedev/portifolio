@@ -49,6 +49,9 @@ import nodejsIcon from '../img/skills/nodejs.svg';
 import obsidianIcon from '../img/skills/obsidian.svg';
 import supabaseIcon from '../img/skills/supabase.svg';
 
+import tec4u from '../img/redes/tec4u.svg';
+import LogoIcon from '../img/logo.svg';
+
 export interface ProjectData {
   id: number;
   title: string;
@@ -58,8 +61,31 @@ export interface ProjectData {
   repoUrl?: string;    // link do GitHub
   siteUrl?: string;    // link do deploy
   type: 'personal' | 'work'; // tipo do projeto
-  label?: string;      // etiqueta do tipo de projeto (ex: E-commerce)
+  labels?: string[];     // etiquetas do tipo de projeto (ex: ['Site Web', 'E-commerce'])
+  institution?: {      // Instituição representada (Trabalho ou Próprio)
+    name: string;
+    logo: string;
+    url: string;
+  };
+  challenge?: string;   // Desafio do projeto (i18n key)
+  solution?: string;    // Solução aplicada (i18n key)
+  result?: string;      // Resultado obtido (i18n key)
+  date?: string;        // Data do projeto (YYYY-MM)
+  likes?: number;       // Número de curtidas (mock)
 }
+
+// Configurações padrão de instituições
+const PERSONAL_INSTITUTION = {
+  name: 't:projects.institutions.personal',
+  logo: LogoIcon,
+  url: 'https://andrecode.dev.br/'
+};
+
+const TEC4U_INSTITUTION = {
+  name: 't:projects.institutions.tec4u',
+  logo: tec4u,
+  url: 'https://www.tec4udigital.com/'
+};
 
 // Ordem padronizada de skills para projetos de e-commerce (Linux-first)
 const ecommerceSkills = [
@@ -93,7 +119,10 @@ export const projectsData: ProjectData[] = [
     description: 't:projects.personal.sealWorld',
     skills: [htmlIcon, cssIcon, javascriptIcon, gitIcon, vscodeIcon, figmaIcon, trelloIcon, canvaIcon],
     type: 'personal',
-    label: 't:projects.labels.siteWeb'
+    labels: ['t:projects.labels.siteWeb'],
+    institution: PERSONAL_INSTITUTION,
+    date: "2024-06",
+    likes: 12
   },
   {
     id: 2,
@@ -102,7 +131,10 @@ export const projectsData: ProjectData[] = [
     description: 't:projects.personal.alessiosPizzaria',
     skills: [htmlIcon, cssIcon, javascriptIcon, gitIcon, vscodeIcon, figmaIcon, trelloIcon, canvaIcon],
     type: 'personal',
-    label: 't:projects.labels.siteWeb'
+    labels: ['t:projects.labels.siteWeb'],
+    institution: PERSONAL_INSTITUTION,
+    date: "2024-07",
+    likes: 8
   },
   {
     id: 3,
@@ -111,7 +143,10 @@ export const projectsData: ProjectData[] = [
     description: 't:projects.personal.jogoAmigoSecreto',
     skills: [htmlIcon, cssIcon, javascriptIcon, gitIcon, vscodeIcon, figmaIcon, trelloIcon, canvaIcon],
     type: 'personal',
-    label: 't:projects.labels.webapp'
+    labels: ['t:projects.labels.siteWeb'],
+    institution: PERSONAL_INSTITUTION,
+    date: "2024-09",
+    likes: 5
   },
   {
     id: 4,
@@ -120,7 +155,10 @@ export const projectsData: ProjectData[] = [
     description: 't:projects.personal.primeiroPortfolio',
     skills: [htmlIcon, cssIcon, javascriptIcon, gitIcon, vscodeIcon, figmaIcon, trelloIcon, canvaIcon],
     type: 'personal',
-    label: 't:projects.labels.templateWeb'
+    labels: ['t:projects.labels.siteWeb', 't:projects.labels.portfolio'],
+    institution: PERSONAL_INSTITUTION,
+    date: "2024-08",
+    likes: 45
   },
   {
     id: 5,
@@ -129,7 +167,10 @@ export const projectsData: ProjectData[] = [
     description: 't:projects.personal.mobiSeg',
     skills: [htmlIcon, cssIcon, javascriptIcon, gitIcon, vscodeIcon, figmaIcon, trelloIcon, canvaIcon],
     type: 'personal',
-    label: 't:projects.labels.academico'
+    labels: ['t:projects.labels.siteWeb', 't:projects.labels.academico'],
+    institution: PERSONAL_INSTITUTION,
+    date: "2024-10",
+    likes: 22
   },
   {
     id: 6,
@@ -138,7 +179,10 @@ export const projectsData: ProjectData[] = [
     description: 't:projects.personal.petLife',
     skills: [htmlIcon, cssIcon, javascriptIcon, gitIcon, vscodeIcon, figmaIcon, trelloIcon, canvaIcon],
     type: 'personal',
-    label: 't:projects.labels.siteWeb'
+    labels: ['t:projects.labels.siteWeb'],
+    institution: PERSONAL_INSTITUTION,
+    date: "2024-11",
+    likes: 15
   },
   {
     id: 7,
@@ -173,7 +217,13 @@ export const projectsData: ProjectData[] = [
     ],
     siteUrl: "https://andrecode.dev.br/",
     type: 'personal',
-    label: 't:projects.labels.portfolio'
+    labels: ['t:projects.labels.siteWeb', 't:projects.labels.portfolio'],
+    institution: PERSONAL_INSTITUTION,
+    challenge: 't:projects.personal.portfolioAndrecodedev_challenge',
+    solution: 't:projects.personal.portfolioAndrecodedev_solution',
+    result: 't:projects.personal.portfolioAndrecodedev_result',
+    date: "2025-01",
+    likes: 120
   },
   {
     id: 101,
@@ -183,7 +233,10 @@ export const projectsData: ProjectData[] = [
     skills: ecommerceSkills,
     siteUrl: "https://www.eoraeyewear.com/",
     type: 'work',
-    label: 't:projects.labels.ecommerce'
+    labels: ['t:projects.labels.ecommerce', 't:projects.labels.siteWeb'],
+    institution: TEC4U_INSTITUTION,
+    date: "2025-10",
+    likes: 18
   },
   {
     id: 102,
@@ -193,7 +246,10 @@ export const projectsData: ProjectData[] = [
     skills: ecommerceSkills,
     siteUrl: "https://www.emoveis.com.br/",
     type: 'work',
-    label: 't:projects.labels.ecommerce'
+    labels: ['t:projects.labels.ecommerce', 't:projects.labels.siteWeb'],
+    institution: TEC4U_INSTITUTION,
+    date: "2025-11",
+    likes: 24
   },
   {
     id: 103,
@@ -203,7 +259,10 @@ export const projectsData: ProjectData[] = [
     skills: ecommerceSkills,
     siteUrl: "https://www.qcybrasil.com/",
     type: 'work',
-    label: 't:projects.labels.ecommerce'
+    labels: ['t:projects.labels.ecommerce', 't:projects.labels.siteWeb'],
+    institution: TEC4U_INSTITUTION,
+    date: "2025-11",
+    likes: 31
   },
   {
     id: 104,
@@ -213,7 +272,10 @@ export const projectsData: ProjectData[] = [
     skills: ecommerceSkills,
     siteUrl: "https://lojascomfort.com.br/",
     type: 'work',
-    label: 't:projects.labels.ecommerce'
+    labels: ['t:projects.labels.ecommerce', 't:projects.labels.siteWeb'],
+    institution: TEC4U_INSTITUTION,
+    date: "2025-12",
+    likes: 14
   },
   {
     id: 105,
@@ -223,7 +285,10 @@ export const projectsData: ProjectData[] = [
     skills: ecommerceSkills,
     siteUrl: "https://www.sapatarianova.com.br/",
     type: 'work',
-    label: 't:projects.labels.ecommerce'
+    labels: ['t:projects.labels.ecommerce', 't:projects.labels.siteWeb'],
+    institution: TEC4U_INSTITUTION,
+    date: "2025-12",
+    likes: 42
   },
   {
     id: 106,
@@ -232,7 +297,10 @@ export const projectsData: ProjectData[] = [
     description: 't:projects.work.relevo',
     skills: ecommerceSkills,
     type: 'work',
-    label: 't:projects.labels.ecommerce'
+    labels: ['t:projects.labels.ecommerce', 't:projects.labels.siteWeb'],
+    institution: TEC4U_INSTITUTION,
+    date: "2026-01",
+    likes: 9
   },
   {
     id: 107,
@@ -242,7 +310,10 @@ export const projectsData: ProjectData[] = [
     skills: ecommerceSkills,
     siteUrl: "https://www.baixapace.com.br/",
     type: 'work',
-    label: 't:projects.labels.ecommerce'
+    labels: ['t:projects.labels.ecommerce', 't:projects.labels.siteWeb'],
+    institution: TEC4U_INSTITUTION,
+    date: "2026-01",
+    likes: 27
   },
   {
     id: 108,
@@ -251,7 +322,10 @@ export const projectsData: ProjectData[] = [
     description: 't:projects.work.sportsTennis',
     skills: ecommerceSkills,
     type: 'work',
-    label: 't:projects.labels.ecommerce'
+    labels: ['t:projects.labels.ecommerce', 't:projects.labels.siteWeb'],
+    institution: TEC4U_INSTITUTION,
+    date: "2026-02",
+    likes: 11
   },
   {
     id: 109,
@@ -261,7 +335,10 @@ export const projectsData: ProjectData[] = [
     skills: ecommerceSkills,
     siteUrl: "https://paduashowroom.com.br/",
     type: 'work',
-    label: 't:projects.labels.ecommerce'
+    labels: ['t:projects.labels.ecommerce', 't:projects.labels.siteWeb'],
+    institution: TEC4U_INSTITUTION,
+    date: "2026-02",
+    likes: 56
   },
   {
     id: 110,
@@ -271,7 +348,10 @@ export const projectsData: ProjectData[] = [
     skills: ecommerceSkills,
     siteUrl: "https://www.couroecia.com.br/",
     type: 'work',
-    label: 't:projects.labels.ecommerce'
+    labels: ['t:projects.labels.ecommerce', 't:projects.labels.siteWeb'],
+    institution: TEC4U_INSTITUTION,
+    date: "2026-02",
+    likes: 38
   },
   {
     id: 111,
@@ -280,7 +360,10 @@ export const projectsData: ProjectData[] = [
     description: 't:projects.work.cabaretDeMarie',
     skills: ecommerceSkills,
     type: 'work',
-    label: 't:projects.labels.ecommerce'
+    labels: ['t:projects.labels.ecommerce', 't:projects.labels.siteWeb'],
+    institution: TEC4U_INSTITUTION,
+    date: "2026-03",
+    likes: 21
   },
   {
     id: 112,
@@ -289,6 +372,9 @@ export const projectsData: ProjectData[] = [
     description: 't:projects.work.zetona',
     skills: ecommerceSkills,
     type: 'work',
-    label: 't:projects.labels.ecommerce'
+    labels: ['t:projects.labels.ecommerce', 't:projects.labels.siteWeb'],
+    institution: TEC4U_INSTITUTION,
+    date: "2026-03",
+    likes: 64
   },
 ];
