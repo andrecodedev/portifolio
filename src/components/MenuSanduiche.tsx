@@ -130,7 +130,7 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
 
             {/* Conteúdo principal — Refinado para equilíbrio visual e proporções profissionais */}
             <div
-              onClick={e => e.stopPropagation()}
+              onClick={(e: React.MouseEvent) => e.stopPropagation()}
               className="relative z-10 flex flex-col items-center justify-center w-full h-full px-4 cursor-default"
             >
               <div className="flex flex-col items-center gap-2 md:gap-6 w-full max-w-4xl">
@@ -167,7 +167,7 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              onClick={e => e.stopPropagation()}
+              onClick={(e: React.MouseEvent) => e.stopPropagation()}
               className="absolute bottom-6 md:bottom-12 flex flex-col items-center w-full px-4 cursor-default"
             >
               <div className="text-[var(--text-terceiro)] text-[10px] md:text-xs tracking-[0.3em] uppercase opacity-50">
