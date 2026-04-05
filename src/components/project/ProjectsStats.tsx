@@ -104,13 +104,13 @@ export default function ProjectsStats({ projectsData }: ProjectsStatsProps) {
     ];
 
     return (
-        <section className="w-full mb-8 lg:mb-12">
+        <section className="w-full">
             <div className="font-jet max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[1.5rem] text-center p-5 sm:px-6">
                 {statsData.map((stat, index) => (
                     <div
                         key={index}
                         tabIndex={0}
-                        className={`relative px-4 group outline-none after:content-[''] after:absolute after:top-[20%] after:bottom-[20%] after:right-[-0.5rem] after:w-[1px] after:bg-[var(--text-primary)] after:opacity-60 after:hidden lg:after:block last:after:hidden`}
+                        className={`relative px-4 group outline-none after:content-[''] after:absolute after:top-[20%] after:bottom-[20%] after:right-[-0.5rem] after:w-[1px] after:bg-[var(--text-primary)] after:opacity-60 after:hidden lg:after:block last:after:hidden ${index === statsData.length - 1 && statsData.length % 2 !== 0 ? 'col-span-2 lg:col-span-1' : ''}`}
                     >
                         <h5 className={`text-[1.875rem] md:text-3xl font-bold mb-2 transition-all duration-300 flex items-center justify-center gap-2 ${stat.isHighlight ? `${stat.highlightColor}` : 'text-[var(--text-primary)]'}`}>
                             {stat.icon && (

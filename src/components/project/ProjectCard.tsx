@@ -12,10 +12,19 @@ interface ProjectCardProps {
   skills?: string[];
   repoUrl?: string;
   siteUrl?: string;
-  label?: string;
+  labels?: string[];
+  institution?: {
+    name: string;
+    logo: string;
+    url: string;
+  };
+  challenge?: string;
+  solution?: string;
+  result?: string;
+  date?: string;
 }
 
-export default function ProjectCard({ id, title, imageUrl, description, skills, repoUrl, siteUrl, label }: ProjectCardProps) {
+export default function ProjectCard({ id, title, imageUrl, description, skills, repoUrl, siteUrl, labels, institution, challenge, solution, result, date }: ProjectCardProps) {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
@@ -66,12 +75,24 @@ export default function ProjectCard({ id, title, imageUrl, description, skills, 
           {/* Internal Content (Smooth fade) */}
           <div className={`flex flex-col justify-center items-center w-full h-full pt-8 gap-1.5 transition-all duration-700 ${showOverlay ? "opacity-100 translate-y-0" : "opacity-0 translate-y-0"}`}>
             {/* Header do Card (Label e Like) - Já é absolute top-0 */}
-            <div className="absolute top-0 left-0 right-0 p-3 flex justify-between items-center z-20">
-              {label ? (
-                <span className="px-2 py-0.5 text-[9px] font-bold rounded-md border border-white/20 bg-white/10 text-white/90 uppercase tracking-widest backdrop-blur-md">
-                  {label.startsWith('t:') ? t(label.replace('t:', '')) : label}
-                </span>
-              ) : <div />}
+            <div className="absolute top-0 left-0 right-0 p-3 flex justify-between items-start z-20">
+              <div className="flex flex-wrap gap-1 max-w-[75%]">
+                {date && (
+                  <span className="px-2 py-0.5 text-[8.5px] font-bold rounded-md border border-white/40 bg-white/20 text-white uppercase tracking-wider backdrop-blur-md">
+                    {date.split('-')[0]}
+                  </span>
+                )}
+                {labels?.slice(0, 1).map((lbl, idx) => (
+                  <span key={idx} className="px-2 py-0.5 text-[8.5px] font-bold rounded-md border border-white/20 bg-white/10 text-white/90 uppercase tracking-wider backdrop-blur-md whitespace-nowrap">
+                    {lbl.startsWith('t:') ? t(lbl.replace('t:', '')) : lbl}
+                  </span>
+                ))}
+                {labels && labels.length > 1 && (
+                  <span className="px-1.5 py-0.5 text-[8.5px] font-bold rounded-md border border-white/20 bg-white/10 text-white/90 backdrop-blur-md">
+                    +{labels.length - 1}
+                  </span>
+                )}
+              </div>
 
               <LikeButton
                 projectId={id}
@@ -128,7 +149,12 @@ export default function ProjectCard({ id, title, imageUrl, description, skills, 
         skills={skills}
         repoUrl={repoUrl}
         siteUrl={siteUrl}
-        label={label}
+        labels={labels}
+        institution={institution}
+        challenge={challenge}
+        solution={solution}
+        result={result}
+        date={date}
       />
     </>
   );

@@ -55,11 +55,19 @@ export default function CardEducation({ data }: { data: CardEducationData }) {
     certificadoUrl,
   } = data;
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const cardRef = useRef<HTMLDivElement>(null);
 
   const translatedStatus = t(status);
   const statusStyles = getStatusStyles(translatedStatus);
+
+  const handleInstitutionClick = () => {
+    const translatedName = t(escola);
+    const searchQuery = i18n.language === 'pt'
+      ? `informações sobre a instituição ${translatedName}`
+      : `information about ${translatedName} institution`;
+    window.open(`https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`, '_blank', 'noopener,noreferrer');
+  };
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -81,16 +89,26 @@ export default function CardEducation({ data }: { data: CardEducationData }) {
   return (
     <div
       ref={cardRef}
-      className="group relative bg-[var(--bg-secondary-transparent)] rounded-xl p-6 w-full h-full flex flex-col shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 overflow-hidden font-jet"
+      role="article"
+      aria-label={`${t(curso)} - ${t(escola)}`}
+      className="group relative bg-[var(--bg-secondary-transparent)] rounded-lg p-6 w-full h-full flex flex-col shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.02] overflow-hidden font-jet"
     >
       {/* CABEÇALHO */}
       <div className="flex items-center justify-between gap-4 mb-4">
-        <div className="p-2">
-          <img src={icon} alt={t(escola)} className="w-11 h-11 select-none" />
+        <div
+          onClick={handleInstitutionClick}
+          className="p-1 cursor-pointer hover:scale-105 transition-transform duration-300"
+        >
+          <img src={icon} alt={t(escola)} className="w-11 h-11 select-none object-contain" />
         </div>
         <div className="flex-1">
           <h3 className="text-sm font-bold text-[var(--text-primary)] leading-tight">{t(curso)}</h3>
-          <p className="text-sm font-medium text-[var(--text-secondary)]">{t(escola)}</p>
+          <p
+            onClick={handleInstitutionClick}
+            className="text-sm font-medium text-[var(--text-secondary)] cursor-pointer hover:underline decoration-1 underline-offset-4 transition-all"
+          >
+            {t(escola)}
+          </p>
         </div>
       </div>
 

@@ -6,20 +6,21 @@ import ContactForm from "../components/contact/ContactForm";
 import FadeIn from "../components/FadeIn";
 
 export default function Contato() {
-
   return (
     <div className="geral">
       <Header />
 
       <main className="flex flex-1 flex-col justify-center items-center text-center px-4">
-        <FadeIn duration={1000}>
-        <Title title_6=" " />
+        <FadeIn delay={0.15}>
+          <Title title_6=" " />
+        </FadeIn>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl w-full mt-6">
-          <ContactInfo />
-          <ContactForm />
-        </div>
-      </FadeIn>
+        <FadeIn delay={0.30}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl w-full mx-auto mt-6">
+            <ContactInfo />
+            <ContactForm />
+          </div>
+        </FadeIn>
       </main>
 
       <footer>

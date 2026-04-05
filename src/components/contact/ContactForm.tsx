@@ -131,11 +131,11 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={loading || toast.show}
-          className={`transition-all duration-300 cursor-pointer p-3 rounded font-semibold flex items-center justify-center select-none text-sm w-full mt-1 active:scale-95 ${loading || toast.show ? "cursor-not-allowed opacity-80" : "hover:bg-[var(--button-hover)]"
+          className={`transition-all duration-300 cursor-pointer p-3 rounded font-semibold flex items-center justify-center select-none text-sm w-full mt-1 active:scale-95 ${loading ? "cursor-not-allowed opacity-80" : "hover:bg-[var(--button-hover)]"
             } ${toast.show
               ? toast.message === t('Contact.message_1')
                 ? "bg-green-600 text-white"
-                : "bg-red-600 text-white"
+                : "bg-[var(--error)] text-white hover:bg-[var(--error-hover)]"
               : "bg-[var(--button-bg)] text-[var(--text-primary)]"
             }`}
         >

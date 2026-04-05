@@ -14,18 +14,32 @@ function Sobre() {
   return (
     <div className="geral">
       <Header />
-      <main>
-        <FadeIn duration={1000}>
-          {/* Título superior */}
+      <main className="space-y-8 sm:space-y-16">
+        <FadeIn delay={0.15}>
           <Title title_1=" " />
-          <AboutHero />
-          <AboutStartsGrid />
-          <AboutVideo videoId="v2vE1Ac-NxE" />
-          <SliderSkills />
-          {/* Experiências com título dinâmico dentro */}
-          <Experience />
+        </FadeIn>
 
-          {/* Destaques e Curiosidades */}
+        <FadeIn delay={0.30}>
+          <AboutHero />
+        </FadeIn>
+
+        <FadeIn delay={0.45}>
+          <AboutStartsGrid />
+        </FadeIn>
+
+        <FadeIn delay={0.60}>
+          <AboutVideo videoId="v2vE1Ac-NxE" />
+        </FadeIn>
+
+        <FadeIn delay={0.75}>
+          <SliderSkills />
+        </FadeIn>
+
+        <FadeIn delay={0.90}>
+          <Experience />
+        </FadeIn>
+
+        <FadeIn delay={1.05}>
           <AboutHighlights />
         </FadeIn>
       </main>

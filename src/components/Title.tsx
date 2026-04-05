@@ -25,7 +25,7 @@ export default function Title({
 
   return (
     <>
-      <div className="flex flex-1 flex-col justify-center items-center text-center px-4 py-6 sm:px-8 lg:px-16">
+      <div className="flex flex-1 flex-col justify-center items-center text-center px-4 py-2 sm:px-8 lg:px-16">
 
         {title_1 && (
           <h2 className="section-title text-5xl sm:text-5xl md:text-6xl lg:text-[4rem] mb-1 mt-1 pb-2 font-medium text-start font-extrabold bg-gradient-to-r from-[var(--primary-linear-gradient)] to-[var(--text-gray-linear-gradient)] bg-clip-text text-transparent relative inline-block select-none">

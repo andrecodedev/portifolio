@@ -22,10 +22,18 @@ const ScrollToTopButton: React.FC = () => {
 
     // Pega a posição do scroll atual
     const scrollY = window.scrollY;
-    // Filtra só os títulos que estão acima do scroll atual (com margem de 10px)
-    const prevTitles = titles.filter(
-      (el) => el.offsetTop < scrollY - 10
-    );
+
+    // Calcula posições absolutas de todos os títulos
+    const mappedTitles = titles.map(el => ({
+      position: el.getBoundingClientRect().top + scrollY,
+      element: el
+    }));
+
+    // Filtra só os títulos que estão acima do scroll atual (com margem de segurança)
+    // Usamos um offset de 20px para ignorar o título que o usuário já está vendo
+    const prevTitles = mappedTitles.filter(
+      (item) => item.position < scrollY - 20
+    ).sort((a, b) => a.position - b.position);
 
     if (prevTitles.length === 0) {
       // Se não tem nenhum acima, vai pro topo
@@ -35,10 +43,9 @@ const ScrollToTopButton: React.FC = () => {
 
     // Pega o último título acima do scroll (mais próximo)
     const target = prevTitles[prevTitles.length - 1];
-    // Offset de respiro (em px)
-    const offset = 180; // ajuste aqui se quiser mais/menos espaço
-    const y = target.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top: y, behavior: 'smooth' });
+    // Offset de respiro (em px) para centralizar um pouco o título ou deixar espaço no topo
+    const offset = 180;
+    window.scrollTo({ top: target.position - offset, behavior: 'smooth' });
   };
 
   return (
@@ -50,7 +57,7 @@ const ScrollToTopButton: React.FC = () => {
     >
       {/* SVG seta para cima */}
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </button>
   );
