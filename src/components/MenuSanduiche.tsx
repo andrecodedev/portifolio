@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
+import { hapticFeedback } from '../utils/haptics';
 
 interface MenuSanduicheProps {
   navigate: (path: string) => void;
@@ -12,11 +13,13 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
   const { t } = useTranslation();
 
   const openMenu = () => {
+    hapticFeedback.medium();
     setOpen(true);
     document.body.style.overflow = 'hidden';
   };
 
   const closeMenu = () => {
+    hapticFeedback.light();
     setOpen(false);
     document.body.style.overflow = 'unset';
   };
@@ -36,6 +39,7 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
   ];
 
   const handleNavigate = (path: string) => {
+    hapticFeedback.success();
     closeMenu();
     setTimeout(() => {
       navigate(path);
@@ -53,7 +57,7 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
         className="w-9 h-9 md:w-10 md:h-10 flex flex-col items-center justify-center gap-[5px]
           rounded-md border border-[var(--border)] bg-[var(--button-bg)]
           hover:bg-[var(--button-hover)] transition-colors duration-300 shadow-lg shadow-black/10"
-        aria-label="Open menu"
+        aria-label={t('aria.open_menu')}
       >
         <span className="w-5 md:w-6 h-0.5 bg-[var(--text-primary)] rounded-full" />
         <span className="w-5 md:w-6 h-0.5 bg-[var(--text-primary)] rounded-full" />
@@ -79,7 +83,7 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
             {/* Botão fechar — HUD close button */}
             <button
               onClick={closeMenu}
-              aria-label="Fechar menu"
+              aria-label={t('aria.close_menu')}
               className="absolute top-8 right-8 z-20 flex items-center gap-2
                 text-[var(--text-terceiro)] hover:text-[var(--text-primary)]
                 transition-all duration-300 hover:-translate-y-0.5 group"
@@ -133,7 +137,7 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
               onClick={(e: React.MouseEvent) => e.stopPropagation()}
               className="relative z-10 flex flex-col items-center justify-center w-full h-full px-4 cursor-default"
             >
-              <div className="flex flex-col items-center gap-2 md:gap-6 w-full max-w-4xl">
+              <div className="flex flex-col items-center gap-[clamp(0.5rem,3vh,2.5rem)] w-full max-w-4xl">
                 {menuItems.map((item, index) => {
                   const isActive = location.pathname === item.path || (item.path === '/about' && location.pathname === '/');
                   return (
@@ -143,9 +147,9 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2 + index * 0.1, duration: 0.4 }}
                       onClick={() => handleNavigate(item.path)}
-                      className="group relative w-full flex items-center justify-center py-3 md:py-5 cursor-pointer"
+                      className="group relative w-full flex items-center justify-center py-[clamp(0.25rem,1.5vh,1.25rem)] cursor-pointer"
                     >
-                      <span className={`text-3xl md:text-6xl lg:text-7xl font-bold tracking-tighter uppercase transition-all duration-700 ease-in-out
+                      <span className={`text-[clamp(1.75rem,7vh,5rem)] font-bold tracking-tighter uppercase transition-all duration-700 ease-in-out
                         ${isActive ? 'text-[var(--text-primary)]' : 'text-[var(--text-terceiro)] group-hover:text-[var(--text-primary)] group-hover:tracking-wider'}
                       `}>
                         {item.name}

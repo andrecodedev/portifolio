@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { hapticFeedback } from '../utils/haptics';
 import '../styles/toggleTheme.css';
 
 export const ThemeToggle = () => {
@@ -13,9 +14,10 @@ document.body.className = `${theme}-theme`;
 localStorage.setItem('theme', theme);
 }, [darkMode]);
 
-const toggleTheme = () => {
-setDarkMode(prev => !prev);
-};
+  const toggleTheme = () => {
+    hapticFeedback.light();
+    setDarkMode(prev => !prev);
+  };
 
 return (
 <label className="switch">

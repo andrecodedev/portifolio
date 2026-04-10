@@ -8,9 +8,10 @@ type ProjectFilterProps = {
   onFilter: (type: string) => void;
   isAdvancedOpen: boolean;
   onToggleAdvanced: () => void;
+  isAnyFilterActive?: boolean;
 };
 
-export default function ProjectFilter({ activeType, onFilter, isAdvancedOpen, onToggleAdvanced }: ProjectFilterProps) {
+export default function ProjectFilter({ activeType, onFilter, isAdvancedOpen, onToggleAdvanced, isAnyFilterActive }: ProjectFilterProps) {
   const { t } = useTranslation();
 
   const types = [
@@ -61,7 +62,7 @@ export default function ProjectFilter({ activeType, onFilter, isAdvancedOpen, on
 
       <button
         onClick={onToggleAdvanced}
-        className={`flex items-center gap-2 px-4 py-1.5 rounded-lg font-jet text-sm cursor-pointer transition-all duration-300 whitespace-nowrap border ${isAdvancedOpen
+        className={`flex items-center gap-2 px-4 py-1.5 rounded-lg font-jet text-sm cursor-pointer transition-all duration-300 whitespace-nowrap border ${isAdvancedOpen || isAnyFilterActive
           ? "bg-[var(--text-primary)] text-[var(--bg-primary)] border-transparent shadow-[0_0_15px_color-mix(in_srgb,var(--text-primary)_30%,transparent)]"
           : "bg-[var(--button-bg)] text-[var(--text-primary)] border-[color-mix(in_srgb,var(--text-primary)_10%,transparent)] hover:bg-[var(--button-hover)]"
           }`}

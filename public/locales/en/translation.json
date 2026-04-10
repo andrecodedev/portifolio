@@ -107,7 +107,7 @@
     "year": "Year",
     "likes": "Most Loved",
     "clear": "Clear All",
-    "reset": "Reset",
+    "reset": "Clear All",
     "sort_title": "Sorting",
     "sort_newest": "Newest",
     "sort_oldest": "Oldest",
@@ -115,7 +115,8 @@
     "sort_hidden": "Least Loved",
     "title": "Custom Filters",
     "search_label": "Filter by name",
-    "type_label": "Categories"
+    "type_label": "Categories",
+    "apply": "Apply Filters"
   },
   "EducationAdvancedFilters": {
     "title": "Custom Filters",
@@ -555,7 +556,8 @@
     "inicio_1": "01/2018",
     "fim_1": "11/2020",
     "cargaHoraria_1": "80h",
-    "modalidade_1": "On-site"
+    "modalidade_1": "On-site",
+    "search_query": "information about {{name}} institution"
   },
   "SkillsFilter": {
     "todas": "All",
@@ -612,7 +614,8 @@
     "level_c1": "C1 (Fluent)",
     "level_b1": "B1 (Intermediate)",
     "click_to_learn": "Click to learn more",
-    "search_instruction": "Click on any skill to learn more about it"
+    "search_instruction": "Click on any skill to learn more about it",
+    "search_query": "what is {{name}} and its applications"
   },
   "EducationStats": {
     "totalHours": "Study Hours",
@@ -700,6 +703,14 @@
   },
   "common": {
     "scroll_to_explore": "Scroll to explore",
-    "click_to_explore": "or click to explore"
+    "click_to_explore": "or click to explore",
+    "no_results": "No results found",
+    "try_clearing": "Try adjusting your filters or searching for another term."
+  },
+  "aria": {
+    "open_menu": "Open navigation menu",
+    "close_menu": "Close menu",
+    "toggle_language": "Toggle language switcher",
+    "select_language": "Select the desired language"
   }
 }

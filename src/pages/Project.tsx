@@ -129,19 +129,26 @@ function Projetos() {
           <ProjectsStats projectsData={projectsData} />
         </FadeIn>
 
-        {/* Filtro: aparece depois dos stats */}
+        {/* Filtro Principal */}
         <FadeIn delay={0.40}>
           <ProjectFilter
             activeType={activeType}
             onFilter={handleFilter}
             isAdvancedOpen={isAdvancedOpen}
             onToggleAdvanced={() => setIsAdvancedOpen(!isAdvancedOpen)}
+            isAnyFilterActive={
+              advFilters.search !== "" ||
+              advFilters.techs.length > 0 ||
+              advFilters.years.length > 0 ||
+              advFilters.sortBy !== "newest"
+            }
           />
         </FadeIn>
 
-        {/* Painel Avançado */}
+        {/* Painel Avançado (Modal) */}
         <ProjectAdvancedFilters
           isVisible={isAdvancedOpen}
+          onClose={() => setIsAdvancedOpen(false)}
           activeType={activeType}
           onFilterCategory={handleFilter}
           filters={advFilters}
@@ -167,10 +174,10 @@ function Projetos() {
                 <div className="py-20 text-center space-y-4">
                   <div className="text-4xl opacity-20">🔍</div>
                   <h3 className="text-xl font-bold text-[var(--text-primary)] opacity-60">
-                    {t("projects.no_results", "Nenhum projeto encontrado")}
+                    {t("common.no_results", "Nenhum resultado encontrado")}
                   </h3>
                   <p className="text-[var(--text-terceiro)] text-sm">
-                    {t("projects.try_clearing", "Tente ajustar seus filtros ou pesquisar por outro termo.")}
+                    {t("common.try_clearing", "Tente ajustar seus filtros ou pesquisar por outro termo.")}
                   </p>
                   <button
                     onClick={() => setAdvFilters({ search: "", techs: [], years: [], sortBy: "newest" })}

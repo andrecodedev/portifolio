@@ -12,16 +12,14 @@ export default function SkillsSection({
   activeCategory,
   baseDelay = 0
 }: SkillsSectionProps) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const skillsToShow = skillsData.filter(
     (skill) => activeCategory === "all" || skill.category === activeCategory
   );
 
   const handleSkillClick = (skillNameKey: string) => {
     const translatedName = t(skillNameKey);
-    const searchQuery = i18n.language === 'pt'
-      ? `o que é ${translatedName} e qual sua aplicação`
-      : `what is ${translatedName} and its applications`;
+    const searchQuery = t('Skills.search_query', { name: translatedName });
     window.open(`https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`, '_blank', 'noopener,noreferrer');
   };
 

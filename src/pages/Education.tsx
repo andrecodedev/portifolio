@@ -155,12 +155,20 @@ export default function Education() {
               setIsAdvancedOpen(!isAdvancedOpen);
               setHasInteracted(true);
             }}
+            isAnyFilterActive={
+              advFilters.search !== "" ||
+              advFilters.status.length > 0 ||
+              advFilters.modality.length > 0 ||
+              advFilters.schools.length > 0 ||
+              advFilters.sortBy !== "newest"
+            }
           />
         </FadeIn>
 
-        {/* Filtros Personalizados */}
+        {/* Filtros Personalizados (Modal) */}
         <EducationAdvancedFilters
           isOpen={isAdvancedOpen}
+          onClose={() => setIsAdvancedOpen(false)}
           filters={advFilters}
           setFilters={setAdvFilters}
           activeCategory={activeCategory}
@@ -183,10 +191,10 @@ export default function Education() {
               <div className="py-20 text-center space-y-4">
                 <div className="text-4xl opacity-20">🔍</div>
                 <h3 className="text-xl font-bold text-[var(--text-primary)] opacity-60">
-                  {t("projects.no_results", "Nenhuma formação encontrada")}
+                  {t("common.no_results", "Nenhum resultado encontrado")}
                 </h3>
                 <p className="text-[var(--text-terceiro)] text-sm">
-                  {t("projects.try_clearing", "Tente ajustar seus filtros ou pesquisar por outro termo.")}
+                  {t("common.try_clearing", "Tente ajustar seus filtros ou pesquisar por outro termo.")}
                 </p>
                 <button
                   onClick={handleClear}

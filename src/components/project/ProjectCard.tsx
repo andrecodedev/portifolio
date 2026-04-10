@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import ProjectModal from "./ProjectModal";
 import { getSkillName } from "../../data/skillsData";
 import LikeButton from "./LikeButton";
+import { hapticFeedback } from "../../utils/haptics";
 
 interface ProjectCardProps {
   id: number;
@@ -30,7 +31,10 @@ export default function ProjectCard({ id, title, imageUrl, description, skills, 
   const [showOverlay, setShowOverlay] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
-  const handleOpen = () => setOpen(true);
+  const handleOpen = () => {
+    hapticFeedback.medium();
+    setOpen(true);
+  };
 
   // Detecta toque fora do card
   useEffect(() => {
@@ -60,6 +64,15 @@ export default function ProjectCard({ id, title, imageUrl, description, skills, 
           e.stopPropagation();
           setShowOverlay(true);
         }}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            handleOpen();
+          }
+        }}
+        aria-label={`${t('button.see_more')} ${title}`}
       >
         <img
           src={imageUrl}

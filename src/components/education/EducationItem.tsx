@@ -55,7 +55,7 @@ export default function CardEducation({ data }: { data: CardEducationData }) {
     certificadoUrl,
   } = data;
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const cardRef = useRef<HTMLDivElement>(null);
 
   const translatedStatus = t(status);
@@ -63,9 +63,7 @@ export default function CardEducation({ data }: { data: CardEducationData }) {
 
   const handleInstitutionClick = () => {
     const translatedName = t(escola);
-    const searchQuery = i18n.language === 'pt'
-      ? `informações sobre a instituição ${translatedName}`
-      : `information about ${translatedName} institution`;
+    const searchQuery = t('Education.search_query', { name: translatedName });
     window.open(`https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`, '_blank', 'noopener,noreferrer');
   };
 

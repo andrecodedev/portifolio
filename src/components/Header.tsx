@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { MenuSanduiche } from './MenuSanduiche'
+import { hapticFeedback } from '../utils/haptics'
 import '../styles/lux.css'
 
 const Header = () => {
@@ -15,6 +16,7 @@ const Header = () => {
   }, [])
 
   const handleHomeClick = () => {
+    hapticFeedback.light();
     // Se já estiver na home, forçamos um reload ou mudamos a key da rota para resetar a intro
     if (location.pathname === '/') {
       // Em vez de window.location.reload(), podemos navegar para / e a key da rota fará o resto no App.tsx
@@ -35,7 +37,8 @@ const Header = () => {
         onClick={handleHomeClick}
         role="button"
         tabIndex={0}
-        onKeyDown={e => { if (e.key === 'Enter') handleHomeClick() }}
+        onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') handleHomeClick() }}
+        aria-label="Ir para o início"
       >
         AndreCodeDev
       </span>
