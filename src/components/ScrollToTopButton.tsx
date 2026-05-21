@@ -52,7 +52,7 @@ const ScrollToTopButton: React.FC = () => {
     <button
       onClick={scrollToPrevTitle}
       aria-label="Voltar ao título anterior"
-      className={`fixed left-4 bottom-4 z-50 p-2 rounded-full bg-[var(--bg-secondary)] shadow-lg transition-opacity duration-300 hover:bg-[var(--bg-primary)] hover:scale-110 text-[var(--text-primary)] ${visible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+      className={`fixed left-4 bottom-4 z-110 p-2 rounded-full bg-[var(--bg-secondary)] shadow-lg transition-opacity duration-300 hover:bg-[var(--bg-primary)] hover:scale-110 text-[var(--text-primary)] ${visible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
       style={{ outline: 'none' }}
     >
       {/* SVG seta para cima */}

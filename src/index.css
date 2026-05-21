@@ -662,3 +662,134 @@ h6,
     transition: opacity 0.5s ease;
   }
 }
+/* Library & Markdown HUD Styles */
+.markdown-content {
+  font-family: var(--inter);
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3 {
+  font-family: var(--title);
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.markdown-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.markdown-content code {
+  font-family: var(--jet);
+  background: var(--button-bg);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.markdown-content pre {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  overflow-x: auto;
+  position: relative;
+}
+
+.markdown-content pre::before {
+  content: "CODE_BASE";
+  position: absolute;
+  top: 0;
+  right: 1.5rem;
+  font-family: var(--jet);
+  font-size: 10px;
+  color: var(--text-primary);
+  opacity: 0.2;
+  letter-spacing: 0.2em;
+}
+
+.markdown-content blockquote {
+  border-left: 4px solid var(--text-primary);
+  padding: 1rem 1.5rem;
+  background: var(--button-bg);
+  font-style: italic;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.markdown-content ul, .markdown-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.markdown-content li {
+  margin-bottom: 0.75rem;
+  list-style-type: square;
+}
+
+.markdown-content li::marker {
+  color: var(--text-primary);
+}
+
+.markdown-content strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* Accordions HUD Style */
+.markdown-content details {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin: 1.5rem 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.markdown-content details[open] {
+  border-color: var(--text-primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.markdown-content summary {
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  font-family: var(--jet);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.markdown-content summary::-webkit-details-marker {
+  display: none;
+}
+
+.markdown-content summary::after {
+  content: "+";
+  font-size: 1.2rem;
+  font-weight: 300;
+  transition: transform 0.3s ease;
+}
+
+.markdown-content details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.markdown-content details > div {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.95rem;
+  color: var(--text-terceiro);
+}

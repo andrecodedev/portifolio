@@ -4,7 +4,7 @@ import { MenuSanduiche } from './MenuSanduiche'
 import { hapticFeedback } from '../utils/haptics'
 import '../styles/lux.css'
 
-const Header = () => {
+const Header = ({ hasBackground }: { hasBackground?: boolean }) => {
   const navigate = useNavigate()
   const location = useLocation()
   const headerRef = useRef<HTMLElement>(null)
@@ -30,7 +30,11 @@ const Header = () => {
   return (
     <header
       ref={headerRef}
-      className="fixed top-0 left-0 w-full flex items-center px-6 py-3 z-[1000] transition-shadow duration-200 default-layout"
+      className={`fixed top-0 left-0 w-full flex items-center px-6 py-3 z-[1000] transition-all duration-200 default-layout ${
+        hasBackground 
+        ? 'bg-[var(--bg-secondary-transparent)] backdrop-blur-md border-b border-[var(--border)] shadow-md' 
+        : 'bg-transparent'
+      }`}
     >
       <span
         className="lux font-medium text-2xl cursor-pointer inline-block tracking-tight text-[var(--text-primary)]"

@@ -148,7 +148,7 @@
     "education": "Educação",
     "skills": "Habilidades",
     "projects": "Projetos",
-    "news": "Notícias",
+    "library": "Biblioteca",
     "contact": "Contato"
   },
   "home": {
@@ -165,7 +165,7 @@
     "educationCursos": "Cursos",
     "skills": "Habilidades",
     "projects": "Projetos",
-    "news": "Notícias",
+    "library": "Biblioteca",
     "contact": "Contato"
   },
   "footer": {
@@ -714,5 +714,29 @@
     "close_menu": "Fechar menu",
     "toggle_language": "Alternar seletor de idiomas",
     "select_language": "Selecione o idioma desejado"
+  }
+,
+  "library": {
+    "title": "Biblioteca Pessoal",
+    "subtitle": "Documentando minha jornada, descobertas no RAG e evolução técnica.",
+    "read_more": "Ler guia completo",
+    "newsletter_title": "Fique por dentro",
+    "newsletter_description": "Cadastre seu e-mail para receber notificações sobre novos conteúdos técnicos.",
+    "newsletter_placeholder": "seu@email.com",
+    "newsletter_button": "Se inscrever",
+    "comments_title": "Conversa",
+    "comments_placeholder": "O que você achou desse guia? Deixe seu comentário...",
+    "comments_button": "Enviar Comentário",
+    "likes_label": "curtidas",
+    "latest_posts": "Guias Recentes",
+    "no_posts": "Nenhum conteúdo disponível ainda.",
+    "back_to_library": "Voltar para a Biblioteca",
+    "written_by": "Escrito por",
+    "reading_time": "minutos de leitura",
+    "categories": {
+      "tech": "Tecnologia",
+      "career": "Carreira",
+      "rag": "RAG & AI"
+    }
   }
 }
