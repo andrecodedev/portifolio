@@ -27,10 +27,10 @@ function AboutHero() {
             {t('about.cargo')}
           </p>
           <p
-            className="text-sm mt-4 font-jet leading-snug tracking-tight max-w-[75ch]"
+            className="text-sm mt-4 font-jet leading-snug tracking-tight"
             dangerouslySetInnerHTML={{ __html: t('about.descricao_1') }}
           />
-          <p className="text-sm mt-2 font-jet leading-snug tracking-tight max-w-[75ch]">
+          <p className="text-sm mt-2 font-jet leading-snug tracking-tight">
             {t('about.descricao_2')}
           </p>
 
