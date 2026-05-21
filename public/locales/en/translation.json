@@ -148,7 +148,6 @@
     "education": "Education",
     "skills": "Skills",
     "projects": "Projects",
-    "library": "Library",
     "contact": "Contact"
   },
   "home": {
@@ -713,29 +712,5 @@
     "close_menu": "Close menu",
     "toggle_language": "Toggle language switcher",
     "select_language": "Select the desired language"
-  }
-,
-  "library": {
-    "title": "Technical Library",
-    "subtitle": "Documenting my journey, RAG discoveries, and technical evolution.",
-    "read_more": "Read full guide",
-    "newsletter_title": "Stay Tuned",
-    "newsletter_description": "Sign up for my newsletter to get notified about new technical content.",
-    "newsletter_placeholder": "your@email.com",
-    "newsletter_button": "Subscribe",
-    "comments_title": "Conversation",
-    "comments_placeholder": "What did you think of this guide? Leave a comment...",
-    "comments_button": "Submit Comment",
-    "likes_label": "likes",
-    "latest_posts": "Recent Guides",
-    "no_posts": "No guides available yet.",
-    "back_to_library": "Back to Library",
-    "written_by": "Written by",
-    "reading_time": "min read",
-    "categories": {
-      "tech": "Technology",
-      "career": "Career",
-      "rag": "RAG & AI"
-    }
   }
 }

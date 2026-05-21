@@ -35,7 +35,6 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
     { name: t('nav.education'), path: '/education' },
     { name: t('nav.skills'), path: '/skills' },
     { name: t('nav.projects'), path: '/project' },
-    { name: t('nav.library'), path: '/library' },
     { name: t('nav.contact'), path: '/contact' },
   ];
 
@@ -136,9 +135,9 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
             {/* Conteúdo principal — Refinado para equilíbrio visual e proporções profissionais */}
             <div
               onClick={(e: React.MouseEvent) => e.stopPropagation()}
-              className="relative z-10 flex flex-col items-center justify-center w-full h-full px-4 py-20 cursor-default"
+              className="relative z-10 flex flex-col items-center justify-center w-full h-full px-4 cursor-default"
             >
-              <div className="flex flex-col items-center gap-[clamp(0.25rem,2vh,1.5rem)] w-full max-w-4xl">
+              <div className="flex flex-col items-center gap-[clamp(0.5rem,3vh,2.5rem)] w-full max-w-4xl">
                 {menuItems.map((item, index) => {
                   const isActive = location.pathname === item.path || (item.path === '/about' && location.pathname === '/');
                   return (
@@ -148,9 +147,9 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2 + index * 0.1, duration: 0.4 }}
                       onClick={() => handleNavigate(item.path)}
-                      className="group relative w-full flex items-center justify-center py-[clamp(0.15rem,1vh,0.75rem)] cursor-pointer"
+                      className="group relative w-full flex items-center justify-center py-[clamp(0.25rem,1.5vh,1.25rem)] cursor-pointer"
                     >
-                      <span className={`text-[clamp(1.5rem,5.5vh,3.5rem)] font-bold tracking-tighter uppercase transition-all duration-700 ease-in-out
+                      <span className={`text-[clamp(1.75rem,7vh,5rem)] font-bold tracking-tighter uppercase transition-all duration-700 ease-in-out
                         ${isActive ? 'text-[var(--text-primary)]' : 'text-[var(--text-terceiro)] group-hover:text-[var(--text-primary)] group-hover:tracking-wider'}
                       `}>
                         {item.name}

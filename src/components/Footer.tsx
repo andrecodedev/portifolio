@@ -6,17 +6,16 @@ import GithubIcon from '../img/redes/github.svg';
 import EmailIcon from '../img/redes/email.svg';
 import LogoIcon from '../img/logo.svg';
 
-const Footer = ({ hasBackground }: { hasBackground?: boolean }) => {
+const Footer = () => {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className={`      
+    <footer className="      
         flex flex-col items-center justify-around gap-4 p-4 text-center 
         text-xs text-primary select-none flex-shrink-0 font-jet leading-snug tracking-tight
         sm:text-xs 
-        md:py-6 md:px-0 md:flex-row transition-all duration-300
-        ${hasBackground ? 'bg-[var(--bg-secondary-transparent)] backdrop-blur-md border-t border-[var(--border)] relative z-[100]' : 'bg-transparent'}`}>
+        md:py-6 md:px-0 md:flex-row">
 
       <div className="md:text-left flex items-center px-6">
         <p className="m-0 leading-snug px-6">
