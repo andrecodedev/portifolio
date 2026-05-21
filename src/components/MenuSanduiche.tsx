@@ -149,7 +149,7 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
                       onClick={() => handleNavigate(item.path)}
                       className="group relative w-full flex items-center justify-center py-[clamp(0.25rem,1.5vh,1.25rem)] cursor-pointer"
                     >
-                      <span className={`text-[clamp(1.75rem,7vh,5rem)] font-bold tracking-tighter uppercase transition-all duration-700 ease-in-out
+                      <span className={`font-bold tracking-tighter uppercase transition-all duration-700 ease-in-out whitespace-nowrap text-[clamp(1.5rem,8vw,5rem)] md:text-[clamp(1.75rem,7vh,5rem)]
                         ${isActive ? 'text-[var(--text-primary)]' : 'text-[var(--text-terceiro)] group-hover:text-[var(--text-primary)] group-hover:tracking-wider'}
                       `}>
                         {item.name}
