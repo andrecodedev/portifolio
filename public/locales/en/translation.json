@@ -246,7 +246,8 @@
   },
   "ExperienceFilter": {
     "professional": "Professional Experiences",
-    "achievements": "Professional Achievements"
+    "achievements": "Professional Achievements",
+    "details": "Diving into Details"
   },
   "Achievements": {
     "title_1": "Full ProUni Scholarship",

@@ -14,7 +14,6 @@ import AboutStartsGrid from '../components/about/AboutStartsGrid';
 import SliderSkills from '../components/SliderSkills';
 import AboutVideo from '../components/about/AboutVideo';
 import Experience from '../components/about/ExperienceSection';
-import AboutHighlights from '../components/about/AboutHighlights';
 
 // Componente de Intro
 import IntroSection from '../components/ui/IntroSection';
@@ -110,10 +109,6 @@ function Home({ skipIntro = false }: HomeProps) {
 
             <FadeIn delay={0.1}>
               <Experience />
-            </FadeIn>
-
-            <FadeIn delay={0.1}>
-              <AboutHighlights />
             </FadeIn>
           </section>
         </main>

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ExperienceItem from './ExperienceItem';
 import ExperienceFilter from './ExperienceFilter';
 import AchievementsCarousel from './AchievementsCarousel';
+import AboutHighlights from './AboutHighlights';
 import Title from '../Title';
 import { useTranslation } from 'react-i18next';
 import { experienceData } from '../../data/experienceData';
@@ -29,7 +30,7 @@ function ExperienceSection() {
           <Title title_7=" " />
           <AchievementsCarousel />
         </>
-      ) : (
+      ) : activeCategory === 'professional' ? (
         // Experiências Profissionais
         <>
           <Title title_2=" " />
@@ -42,6 +43,9 @@ function ExperienceSection() {
             ))}
           </div>
         </>
+      ) : (
+        // Mergulhando nos Detalhes
+        <AboutHighlights />
       )}
     </div>
   );

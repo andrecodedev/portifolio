@@ -13,6 +13,7 @@ export default function ExperienceFilter({ onFilter, activeCategory }: Experienc
   const categories = [
     { key: "achievements", label: t("ExperienceFilter.achievements", "Conquistas Profissionais") },
     { key: "professional", label: t("ExperienceFilter.professional", "Experiências Profissionais") },
+    { key: "details", label: t("ExperienceFilter.details", "Mergulhando nos Detalhes") },
   ];
 
   return (

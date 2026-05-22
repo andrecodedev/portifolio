@@ -7,7 +7,6 @@ import AboutStartsGrid from '../components/about/AboutStartsGrid';
 import SliderSkills from '../components/SliderSkills';
 import AboutVideo from '../components/about/AboutVideo';
 import Experience from '../components/about/ExperienceSection';
-import AboutHighlights from '../components/about/AboutHighlights';
 import FadeIn from '../components/FadeIn';
 
 function Sobre() {
@@ -37,10 +36,6 @@ function Sobre() {
 
         <FadeIn delay={0.90}>
           <Experience />
-        </FadeIn>
-
-        <FadeIn delay={1.05}>
-          <AboutHighlights />
         </FadeIn>
       </main>
       <footer>

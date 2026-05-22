@@ -248,7 +248,8 @@
   },
   "ExperienceFilter": {
     "professional": "Experiências Profissionais",
-    "achievements": "Conquistas Profissionais"
+    "achievements": "Conquistas Profissionais",
+    "details": "Mergulhando nos Detalhes"
   },
   "Achievements": {
     "title_1": "Bolsa ProUni Integral",
