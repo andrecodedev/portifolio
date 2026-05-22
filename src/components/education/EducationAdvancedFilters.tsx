@@ -148,7 +148,7 @@ export default function EducationAdvancedFilters({
                                 value={localFilters.search}
                                 onChange={(e) => setLocalFilters({ ...localFilters, search: e.target.value })}
                                 placeholder={t("EducationAdvancedFilters.search_placeholder")}
-                                className="w-full h-[54px] bg-[color-mix(in_srgb,var(--bg-primary)_70%,transparent)] border border-[color-mix(in_srgb,var(--text-primary)_12%,transparent)] rounded-2xl px-4 pl-12 pr-10 text-sm text-[var(--text-primary)] placeholder:text-[color-mix(in_srgb,var(--text-terceiro)_70%,transparent)] focus:outline-none focus:border-[color-mix(in_srgb,var(--text-primary)_30%,transparent)] transition-all"
+                                className="w-full h-[54px] bg-[color-mix(in_srgb,var(--bg-primary)_70%,transparent)] border border-[color-mix(in_srgb,var(--text-primary)_12%,transparent)] rounded-2xl pl-11 pr-4 text-[12px] sm:text-[13px] text-[var(--text-primary)] placeholder:text-[color-mix(in_srgb,var(--text-terceiro)_70%,transparent)] focus:outline-none focus:border-[color-mix(in_srgb,var(--text-primary)_30%,transparent)] transition-all text-ellipsis"
                             />
                         </div>
                     </div>
