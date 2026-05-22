@@ -11,6 +11,7 @@ import FadeIn from '../components/FadeIn';
 import AboutHero from '../components/about/AboutHero';
 import Title from '../components/Title';
 import AboutStartsGrid from '../components/about/AboutStartsGrid';
+import GithubContributions from '../components/about/GithubContributions';
 import SliderSkills from '../components/SliderSkills';
 import AboutVideo from '../components/about/AboutVideo';
 import Experience from '../components/about/ExperienceSection';
@@ -97,6 +98,10 @@ function Home({ skipIntro = false }: HomeProps) {
 
             <FadeIn delay={0.20}>
               <AboutStartsGrid />
+            </FadeIn>
+
+            <FadeIn delay={0.1}>
+              <GithubContributions />
             </FadeIn>
 
             <FadeIn delay={0.1}>

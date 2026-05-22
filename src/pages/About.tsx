@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import AboutHero from '../components/about/AboutHero';
 import Title from '../components/Title';
 import AboutStartsGrid from '../components/about/AboutStartsGrid';
+import GithubContributions from '../components/about/GithubContributions';
 import SliderSkills from '../components/SliderSkills';
 import AboutVideo from '../components/about/AboutVideo';
 import Experience from '../components/about/ExperienceSection';
@@ -24,6 +25,10 @@ function Sobre() {
 
         <FadeIn delay={0.45}>
           <AboutStartsGrid />
+        </FadeIn>
+
+        <FadeIn delay={0.50}>
+          <GithubContributions />
         </FadeIn>
 
         <FadeIn delay={0.60}>
