@@ -118,18 +118,10 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
               </span>
             </div>
 
-            {/* Background Grid */}
-            <div className="absolute inset-0 opacity-[0.08] pointer-events-none"
-              style={{
-                backgroundImage: 'linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px)',
-                backgroundSize: '24px 24px'
-              }}
-            />
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-              style={{
-                backgroundImage: 'linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px)',
-                backgroundSize: '120px 120px'
-              }}
+            {/* Background Grid - Agora usando a mesma classe e opacidade do site principal */}
+            <div 
+              className="absolute inset-0 pointer-events-none loading-grid-overlay"
+              style={{ opacity: 'var(--grid-opacity)' }}
             />
 
             {/* Conteúdo principal — Refinado para equilíbrio visual e proporções profissionais */}
