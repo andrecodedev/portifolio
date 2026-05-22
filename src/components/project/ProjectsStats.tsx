@@ -9,8 +9,6 @@ import PixelProject from '../ui/PixelProject';
 import PixelUser from '../ui/PixelUser';
 import PixelBriefcase from '../ui/PixelBriefcase';
 import PixelLayers from '../ui/PixelLayers';
-import { formatLikes } from '../../utils/formatters';
-
 interface ProjectsStatsProps {
     projectsData: ProjectData[];
 }
