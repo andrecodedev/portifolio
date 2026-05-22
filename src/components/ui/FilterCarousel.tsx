@@ -13,6 +13,11 @@ export default function FilterCarousel({ children, className = "", onNext, onPre
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(false);
 
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [startScrollLeft, setStartScrollLeft] = useState(0);
+    const [dragDistance, setDragDistance] = useState(0);
+
     const checkScroll = useCallback(() => {
         if (scrollRef.current) {
             const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
@@ -82,6 +87,40 @@ export default function FilterCarousel({ children, className = "", onNext, onPre
         }
     };
 
+    const handleMouseDown = (e: React.MouseEvent) => {
+        if (!scrollRef.current) return;
+        setIsDragging(true);
+        setDragDistance(0);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setStartScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+        setDragDistance(0);
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+        setTimeout(() => setDragDistance(0), 50);
+    };
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (!isDragging || !scrollRef.current) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2; // Multiplicador de velocidade do arrasto
+        setDragDistance(Math.abs(walk));
+        scrollRef.current.scrollLeft = startScrollLeft - walk;
+    };
+
+    const handleClickCapture = (e: React.MouseEvent) => {
+        if (dragDistance > 10) {
+            e.stopPropagation();
+            e.preventDefault();
+        }
+    };
+
     return (
         <div className={`w-full max-w-full overflow-hidden relative ${className}`}>
             <div className="relative w-full max-w-5xl mx-auto flex items-center">
@@ -101,7 +140,12 @@ export default function FilterCarousel({ children, className = "", onNext, onPre
                 <div
                     ref={scrollRef}
                     onScroll={checkScroll}
-                    className="flex overflow-x-auto no-scrollbar w-full scroll-smooth"
+                    onMouseDown={handleMouseDown}
+                    onMouseLeave={handleMouseLeave}
+                    onMouseUp={handleMouseUp}
+                    onMouseMove={handleMouseMove}
+                    onClickCapture={handleClickCapture}
+                    className={`flex overflow-x-auto no-scrollbar w-full ${isDragging ? 'cursor-grabbing' : 'cursor-grab scroll-smooth'}`}
                     style={{
                         maskImage: showLeftArrow || showRightArrow
                             ? `linear-gradient(to right, ${showLeftArrow ? 'transparent' : 'black'} 0%, black 64px, black calc(100% - 64px), ${showRightArrow ? 'transparent' : 'black'} 100%)`
@@ -111,7 +155,7 @@ export default function FilterCarousel({ children, className = "", onNext, onPre
                             : 'none'
                     }}
                 >
-                    <div className="flex flex-nowrap gap-2 px-8 py-4 mx-auto w-fit min-w-max">
+                    <div className="flex flex-nowrap gap-2 px-8 py-4 mx-auto w-fit min-w-max pointer-events-auto select-none">
                         {children}
                     </div>
                 </div>
