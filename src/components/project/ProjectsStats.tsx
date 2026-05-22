@@ -118,11 +118,7 @@ export default function ProjectsStats({ projectsData }: ProjectsStatsProps) {
                                     {stat.icon}
                                 </span>
                             )}
-                            {stat.isHighlight && typeof stat.value === 'number' && stat.value >= 1000 ? (
-                                <span>{formatLikes(stat.value)}+</span>
-                            ) : (
-                                <CountUp end={stat.value as number} suffix="+" />
-                            )}
+                            <CountUp end={stat.value as number} suffix="+" useKFormatter={typeof stat.value === 'number' && stat.value >= 1000} />
                         </h5>
                         <p className={`text-[11px] md:text-xs leading-[1.4] transition-colors duration-300 ${stat.isHighlight && stat.highlightColor !== 'text-[var(--text-primary)]' ? `${stat.highlightColor} font-bold` : 'text-[var(--text-terceiro)]'} ${stat.isHighlight ? 'font-bold' : ''}`}>
                             {t(stat.labelKey, stat.labelDefault)}

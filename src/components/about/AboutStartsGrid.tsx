@@ -10,13 +10,23 @@ export default function AboutStartsGrid() {
   const { t } = useTranslation();
 
   const parseValue = (val: string) => {
-    if (!val) return { num: 0, suffix: '', decimals: 0 };
+    if (!val) return { num: 0, suffix: '', decimals: 0, useKFormatter: false };
     const match = val.match(/(\d+([.,]\d+)?)/);
     const numStr = match ? match[0] : '0';
-    const num = parseFloat(numStr.replace(',', '.'));
-    const decimals = numStr.includes(',') || (numStr.includes('.') && !/^\d{1,3}(\.\d{3})*$/.test(numStr)) ? 1 : 0;
-    const suffix = val.split(numStr)[1] || '';
-    return { num, suffix, decimals };
+    let num = parseFloat(numStr.replace(',', '.'));
+    let suffix = val.split(numStr)[1] || '';
+    
+    let useKFormatter = false;
+    let decimals = 0;
+
+    if (suffix.toUpperCase().includes('K')) {
+      num = num * 1000;
+      suffix = suffix.replace(/k/i, '');
+      useKFormatter = true;
+      decimals = numStr.includes(',') || (numStr.includes('.') && !/^\d{1,3}(\.\d{3})*$/.test(numStr)) ? 1 : 0;
+    }
+
+    return { num, suffix, decimals, useKFormatter };
   };
 
   const stat1 = parseValue(t('AboutStartsGrid.number1'));
@@ -30,6 +40,7 @@ export default function AboutStartsGrid() {
       num: stat1.num,
       decimals: stat1.decimals,
       suffix: stat1.suffix,
+      useKFormatter: stat1.useKFormatter,
       labelKey: 'AboutStartsGrid.description1',
       labelDefault: 'Anos de Estudo Intensivo',
       isHighlight: true,
@@ -42,6 +53,7 @@ export default function AboutStartsGrid() {
       num: stat2.num,
       decimals: stat2.decimals,
       suffix: stat2.suffix,
+      useKFormatter: stat2.useKFormatter,
       labelKey: 'AboutStartsGrid.description2',
       labelDefault: 'Horas de Codificação',
       isHighlight: true,
@@ -54,6 +66,7 @@ export default function AboutStartsGrid() {
       num: stat3.num,
       decimals: stat3.decimals,
       suffix: stat3.suffix,
+      useKFormatter: stat3.useKFormatter,
       labelKey: 'AboutStartsGrid.description3',
       labelDefault: 'Total de Commits',
       isHighlight: true,
@@ -66,6 +79,7 @@ export default function AboutStartsGrid() {
       num: stat4.num,
       decimals: stat4.decimals,
       suffix: stat4.suffix,
+      useKFormatter: stat4.useKFormatter,
       labelKey: 'AboutStartsGrid.description4',
       labelDefault: 'Repositórios no GitHub',
       isHighlight: true,
@@ -78,6 +92,7 @@ export default function AboutStartsGrid() {
       num: stat5.num,
       decimals: stat5.decimals,
       suffix: stat5.suffix,
+      useKFormatter: stat5.useKFormatter,
       labelKey: 'AboutStartsGrid.description5',
       labelDefault: 'Cafés Consumidos',
       isHighlight: true,
@@ -103,7 +118,7 @@ export default function AboutStartsGrid() {
                   {stat.icon}
                 </span>
               )}
-              <CountUp end={stat.num} decimals={stat.decimals} suffix={stat.suffix} />
+              <CountUp end={stat.num} decimals={stat.decimals} suffix={stat.suffix} useKFormatter={stat.useKFormatter} />
             </h5>
             <p className={`text-[11px] md:text-xs leading-[1.4] transition-colors duration-300 text-[var(--text-terceiro)] ${stat.isHighlight ? 'font-bold opacity-100' : ''}`}>
               {t(stat.labelKey, stat.labelDefault)}

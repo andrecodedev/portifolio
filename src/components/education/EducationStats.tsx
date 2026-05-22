@@ -65,9 +65,10 @@ export default function EducationStats({ educationData }: EducationStatsProps) {
         {
             labelKey: 'EducationStats.totalHours',
             labelDefault: 'Horas de Estudo',
-            value: totalHours >= 1000 ? totalHours / 1000 : totalHours,
+            value: totalHours,
             decimals: totalHours >= 1000 ? 1 : 0,
-            suffix: totalHours >= 1000 ? 'K+' : '+',
+            suffix: '+',
+            useKFormatter: totalHours >= 1000,
             isHighlight: true,
             highlightColor: 'text-[var(--text-primary)]',
             icon: <PixelHourglass className="w-6 h-6 md:w-8 md:h-8" color="#FACC15" />,
@@ -139,6 +140,7 @@ export default function EducationStats({ educationData }: EducationStatsProps) {
                                 end={stat.value as number}
                                 decimals={stat.decimals || 0}
                                 suffix={stat.suffix}
+                                useKFormatter={stat.useKFormatter}
                             />
                         </h5>
                         <p className={`text-[11px] md:text-xs leading-[1.4] transition-colors duration-300 text-[var(--text-terceiro)] ${stat.isHighlight ? 'font-bold' : ''}`}>

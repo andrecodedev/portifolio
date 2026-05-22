@@ -108,7 +108,10 @@ const GithubContributions: React.FC = () => {
                   color: 'var(--text-primary)',
                   border: '1px solid var(--border-gray)',
                   borderRadius: '8px',
-                  padding: '8px 12px'
+                  padding: '8px 12px',
+                  maxWidth: '220px',
+                  whiteSpace: 'normal',
+                  textAlign: 'center'
                 }}
               />
             </div>

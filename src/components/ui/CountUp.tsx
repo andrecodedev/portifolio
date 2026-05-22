@@ -6,6 +6,7 @@ interface CountUpProps {
     decimals?: number;
     suffix?: string;
     prefix?: string;
+    useKFormatter?: boolean;
 }
 
 export default function CountUp({
@@ -13,10 +14,12 @@ export default function CountUp({
     duration = 3000,
     decimals = 0,
     suffix = '',
-    prefix = ''
+    prefix = '',
+    useKFormatter = false
 }: CountUpProps) {
     const [count, setCount] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
+    const [isFinished, setIsFinished] = useState(false);
     const elementRef = useRef<HTMLSpanElement>(null);
     const startTimeRef = useRef<number | null>(null);
 
@@ -57,6 +60,8 @@ export default function CountUp({
 
             if (percentage < 1) {
                 animationFrameId = requestAnimationFrame(animate);
+            } else {
+                setIsFinished(true);
             }
         };
 
@@ -65,10 +70,18 @@ export default function CountUp({
         return () => cancelAnimationFrame(animationFrameId);
     }, [end, duration, isVisible]);
 
-    const formattedCount = count.toLocaleString('pt-BR', {
-        minimumFractionDigits: decimals,
-        maximumFractionDigits: decimals,
-    });
+    let formattedCount = '';
+    if (useKFormatter && isFinished && count >= 1000) {
+        formattedCount = (count / 1000).toLocaleString('pt-BR', {
+            minimumFractionDigits: decimals,
+            maximumFractionDigits: decimals,
+        }) + 'K';
+    } else {
+        formattedCount = count.toLocaleString('pt-BR', {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+        });
+    }
 
     return (
         <span ref={elementRef}>
