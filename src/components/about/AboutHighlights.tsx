@@ -38,7 +38,7 @@ export default function AboutHighlights() {
     ));
 
     return (
-        <section className="w-full max-w-5xl mx-auto py-8 px-4 mb-4 sm:px-6">
+        <section className="w-full max-w-5xl mx-auto mb-4 sm:px-6">
             <Title title_8=" " />
             <p className="text-center text-[var(--text-terceiro)] font-jet mb-8 mt-2 max-w-2xl mx-auto text-[11px] sm:text-xs px-4 opacity-80 leading-relaxed">
                 {t('AboutHighlights.subtitle')}
