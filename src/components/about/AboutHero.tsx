@@ -1,12 +1,25 @@
 import { useTranslation } from 'react-i18next';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 
-import avatarIcon from '../../img/avatar.svg';
+import andreAntigo from '../../img/andre_antigo.png';
+import andreAtual from '../../img/andre_atual.png';
+import andreAvatar from '../../img/andre_avatar.png';
 
 function AboutHero() {
   const { t, i18n } = useTranslation();
   const [activeBtn, setActiveBtn] = useState<string | null>(null);
+  const [currentAvatar, setCurrentAvatar] = useState(0);
+
+  const avatars = [andreAvatar, andreAtual, andreAntigo];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentAvatar((prev) => (prev + 1) % avatars.length);
+    }, 5500); // Troca a foto a cada 5.5 segundos
+    return () => clearInterval(interval);
+  }, [avatars.length]);
 
   // Atualiza o idioma do documento HTML  
   document.documentElement.lang = i18n.language;
@@ -54,13 +67,42 @@ function AboutHero() {
           </div>
         </div>
 
-        {/* AVATAR */}
-        <div className="w-full flex justify-center lg:w-1/3 select-none">
-          <img
-            src={avatarIcon}
-            alt="avatar"
-            className="w-[15rem] h-[15rem] sm:w-[18rem] sm:h-[18rem] lg:w-[17rem] lg:h-[17rem] rounded-full object-cover"
-          />
+        {/* AVATAR MORPH */}
+        <div className="w-full flex justify-center lg:w-1/3 select-none relative h-[15rem] sm:h-[18rem] lg:h-[17rem]">
+          <div className="relative w-[15rem] h-[15rem] sm:w-[18rem] sm:h-[18rem] lg:w-[17rem] lg:h-[17rem] rounded-full overflow-hidden">
+            <AnimatePresence>
+              <motion.div
+                key={currentAvatar}
+                className="absolute inset-0 grid grid-cols-5 grid-rows-5"
+                initial={{ zIndex: 10 }}
+                animate={{ zIndex: 10 }}
+                exit={{ zIndex: 0 }}
+              >
+                {Array.from({ length: 25 }).map((_, i) => {
+                  const col = i % 5;
+                  const row = Math.floor(i / 5);
+                  return (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, scale: 0.3, rotate: 15 }}
+                      animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                      transition={{ 
+                        duration: 0.6, 
+                        delay: (col + row) * 0.08, 
+                        ease: "backOut" 
+                      }}
+                      style={{
+                        backgroundImage: `url(${avatars[currentAvatar]})`,
+                        backgroundSize: '500% 500%',
+                        backgroundPosition: `${col * 25}% ${row * 25}%`,
+                        backgroundRepeat: 'no-repeat'
+                      }}
+                    />
+                  );
+                })}
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </section>
     </div>
