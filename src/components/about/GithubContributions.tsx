@@ -4,6 +4,7 @@ import { Tooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css';
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 type Year = 'last' | 2026 | 2025 | 2024;
 
@@ -11,13 +12,25 @@ const GithubContributions: React.FC = () => {
   const { i18n } = useTranslation();
   const [selectedYear, setSelectedYear] = useState<Year>('last');
   const [isDarkMode, setIsDarkMode] = useState(document.body.className.includes('dark-theme'));
+  const [isExpanded, setIsExpanded] = useState(window.innerWidth >= 1024);
 
   useEffect(() => {
     const observer = new MutationObserver(() => {
       setIsDarkMode(document.body.className.includes('dark-theme'));
     });
     observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
-    return () => observer.disconnect();
+
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setIsExpanded(true);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
   
   const years: Year[] = ['last', 2026, 2025, 2024];
@@ -47,15 +60,41 @@ const GithubContributions: React.FC = () => {
     <div className="flex flex-col items-center justify-center w-full px-4 mb-8 font-jet">
       <div className="w-full max-w-6xl py-8 px-4 sm:px-8 bg-[var(--bg-secondary-transparent)] border border-[var(--border)] rounded-xl shadow-[0_0_15px_rgba(0,0,0,0.2)]">
         
-        <h3 className="text-xl md:text-2xl font-title text-[var(--text-primary)] mb-6 uppercase tracking-widest text-center flex items-center justify-center gap-3">
-          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="opacity-80">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-          </svg>
-          {i18n.language === 'en' ? 'GitHub Activity' : 'Atividade no GitHub'}
-        </h3>
+        <button 
+          onClick={() => window.innerWidth < 1024 && setIsExpanded(!isExpanded)}
+          className={`w-full flex items-center justify-between lg:justify-center gap-3 lg:mb-6 group focus:outline-none ${window.innerWidth < 1024 ? 'cursor-pointer' : 'cursor-default'}`}
+          aria-expanded={isExpanded}
+        >
+          <div className="flex items-center gap-2 md:gap-3 text-lg md:text-2xl font-title text-[var(--text-primary)] uppercase tracking-widest">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="opacity-80 flex-shrink-0 w-5 h-5 md:w-6 md:h-6">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+            <span className="text-left text-[14px] sm:text-lg md:text-2xl">{i18n.language === 'en' ? 'GitHub Activity' : 'Atividade no GitHub'}</span>
+          </div>
+          
+          <motion.div 
+            animate={{ rotate: isExpanded ? 180 : 0 }}
+            transition={{ duration: 0.3 }}
+            className="lg:hidden text-[var(--text-primary)] p-1.5 md:p-2 rounded-full bg-[var(--button-bg)] flex-shrink-0 border border-[var(--border)]"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </motion.div>
+        </button>
         
-        {/* Layout Flex: Menu de anos no mobile (topo) e desktop (direita) */}
-        <div className="flex flex-col lg:flex-row gap-6 w-full items-start justify-center">
+        <AnimatePresence initial={false}>
+          {isExpanded && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="overflow-hidden w-full"
+            >
+              <div className="pt-4 lg:pt-0">
+                {/* Layout Flex: Menu de anos no mobile (topo) e desktop (direita) */}
+                <div className="flex flex-col lg:flex-row gap-6 w-full items-start justify-center">
           
           {/* Menu de Anos (Mobile/Tablet) */}
           <div className="flex lg:hidden flex-wrap justify-center gap-2 w-full mb-2">
@@ -149,6 +188,11 @@ const GithubContributions: React.FC = () => {
             className="w-full max-w-[350px] transition-transform duration-300 hover:scale-[1.02] border-2 border-[var(--border)] rounded-xl"
           />
         </div>
+
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
       </div>
     </div>
