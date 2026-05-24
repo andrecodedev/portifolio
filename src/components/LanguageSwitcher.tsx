@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
-import { IoChevronBack, IoChevronForward, IoFingerPrint } from 'react-icons/io5';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { IoChevronBack, IoChevronForward, IoLockClosedOutline } from 'react-icons/io5';
 import { ThemeToggle } from './ThemeToggle';
 import { hapticFeedback } from '../utils/haptics';
 
@@ -13,6 +13,7 @@ import SpanishIcon from '../img/skills/spanish.svg';
 function LanguageSwitcher() {
   const { i18n, t } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
   const changeLanguage = (lng: string) => {
@@ -25,6 +26,8 @@ function LanguageSwitcher() {
     setIsOpen(!isOpen);
   };
 
+  const isAdmin = location.pathname.startsWith('/admin');
+
   return (
     <div className={`language-switcher-wrapper ${isOpen ? 'open' : 'closed'}`}>
       <button
@@ -36,7 +39,8 @@ function LanguageSwitcher() {
       </button>
 
       <div className="language-switcher">
-        <div className="flex flex-col gap-3 pb-1" role="group" aria-label={t('aria.select_language')}>
+        {!isAdmin && (
+          <div className="flex flex-col gap-3 pb-1" role="group" aria-label={t('aria.select_language')}>
           <button 
             onClick={() => changeLanguage('pt')} 
             disabled={i18n.language.startsWith('pt')} 
@@ -62,9 +66,10 @@ function LanguageSwitcher() {
             <img src={SpanishIcon} alt="Español" />
           </button>
         </div>
+        )}
 
         <div className="theme-switcher-sidebar-wrapper">
-          <div className="w-[80%] h-[1px] bg-white/20 my-2 rounded-full mx-auto" />
+          {!isAdmin && <div className="w-[80%] h-[1px] bg-white/20 my-2 rounded-full mx-auto" />}
           <div className="flex justify-center items-center py-2 scale-[0.7] origin-center">
             <ThemeToggle />
           </div>
@@ -74,11 +79,12 @@ function LanguageSwitcher() {
               hapticFeedback.light();
               navigate('/admin');
             }}
-            className="w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-2 mt-1 text-white/30 hover:text-white hover:bg-white/10 transition-all hover:scale-110"
+            className="w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-2 mt-1 text-[var(--text-terceiro)] hover:text-[var(--text-primary)] transition-all hover:scale-110 shadow-sm"
+            style={{ backgroundColor: 'rgba(128, 128, 128, 0.15)' }}
             title="Acesso Restrito"
             aria-label="Admin"
           >
-            <IoFingerPrint size={18} />
+            <IoLockClosedOutline size={18} />
           </button>
         </div>
       </div>

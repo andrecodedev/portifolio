@@ -19,7 +19,7 @@ const IntroSection = ({ onTriggerExit, onExitFinished }: IntroSectionProps) => {
     const [isExiting, setIsExiting] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const [isTypingFinished, setIsTypingFinished] = useState(false);
-    const [heroData, setHeroData] = useState<{title_pt: string, title_en: string, description_pt: string, description_en: string} | null>(null);
+    const [heroData, setHeroData] = useState<{title_pt: string, title_en: string, title_es?: string, description_pt: string, description_en: string, description_es?: string} | null>(null);
 
     useEffect(() => {
         const fetchHero = async () => {
@@ -174,18 +174,18 @@ const IntroSection = ({ onTriggerExit, onExitFinished }: IntroSectionProps) => {
                             className="lux text-[2.2rem] sm:text-[4.2rem] tracking-tighter px-6"
                             style={{ color: 'var(--text-primary)' }}
                         >
-                            {heroData ? (i18n.language.startsWith('pt') ? heroData.title_pt : heroData.title_en) : t('home.welcome')}
+                            {heroData ? (i18n.language.startsWith('pt') ? heroData.title_pt : i18n.language.startsWith('es') ? (heroData.title_es || heroData.title_en) : heroData.title_en) : t('home.welcome')}
                         </h1>
                         
-                        {(heroData?.description_pt || heroData?.description_en) && (
+                        {(heroData?.description_pt || heroData?.description_en || heroData?.description_es) && (
                             <motion.p 
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.5, duration: 0.8 }}
-                                className="mt-4 sm:mt-6 text-sm sm:text-lg font-jet tracking-wide max-w-2xl px-6 opacity-80"
+                                className="mt-4 sm:mt-6 text-xs sm:text-sm font-jet tracking-wide max-w-2xl px-6 opacity-80"
                                 style={{ color: 'var(--text-primary)' }}
                             >
-                                {i18n.language.startsWith('pt') ? heroData.description_pt : heroData.description_en}
+                                {i18n.language.startsWith('pt') ? heroData.description_pt : i18n.language.startsWith('es') ? (heroData.description_es || heroData.description_en) : heroData.description_en}
                             </motion.p>
                         )}
                     </motion.div>

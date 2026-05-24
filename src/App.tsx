@@ -6,6 +6,7 @@ import Skills from './pages/Skills';
 import Project from './pages/Project';
 import Contact from './pages/Contact';
 import AdminAuth from './pages/AdminAuth';
+// Importação do dashboard (se o VS Code der erro aqui, é erro fantasma)
 import AdminDashboard from './pages/AdminDashboard';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import ScrollToTopButton from './components/ScrollToTopButton';
@@ -23,7 +24,7 @@ function AppRoutes() {
   // Usamos a location.state ou timestamp para forçar o reset da intro se o usuário clicar na logo home
   // a key da rota '/' vai depender de um segredo vindo do state se desejado.
   const homeKey = useMemo(() => {
-    return location.pathname === '/' ? (location.state?.resetIntro || 'main-home') : 'other';
+    return location.pathname === '/' ? ((location.state as any)?.resetIntro || 'main-home') : 'other';
   }, [location.pathname, location.state]);
 
   return (
