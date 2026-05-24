@@ -5,7 +5,8 @@ import Education from './pages/Education';
 import Skills from './pages/Skills';
 import Project from './pages/Project';
 import Contact from './pages/Contact';
-// News import removed as requested
+import AdminAuth from './pages/AdminAuth';
+import AdminDashboard from './pages/AdminDashboard';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import ScrollToTopOnNavigation from './components/ScrollToTopOnNavigation';
@@ -37,7 +38,11 @@ function AppRoutes() {
       <Route path="/skills" element={<Skills />} />
       <Route path="/project" element={<Project />} />
       <Route path="/contact" element={<Contact />} />
-      {/* News page removed */}
+      
+      {/* Admin Routes */}
+      <Route path="/admin" element={<AdminAuth />} />
+      <Route path="/admin/dashboard" element={<AdminDashboard />} />
+      
       <Route path="*" element={<div className="main-center"><h2>Página não encontrada</h2></div>} />
     </Routes>
   );

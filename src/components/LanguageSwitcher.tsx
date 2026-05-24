@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { IoChevronBack, IoChevronForward } from 'react-icons/io5';
+import { useNavigate } from 'react-router-dom';
+import { IoChevronBack, IoChevronForward, IoFingerPrint } from 'react-icons/io5';
 import { ThemeToggle } from './ThemeToggle';
 import { hapticFeedback } from '../utils/haptics';
 
@@ -11,6 +12,7 @@ import SpanishIcon from '../img/skills/spanish.svg';
 
 function LanguageSwitcher() {
   const { i18n, t } = useTranslation();
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
   const changeLanguage = (lng: string) => {
@@ -66,6 +68,18 @@ function LanguageSwitcher() {
           <div className="flex justify-center items-center py-2 scale-[0.7] origin-center">
             <ThemeToggle />
           </div>
+          {/* Secret Admin Portal */}
+          <button 
+            onClick={() => {
+              hapticFeedback.light();
+              navigate('/admin');
+            }}
+            className="w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-2 mt-1 text-white/30 hover:text-white hover:bg-white/10 transition-all hover:scale-110"
+            title="Acesso Restrito"
+            aria-label="Admin"
+          >
+            <IoFingerPrint size={18} />
+          </button>
         </div>
       </div>
     </div>

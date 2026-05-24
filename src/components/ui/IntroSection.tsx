@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import Typewriter from './Typewriter';
+import { supabase } from '../../lib/supabaseClient';
 
 interface IntroSectionProps {
     onTriggerExit: () => void;
@@ -18,6 +19,19 @@ const IntroSection = ({ onTriggerExit, onExitFinished }: IntroSectionProps) => {
     const [isExiting, setIsExiting] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const [isTypingFinished, setIsTypingFinished] = useState(false);
+    const [heroData, setHeroData] = useState<{title_pt: string, title_en: string, description_pt: string, description_en: string} | null>(null);
+
+    useEffect(() => {
+        const fetchHero = async () => {
+            try {
+                const { data } = await supabase!.from('hero_section').select('*').limit(1).single();
+                if (data) setHeroData(data);
+            } catch (e) {
+                console.error(e);
+            }
+        };
+        fetchHero();
+    }, []);
 
     useEffect(() => {
         const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -154,14 +168,26 @@ const IntroSection = ({ onTriggerExit, onExitFinished }: IntroSectionProps) => {
                             transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }
                         }}
                         exit={{ opacity: 0, scale: 1.1, transition: { duration: 1.2, ease: "easeInOut" } }}
-                        className="relative z-30 text-center"
+                        className="relative z-30 text-center flex flex-col items-center"
                     >
                         <h1
                             className="lux text-[2.2rem] sm:text-[4.2rem] tracking-tighter px-6"
                             style={{ color: 'var(--text-primary)' }}
                         >
-                            {t('home.welcome')}
+                            {heroData ? (i18n.language.startsWith('pt') ? heroData.title_pt : heroData.title_en) : t('home.welcome')}
                         </h1>
+                        
+                        {(heroData?.description_pt || heroData?.description_en) && (
+                            <motion.p 
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.5, duration: 0.8 }}
+                                className="mt-4 sm:mt-6 text-sm sm:text-lg font-jet tracking-wide max-w-2xl px-6 opacity-80"
+                                style={{ color: 'var(--text-primary)' }}
+                            >
+                                {i18n.language.startsWith('pt') ? heroData.description_pt : heroData.description_en}
+                            </motion.p>
+                        )}
                     </motion.div>
 
                     {/* GUIA DE SCROLL NA BASE */}
