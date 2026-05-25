@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { supabase } from '../lib/supabaseClient';
 import { hapticFeedback } from '../utils/haptics';
 
@@ -9,7 +10,7 @@ export default function AdminAuth() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
-
+  const { t } = useTranslation();
   useEffect(() => {
     supabase!.auth.getSession().then(({ data: { session } }) => {
       if (session) {
@@ -30,7 +31,7 @@ export default function AdminAuth() {
     });
 
     if (error) {
-      setError('Credenciais inválidas. Tente novamente.');
+      setError(t('admin.auth.error'));
       hapticFeedback.warning();
     } else {
       hapticFeedback.success();
@@ -48,8 +49,8 @@ export default function AdminAuth() {
 
       <div className="w-full max-w-md z-10 relative">
         <div className="text-center mb-10">
-          <h1 className="text-3xl font-bold tracking-tight mb-2 text-[var(--text-primary)]">Painel Restrito</h1>
-          <p className="text-[var(--text-terceiro)] text-sm">Acesso exclusivo para o administrador</p>
+          <h1 className="text-3xl font-bold tracking-tight mb-2 text-[var(--text-primary)]">{t('admin.auth.title')}</h1>
+          <p className="text-[var(--text-terceiro)] text-sm">{t('admin.auth.subtitle')}</p>
         </div>
 
         <form onSubmit={handleLogin} className="bg-[var(--bg-secondary)] border border-[var(--border)] rounded-2xl p-8 backdrop-blur-md shadow-2xl flex flex-col gap-6 transition-colors duration-300">
@@ -60,7 +61,7 @@ export default function AdminAuth() {
           )}
 
           <div className="flex flex-col gap-2">
-            <label className="text-xs uppercase tracking-wider text-[var(--text-terceiro)] font-medium">Email</label>
+            <label className="text-xs uppercase tracking-wider text-[var(--text-terceiro)] font-medium">{t('admin.auth.email')}</label>
             <input
               type="email"
               value={email}
@@ -72,7 +73,7 @@ export default function AdminAuth() {
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-xs uppercase tracking-wider text-[var(--text-terceiro)] font-medium">Senha</label>
+            <label className="text-xs uppercase tracking-wider text-[var(--text-terceiro)] font-medium">{t('admin.auth.password')}</label>
             <input
               type="password"
               value={password}
@@ -91,7 +92,7 @@ export default function AdminAuth() {
             {loading ? (
               <span className="w-5 h-5 border-2 border-[var(--bg-primary)]/20 border-t-[var(--bg-primary)] rounded-full animate-spin" />
             ) : (
-              'Entrar no Cofre'
+              t('admin.auth.submit')
             )}
           </button>
         </form>
@@ -100,7 +101,7 @@ export default function AdminAuth() {
           onClick={() => navigate('/')} 
           className="mt-8 text-[var(--text-terceiro)] hover:text-[var(--text-primary)] text-sm transition-colors w-full text-center block"
         >
-          Voltar ao Portfólio
+          {t('admin.auth.back')}
         </button>
       </div>
     </div>

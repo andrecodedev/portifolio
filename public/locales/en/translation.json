@@ -713,5 +713,46 @@
     "close_menu": "Close menu",
     "toggle_language": "Toggle language switcher",
     "select_language": "Select the desired language"
+  },
+  "admin": {
+    "auth": {
+      "title": "Restricted Panel",
+      "subtitle": "Exclusive access for the administrator",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Enter the Vault",
+      "error": "Invalid credentials. Try again.",
+      "back": "Back to Portfolio"
+    },
+    "dashboard": {
+      "title": "Control Panel",
+      "subtitle": "Custom CMS Headless",
+      "logout": "Logout",
+      "modules": "Site Modules",
+      "hero_title": "Hero Section",
+      "hero_desc": "Home page title and subtitle",
+      "about_title": "About",
+      "soon": "SOON",
+      "about_desc": "Biography and profile picture",
+      "skills_title": "Skills",
+      "skills_desc": "Languages and tools",
+      "waiting": "WAITING FOR SELECTION...",
+      "empty_title": "Select a Module",
+      "empty_desc": "Choose a section in the left sidebar to view and edit content in real time.",
+      "back": "BACK",
+      "edit_hero": "Edit Hero",
+      "publish": "Publish",
+      "tab_pt": "PORTUGUESE (PT-BR)",
+      "tab_en": "ENGLISH (EN)",
+      "tab_es": "SPANISH (ES)",
+      "input_title": "INTRO TITLE",
+      "input_desc": "SUB-DESCRIPTION",
+      "preview_badge": "REAL-TIME PREVIEW (LIVE STATE)",
+      "logout_title": "Close the vault?",
+      "logout_desc": "Your current session will be terminated and you will need to login again.",
+      "cancel": "Cancel",
+      "confirm_logout": "Yes, logout",
+      "btn_back": "BACK"
+    }
   }
 }

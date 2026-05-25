@@ -39,8 +39,7 @@ function LanguageSwitcher() {
       </button>
 
       <div className="language-switcher">
-        {!isAdmin && (
-          <div className="flex flex-col gap-3 pb-1" role="group" aria-label={t('aria.select_language')}>
+        <div className="flex flex-col gap-3 pb-1" role="group" aria-label={t('aria.select_language')}>
           <button 
             onClick={() => changeLanguage('pt')} 
             disabled={i18n.language.startsWith('pt')} 
@@ -66,10 +65,9 @@ function LanguageSwitcher() {
             <img src={SpanishIcon} alt="Español" />
           </button>
         </div>
-        )}
 
         <div className="theme-switcher-sidebar-wrapper">
-          {!isAdmin && <div className="w-[80%] h-[1px] bg-white/20 my-2 rounded-full mx-auto" />}
+          <div className="w-[80%] h-[1px] bg-white/20 my-2 rounded-full mx-auto" />
           <div className="flex justify-center items-center py-2 scale-[0.7] origin-center">
             <ThemeToggle />
           </div>

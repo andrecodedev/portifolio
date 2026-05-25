@@ -694,5 +694,46 @@
     "close_menu": "Cerrar menú",
     "toggle_language": "Alternar selector de idiomas",
     "select_language": "Seleccione el idioma deseado"
+  },
+  "admin": {
+    "auth": {
+      "title": "Panel Restringido",
+      "subtitle": "Acceso exclusivo para el administrador",
+      "email": "Email",
+      "password": "Contraseña",
+      "submit": "Entrar a la Bóveda",
+      "error": "Credenciales inválidas. Inténtelo de nuevo.",
+      "back": "Volver al Portafolio"
+    },
+    "dashboard": {
+      "title": "Panel de Control",
+      "subtitle": "Custom CMS Headless",
+      "logout": "Cerrar Sesión",
+      "modules": "Módulos del Sitio",
+      "hero_title": "Hero Section",
+      "hero_desc": "Título y subtítulo de la página de inicio",
+      "about_title": "About",
+      "soon": "PRONTO",
+      "about_desc": "Biografía y foto de perfil",
+      "skills_title": "Skills",
+      "skills_desc": "Lenguajes y herramientas",
+      "waiting": "ESPERANDO SELECCIÓN...",
+      "empty_title": "Seleccione un Módulo",
+      "empty_desc": "Elija una sección en el menú izquierdo para ver y editar el contenido en tiempo real.",
+      "back": "VOLVER",
+      "edit_hero": "Editar Hero",
+      "publish": "Publicar",
+      "tab_pt": "PORTUGUÉS (PT-BR)",
+      "tab_en": "INGLÉS (EN)",
+      "tab_es": "ESPAÑOL (ES)",
+      "input_title": "TÍTULO DE LA INTRO",
+      "input_desc": "SUB-DESCRIPCIÓN",
+      "preview_badge": "VISTA PREVIA EN TIEMPO REAL (LIVE STATE)",
+      "logout_title": "¿Desea cerrar la bóveda?",
+      "logout_desc": "Su sesión actual terminará y deberá iniciar sesión nuevamente.",
+      "cancel": "Cancelar",
+      "confirm_logout": "Sí, cerrar sesión",
+      "btn_back": "VOLVER"
+    }
   }
 }
