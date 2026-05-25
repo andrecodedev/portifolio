@@ -61,7 +61,7 @@ export default function LivePreview({ currentView, previewLang, setPreviewLang, 
                </h1>
                
                {currentDesc && (
-                 <p className="mt-3 sm:mt-6 text-[10px] sm:text-xs lg:text-sm text-[var(--text-secondary)] font-jet tracking-wide max-w-2xl mx-auto opacity-100 transition-colors duration-300 px-4">
+                 <p className="mt-3 sm:mt-6 text-[9px] sm:text-[10px] lg:text-xs text-[var(--text-secondary)] font-jet tracking-wide max-w-2xl mx-auto opacity-100 transition-colors duration-300 px-4">
                    {currentDesc}
                  </p>
                )}

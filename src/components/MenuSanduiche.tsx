@@ -55,14 +55,16 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
         animate={{ opacity: open ? 0 : 1 }}
         transition={{ duration: 0.2 }}
         style={{ pointerEvents: open ? 'none' : 'auto' }}
-        className="w-9 h-9 md:w-10 md:h-10 flex flex-col items-center justify-center gap-[5px]
-          rounded-md border border-[var(--border)] bg-[var(--button-bg)]
+        className="group w-9 h-9 md:w-10 md:h-10 flex items-center justify-center
+          rounded-md border border-[var(--border)] bg-[var(--bg-secondary)]
           hover:bg-[var(--button-hover)] transition-colors duration-300 shadow-lg shadow-black/10"
         aria-label={t('aria.open_menu')}
       >
-        <span className="w-5 md:w-6 h-0.5 bg-[var(--text-primary)] rounded-full" />
-        <span className="w-5 md:w-6 h-0.5 bg-[var(--text-primary)] rounded-full" />
-        <span className="w-5 md:w-6 h-0.5 bg-[var(--text-primary)] rounded-full" />
+        <div className="flex flex-col items-start gap-[5px]">
+          <span className="w-5 md:w-6 h-0.5 bg-[var(--text-primary)] rounded-full" />
+          <span className="w-5 md:w-6 h-0.5 bg-[var(--text-primary)] rounded-full" />
+          <span className="w-3 md:w-4 h-0.5 bg-[var(--text-primary)] rounded-full transition-all duration-300 group-hover:w-5 md:group-hover:w-6" />
+        </div>
       </motion.button>
 
       {/* Overlay Full-Screen — clicar na área escura fecha o menu */}

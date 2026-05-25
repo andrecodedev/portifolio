@@ -440,8 +440,7 @@ h6,
 
 /* Botão de abrir/fechar com efeito de "aba" */
 .language-toggle {
-  background: var(--button-bg);
-  backdrop-filter: blur(8px);
+  background: var(--bg-secondary);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-right: none;
   border-radius: 6px 0 0 6px;
@@ -468,8 +467,7 @@ h6,
   align-items: center;
   gap: 4px;
   padding: 8px 7px;
-  background: var(--button-bg);
-  backdrop-filter: blur(16px);
+  background: var(--bg-secondary);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-right: none;
   border-radius: 9px 0 0 9px;

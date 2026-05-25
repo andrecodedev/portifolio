@@ -182,7 +182,7 @@ const IntroSection = ({ onTriggerExit, onExitFinished }: IntroSectionProps) => {
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.5, duration: 0.8 }}
-                                className="mt-4 sm:mt-6 text-xs sm:text-sm font-jet tracking-wide max-w-2xl px-6 opacity-80"
+                                className="mt-4 sm:mt-6 text-[10px] sm:text-xs font-jet tracking-wide max-w-2xl px-6 opacity-80"
                                 style={{ color: 'var(--text-primary)' }}
                             >
                                 {i18n.language.startsWith('pt') ? heroData.description_pt : i18n.language.startsWith('es') ? (heroData.description_es || heroData.description_en) : heroData.description_en}
