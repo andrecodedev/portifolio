@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { IoChevronBack, IoChevronForward, IoLockClosedOutline } from 'react-icons/io5';
 import { ThemeToggle } from './ThemeToggle';
 import { hapticFeedback } from '../utils/haptics';
@@ -13,7 +13,6 @@ import SpanishIcon from '../img/skills/spanish.svg';
 function LanguageSwitcher() {
   const { i18n, t } = useTranslation();
   const navigate = useNavigate();
-  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
   const changeLanguage = (lng: string) => {
