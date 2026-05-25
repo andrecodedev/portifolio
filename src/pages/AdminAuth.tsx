@@ -54,7 +54,7 @@ export default function AdminAuth() {
 
         <form onSubmit={handleLogin} className="bg-[var(--bg-secondary)] border border-[var(--border)] rounded-2xl p-8 backdrop-blur-md shadow-2xl flex flex-col gap-6 transition-colors duration-300">
           {error && (
-            <div className="bg-[var(--error)] bg-opacity-10 border border-[var(--error)] opacity-80 text-[var(--error)] text-sm p-3 rounded-lg text-center">
+            <div className="bg-red-500/10 border border-red-500/50 text-red-400 text-sm p-3 rounded-lg text-center font-medium">
               {error}
             </div>
           )}
