@@ -26,8 +26,6 @@ function LanguageSwitcher() {
     setIsOpen(!isOpen);
   };
 
-  const isAdmin = location.pathname.startsWith('/admin');
-
   return (
     <div className={`language-switcher-wrapper ${isOpen ? 'open' : 'closed'}`}>
       <button
