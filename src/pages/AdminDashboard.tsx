@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Skeleton } from '../components/ui/Skeleton';
 import { supabase } from '../lib/supabaseClient';
 import { hapticFeedback } from '../utils/haptics';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -157,7 +158,40 @@ export default function AdminDashboard() {
     }
   };
 
-  if (loading) return <div className="h-screen bg-[var(--bg-primary)] flex items-center justify-center text-[var(--text-primary)] transition-colors duration-300">Carregando cofre...</div>;
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] flex flex-col font-jet transition-colors duration-300">
+        <header className="bg-[var(--bg-secondary)] border-b border-[var(--border)] p-4 flex flex-col sm:flex-row gap-4 justify-between sm:items-center z-50">
+          <div>
+            <Skeleton className="w-48 h-6 mb-2" />
+            <Skeleton className="w-32 h-4" />
+          </div>
+          <div className="flex flex-wrap gap-2 sm:gap-4 items-center justify-start sm:justify-end w-full sm:w-auto">
+            <Skeleton className="w-20 sm:w-24 h-8" />
+            <Skeleton className="w-20 sm:w-24 h-8" />
+          </div>
+        </header>
+
+        <div className="flex flex-1 overflow-y-auto lg:overflow-hidden flex-col lg:flex-row relative">
+          <div className="w-full lg:w-1/3 bg-[var(--bg-secondary)] border-b lg:border-b-0 lg:border-r border-[var(--border)] p-4 sm:p-6 shrink-0">
+            <Skeleton className="w-32 h-6 mb-6" />
+            <div className="space-y-4">
+              <Skeleton className="w-full h-12" />
+              <Skeleton className="w-full h-12" />
+              <Skeleton className="w-full h-12" />
+            </div>
+          </div>
+          <div className="flex-1 bg-[var(--bg-primary)] p-4 sm:p-6 flex flex-col items-center justify-center">
+            <div className="w-full max-w-2xl space-y-6">
+              <Skeleton className="w-full h-[30vh] sm:h-64 rounded-xl" />
+              <Skeleton className="w-3/4 h-8" />
+              <Skeleton className="w-1/2 h-6" />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] flex flex-col font-jet transition-colors duration-300">

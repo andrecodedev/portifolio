@@ -76,7 +76,8 @@ function AboutHero() {
                 className="absolute inset-0 grid grid-cols-5 grid-rows-5"
                 initial={{ zIndex: 10 }}
                 animate={{ zIndex: 10 }}
-                exit={{ zIndex: 0 }}
+                exit={{ zIndex: 0, opacity: 1 }}
+                transition={{ duration: 1.5 }}
               >
                 {Array.from({ length: 25 }).map((_, i) => {
                   const col = i % 5;
@@ -84,12 +85,12 @@ function AboutHero() {
                   return (
                     <motion.div
                       key={i}
-                      initial={{ opacity: 0, scale: 0.3, rotate: 15 }}
-                      animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
                       transition={{ 
-                        duration: 0.6, 
-                        delay: (col + row) * 0.08, 
-                        ease: "backOut" 
+                        duration: 0.5, 
+                        delay: (col + row) * 0.05, 
+                        ease: "easeOut" 
                       }}
                       style={{
                         backgroundImage: `url(${avatars[currentAvatar]})`,

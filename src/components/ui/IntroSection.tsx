@@ -3,6 +3,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import Typewriter from './Typewriter';
 import { supabase } from '../../lib/supabaseClient';
+import { Skeleton } from './Skeleton';
 
 interface IntroSectionProps {
     onTriggerExit: () => void;
@@ -170,23 +171,35 @@ const IntroSection = ({ onTriggerExit, onExitFinished }: IntroSectionProps) => {
                         exit={{ opacity: 0, scale: 1.1, transition: { duration: 1.2, ease: "easeInOut" } }}
                         className="relative z-30 text-center flex flex-col items-center"
                     >
-                        <h1
-                            className="lux text-[2.2rem] sm:text-[4.2rem] tracking-tighter px-6"
-                            style={{ color: 'var(--text-primary)' }}
-                        >
-                            {heroData ? (i18n.language.startsWith('pt') ? heroData.title_pt : i18n.language.startsWith('es') ? (heroData.title_es || heroData.title_en) : heroData.title_en) : t('home.welcome')}
-                        </h1>
-                        
-                        {(heroData?.description_pt || heroData?.description_en || heroData?.description_es) && (
-                            <motion.p 
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.5, duration: 0.8 }}
-                                className="mt-4 sm:mt-6 text-[10px] sm:text-xs font-jet tracking-wide max-w-2xl px-6 opacity-80"
-                                style={{ color: 'var(--text-primary)' }}
-                            >
-                                {i18n.language.startsWith('pt') ? heroData.description_pt : i18n.language.startsWith('es') ? (heroData.description_es || heroData.description_en) : heroData.description_en}
-                            </motion.p>
+                        {heroData ? (
+                            <>
+                                <h1
+                                    className="lux text-[2.2rem] sm:text-[4.2rem] tracking-tighter px-6"
+                                    style={{ color: 'var(--text-primary)' }}
+                                >
+                                    {i18n.language.startsWith('pt') ? heroData.title_pt : i18n.language.startsWith('es') ? (heroData.title_es || heroData.title_en) : heroData.title_en}
+                                </h1>
+                                
+                                {(heroData.description_pt || heroData.description_en || heroData.description_es) && (
+                                    <motion.p 
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.5, duration: 0.8 }}
+                                        className="mt-4 sm:mt-6 text-[10px] sm:text-xs font-jet tracking-wide max-w-2xl px-6 opacity-80"
+                                        style={{ color: 'var(--text-primary)' }}
+                                    >
+                                        {i18n.language.startsWith('pt') ? heroData.description_pt : i18n.language.startsWith('es') ? (heroData.description_es || heroData.description_en) : heroData.description_en}
+                                    </motion.p>
+                                )}
+                            </>
+                        ) : (
+                            <div className="flex flex-col items-center justify-center gap-6 w-full opacity-80">
+                                <Skeleton className="w-[80vw] sm:w-[600px] h-[3rem] sm:h-[4.5rem] rounded-md" />
+                                <div className="flex flex-col items-center gap-3 w-full mt-2">
+                                    <Skeleton className="w-[60vw] sm:w-[450px] h-3 sm:h-4 rounded-sm" />
+                                    <Skeleton className="w-[50vw] sm:w-[350px] h-3 sm:h-4 rounded-sm" />
+                                </div>
+                            </div>
                         )}
                     </motion.div>
 

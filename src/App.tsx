@@ -11,7 +11,7 @@ import AdminDashboard from './pages/AdminDashboard';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import ScrollToTopOnNavigation from './components/ScrollToTopOnNavigation';
-import LoadingScreen from './components/ui/LoadingScreen';
+
 import CustomCursor from './components/ui/CustomCursor';
 import ReadingProgress from './components/ui/ReadingProgress';
 import GlobalCodeRain from './components/ui/GlobalCodeRain';
@@ -50,19 +50,8 @@ function AppRoutes() {
 }
 
 function App() {
-  const [loading, setLoading] = useState(true);
-
+  // Initialize Lenis garantindo que o DOM está pronto
   useEffect(() => {
-    // Pequeno delay para garantir que os assets base carreguem e mostrar a animação premium
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1500);
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Initialize Lenis apenas após o loading, garantindo que o DOM está pronto
-  useEffect(() => {
-    if (loading) return;
 
     console.log('%c[Lenis] Ultra Smooth (Low Gravity) Ativado! 🪐', 'color: #00ffff; font-weight: bold; font-size: 14px;');
 
@@ -91,23 +80,19 @@ function App() {
     return () => {
       lenis.destroy();
     };
-  }, [loading]);
+  }, []);
 
   return (
     <>
       <GlobalCodeRain />
-      {loading ? (
-        <LoadingScreen />
-      ) : (
-        <Router>
-          <ReadingProgress />
-          <CustomCursor />
-          <ScrollToTopOnNavigation />
-          <LanguageSwitcher />
-          <ScrollToTopButton />
-          <AppRoutes />
-        </Router>
-      )}
+      <Router>
+        <ReadingProgress />
+        <CustomCursor />
+        <ScrollToTopOnNavigation />
+        <LanguageSwitcher />
+        <ScrollToTopButton />
+        <AppRoutes />
+      </Router>
     </>
   );
 }
