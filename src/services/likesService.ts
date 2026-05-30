@@ -53,24 +53,25 @@ export const likesService = {
         }
 
         try {
-            // Buscamos o valor mais recente do banco SEM .single() para evitar erros
-            const latestCount = await this.getLikes(projectId);
-            const finalCount = newLikedStatus ? latestCount + 1 : Math.max(0, latestCount - 1);
-
-            const { error: upsertError } = await supabase
-                .from('project_likes')
-                .upsert({
-                    id: projectId,
-                    count: finalCount,
-                    updated_at: new Date().toISOString()
-                }, { onConflict: 'id' });
-
-            if (upsertError) {
-                console.error(`🔴 [Supabase] Erro ao salvar (Upsert):`, upsertError.message);
-                throw upsertError;
+            if (newLikedStatus) {
+                const { error: rpcError } = await supabase.rpc('increment_like', { p_id: projectId });
+                if (rpcError) throw rpcError;
+            } else {
+                // Se a lógica permitir remover o like, precisa de outra RPC (ex: decrement_like).
+                // Como não criei o decrement_like no banco, e normalmente like de portfólio só sobe
+                // vou manter a lógica de "se desmarcar o like", não diminui no banco, só no front (ou precisa criar a RPC de decremento).
+                // Por segurança e simplicidade, vamos criar a chamada de decremento, 
+                // mas se der erro, significa que a RPC 'decrement_like' não existe no banco e ele cai pro Catch.
+                const { error: rpcError } = await supabase.rpc('decrement_like', { p_id: projectId });
+                if (rpcError) throw rpcError;
             }
 
+            // Atualiza o local storage
             localStorage.setItem(userLikedKey, newLikedStatus.toString());
+            
+            // Busca o valor atualizado do banco
+            const finalCount = await this.getLikes(projectId);
+            
             return { count: finalCount, liked: newLikedStatus };
         } catch (error) {
             console.error('🔴 [LikesService] Erro na sincronização:', error);
