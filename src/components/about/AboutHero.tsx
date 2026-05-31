@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import andreAntigo from '../../img/andre_antigo.png';
-import andreAtual from '../../img/andre_atual.png';
 import andreAvatar from '../../img/andre_avatar.png';
 
 function AboutHero() {
@@ -12,7 +11,7 @@ function AboutHero() {
   const [activeBtn, setActiveBtn] = useState<string | null>(null);
   const [currentAvatar, setCurrentAvatar] = useState(0);
 
-  const avatars = [andreAvatar, andreAtual, andreAntigo];
+  const avatars = [andreAvatar, andreAntigo];
 
   useEffect(() => {
     const interval = setInterval(() => {
