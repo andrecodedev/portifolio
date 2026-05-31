@@ -668,9 +668,9 @@ h6,
   background: var(--bg-primary); 
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border); 
+  background: var(--text-terceiro); 
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-terceiro); 
+  background: var(--text-secondary); 
 }

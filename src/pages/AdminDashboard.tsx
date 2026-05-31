@@ -12,9 +12,18 @@ import HeroEditor from '../components/admin/HeroEditor';
 import type { HeroData } from '../components/admin/HeroEditor';
 import LivePreview from '../components/admin/LivePreview';
 import AboutEditor from '../components/admin/AboutEditor';
+import type { AboutHeroData } from '../components/admin/AboutHeroEditor';
 
 const initialEmptyHero: HeroData = {
   titlePt: '', titleEn: '', titleEs: '', descPt: '', descEn: '', descEs: ''
+};
+
+const initialEmptyAboutHero: AboutHeroData = {
+  titlePt: '', titleEn: '', titleEs: '',
+  subtitlePt: '', subtitleEn: '', subtitleEs: '',
+  descPt: '', descEn: '', descEs: '',
+  buttons: [],
+  avatarGallery: []
 };
 
 export default function AdminDashboard() {
@@ -26,6 +35,9 @@ export default function AdminDashboard() {
   // States Unificados
   const [heroData, setHeroData] = useState<HeroData>(initialEmptyHero);
   const [initialHeroData, setInitialHeroData] = useState<HeroData>(initialEmptyHero);
+  
+  const [aboutHeroData, setAboutHeroData] = useState<AboutHeroData>(initialEmptyAboutHero);
+  const [initialAboutHeroData, setInitialAboutHeroData] = useState<AboutHeroData>(initialEmptyAboutHero);
 
   // Preview Language Switcher
   const [previewLang, setPreviewLang] = useState('pt');
@@ -34,7 +46,6 @@ export default function AdminDashboard() {
   const [currentView, setCurrentView] = useState<'menu' | 'hero' | 'about'>('menu');
   
   // Toast & Modals
-  const [toast, setToast] = useState<{message: string, type: 'success' | 'error'} | null>(null);
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
   
   // UX: Prevenção de perda de dados (Unsaved Changes)
@@ -42,11 +53,7 @@ export default function AdminDashboard() {
   const [pendingAction, setPendingAction] = useState<(() => void) | null>(null);
 
   const isDirty = JSON.stringify(heroData) !== JSON.stringify(initialHeroData);
-
-  const showToast = (message: string, type: 'success' | 'error') => {
-    setToast({ message, type });
-    setTimeout(() => setToast(null), 3000);
-  };
+  const isAboutHeroDirty = JSON.stringify(aboutHeroData) !== JSON.stringify(initialAboutHeroData);
 
   useEffect(() => {
     supabase!.auth.getSession().then(({ data: { session } }) => {
@@ -54,6 +61,7 @@ export default function AdminDashboard() {
         navigate('/admin');
       } else {
         fetchHeroData();
+        fetchAboutData();
       }
     });
 
@@ -91,6 +99,33 @@ export default function AdminDashboard() {
       console.error(err);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const fetchAboutData = async () => {
+    try {
+      const { data, error } = await supabase!
+        .from('about_page')
+        .select('*')
+        .limit(1)
+        .single();
+      
+      if (data && data.hero) {
+        const fetchedHeroData: AboutHeroData = {
+          titlePt: data.hero.titlePt || '', titleEn: data.hero.titleEn || '', titleEs: data.hero.titleEs || '',
+          subtitlePt: data.hero.subtitlePt || '', subtitleEn: data.hero.subtitleEn || '', subtitleEs: data.hero.subtitleEs || '',
+          descPt: data.hero.descPt || '', descEn: data.hero.descEn || '', descEs: data.hero.descEs || '',
+          buttons: data.hero.buttons || [],
+          avatarGallery: data.hero.avatarGallery || []
+        };
+        setAboutHeroData(fetchedHeroData);
+        setInitialAboutHeroData(fetchedHeroData);
+      }
+      if (error && error.code !== 'PGRST116') {
+        console.error('Erro ao buscar dados do about:', error);
+      }
+    } catch (err) {
+      console.error(err);
     }
   };
 
@@ -134,13 +169,42 @@ export default function AdminDashboard() {
     }
   };
 
+  const handleSaveAboutHero = async () => {
+    setSaveStatus('saving');
+    hapticFeedback.light();
+    
+    try {
+      const { data: existingData } = await supabase!.from('about_page').select('id').limit(1).single();
+      
+      if (existingData) {
+        await supabase!.from('about_page').update({
+          hero: aboutHeroData
+        }).eq('id', existingData.id);
+      } else {
+        await supabase!.from('about_page').insert([{
+          hero: aboutHeroData
+        }]);
+      }
+      
+      setInitialAboutHeroData(aboutHeroData);
+      setSaveStatus('success');
+      setTimeout(() => setSaveStatus('idle'), 3000);
+      hapticFeedback.success();
+    } catch (err) {
+      console.error(err);
+      setSaveStatus('error');
+      setTimeout(() => setSaveStatus('idle'), 3000);
+      hapticFeedback.warning();
+    }
+  };
+
   const handleLogout = async () => {
     await supabase!.auth.signOut();
   };
 
   // Função central para interceptar ações destrutivas se o usuário tiver alterações não salvas
   const handleProtectedAction = (action: () => void) => {
-    if (isDirty) {
+    if (isDirty || isAboutHeroDirty) {
       hapticFeedback.warning();
       setPendingAction(() => action);
       setShowUnsavedConfirm(true);
@@ -153,6 +217,7 @@ export default function AdminDashboard() {
     setShowUnsavedConfirm(false);
     // Descarta alterações locais revertendo para o banco
     setHeroData(initialHeroData);
+    setAboutHeroData(initialAboutHeroData);
     if (pendingAction) {
       pendingAction();
       setPendingAction(null);
@@ -195,7 +260,7 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] flex flex-col font-jet transition-colors duration-300">
+    <div className="h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] flex flex-col font-jet transition-colors duration-300 overflow-hidden">
       {/* HEADER DO ADMIN */}
       <header className="bg-[var(--bg-secondary)] border-b border-[var(--border)] p-4 flex flex-col sm:flex-row gap-4 justify-between sm:items-center z-50 transition-colors duration-300">
         <div className="flex justify-between items-center w-full sm:w-auto">
@@ -229,10 +294,10 @@ export default function AdminDashboard() {
       </header>
 
       {/* WORKSPACE - SPLIT VIEW */}
-      <div className="flex flex-1 overflow-y-auto lg:overflow-hidden flex-col lg:flex-row relative">
+      <div data-lenis-prevent="true" className="flex flex-1 overflow-y-auto lg:overflow-hidden flex-col lg:flex-row relative">
         
         {/* LADO ESQUERDO: MENU OU FORMULÁRIO */}
-        <div className="w-full lg:w-1/3 bg-[var(--bg-secondary)] border-b lg:border-b-0 lg:border-r border-[var(--border)] p-4 sm:p-6 lg:overflow-y-auto transition-colors duration-300 shrink-0">
+        <div data-lenis-prevent="true" className="w-full lg:w-1/3 bg-[var(--bg-secondary)] border-b lg:border-b-0 lg:border-r border-[var(--border)] p-4 sm:p-6 lg:overflow-y-auto transition-colors duration-300 shrink-0">
           {currentView === 'menu' ? (
             <SidebarMenu setCurrentView={(view) => handleProtectedAction(() => setCurrentView(view))} />
           ) : currentView === 'hero' ? (
@@ -247,6 +312,11 @@ export default function AdminDashboard() {
           ) : (
             <AboutEditor 
               onBack={() => handleProtectedAction(() => setCurrentView('menu'))}
+              aboutHeroData={aboutHeroData}
+              setAboutHeroData={(data) => setAboutHeroData({ ...aboutHeroData, ...data })}
+              saveStatus={saveStatus}
+              isDirty={isAboutHeroDirty}
+              onSaveHero={handleSaveAboutHero}
             />
           )}
         </div>
@@ -260,24 +330,7 @@ export default function AdminDashboard() {
         />
       </div>
 
-      {/* TOAST NOTIFICATION */}
-      <AnimatePresence>
-        {toast && (
-          <motion.div 
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            className={`fixed bottom-8 right-8 px-6 py-4 rounded-xl font-bold text-sm z-[100] border-2 backdrop-blur-xl flex items-center gap-3 transition-all ${
-              toast.type === 'success' 
-                ? 'bg-green-500/20 text-green-400 border-green-500/50 shadow-[0_0_30px_rgba(34,197,94,0.2)]' 
-                : 'bg-[var(--error)]/20 text-[var(--error)] border-[var(--error)]/50 shadow-[0_0_30px_rgba(255,50,50,0.2)]'
-            }`}
-          >
-            <span className="text-xl drop-shadow-md">{toast.type === 'success' ? '✓' : '✕'}</span>
-            <span className="drop-shadow-sm">{toast.message}</span>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
 
       {/* UNSAVED CHANGES MODAL */}
       <AnimatePresence>

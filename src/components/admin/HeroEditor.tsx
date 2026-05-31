@@ -97,7 +97,7 @@ export default function HeroEditor({ heroData, setHeroData, saveStatus, isDirty,
       </div>
 
       {/* BOTÃO SALVAR GLOBAL */}
-      <div className="mt-6 pt-4 border-t border-[var(--border)]">
+      <div className="mt-6 pt-4 pb-8 border-t border-[var(--border)]">
         <button 
           onClick={onSave} 
           disabled={!isDirty || saveStatus === 'saving' || saveStatus === 'success'}
