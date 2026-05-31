@@ -3,7 +3,6 @@ import { useState, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import Typewriter from './Typewriter';
 import { supabase } from '../../lib/supabaseClient';
-import { Skeleton } from './Skeleton';
 
 interface IntroSectionProps {
     onTriggerExit: () => void;
@@ -25,7 +24,7 @@ const IntroSection = ({ onTriggerExit, onExitFinished }: IntroSectionProps) => {
     useEffect(() => {
         const fetchHero = async () => {
             try {
-                const { data, error } = await supabase!.from('hero_section').select('*').limit(1).single();
+                const { data } = await supabase!.from('hero_section').select('*').limit(1).single();
                 if (data) {
                     setHeroData(data);
                 } else {
