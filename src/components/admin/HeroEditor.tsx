@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { IoChevronBack } from 'react-icons/io5';
+import { IoChevronBack, IoSaveOutline } from 'react-icons/io5';
 
 export interface HeroData {
   titlePt: string; titleEn: string; titleEs: string;
@@ -10,12 +10,13 @@ export interface HeroData {
 interface HeroEditorProps {
   heroData: HeroData;
   setHeroData: (data: Partial<HeroData>) => void;
-  saving: boolean;
+  saveStatus: 'idle' | 'saving' | 'success' | 'error';
+  isDirty: boolean;
   onSave: () => void;
   onBack: () => void;
 }
 
-export default function HeroEditor({ heroData, setHeroData, saving, onSave, onBack }: HeroEditorProps) {
+export default function HeroEditor({ heroData, setHeroData, saveStatus, isDirty, onSave, onBack }: HeroEditorProps) {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<'pt' | 'en' | 'es'>('pt');
 
@@ -33,13 +34,6 @@ export default function HeroEditor({ heroData, setHeroData, saving, onSave, onBa
           </button>
           <h2 className="text-base sm:text-lg font-semibold ml-1">{t('admin.dashboard.edit_hero')}</h2>
         </div>
-        <button 
-          onClick={onSave} 
-          disabled={saving}
-          className="w-full sm:w-auto bg-[var(--text-primary)] text-[var(--bg-primary)] px-4 py-2 rounded text-sm font-bold hover:opacity-80 transition-opacity"
-        >
-          {saving ? '...' : t('admin.dashboard.publish')}
-        </button>
       </div>
 
       {/* ÁREA DE CONTEÚDO AGRUPADA COM BORDA */}
@@ -100,6 +94,32 @@ export default function HeroEditor({ heroData, setHeroData, saving, onSave, onBa
           />
         </div>
       </div>
+      </div>
+
+      {/* BOTÃO SALVAR GLOBAL */}
+      <div className="mt-6 pt-4 border-t border-[var(--border)]">
+        <button 
+          onClick={onSave} 
+          disabled={!isDirty || saveStatus === 'saving' || saveStatus === 'success'}
+          className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold transition-all duration-300 disabled:cursor-not-allowed ${
+            saveStatus === 'success' 
+              ? 'bg-green-500 text-white hover:bg-green-500 opacity-100 disabled:opacity-100'
+              : saveStatus === 'error'
+              ? 'bg-red-500 text-white hover:bg-red-600'
+              : 'bg-[var(--text-primary)] text-[var(--bg-primary)] hover:opacity-90 disabled:opacity-50'
+          }`}
+        >
+          {saveStatus === 'success' ? (
+            <span className="flex items-center gap-2">
+              <span className="text-lg">✓</span> {t('admin.dashboard.published_success')}
+            </span>
+          ) : (
+            <>
+              <IoSaveOutline size={18} />
+              {saveStatus === 'saving' ? t('admin.dashboard.publishing') : t('admin.dashboard.publish')}
+            </>
+          )}
+        </button>
       </div>
     </div>
   );

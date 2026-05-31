@@ -11,6 +11,7 @@ import SidebarMenu from '../components/admin/SidebarMenu';
 import HeroEditor from '../components/admin/HeroEditor';
 import type { HeroData } from '../components/admin/HeroEditor';
 import LivePreview from '../components/admin/LivePreview';
+import AboutEditor from '../components/admin/AboutEditor';
 
 const initialEmptyHero: HeroData = {
   titlePt: '', titleEn: '', titleEs: '', descPt: '', descEn: '', descEs: ''
@@ -18,7 +19,7 @@ const initialEmptyHero: HeroData = {
 
 export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
-  const [saving, setSaving] = useState(false);
+  const [saveStatus, setSaveStatus] = useState<'idle' | 'saving' | 'success' | 'error'>('idle');
   const navigate = useNavigate();
   const { t } = useTranslation();
   
@@ -30,7 +31,7 @@ export default function AdminDashboard() {
   const [previewLang, setPreviewLang] = useState('pt');
   
   // Navigation State
-  const [currentView, setCurrentView] = useState<'menu' | 'hero'>('menu');
+  const [currentView, setCurrentView] = useState<'menu' | 'hero' | 'about'>('menu');
   
   // Toast & Modals
   const [toast, setToast] = useState<{message: string, type: 'success' | 'error'} | null>(null);
@@ -94,7 +95,7 @@ export default function AdminDashboard() {
   };
 
   const handleSave = async () => {
-    setSaving(true);
+    setSaveStatus('saving');
     hapticFeedback.light();
     
     try {
@@ -122,14 +123,14 @@ export default function AdminDashboard() {
       }
       
       setInitialHeroData(heroData); // Reseta o estado de "sujo"
+      setSaveStatus('success');
+      setTimeout(() => setSaveStatus('idle'), 3000);
       hapticFeedback.success();
-      showToast('Hero Section publicada com sucesso!', 'success');
     } catch (err) {
       console.error(err);
+      setSaveStatus('error');
+      setTimeout(() => setSaveStatus('idle'), 3000);
       hapticFeedback.warning();
-      showToast('Erro ao publicar alterações.', 'error');
-    } finally {
-      setSaving(false);
     }
   };
 
@@ -234,12 +235,17 @@ export default function AdminDashboard() {
         <div className="w-full lg:w-1/3 bg-[var(--bg-secondary)] border-b lg:border-b-0 lg:border-r border-[var(--border)] p-4 sm:p-6 lg:overflow-y-auto transition-colors duration-300 shrink-0">
           {currentView === 'menu' ? (
             <SidebarMenu setCurrentView={(view) => handleProtectedAction(() => setCurrentView(view))} />
-          ) : (
+          ) : currentView === 'hero' ? (
             <HeroEditor 
               heroData={heroData}
               setHeroData={(data) => setHeroData({ ...heroData, ...data })}
-              saving={saving}
+              saveStatus={saveStatus}
+              isDirty={isDirty}
               onSave={handleSave}
+              onBack={() => handleProtectedAction(() => setCurrentView('menu'))}
+            />
+          ) : (
+            <AboutEditor 
               onBack={() => handleProtectedAction(() => setCurrentView('menu'))}
             />
           )}

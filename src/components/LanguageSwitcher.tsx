@@ -13,7 +13,7 @@ import SpanishIcon from '../img/skills/spanish.svg';
 function LanguageSwitcher() {
   const { i18n, t } = useTranslation();
   const navigate = useNavigate();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const changeLanguage = (lng: string) => {
     hapticFeedback.success();

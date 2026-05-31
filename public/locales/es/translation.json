@@ -723,6 +723,8 @@
       "back": "VOLVER",
       "edit_hero": "Editar Hero",
       "publish": "Publicar",
+      "publishing": "Publicando...",
+      "published_success": "¡Publicado con éxito!",
       "tab_pt": "PORTUGUÉS (PT-BR)",
       "tab_en": "INGLÉS (EN)",
       "tab_es": "ESPAÑOL (ES)",
