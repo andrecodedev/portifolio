@@ -25,10 +25,15 @@ const IntroSection = ({ onTriggerExit, onExitFinished }: IntroSectionProps) => {
     useEffect(() => {
         const fetchHero = async () => {
             try {
-                const { data } = await supabase!.from('hero_section').select('*').limit(1).single();
-                if (data) setHeroData(data);
+                const { data, error } = await supabase!.from('hero_section').select('*').limit(1).single();
+                if (data) {
+                    setHeroData(data);
+                } else {
+                    setHeroData({ title_pt: '', title_en: '', title_es: '', description_pt: '', description_en: '', description_es: '' });
+                }
             } catch (e) {
                 console.error(e);
+                setHeroData({ title_pt: '', title_en: '', title_es: '', description_pt: '', description_en: '', description_es: '' });
             }
         };
         fetchHero();
@@ -192,15 +197,7 @@ const IntroSection = ({ onTriggerExit, onExitFinished }: IntroSectionProps) => {
                                     </motion.p>
                                 )}
                             </>
-                        ) : (
-                            <div className="flex flex-col items-center justify-center gap-6 w-full opacity-80">
-                                <Skeleton className="w-[80vw] sm:w-[600px] h-[3rem] sm:h-[4.5rem] rounded-md" />
-                                <div className="flex flex-col items-center gap-3 w-full mt-2">
-                                    <Skeleton className="w-[60vw] sm:w-[450px] h-3 sm:h-4 rounded-sm" />
-                                    <Skeleton className="w-[50vw] sm:w-[350px] h-3 sm:h-4 rounded-sm" />
-                                </div>
-                            </div>
-                        )}
+                        ) : null}
                     </motion.div>
 
                     {/* GUIA DE SCROLL NA BASE */}

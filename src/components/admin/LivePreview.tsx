@@ -56,8 +56,8 @@ export default function LivePreview({ currentView, previewLang, setPreviewLang, 
         <>
           <div className="flex-1 relative flex items-center justify-center p-8">
             <div className="text-center z-30 max-w-4xl">
-               <h1 className="lux text-[1.8rem] sm:text-[2.8rem] md:text-[3.5rem] lg:text-[4.2rem] tracking-tighter px-4 sm:px-6 text-[var(--text-primary)] transition-all duration-300 leading-tight">
-                  {currentTitle || (previewLang === 'pt' ? 'Bem-vindo ao meu Portfólio' : 'Welcome to my Portfolio')}
+               <h1 className="lux text-[1.8rem] sm:text-[2.8rem] md:text-[3.5rem] lg:text-[4.2rem] tracking-tighter px-4 sm:px-6 text-[var(--text-primary)] transition-all duration-300 leading-tight min-h-[3rem]">
+                  {currentTitle}
                </h1>
                
                {currentDesc && (
