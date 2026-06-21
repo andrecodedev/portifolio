@@ -212,7 +212,7 @@ const IntroSection = ({ onTriggerExit, onExitFinished }: IntroSectionProps) => {
                                     exit={{ opacity: 0 }}
                                     transition={{ duration: 0.4 }}
                                 >
-                                    <Skeleton className="w-[80vw] sm:w-[600px] h-[3rem] sm:h-[4.5rem]" />
+                                    <Skeleton className="w-[60vw] h-[2.65rem] sm:h-[5.05rem]" />
                                 </motion.div>
                             )}
                         </AnimatePresence>
