@@ -322,11 +322,12 @@ export default function AdminDashboard() {
         </div>
 
         {/* LADO DIREITO: LIVE PREVIEW */}
-        <LivePreview 
+        <LivePreview
           currentView={currentView}
           previewLang={previewLang}
           setPreviewLang={setPreviewLang}
           heroData={heroData}
+          aboutHeroData={aboutHeroData}
         />
       </div>
 

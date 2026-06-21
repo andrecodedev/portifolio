@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { IoChevronBack, IoSaveOutline, IoAdd, IoTrashOutline } from 'react-icons/io5';
+import { IoChevronBack, IoSaveOutline, IoAdd, IoTrashOutline, IoCloudUploadOutline } from 'react-icons/io5';
+import { supabase } from '../../lib/supabaseClient';
 
 export interface AboutButton {
   id: string;
@@ -29,6 +30,8 @@ export default function AboutHeroEditor({ heroData, setHeroData, saveStatus, isD
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<'pt' | 'en' | 'es'>('pt');
   const [newImageUrl, setNewImageUrl] = useState('');
+  const [uploadLoading, setUploadLoading] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
 
   const handleAddImage = () => {
     if (newImageUrl.trim()) {
@@ -228,25 +231,48 @@ export default function AboutHeroEditor({ heroData, setHeroData, saveStatus, isD
           <div className="flex flex-col gap-4 mb-4">
             
             {/* Drag and Drop / File Input Zone */}
-            <div className="relative border-2 border-dashed border-[var(--border)] hover:border-[var(--text-primary)] rounded-xl p-6 flex flex-col items-center justify-center text-center transition-colors group cursor-pointer bg-[var(--bg-primary)]/50">
-              <input 
-                type="file" 
+            <div className={`relative border-2 border-dashed rounded-xl p-6 flex flex-col items-center justify-center text-center transition-colors group cursor-pointer bg-[var(--bg-primary)]/50 ${uploadLoading ? 'border-[var(--text-primary)] opacity-60 cursor-not-allowed' : 'border-[var(--border)] hover:border-[var(--text-primary)]'}`}>
+              <input
+                type="file"
                 accept="image/*"
+                disabled={uploadLoading}
                 onChange={async (e) => {
                   const file = e.target.files?.[0];
                   if (!file) return;
-                  // TODO: Implement Supabase Storage upload
-                  // For now, we will simulate or use base64 if no bucket is ready
-                  alert("Upload via arquivo clicado! Precisamos conectar ao bucket do Supabase.");
+                  setUploadLoading(true);
+                  setUploadError(null);
+                  try {
+                    const ext = file.name.split('.').pop();
+                    const path = `avatars/${Date.now()}.${ext}`;
+                    const { data, error } = await supabase!.storage
+                      .from('avatars')
+                      .upload(path, file, { cacheControl: '3600', upsert: false });
+                    if (error) throw error;
+                    const { data: { publicUrl } } = supabase!.storage.from('avatars').getPublicUrl(data.path);
+                    setHeroData({ avatarGallery: [...(heroData.avatarGallery || []), publicUrl] });
+                    e.target.value = '';
+                  } catch (err: unknown) {
+                    setUploadError(err instanceof Error ? err.message : 'Erro no upload');
+                  } finally {
+                    setUploadLoading(false);
+                  }
                 }}
-                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10 disabled:cursor-not-allowed"
                 title="Clique ou arraste uma imagem aqui"
               />
               <div className="w-12 h-12 rounded-full bg-[var(--bg-secondary)] flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                <IoAdd size={24} className="text-[var(--text-terceiro)] group-hover:text-[var(--text-primary)] transition-colors" />
+                {uploadLoading
+                  ? <div className="w-5 h-5 border-2 border-[var(--text-primary)] border-t-transparent rounded-full animate-spin" />
+                  : <IoCloudUploadOutline size={24} className="text-[var(--text-terceiro)] group-hover:text-[var(--text-primary)] transition-colors" />
+                }
               </div>
-              <p className="text-sm font-bold text-[var(--text-primary)] mb-1">Clique para enviar imagem</p>
+              <p className="text-sm font-bold text-[var(--text-primary)] mb-1">
+                {uploadLoading ? 'Enviando…' : 'Clique para enviar imagem'}
+              </p>
               <p className="text-[10px] text-[var(--text-terceiro)] uppercase tracking-widest">Ou arraste e solte (PNG, JPG, WEBP)</p>
+              {uploadError && (
+                <p className="text-[10px] text-[var(--error)] mt-2 z-20 relative">{uploadError}</p>
+              )}
             </div>
 
             <div className="flex items-center gap-2 w-full my-2">
