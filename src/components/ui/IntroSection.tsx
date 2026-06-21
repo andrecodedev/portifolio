@@ -176,31 +176,46 @@ const IntroSection = ({ onTriggerExit, onExitFinished }: IntroSectionProps) => {
                         exit={{ opacity: 0, scale: 1.1, transition: { duration: 1.2, ease: "easeInOut" } }}
                         className="relative z-30 text-center flex flex-col items-center"
                     >
-                        {heroData ? (
-                            <>
-                                <h1
-                                    className="lux text-[2.2rem] sm:text-[4.2rem] tracking-tighter px-6"
-                                    style={{ color: 'var(--text-primary)' }}
+                        <AnimatePresence mode="wait">
+                            {heroData ? (
+                                <motion.div
+                                    key="content"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.7, ease: "easeOut" }}
                                 >
-                                    {i18n.language.startsWith('pt') ? heroData.title_pt : i18n.language.startsWith('es') ? (heroData.title_es || heroData.title_en) : heroData.title_en}
-                                </h1>
-                                
-                                {(heroData.description_pt || heroData.description_en || heroData.description_es) && (
-                                    <motion.div 
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: 0.5, duration: 0.8 }}
-                                        className="mt-4 sm:mt-6 text-[10px] sm:text-xs font-jet tracking-wide max-w-2xl px-6 opacity-80"
+                                    <h1
+                                        className="lux text-[2.2rem] sm:text-[4.2rem] tracking-tighter px-6"
                                         style={{ color: 'var(--text-primary)' }}
-                                        dangerouslySetInnerHTML={{ 
-                                            __html: i18n.language.startsWith('pt') ? heroData.description_pt : i18n.language.startsWith('es') ? (heroData.description_es || heroData.description_en) : heroData.description_en 
-                                        }}
-                                    />
-                                )}
-                            </>
-                        ) : (
-                            <Skeleton className="w-[80vw] sm:w-[600px] h-[3rem] sm:h-[4.5rem] rounded-md" />
-                        )}
+                                    >
+                                        {i18n.language.startsWith('pt') ? heroData.title_pt : i18n.language.startsWith('es') ? (heroData.title_es || heroData.title_en) : heroData.title_en}
+                                    </h1>
+
+                                    {(heroData.description_pt || heroData.description_en || heroData.description_es) && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ delay: 0.4, duration: 0.8 }}
+                                            className="mt-4 sm:mt-6 text-[10px] sm:text-xs font-jet tracking-wide max-w-2xl px-6 opacity-80"
+                                            style={{ color: 'var(--text-primary)' }}
+                                            dangerouslySetInnerHTML={{
+                                                __html: i18n.language.startsWith('pt') ? heroData.description_pt : i18n.language.startsWith('es') ? (heroData.description_es || heroData.description_en) : heroData.description_en
+                                            }}
+                                        />
+                                    )}
+                                </motion.div>
+                            ) : (
+                                <motion.div
+                                    key="skeleton"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.4 }}
+                                >
+                                    <Skeleton className="w-[80vw] sm:w-[600px] h-[3rem] sm:h-[4.5rem]" />
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                     </motion.div>
 
                     {/* GUIA DE SCROLL NA BASE */}
