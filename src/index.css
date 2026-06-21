@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@theme {
+  --font-title: "Barlow Condensed", sans-serif;
+  --font-jet: "JetBrains Mono", monospace;
+  --font-sans: "JetBrains Mono", monospace;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-serif: "JetBrains Mono", monospace;
+}
+
 :root {
   /* Cores base - Dark Mode */
   --bg-primary: #121212;
@@ -101,9 +109,7 @@ html.lenis body {
 }
 
 body {
-  font-family:
-    "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif;
+  font-family: "JetBrains Mono", monospace;
   font-weight: 400;
   line-height: 1.6;
   overflow-x: hidden;
@@ -278,6 +284,10 @@ a {
   font-family: "JetBrains Mono", monospace;
 }
 
+.lux {
+  font-family: var(--jet);
+}
+
 /* Fix global para títulos não cortarem a parte inferior (descenders g, j, q, y) */
 h1,
 h2,
@@ -286,6 +296,7 @@ h4,
 h5,
 h6,
 .section-title {
+  font-family: var(--jet);
   line-height: 1.2 !important;
   padding-bottom: 0.15em;
 }

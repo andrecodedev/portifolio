@@ -108,7 +108,7 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
 
             {/* Elementos decorativos */}
             <div className="absolute top-1/2 left-8 -translate-y-1/2 flex flex-col gap-2 items-center opacity-20 select-none pointer-events-none">
-              <span className="[writing-mode:vertical-rl] rotate-180 text-[10px] tracking-[0.4em] font-mono whitespace-nowrap uppercase">
+              <span className="[writing-mode:vertical-rl] rotate-180 text-[10px] tracking-[0.4em] font-jet whitespace-nowrap uppercase">
                 Developer Interface v2.0
               </span>
               <div className="w-[1px] h-16 lg:h-32 bg-[var(--text-primary)]" />
@@ -116,7 +116,7 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
 
             <div className="absolute top-1/2 right-8 -translate-y-1/2 flex flex-col gap-2 items-center opacity-20 select-none pointer-events-none">
               <div className="w-[1px] h-16 lg:h-32 bg-[var(--text-primary)]" />
-              <span className="[writing-mode:vertical-rl] text-[10px] tracking-[0.4em] font-mono whitespace-nowrap uppercase">
+              <span className="[writing-mode:vertical-rl] text-[10px] tracking-[0.4em] font-jet whitespace-nowrap uppercase">
                 System Status: Active
               </span>
             </div>
@@ -165,7 +165,7 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
                       onClick={() => handleNavigate(item.path)}
                       className="group relative w-full flex items-center justify-center py-[clamp(0.25rem,1.5vh,1.25rem)] cursor-pointer"
                     >
-                      <span className={`font-bold tracking-tighter uppercase transition-all duration-700 ease-in-out whitespace-nowrap text-[clamp(1.5rem,8vw,5rem)] md:text-[clamp(1.75rem,7vh,5rem)]
+                      <span className={`font-bold tracking-tighter transition-all duration-700 ease-in-out whitespace-nowrap text-[clamp(1.5rem,8vw,5rem)] md:text-[clamp(1.75rem,7vh,5rem)]
                         ${isActive ? 'text-[var(--text-primary)]' : 'text-[var(--text-terceiro)] group-hover:text-[var(--text-primary)] group-hover:tracking-wider'}
                       `}>
                         {item.name}

@@ -30,7 +30,7 @@ export default function Modal({ isOpen, onClose, title, children, footer }: Moda
     <AnimatePresence>
       {isOpen && (
         <div 
-          className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-6 select-none font-inter"
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-6 select-none"
           data-lenis-prevent
         >
           {/* Backdrop */}
