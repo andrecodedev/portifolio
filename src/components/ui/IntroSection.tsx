@@ -3,6 +3,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import Typewriter from './Typewriter';
 import { supabase } from '../../lib/supabaseClient';
+import { Skeleton } from './Skeleton';
 
 interface IntroSectionProps {
     onTriggerExit: () => void;
@@ -197,7 +198,9 @@ const IntroSection = ({ onTriggerExit, onExitFinished }: IntroSectionProps) => {
                                     />
                                 )}
                             </>
-                        ) : null}
+                        ) : (
+                            <Skeleton className="w-[80vw] sm:w-[600px] h-[3rem] sm:h-[4.5rem] rounded-md" />
+                        )}
                     </motion.div>
 
                     {/* GUIA DE SCROLL NA BASE */}

@@ -30,6 +30,10 @@
   --primary-linear-gradient: #3d3d3d;
   --text-gray-linear-gradient: #cdcdcd;
 
+  /* Shimmer skeleton */
+  --shimmer-base: #333;
+  --shimmer-highlight: #555;
+
   --jet: '"JetBrains Mono"', "monospace";
   --title: '"Barlow Condensed"', "sans-serif";
 }
@@ -58,6 +62,10 @@
   --border-gray: rgb(120, 120, 120);
   --error: #d32f2f;
   --error-hover: #b71c1c;
+
+  /* Shimmer skeleton */
+  --shimmer-base: #e0e0e0;
+  --shimmer-highlight: #c8c8c8;
 }
 
 html {
@@ -148,6 +156,27 @@ body::before {
 
 .animate-loading-bar {
   animation: loading-bar 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -1000px 0;
+  }
+  to {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer-effect {
+  background: linear-gradient(
+    to right,
+    var(--shimmer-base) 5%,
+    var(--shimmer-highlight) 25%,
+    var(--shimmer-base) 35%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 3s infinite;
+  opacity: 0.5;
 }
 
 .loading-grid-overlay {

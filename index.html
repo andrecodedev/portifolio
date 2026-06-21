@@ -101,6 +101,13 @@
   </head>
 
   <body>
+    <script>
+      (function() {
+        var theme = localStorage.getItem('theme');
+        var isDark = theme ? theme === 'dark' : true;
+        document.body.style.backgroundColor = isDark ? '#121212' : '#f5f5f5';
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
