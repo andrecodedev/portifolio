@@ -1,29 +1,16 @@
 import { useTranslation } from 'react-i18next';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
 
-import andreAntigo from '../../img/andre_antigo.png';
-import andreAvatar from '../../img/andre_avatar.png';
+import andreAvatar from '../../img/andre_antigo.png';
 
 function AboutHero() {
   const { t, i18n } = useTranslation();
   const [activeBtn, setActiveBtn] = useState<string | null>(null);
-  const [currentAvatar, setCurrentAvatar] = useState(0);
 
-  const avatars = [andreAvatar, andreAntigo];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentAvatar((prev) => (prev + 1) % avatars.length);
-    }, 5500); // Troca a foto a cada 5.5 segundos
-    return () => clearInterval(interval);
-  }, [avatars.length]);
-
-  // Atualiza o idioma do documento HTML  
   document.documentElement.lang = i18n.language;
 
-  const buttonBase = "text-sm px-6 py-2 rounded-md transition-all duration-300 select-none"; // mantém text-sm nos botões
+  const buttonBase = "text-sm px-6 py-2 rounded-md transition-all duration-300 select-none";
   const buttonStyle = "bg-[var(--button-bg)] text-[var(--text-primary)] hover:bg-[var(--button-hover)]";
   const activeStyle = "bg-[var(--button-active)]";
 
@@ -66,43 +53,13 @@ function AboutHero() {
           </div>
         </div>
 
-        {/* AVATAR MORPH */}
-        <div className="w-full flex justify-center lg:w-1/3 select-none relative h-[15rem] sm:h-[18rem] lg:h-[17rem]">
-          <div className="relative w-[15rem] h-[15rem] sm:w-[18rem] sm:h-[18rem] lg:w-[17rem] lg:h-[17rem] rounded-full overflow-hidden">
-            <AnimatePresence>
-              <motion.div
-                key={currentAvatar}
-                className="absolute inset-0 grid grid-cols-5 grid-rows-5"
-                initial={{ zIndex: 10 }}
-                animate={{ zIndex: 10 }}
-                exit={{ zIndex: 0, opacity: 1 }}
-                transition={{ duration: 1.5 }}
-              >
-                {Array.from({ length: 25 }).map((_, i) => {
-                  const col = i % 5;
-                  const row = Math.floor(i / 5);
-                  return (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ 
-                        duration: 0.5, 
-                        delay: (col + row) * 0.05, 
-                        ease: "easeOut" 
-                      }}
-                      style={{
-                        backgroundImage: `url(${avatars[currentAvatar]})`,
-                        backgroundSize: '500% 500%',
-                        backgroundPosition: `${col * 25}% ${row * 25}%`,
-                        backgroundRepeat: 'no-repeat'
-                      }}
-                    />
-                  );
-                })}
-              </motion.div>
-            </AnimatePresence>
-          </div>
+        {/* FOTO */}
+        <div className="w-full flex justify-center lg:w-1/3 select-none">
+          <img
+            src={andreAvatar}
+            alt="André Vitor"
+            className="w-[15rem] h-[15rem] sm:w-[18rem] sm:h-[18rem] lg:w-[17rem] lg:h-[17rem] object-cover rounded-[50%]"
+          />
         </div>
       </section>
     </div>
