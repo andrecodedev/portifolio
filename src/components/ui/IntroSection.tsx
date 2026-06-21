@@ -58,8 +58,8 @@ const IntroSection = ({ onTriggerExit, onExitFinished }: IntroSectionProps) => {
 
         const handleTouch = () => handleTrigger();
 
-        window.addEventListener('wheel', handleWheel);
-        window.addEventListener('touchmove', handleTouch);
+        window.addEventListener('wheel', handleWheel, { passive: true });
+        window.addEventListener('touchmove', handleTouch, { passive: true });
 
         return () => {
             window.removeEventListener('resize', checkMobile);

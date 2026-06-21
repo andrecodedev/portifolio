@@ -137,6 +137,8 @@ body::before {
   z-index: -2;
   pointer-events: none;
   animation: moveGrid 10s linear infinite;
+  will-change: background-position;
+  transform: translateZ(0);
 }
 
 /* Animação da grade se movendo */
@@ -183,6 +185,8 @@ body::before {
   background-size: 1000px 100%;
   animation: shimmer 3s infinite;
   opacity: 0.5;
+  will-change: background-position;
+  transform: translateZ(0);
 }
 
 .loading-grid-overlay {

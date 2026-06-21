@@ -70,7 +70,7 @@ const GlobalCodeRain: React.FC = () => {
     }, []);
 
     return (
-        <div className="fixed inset-0 pointer-events-none overflow-hidden z-[-1] select-none code-rain-container">
+        <div className="fixed inset-0 pointer-events-none overflow-hidden z-[-1] select-none code-rain-container" style={{ contain: 'strict' }}>
             {streams.map((stream) => (
                 <motion.span
                     key={stream.id}
@@ -83,13 +83,13 @@ const GlobalCodeRain: React.FC = () => {
                         duration: stream.duration,
                         repeat: Infinity,
                         ease: "linear",
-                        // Delay negativo para já carregar a tela preenchida com a nova dinâmica
                         delay: -Math.random() * 100
                     }}
                     className="absolute font-jet text-[var(--text-terceiro)] font-medium"
                     style={{
                         left: stream.left,
                         fontSize: `${stream.fontSize}px`,
+                        willChange: 'transform, opacity',
                     }}
                 >
                     {stream.char}

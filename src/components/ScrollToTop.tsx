@@ -30,7 +30,7 @@ export const ScrollToTop = ({ sectionIds }: ScrollToTopProps) => {
       // Só mostra se tem título acima OU se está mais de 300px do topo (pra garantir UX)
       setShow((found !== null) || (scrollY > 300 && (!sectionIds || sectionIds.length === 0)));
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // já roda ao montar
     return () => window.removeEventListener('scroll', handleScroll);
   }, [sectionIds]);

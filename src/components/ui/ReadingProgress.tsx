@@ -24,7 +24,7 @@ export default function ReadingProgress() {
         // Resetar e recalcular imediatamente ao mudar de rota
         handleScroll();
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, [location]);
 
