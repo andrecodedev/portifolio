@@ -25,11 +25,11 @@ export default function ContactForm() {
   // Observar mudanças no tema
   useEffect(() => {
     const observer = new MutationObserver(() => {
-      const currentTheme = document.body.className.includes('dark-theme');
+      const currentTheme = document.documentElement.classList.contains('dark-theme');
       setIsDarkMode(currentTheme);
     });
 
-    observer.observe(document.body, {
+    observer.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ['class']
     });

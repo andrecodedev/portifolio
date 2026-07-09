@@ -46,7 +46,8 @@
   --title: '"Barlow Condensed"', "sans-serif";
 }
 
-.light-theme {
+.light-theme,
+html.light-theme {
   --bg-primary: #f5f5f5;
   --bg-secondary: #ffffff;
   --bg-terceiro: #ffffffb3;
@@ -218,6 +219,24 @@ body.menu-open .code-rain-container {
 
 body.menu-open header {
   z-index: 10001;
+}
+
+body.menu-open .language-switcher-wrapper {
+  z-index: 15000;
+}
+
+.admin-auth-dots {
+  opacity: 0.55;
+  background-image: radial-gradient(
+    circle at center,
+    color-mix(in srgb, var(--text-terceiro) 85%, transparent) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 36px 36px;
+}
+
+.light-theme .admin-auth-dots {
+  opacity: 0.45;
 }
 
 /* Seleção de texto */

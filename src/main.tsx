@@ -9,7 +9,8 @@ import './i18n';
 // APLICA O TEMA SALVO NO LOCALSTORAGE ANTES DE MONTAR O APP
 const savedTheme = localStorage.getItem('theme');
 const isDark = savedTheme ? savedTheme === 'dark' : true;
-document.body.className = isDark ? 'dark-theme' : 'light-theme';
+document.documentElement.classList.remove('dark-theme', 'light-theme');
+document.documentElement.classList.add(isDark ? 'dark-theme' : 'light-theme');
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

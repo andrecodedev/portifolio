@@ -11,14 +11,14 @@ type Year = 'last' | 2026 | 2025 | 2024;
 const GithubContributions: React.FC = () => {
   const { i18n } = useTranslation();
   const [selectedYear, setSelectedYear] = useState<Year>('last');
-  const [isDarkMode, setIsDarkMode] = useState(document.body.className.includes('dark-theme'));
+  const [isDarkMode, setIsDarkMode] = useState(document.documentElement.classList.contains('dark-theme'));
   const [isExpanded, setIsExpanded] = useState(window.innerWidth >= 1024);
 
   useEffect(() => {
     const observer = new MutationObserver(() => {
-      setIsDarkMode(document.body.className.includes('dark-theme'));
+      setIsDarkMode(document.documentElement.classList.contains('dark-theme'));
     });
-    observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 
     const handleResize = () => {
       if (window.innerWidth >= 1024) {

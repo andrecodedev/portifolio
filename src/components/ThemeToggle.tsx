@@ -10,7 +10,8 @@ return saved ? saved === 'dark' : true;
 
 useEffect(() => {
 const theme = darkMode ? 'dark' : 'light';
-document.body.className = `${theme}-theme`;
+document.documentElement.classList.remove('dark-theme', 'light-theme');
+document.documentElement.classList.add(`${theme}-theme`);
 localStorage.setItem('theme', theme);
 }, [darkMode]);
 
