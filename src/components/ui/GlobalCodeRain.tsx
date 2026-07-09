@@ -39,7 +39,9 @@ const TECH_CHARS = [
     '</>', '<div>', '<script>', '404', '200 OK'
 ];
 
-const GlobalCodeRain: React.FC = () => {
+const GlobalCodeRain: React.FC<{ className?: string }> = ({
+    className = 'fixed inset-0 pointer-events-none overflow-hidden z-[-1] select-none code-rain-container',
+}) => {
     // Densidade equilibrada: 38 fluxos no desktop, 22 no mobile para manter a tela viva
     const streams = useMemo(() => {
         const isMobile = typeof window !== 'undefined' ? window.innerWidth < 768 : false;
@@ -70,7 +72,7 @@ const GlobalCodeRain: React.FC = () => {
     }, []);
 
     return (
-        <div className="fixed inset-0 pointer-events-none overflow-hidden z-[-1] select-none code-rain-container" style={{ contain: 'strict' }}>
+        <div className={className} style={{ contain: 'strict' }}>
             {streams.map((stream) => (
                 <motion.span
                     key={stream.id}

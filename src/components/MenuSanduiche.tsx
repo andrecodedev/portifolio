@@ -15,20 +15,27 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
   const openMenu = () => {
     hapticFeedback.medium();
     setOpen(true);
-    document.body.style.overflow = 'hidden';
   };
 
   const closeMenu = () => {
     hapticFeedback.light();
     setOpen(false);
-    document.body.style.overflow = 'unset';
   };
 
   useEffect(() => {
+    if (open) {
+      document.body.classList.add('menu-open');
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.classList.remove('menu-open');
+      document.body.style.overflow = 'unset';
+    }
+
     return () => {
+      document.body.classList.remove('menu-open');
       document.body.style.overflow = 'unset';
     };
-  }, []);
+  }, [open]);
 
   const menuItems = [
     { name: t('nav.about'), path: '/about' },
@@ -43,7 +50,7 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
     closeMenu();
     setTimeout(() => {
       navigate(path);
-    }, 700);
+    }, 1000);
   };
 
   return (
@@ -70,12 +77,12 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ clipPath: 'inset(0 0 0 100%)', opacity: 0 }}
-            animate={{ clipPath: 'inset(0 0 0 0%)', opacity: 1 }}
-            exit={{ clipPath: 'inset(0 0 0 100%)', opacity: 0 }}
-            transition={{ duration: 0.7, ease: [0.77, 0, 0.175, 1] }}
+            initial={{ clipPath: 'inset(0 0 100% 0)' }}
+            animate={{ clipPath: 'inset(0 0 0% 0)' }}
+            exit={{ clipPath: 'inset(0 0 100% 0)' }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             onClick={closeMenu}
-            className="fixed inset-0 z-[10000] bg-[var(--bg-primary)] flex flex-col items-center justify-center overflow-hidden cursor-pointer"
+            className="fixed inset-0 z-[10000] bg-transparent flex flex-col items-center justify-center overflow-hidden cursor-pointer"
           >
             {/* Cantoneiras HUD - todas iguais */}
             <div className="absolute top-8 left-8 w-6 h-6 border-t border-l border-[var(--text-primary)] opacity-20 pointer-events-none" />
@@ -120,18 +127,12 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
               </span>
             </div>
 
-            {/* Background Grid - Agora usando a mesma classe e opacidade do site principal */}
-            <div 
-              className="absolute inset-0 pointer-events-none loading-grid-overlay"
-              style={{ opacity: 'var(--grid-opacity)' }}
-            />
-
             {/* Conteúdo principal — Refinado para equilíbrio visual e proporções profissionais */}
             <div
               onClick={(e: React.MouseEvent) => e.stopPropagation()}
               className="relative z-10 flex flex-col items-center justify-center w-full h-full px-4 cursor-default"
             >
-              <div className="flex flex-col items-center gap-[clamp(0.5rem,3vh,2.5rem)] w-full max-w-4xl">
+              <div className="flex flex-col items-center gap-[clamp(0.75rem,2.5vh,1.75rem)] w-full max-w-3xl">
                 {menuItems.map((item, index) => {
                   const isActive = location.pathname === item.path || (item.path === '/about' && location.pathname === '/');
                   return (
@@ -141,9 +142,9 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2 + index * 0.1, duration: 0.4 }}
                       onClick={() => handleNavigate(item.path)}
-                      className="group relative w-full flex items-center justify-center py-[clamp(0.25rem,1.5vh,1.25rem)] cursor-pointer"
+                      className="group relative w-full flex items-center justify-center py-[clamp(0.25rem,1.25vh,1rem)] cursor-pointer"
                     >
-                      <span className={`font-bold tracking-tighter transition-all duration-700 ease-in-out whitespace-nowrap text-[clamp(1.5rem,8vw,5rem)] md:text-[clamp(1.75rem,7vh,5rem)]
+                      <span className={`font-bold tracking-tight transition-all duration-700 ease-in-out whitespace-nowrap text-[clamp(1.5rem,6vw,3rem)] md:text-[clamp(1.75rem,5vh,3.5rem)]
                         ${isActive ? 'text-[var(--text-primary)]' : 'text-[var(--text-terceiro)] group-hover:text-[var(--text-primary)] group-hover:tracking-wider'}
                       `}>
                         {item.name}

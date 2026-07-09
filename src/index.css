@@ -197,6 +197,29 @@ body::before {
   animation: moveGrid 10s linear infinite;
 }
 
+/* Reutiliza o mesmo fundo do site no menu sanduíche (grid + chuva contínuos) */
+body.menu-open::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg-primary);
+  z-index: 9997;
+  pointer-events: none;
+}
+
+body.menu-open::before {
+  position: fixed;
+  z-index: 9998;
+}
+
+body.menu-open .code-rain-container {
+  z-index: 9999;
+}
+
+body.menu-open header {
+  z-index: 10001;
+}
+
 /* Seleção de texto */
 ::selection {
   background-color: var(--selection-bg);
