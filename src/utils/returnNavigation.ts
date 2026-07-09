@@ -1,11 +1,14 @@
 import type { NavigateFunction } from 'react-router-dom';
+import { isIntroVisible } from './introState';
 import { getCurrentScrollY, scrollToY } from './smoothScroll';
 
 const RETURN_KEY = 'portfolio-return-navigation';
+const LEGACY_RETURN_KEY = 'portfolio-return-navigation';
 
 export interface ReturnNavigation {
   path: string;
   scrollY: number;
+  introActive?: boolean;
 }
 
 export type ReturnNavigationState = {
@@ -15,27 +18,47 @@ export type ReturnNavigationState = {
 export type PortfolioLocationState = ReturnNavigationState & {
   restoreScroll?: number;
   skipIntro?: boolean;
+  resetIntro?: number;
 };
 
 export function getCurrentPath() {
   return `${window.location.pathname}${window.location.search}${window.location.hash}`;
 }
 
-export function saveReturnNavigation(path: string, scrollY = getCurrentScrollY()) {
+export function saveReturnNavigation(
+  path: string,
+  scrollY = getCurrentScrollY(),
+  introActive = false
+) {
   const data: ReturnNavigation = {
     path: path || '/',
-    scrollY,
+    scrollY: introActive ? 0 : scrollY,
+    introActive,
   };
-  localStorage.setItem(RETURN_KEY, JSON.stringify(data));
+  sessionStorage.setItem(RETURN_KEY, JSON.stringify(data));
   return data;
 }
 
 export function captureReturnNavigation(): ReturnNavigation {
-  return saveReturnNavigation(getCurrentPath(), getCurrentScrollY());
+  const path = getCurrentPath();
+  const introActive = path === '/' && isIntroVisible();
+
+  return saveReturnNavigation(
+    path,
+    introActive ? 0 : getCurrentScrollY(),
+    introActive
+  );
+}
+
+// Limpa dado legado que podia restaurar /about indevidamente
+try {
+  localStorage.removeItem(LEGACY_RETURN_KEY);
+} catch {
+  // ignore
 }
 
 export function getReturnNavigation(): ReturnNavigation | null {
-  const raw = localStorage.getItem(RETURN_KEY);
+  const raw = sessionStorage.getItem(RETURN_KEY);
   if (!raw) return null;
 
   try {
@@ -46,7 +69,7 @@ export function getReturnNavigation(): ReturnNavigation | null {
 }
 
 export function clearReturnNavigation() {
-  localStorage.removeItem(RETURN_KEY);
+  sessionStorage.removeItem(RETURN_KEY);
 }
 
 function isValidReturnPath(path: string) {
@@ -74,25 +97,36 @@ export function navigateBackToPortfolio(
   locationState?: unknown
 ) {
   const fromState = (locationState as ReturnNavigationState | null)?.returnTo;
-  const saved = fromState ?? getReturnNavigation();
+  const saved = getReturnNavigation() ?? fromState;
 
-  if (saved?.path && isValidReturnPath(saved.path)) {
-    navigate(saved.path, {
-      state: {
-        restoreScroll: saved.scrollY,
-        skipIntro: saved.path === '/',
-      },
-    });
+  if (!saved?.path || !isValidReturnPath(saved.path)) {
     clearReturnNavigation();
+    navigate('/');
     return;
   }
 
+  const { path, scrollY, introActive } = saved;
   clearReturnNavigation();
 
-  if (window.history.length > 1) {
-    navigate(-1);
+  // Hero = rota /. Só reabre a intro se o usuário saiu durante ela
+  if (path === '/') {
+    if (introActive) {
+      navigate('/', {
+        replace: true,
+        state: { resetIntro: Date.now() },
+      });
+    } else {
+      navigate('/', {
+        state: {
+          restoreScroll: scrollY,
+          skipIntro: true,
+        },
+      });
+    }
     return;
   }
 
-  navigate('/');
+  navigate(path, {
+    state: { restoreScroll: scrollY },
+  });
 }

@@ -18,6 +18,7 @@ import Experience from '../components/about/ExperienceSection';
 
 // Componente de Intro
 import IntroSection from '../components/ui/IntroSection';
+import { setIntroVisible } from '../utils/introState';
 
 import '../styles/lux.css';
 
@@ -41,6 +42,11 @@ function Home({ skipIntro = false }: HomeProps) {
       setIsTransitioning(false);
     }
   }, [skipIntro]);
+
+  useEffect(() => {
+    setIntroVisible(showIntro && !isTransitioning);
+    return () => setIntroVisible(false);
+  }, [showIntro, isTransitioning]);
 
   const handleStartExit = () => {
     setIsTransitioning(true);
