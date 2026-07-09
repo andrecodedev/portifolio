@@ -85,10 +85,10 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
             className="fixed inset-0 z-[10000] bg-transparent flex flex-col items-center justify-center overflow-hidden cursor-pointer"
           >
             {/* Cantoneiras HUD - todas iguais */}
-            <div className="absolute top-8 left-8 w-6 h-6 border-t border-l border-[var(--text-primary)] opacity-20 pointer-events-none" />
+            <div className="menu-hud-corner absolute top-8 left-8 w-6 h-6 border-t border-l border-[var(--text-primary)] pointer-events-none" />
             {/* Cantoneira top-right removida — o botão CLOSE ocupa esse espaço */}
-            <div className="absolute bottom-8 left-8 w-6 h-6 border-b border-l border-[var(--text-primary)] opacity-20 pointer-events-none" />
-            <div className="absolute bottom-8 right-8 w-6 h-6 border-b border-r border-[var(--text-primary)] opacity-20 pointer-events-none" />
+            <div className="menu-hud-corner absolute bottom-8 left-8 w-6 h-6 border-b border-l border-[var(--text-primary)] pointer-events-none" />
+            <div className="menu-hud-corner absolute bottom-8 right-8 w-6 h-6 border-b border-r border-[var(--text-primary)] pointer-events-none" />
             {/* Botão fechar — HUD close button */}
             <button
               onClick={closeMenu}
@@ -113,14 +113,14 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
             </button>
 
             {/* Elementos decorativos */}
-            <div className="absolute top-1/2 left-8 -translate-y-1/2 flex flex-col gap-2 items-center opacity-20 select-none pointer-events-none">
+            <div className="menu-hud-side absolute top-1/2 left-8 -translate-y-1/2 flex flex-col gap-2 items-center select-none pointer-events-none">
               <span className="[writing-mode:vertical-rl] rotate-180 text-[10px] tracking-[0.4em] font-jet whitespace-nowrap uppercase">
                 Developer Interface v2.0
               </span>
               <div className="w-[1px] h-16 lg:h-32 bg-[var(--text-primary)]" />
             </div>
 
-            <div className="absolute top-1/2 right-8 -translate-y-1/2 flex flex-col gap-2 items-center opacity-20 select-none pointer-events-none">
+            <div className="menu-hud-side absolute top-1/2 right-8 -translate-y-1/2 flex flex-col gap-2 items-center select-none pointer-events-none">
               <div className="w-[1px] h-16 lg:h-32 bg-[var(--text-primary)]" />
               <span className="[writing-mode:vertical-rl] text-[10px] tracking-[0.4em] font-jet whitespace-nowrap uppercase">
                 System Status: Active
@@ -169,7 +169,7 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
               onClick={(e: React.MouseEvent) => e.stopPropagation()}
               className="absolute bottom-6 md:bottom-12 flex flex-col items-center w-full px-4 cursor-default"
             >
-              <div className="text-[var(--text-terceiro)] text-[10px] md:text-xs tracking-[0.3em] uppercase opacity-50">
+              <div className="menu-hud-footer text-[10px] md:text-xs tracking-[0.3em] uppercase">
                 © {new Date().getFullYear()} AndreCodeDev
               </div>
             </motion.div>

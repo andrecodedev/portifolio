@@ -220,6 +220,12 @@ body.menu-open header {
   z-index: 10001;
 }
 
+body.menu-open .header-logo {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 body.menu-open .language-switcher-wrapper {
   z-index: 15000;
 }
@@ -495,6 +501,33 @@ html.light-theme .active-premium-bg {
 /* Menu Sanduiche - Now handled by Framer Motion in MenuSanduiche.tsx */
 .menu-sanduiche {
   display: flex;
+}
+
+.menu-hud-corner {
+  opacity: 0.2;
+}
+
+.menu-hud-side {
+  opacity: 0.2;
+  color: var(--text-primary);
+}
+
+.menu-hud-footer {
+  color: var(--text-terceiro);
+  opacity: 0.5;
+}
+
+html.light-theme .menu-hud-corner {
+  opacity: 0.38;
+}
+
+html.light-theme .menu-hud-side {
+  opacity: 0.42;
+}
+
+html.light-theme .menu-hud-footer {
+  color: var(--text-secondary);
+  opacity: 0.72;
 }
 
 .default-layout {

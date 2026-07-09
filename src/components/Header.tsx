@@ -33,7 +33,7 @@ const Header = () => {
       className="fixed top-0 left-0 w-full flex items-center px-6 py-3 z-[1000] transition-shadow duration-200 default-layout"
     >
       <span
-        className="lux font-medium text-2xl cursor-pointer inline-block tracking-tight text-[var(--text-primary)]"
+        className="header-logo lux font-medium text-2xl cursor-pointer inline-block tracking-tight text-[var(--text-primary)]"
         onClick={handleHomeClick}
         role="button"
         tabIndex={0}
