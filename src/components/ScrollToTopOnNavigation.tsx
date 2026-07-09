@@ -1,20 +1,21 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { consumeScrollRestore, restoreScrollPosition } from "../utils/returnNavigation";
+import { restoreScrollPosition, type PortfolioLocationState } from "../utils/returnNavigation";
 import { scrollToY } from "../utils/smoothScroll";
 
 const ScrollToTopOnNavigation = () => {
-    const { key } = useLocation();
+    const location = useLocation();
 
     useEffect(() => {
-        const scrollY = consumeScrollRestore();
-        if (scrollY !== null) {
-            restoreScrollPosition(scrollY);
+        const restoreScroll = (location.state as PortfolioLocationState | null)?.restoreScroll;
+
+        if (typeof restoreScroll === 'number' && restoreScroll >= 0) {
+            restoreScrollPosition(restoreScroll);
             return;
         }
 
         scrollToY(0, false);
-    }, [key]);
+    }, [location.key, location.state]);
 
     return null;
 };

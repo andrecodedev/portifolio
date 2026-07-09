@@ -105,7 +105,7 @@
       (function() {
         var theme = localStorage.getItem('theme');
         var isDark = theme ? theme === 'dark' : true;
-        document.body.style.backgroundColor = isDark ? '#121212' : '#f5f5f5';
+        document.documentElement.classList.add(isDark ? 'dark-theme' : 'light-theme');
       })();
     </script>
     <div id="root"></div>

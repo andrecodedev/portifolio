@@ -16,7 +16,7 @@ export default function AdminAuth() {
   useEffect(() => {
     supabase!.auth.getSession().then(({ data: { session } }) => {
       if (session) {
-        navigate('/admin/dashboard', { state: location.state });
+        navigate('/admin/dashboard', { state: location.state, replace: true });
       }
     });
   }, [navigate, location.state]);
@@ -37,7 +37,7 @@ export default function AdminAuth() {
       hapticFeedback.warning();
     } else {
       hapticFeedback.success();
-      navigate('/admin/dashboard', { state: location.state });
+      navigate('/admin/dashboard', { state: location.state, replace: true });
     }
     
     setLoading(false);

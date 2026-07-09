@@ -5,6 +5,7 @@ import { IoChevronBack, IoChevronForward, IoLockClosedOutline } from 'react-icon
 import { ThemeToggle } from './ThemeToggle';
 import { hapticFeedback } from '../utils/haptics';
 import { saveReturnNavigation } from '../utils/returnNavigation';
+import { getCurrentScrollY } from '../utils/smoothScroll';
 
 // Importe as imagens diretamente
 import PortuguesIcon from '../img/skills/portugues.svg';
@@ -78,7 +79,7 @@ function LanguageSwitcher() {
               hapticFeedback.light();
               const returnTo = {
                 path: `${location.pathname}${location.search}${location.hash}`,
-                scrollY: window.scrollY,
+                scrollY: getCurrentScrollY(),
               };
               saveReturnNavigation(returnTo.path, returnTo.scrollY);
               navigate('/admin', { state: { returnTo } });

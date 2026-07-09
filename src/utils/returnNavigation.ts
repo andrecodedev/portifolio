@@ -1,8 +1,7 @@
 import type { NavigateFunction } from 'react-router-dom';
-import { scrollToY } from './smoothScroll';
+import { getCurrentScrollY, scrollToY } from './smoothScroll';
 
 const RETURN_KEY = 'portfolio-return-navigation';
-const SCROLL_RESTORE_KEY = 'portfolio-restore-scroll';
 
 export interface ReturnNavigation {
   path: string;
@@ -13,12 +12,17 @@ export type ReturnNavigationState = {
   returnTo?: ReturnNavigation;
 };
 
-export function saveReturnNavigation(path: string, scrollY = window.scrollY) {
+export type PortfolioLocationState = ReturnNavigationState & {
+  restoreScroll?: number;
+};
+
+export function saveReturnNavigation(path: string, scrollY = getCurrentScrollY()) {
   const data: ReturnNavigation = {
     path: path || '/',
     scrollY,
   };
   localStorage.setItem(RETURN_KEY, JSON.stringify(data));
+  return data;
 }
 
 export function getReturnNavigation(): ReturnNavigation | null {
@@ -36,19 +40,6 @@ export function clearReturnNavigation() {
   localStorage.removeItem(RETURN_KEY);
 }
 
-export function queueScrollRestore(scrollY: number) {
-  localStorage.setItem(SCROLL_RESTORE_KEY, String(scrollY));
-}
-
-export function consumeScrollRestore(): number | null {
-  const raw = localStorage.getItem(SCROLL_RESTORE_KEY);
-  if (raw === null) return null;
-
-  localStorage.removeItem(SCROLL_RESTORE_KEY);
-  const scrollY = Number(raw);
-  return Number.isFinite(scrollY) ? scrollY : null;
-}
-
 function isValidReturnPath(path: string) {
   return path !== '/admin' && !path.startsWith('/admin/');
 }
@@ -61,6 +52,7 @@ export function restoreScrollPosition(scrollY: number) {
       restore();
       setTimeout(restore, 50);
       setTimeout(restore, 200);
+      setTimeout(restore, 500);
     });
   });
 }
@@ -73,9 +65,12 @@ export function navigateBackToPortfolio(
   const saved = fromState ?? getReturnNavigation();
 
   if (saved?.path && isValidReturnPath(saved.path)) {
-    queueScrollRestore(saved.scrollY);
     clearReturnNavigation();
-    navigate(saved.path);
+    navigate(saved.path, {
+      state: {
+        restoreScroll: saved.scrollY,
+      },
+    });
     return;
   }
 

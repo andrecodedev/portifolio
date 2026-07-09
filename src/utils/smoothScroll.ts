@@ -6,6 +6,14 @@ export function setLenisInstance(lenis: Lenis | null) {
   lenisInstance = lenis;
 }
 
+export function getCurrentScrollY() {
+  if (lenisInstance) {
+    return lenisInstance.scroll;
+  }
+
+  return window.scrollY;
+}
+
 export function scrollToY(y: number, immediate = true) {
   if (lenisInstance) {
     lenisInstance.scrollTo(y, { immediate });
