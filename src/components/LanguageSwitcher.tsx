@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { IoChevronBack, IoChevronForward, IoLockClosedOutline } from 'react-icons/io5';
 import { ThemeToggle } from './ThemeToggle';
 import { hapticFeedback } from '../utils/haptics';
-import { saveReturnNavigation } from '../utils/returnNavigation';
-import { getCurrentScrollY } from '../utils/smoothScroll';
+import { captureReturnNavigation } from '../utils/returnNavigation';
 
 // Importe as imagens diretamente
 import PortuguesIcon from '../img/skills/portugues.svg';
@@ -15,7 +14,6 @@ import SpanishIcon from '../img/skills/spanish.svg';
 function LanguageSwitcher() {
   const { i18n, t } = useTranslation();
   const navigate = useNavigate();
-  const location = useLocation();
   const [isOpen, setIsOpen] = useState(true);
 
   const changeLanguage = (lng: string) => {
@@ -77,11 +75,7 @@ function LanguageSwitcher() {
             onClick={(e) => {
               e.stopPropagation();
               hapticFeedback.light();
-              const returnTo = {
-                path: `${location.pathname}${location.search}${location.hash}`,
-                scrollY: getCurrentScrollY(),
-              };
-              saveReturnNavigation(returnTo.path, returnTo.scrollY);
+              const returnTo = captureReturnNavigation();
               navigate('/admin', { state: { returnTo } });
             }}
             className="w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-2 mt-1 text-[var(--text-terceiro)] hover:text-[var(--text-primary)] transition-all hover:scale-110 shadow-sm"

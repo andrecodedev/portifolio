@@ -134,7 +134,7 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
             >
               <div className="flex flex-col items-center gap-[clamp(0.75rem,2.5vh,1.75rem)] w-full max-w-3xl">
                 {menuItems.map((item, index) => {
-                  const isActive = location.pathname === item.path || (item.path === '/about' && location.pathname === '/');
+                  const isActive = location.pathname === item.path;
                   return (
                     <motion.button
                       key={item.path}

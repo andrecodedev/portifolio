@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '../lib/supabaseClient';
 import { hapticFeedback } from '../utils/haptics';
-import { navigateBackToPortfolio, persistReturnNavigationFromState } from '../utils/returnNavigation';
+import { navigateBackToPortfolio } from '../utils/returnNavigation';
 
 export default function AdminAuth() {
   const [email, setEmail] = useState('');
@@ -13,9 +13,6 @@ export default function AdminAuth() {
   const navigate = useNavigate();
   const location = useLocation();
   const { t } = useTranslation();
-  useEffect(() => {
-    persistReturnNavigationFromState(location.state);
-  }, [location.state]);
 
   useEffect(() => {
     supabase!.auth.getSession().then(({ data: { session } }) => {

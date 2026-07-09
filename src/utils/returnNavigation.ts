@@ -17,6 +17,10 @@ export type PortfolioLocationState = ReturnNavigationState & {
   skipIntro?: boolean;
 };
 
+export function getCurrentPath() {
+  return `${window.location.pathname}${window.location.search}${window.location.hash}`;
+}
+
 export function saveReturnNavigation(path: string, scrollY = getCurrentScrollY()) {
   const data: ReturnNavigation = {
     path: path || '/',
@@ -24,6 +28,10 @@ export function saveReturnNavigation(path: string, scrollY = getCurrentScrollY()
   };
   localStorage.setItem(RETURN_KEY, JSON.stringify(data));
   return data;
+}
+
+export function captureReturnNavigation(): ReturnNavigation {
+  return saveReturnNavigation(getCurrentPath(), getCurrentScrollY());
 }
 
 export function getReturnNavigation(): ReturnNavigation | null {
@@ -39,13 +47,6 @@ export function getReturnNavigation(): ReturnNavigation | null {
 
 export function clearReturnNavigation() {
   localStorage.removeItem(RETURN_KEY);
-}
-
-export function persistReturnNavigationFromState(locationState?: unknown) {
-  const returnTo = (locationState as ReturnNavigationState | null)?.returnTo;
-  if (returnTo?.path) {
-    saveReturnNavigation(returnTo.path, returnTo.scrollY);
-  }
 }
 
 function isValidReturnPath(path: string) {
@@ -73,7 +74,7 @@ export function navigateBackToPortfolio(
   locationState?: unknown
 ) {
   const fromState = (locationState as ReturnNavigationState | null)?.returnTo;
-  const saved = getReturnNavigation() ?? fromState;
+  const saved = fromState ?? getReturnNavigation();
 
   if (saved?.path && isValidReturnPath(saved.path)) {
     navigate(saved.path, {

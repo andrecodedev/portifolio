@@ -18,7 +18,6 @@ import GlobalCodeRain from './components/ui/GlobalCodeRain';
 import Lenis from 'lenis';
 import { setLenisInstance } from './utils/smoothScroll';
 import type { PortfolioLocationState } from './utils/returnNavigation';
-import { PortfolioRouteTracker } from './utils/PortfolioRouteTracker';
 
 function HomePage() {
   const location = useLocation();
@@ -99,7 +98,6 @@ function App() {
         <ReadingProgress />
         <CustomCursor />
         <ScrollToTopOnNavigation />
-        <PortfolioRouteTracker />
         <LanguageSwitcher />
         <ScrollToTopButton />
         <AppRoutes />
