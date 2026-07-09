@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { navigateBackToPortfolio } from '../utils/returnNavigation';
+import { navigateBackToPortfolio, persistReturnNavigationFromState } from '../utils/returnNavigation';
 import { useTranslation } from 'react-i18next';
 import { Skeleton } from '../components/ui/Skeleton';
 import { supabase } from '../lib/supabaseClient';
@@ -56,6 +56,10 @@ export default function AdminDashboard() {
 
   const isDirty = JSON.stringify(heroData) !== JSON.stringify(initialHeroData);
   const isAboutHeroDirty = JSON.stringify(aboutHeroData) !== JSON.stringify(initialAboutHeroData);
+
+  useEffect(() => {
+    persistReturnNavigationFromState(location.state);
+  }, [location.state]);
 
   useEffect(() => {
     supabase!.auth.getSession().then(({ data: { session } }) => {

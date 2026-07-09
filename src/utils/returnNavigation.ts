@@ -14,6 +14,7 @@ export type ReturnNavigationState = {
 
 export type PortfolioLocationState = ReturnNavigationState & {
   restoreScroll?: number;
+  skipIntro?: boolean;
 };
 
 export function saveReturnNavigation(path: string, scrollY = getCurrentScrollY()) {
@@ -40,6 +41,13 @@ export function clearReturnNavigation() {
   localStorage.removeItem(RETURN_KEY);
 }
 
+export function persistReturnNavigationFromState(locationState?: unknown) {
+  const returnTo = (locationState as ReturnNavigationState | null)?.returnTo;
+  if (returnTo?.path) {
+    saveReturnNavigation(returnTo.path, returnTo.scrollY);
+  }
+}
+
 function isValidReturnPath(path: string) {
   return path !== '/admin' && !path.startsWith('/admin/');
 }
@@ -47,12 +55,15 @@ function isValidReturnPath(path: string) {
 export function restoreScrollPosition(scrollY: number) {
   const restore = () => scrollToY(scrollY, true);
 
+  restore();
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       restore();
       setTimeout(restore, 50);
-      setTimeout(restore, 200);
-      setTimeout(restore, 500);
+      setTimeout(restore, 150);
+      setTimeout(restore, 300);
+      setTimeout(restore, 600);
+      setTimeout(restore, 1000);
     });
   });
 }
@@ -62,15 +73,16 @@ export function navigateBackToPortfolio(
   locationState?: unknown
 ) {
   const fromState = (locationState as ReturnNavigationState | null)?.returnTo;
-  const saved = fromState ?? getReturnNavigation();
+  const saved = getReturnNavigation() ?? fromState;
 
   if (saved?.path && isValidReturnPath(saved.path)) {
-    clearReturnNavigation();
     navigate(saved.path, {
       state: {
         restoreScroll: saved.scrollY,
+        skipIntro: saved.path === '/',
       },
     });
+    clearReturnNavigation();
     return;
   }
 

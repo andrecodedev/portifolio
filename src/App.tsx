@@ -17,21 +17,27 @@ import ReadingProgress from './components/ui/ReadingProgress';
 import GlobalCodeRain from './components/ui/GlobalCodeRain';
 import Lenis from 'lenis';
 import { setLenisInstance } from './utils/smoothScroll';
+import type { PortfolioLocationState } from './utils/returnNavigation';
+import { PortfolioRouteTracker } from './utils/PortfolioRouteTracker';
 
-// Componente Wrapper para gerenciar a key da rota e forçar re-render se necessário
-function AppRoutes() {
+function HomePage() {
   const location = useLocation();
+  const state = location.state as PortfolioLocationState | null;
+  const skipIntro = state?.skipIntro === true;
 
-  // Usamos a location.state ou timestamp para forçar o reset da intro se o usuário clicar na logo home
-  // a key da rota '/' vai depender de um segredo vindo do state se desejado.
   const homeKey = useMemo(() => {
-    return location.pathname === '/' ? ((location.state as any)?.resetIntro || 'main-home') : 'other';
-  }, [location.pathname, location.state]);
+    return (state as { resetIntro?: number } | null)?.resetIntro || 'main-home';
+  }, [location.state]);
 
+  return <Home key={homeKey} skipIntro={skipIntro} />;
+}
+
+// Componente Wrapper para gerenciar as rotas do portfólio
+function AppRoutes() {
   return (
     <Routes>
       {/* Home com Intro (Estado Inicial) */}
-      <Route path="/" element={<Home key={homeKey} />} />
+      <Route path="/" element={<HomePage />} />
 
       {/* Sobre (Home sem Intro) */}
       <Route path="/about" element={<Home skipIntro={true} />} />
@@ -93,6 +99,7 @@ function App() {
         <ReadingProgress />
         <CustomCursor />
         <ScrollToTopOnNavigation />
+        <PortfolioRouteTracker />
         <LanguageSwitcher />
         <ScrollToTopButton />
         <AppRoutes />

@@ -16,6 +16,7 @@ export function getCurrentScrollY() {
 
 export function scrollToY(y: number, immediate = true) {
   if (lenisInstance) {
+    lenisInstance.resize();
     lenisInstance.scrollTo(y, { immediate });
     return;
   }
