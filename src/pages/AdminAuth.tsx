@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '../lib/supabaseClient';
 import { hapticFeedback } from '../utils/haptics';
@@ -11,14 +11,15 @@ export default function AdminAuth() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
+  const location = useLocation();
   const { t } = useTranslation();
   useEffect(() => {
     supabase!.auth.getSession().then(({ data: { session } }) => {
       if (session) {
-        navigate('/admin/dashboard');
+        navigate('/admin/dashboard', { state: location.state });
       }
     });
-  }, [navigate]);
+  }, [navigate, location.state]);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,7 +37,7 @@ export default function AdminAuth() {
       hapticFeedback.warning();
     } else {
       hapticFeedback.success();
-      navigate('/admin/dashboard');
+      navigate('/admin/dashboard', { state: location.state });
     }
     
     setLoading(false);
@@ -101,7 +102,7 @@ export default function AdminAuth() {
         </form>
 
         <button 
-          onClick={() => navigateBackToPortfolio(navigate)} 
+          onClick={() => navigateBackToPortfolio(navigate, location.state)} 
           className="mt-8 text-[var(--text-terceiro)] hover:text-[var(--text-primary)] text-sm transition-colors w-full text-center block"
         >
           {t('admin.auth.back')}

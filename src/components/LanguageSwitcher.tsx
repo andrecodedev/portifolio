@@ -76,8 +76,12 @@ function LanguageSwitcher() {
             onClick={(e) => {
               e.stopPropagation();
               hapticFeedback.light();
-              saveReturnNavigation(`${location.pathname}${location.search}${location.hash}`);
-              navigate('/admin');
+              const returnTo = {
+                path: `${location.pathname}${location.search}${location.hash}`,
+                scrollY: window.scrollY,
+              };
+              saveReturnNavigation(returnTo.path, returnTo.scrollY);
+              navigate('/admin', { state: { returnTo } });
             }}
             className="w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-2 mt-1 text-[var(--text-terceiro)] hover:text-[var(--text-primary)] transition-all hover:scale-110 shadow-sm"
             style={{ backgroundColor: 'rgba(128, 128, 128, 0.15)' }}

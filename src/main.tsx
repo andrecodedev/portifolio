@@ -5,12 +5,9 @@ import './index.css';
 
 // Importe a configuração do i18n que acabamos de criar
 import './i18n';
+import { applyTheme, getSavedTheme } from './utils/theme';
 
-// APLICA O TEMA SALVO NO LOCALSTORAGE ANTES DE MONTAR O APP
-const savedTheme = localStorage.getItem('theme');
-const isDark = savedTheme ? savedTheme === 'dark' : true;
-document.documentElement.classList.remove('dark-theme', 'light-theme');
-document.documentElement.classList.add(isDark ? 'dark-theme' : 'light-theme');
+applyTheme(getSavedTheme());
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

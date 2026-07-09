@@ -16,6 +16,7 @@ import CustomCursor from './components/ui/CustomCursor';
 import ReadingProgress from './components/ui/ReadingProgress';
 import GlobalCodeRain from './components/ui/GlobalCodeRain';
 import Lenis from 'lenis';
+import { setLenisInstance } from './utils/smoothScroll';
 
 // Componente Wrapper para gerenciar a key da rota e forçar re-render se necessário
 function AppRoutes() {
@@ -65,6 +66,8 @@ function App() {
       touchMultiplier: 2,
     });
 
+    setLenisInstance(lenis);
+
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -78,6 +81,7 @@ function App() {
     });
 
     return () => {
+      setLenisInstance(null);
       lenis.destroy();
     };
   }, []);

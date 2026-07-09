@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { navigateBackToPortfolio } from '../utils/returnNavigation';
 import { useTranslation } from 'react-i18next';
 import { Skeleton } from '../components/ui/Skeleton';
@@ -31,6 +31,7 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [saveStatus, setSaveStatus] = useState<'idle' | 'saving' | 'success' | 'error'>('idle');
   const navigate = useNavigate();
+  const location = useLocation();
   const { t } = useTranslation();
   
   // States Unificados
@@ -274,7 +275,7 @@ export default function AdminDashboard() {
           <button 
             onClick={() => handleProtectedAction(() => {
               hapticFeedback.light();
-              navigateBackToPortfolio(navigate);
+              navigateBackToPortfolio(navigate, location.state);
             })}
             className="text-xs px-3 py-1.5 rounded bg-[var(--bg-primary)] text-[var(--text-secondary)] border border-[var(--border)] hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] transition-all duration-300 font-bold"
             title="Acessar o site sem fechar a sessão"

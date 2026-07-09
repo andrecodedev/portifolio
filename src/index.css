@@ -46,7 +46,6 @@
   --title: '"Barlow Condensed"', "sans-serif";
 }
 
-.light-theme,
 html.light-theme {
   --bg-primary: #f5f5f5;
   --bg-secondary: #ffffff;
@@ -235,7 +234,7 @@ body.menu-open .language-switcher-wrapper {
   background-size: 36px 36px;
 }
 
-.light-theme .admin-auth-dots {
+html.light-theme .admin-auth-dots {
   opacity: 0.45;
 }
 
@@ -453,11 +452,11 @@ h6,
   /* Acima da cobrinha, mas abaixo do texto */
 }
 
-.light-theme .active-premium {
+html.light-theme .active-premium {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
 }
 
-.light-theme .active-premium-bg {
+html.light-theme .active-premium-bg {
   background: var(--button-active) !important;
 }
 

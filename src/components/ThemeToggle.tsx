@@ -1,18 +1,13 @@
 import { useState, useEffect } from 'react';
 import { hapticFeedback } from '../utils/haptics';
+import { applyTheme, getSavedTheme } from '../utils/theme';
 import '../styles/toggleTheme.css';
 
 export const ThemeToggle = () => {
-const [darkMode, setDarkMode] = useState(() => {
-const saved = localStorage.getItem('theme');
-return saved ? saved === 'dark' : true;
-});
+const [darkMode, setDarkMode] = useState(() => getSavedTheme() === 'dark');
 
 useEffect(() => {
-const theme = darkMode ? 'dark' : 'light';
-document.documentElement.classList.remove('dark-theme', 'light-theme');
-document.documentElement.classList.add(`${theme}-theme`);
-localStorage.setItem('theme', theme);
+applyTheme(darkMode ? 'dark' : 'light');
 }, [darkMode]);
 
   const toggleTheme = () => {
