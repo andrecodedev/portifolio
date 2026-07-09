@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { hapticFeedback } from '../utils/haptics';
-import LiquidEther from './ui/LiquidEther';
 
 interface MenuSanduicheProps {
   navigate: (path: string) => void;
@@ -119,27 +118,6 @@ export const MenuSanduiche: React.FC<MenuSanduicheProps> = ({ navigate, location
               <span className="[writing-mode:vertical-rl] text-[10px] tracking-[0.4em] font-jet whitespace-nowrap uppercase">
                 System Status: Active
               </span>
-            </div>
-
-            {/* Background LiquidEther */}
-            <div className="absolute inset-0 pointer-events-none opacity-[0.25]">
-              <LiquidEther 
-                colors={['var(--text-primary)', 'var(--border-gray)', 'var(--text-terceiro)']}
-                mouseForce={30}
-                cursorSize={150}
-                isViscous={true}
-                viscous={20}
-                iterationsViscous={16}
-                iterationsPoisson={16}
-                resolution={0.4}
-                isBounce={false}
-                autoDemo={true}
-                autoSpeed={0.5}
-                autoIntensity={2.2}
-                takeoverDuration={0.25}
-                autoResumeDelay={3000}
-                autoRampDuration={0.6}
-              />
             </div>
 
             {/* Background Grid - Agora usando a mesma classe e opacidade do site principal */}
