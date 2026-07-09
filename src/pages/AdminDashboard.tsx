@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { navigateBackToPortfolio } from '../utils/returnNavigation';
 import { useTranslation } from 'react-i18next';
 import { Skeleton } from '../components/ui/Skeleton';
 import { supabase } from '../lib/supabaseClient';
@@ -273,7 +274,7 @@ export default function AdminDashboard() {
           <button 
             onClick={() => handleProtectedAction(() => {
               hapticFeedback.light();
-              navigate('/');
+              navigateBackToPortfolio(navigate);
             })}
             className="text-xs px-3 py-1.5 rounded bg-[var(--bg-primary)] text-[var(--text-secondary)] border border-[var(--border)] hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] transition-all duration-300 font-bold"
             title="Acessar o site sem fechar a sessão"

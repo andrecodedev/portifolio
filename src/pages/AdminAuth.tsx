@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '../lib/supabaseClient';
 import { hapticFeedback } from '../utils/haptics';
+import { navigateBackToPortfolio } from '../utils/returnNavigation';
 
 export default function AdminAuth() {
   const [email, setEmail] = useState('');
@@ -43,8 +44,10 @@ export default function AdminAuth() {
 
   return (
     <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] flex flex-col items-center justify-center p-6 relative overflow-hidden transition-colors duration-300">
-      {/* Background Grid e Glow Originais */}
-      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, var(--grid-line) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+      {/* Background dots */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none admin-auth-dots"
+      />
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[var(--text-primary)] opacity-5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="w-full max-w-md z-10 relative">
@@ -98,7 +101,7 @@ export default function AdminAuth() {
         </form>
 
         <button 
-          onClick={() => navigate('/')} 
+          onClick={() => navigateBackToPortfolio(navigate)} 
           className="mt-8 text-[var(--text-terceiro)] hover:text-[var(--text-primary)] text-sm transition-colors w-full text-center block"
         >
           {t('admin.auth.back')}

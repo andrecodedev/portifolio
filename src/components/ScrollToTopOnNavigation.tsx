@@ -1,11 +1,26 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { consumeScrollRestore } from "../utils/returnNavigation";
 
 const ScrollToTopOnNavigation = () => {
     const { key } = useLocation();
 
     useEffect(() => {
-        // Quando qualquer navegação ocorre (mesmo para o mesmo path), rola para o topo
+        const scrollY = consumeScrollRestore();
+        if (scrollY !== null) {
+            const restore = () => {
+                window.scrollTo({
+                    top: scrollY,
+                    behavior: "instant",
+                });
+            };
+
+            requestAnimationFrame(() => {
+                requestAnimationFrame(restore);
+            });
+            return;
+        }
+
         window.scrollTo({
             top: 0,
             behavior: "smooth",
