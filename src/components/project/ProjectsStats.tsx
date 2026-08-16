@@ -7,7 +7,6 @@ import PixelHeart from '../ui/PixelHeart';
 import PixelRocket from '../ui/PixelRocket';
 import PixelProject from '../ui/PixelProject';
 import PixelUser from '../ui/PixelUser';
-import PixelBriefcase from '../ui/PixelBriefcase';
 import PixelLayers from '../ui/PixelLayers';
 interface ProjectsStatsProps {
     projectsData: ProjectData[];
@@ -27,7 +26,6 @@ export default function ProjectsStats({ projectsData }: ProjectsStatsProps) {
 
     const totalProjects = projectsData.length;
     const personalProjects = projectsData.filter(p => p.type === 'personal').length;
-    const workProjects = projectsData.filter(p => p.type === 'work').length;
 
     // Tecnologias únicas usadas nos projetos
     const allSkills = projectsData.reduce((acc, p) => {
@@ -58,16 +56,6 @@ export default function ProjectsStats({ projectsData }: ProjectsStatsProps) {
             icon: <PixelUser className="w-6 h-6 md:w-8 md:h-8" />,
             tooltipKey: 'ProjectsStats.tooltipPersonal',
             tooltipDefault: 'Criações exclusivas!'
-        },
-        {
-            labelKey: 'ProjectsStats.workProjects',
-            labelDefault: 'Projetos de Trabalho',
-            value: workProjects,
-            isHighlight: true,
-            highlightColor: 'text-[var(--text-primary)]',
-            icon: <PixelBriefcase className="w-6 h-6 md:w-8 md:h-8" />,
-            tooltipKey: 'ProjectsStats.tooltipWork',
-            tooltipDefault: 'Experiência de mercado!'
         },
         {
             labelKey: 'ProjectsStats.techUsed',
@@ -103,7 +91,7 @@ export default function ProjectsStats({ projectsData }: ProjectsStatsProps) {
 
     return (
         <section className="w-full">
-            <div className="font-jet max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[1.5rem] text-center p-5 sm:px-6">
+            <div className="font-jet max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-[1.5rem] text-center p-5 sm:px-6">
                 {statsData.map((stat, index) => (
                     <div
                         key={index}

@@ -49,7 +49,6 @@ export default function ProjectAdvancedFilters({ isVisible, onClose, activeType,
     const categories = [
         { key: "all", label: t("ProjectFilter.todos", "Todos") },
         { key: "personal", label: t("ProjectFilter.pessoais", "Pessoais") },
-        { key: "work", label: t("ProjectFilter.trabalho", "Trabalho") },
     ];
 
     // Extrair anos únicos dos projetos

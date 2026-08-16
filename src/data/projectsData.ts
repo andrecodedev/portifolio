@@ -111,7 +111,10 @@ const ecommerceSkills = [
   linuxIcon
 ];
 
-export const projectsData: ProjectData[] = [
+/** false = oculta projetos de trabalho na vitrine (dados permanecem abaixo). */
+export const SHOW_WORK_PROJECTS = false;
+
+const allProjectsData: ProjectData[] = [
   {
     id: 1,
     title: "Seal World",
@@ -434,3 +437,7 @@ export const projectsData: ProjectData[] = [
     likes: 64
   },
 ];
+
+export const projectsData: ProjectData[] = SHOW_WORK_PROJECTS
+  ? allProjectsData
+  : allProjectsData.filter((p) => p.type !== 'work');

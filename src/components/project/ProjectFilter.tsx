@@ -17,7 +17,6 @@ export default function ProjectFilter({ activeType, onFilter, isAdvancedOpen, on
   const types = [
     { key: "all", label: t("ProjectFilter.todos", "Todos") },
     { key: "personal", label: t("ProjectFilter.pessoais", "Pessoais") },
-    { key: "work", label: t("ProjectFilter.trabalho", "Trabalho") },
     { key: "custom", label: t("ProjectFilter.avancado", "Personalizados") },
   ];
 
